@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+  <title>HCC Coleman Connection</title>
+	
+	<!-- iDevice Specific -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Author and Description -->
+	<meta name="description" content="Online Enrollment system for HCC Coleman Connection">
+  <meta name="author" content="Terry Schmidt">
+	
+	<!-- Application Assets -->
+  <%= stylesheet_link_tag    "welcome", :media => "all" %>
+  <%= javascript_include_tag "welcome" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<div id='mast' class='container'>
+			<%= link_to root_path do %>
+			<h1 id='mast-logo'>HCC Coleman Connection</h1>
+			<%- end -%>
+		</div>
+	</header>
+
+	<%= yield %>
+
+	<hr>
+	<footer>
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          1900 Pressler St, Houston TX  77030<br>
+          713.718.7400<br>
+          <a href='mailto:studentsfirst@hccs.edu'>studentsfirst@hccs.edu</a>
+        </div>
+        <div class="span4 connections">
+          <a href="https://www.facebook.com/HCCColemanCollege" title="Connect with us on Facebook">Facebook</a><br>
+          <a href="https://twitter.com/#!/HCC_Coleman" title="Follow us on Twitter">Twitter</a><br>
+          <a href="http://coleman.hccs.edu/askcoleman" title="Have a question? Why not askColeman.">askColeman</a><br>
+        </div>
+        <div class="span4 logos">
+          <a href="#"><%= image_tag 'hcc-logo.png' %></a>
+          <a href="#"><%= image_tag 'coleman-logo.png' %></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

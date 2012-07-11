@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+  <title>HCC Coleman Connection</title>
+	
+	<!-- iDevice Specific -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Author and Description -->
+	<meta name="description" content="Online Enrollment system for HCC Coleman Connection">
+  <meta name="author" content="Terry Schmidt">
+	
+	<!-- Application Assets -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render 'common/flash_messages' %>
+  <%= yield %>
+
+</body>
+</html>

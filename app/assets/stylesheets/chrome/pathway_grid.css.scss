@@ -1,0 +1,111 @@
+.image-grid, .image-grid li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.image-grid {
+  overflow: hidden;
+}
+
+.image-grid li {
+  display: block;
+  float: left;
+  margin: 5px 19px;
+}
+
+.image-grid li a {
+  display: block;
+  background-image: url(image_path('SimDayIcons.png'));
+  text-indent: -9999px;
+  width: 150px;
+  height: 130px;
+}
+
+.dental-assisting p a {
+  background-position: -172px 0px;
+}
+
+.community-health-worker p a {
+  background-position: -341px 0px;
+}
+
+.certified-prevention-specialist p a {
+  background-position: -509px 0;
+}
+
+.pharmacy-technician p a {
+  background-position: -679px 0;
+}
+
+.human-services-technology p a {
+  background-position: 0 -167px;
+}
+
+.health-information-technology p a {
+  background-position: -172px -167px;
+}
+
+.biosafety p a {
+  background-position: -341px -167px;
+}
+
+.radiography p a {
+  background-position: -509px -167px;
+}
+
+.nuclear-medicine-technologist p a {
+  background-position: -679px -167px;
+}
+
+.histology-technician p a {
+  background-position: 0 -336px;
+}
+
+.diagnostic-medical-sonography p a {
+  background-position: -172px -336px;
+}
+
+.computed-tomography p a {
+  background-position: -341px -336px;
+}
+
+.clinical-laboratory-technician p a {
+  background-position: -509px -336px;
+}
+
+.respiratory-therapist p a {
+  background-position: -679px -336px;
+}
+
+.physical-therapy-assistant p a {
+  background-position: 0 -505px;
+}
+
+.occupational-therapy-assistant p a {
+  background-position: -172px -505px;
+}
+
+.gamw p a {
+  background-position: -341px -505px;
+}
+
+.hcca p a {
+  background-position: -509px -505px;
+}
+
+.surgical-technology p a {
+  background-position: -679px -505px;
+}
+
+.medical-assistant p a {
+  background-position: 0 -669px;
+}
+
+.registered-nurse p a {
+  background-position: -172px -669px;
+}
+
+.vocational-nurse p a {
+  background-position: -341px -669px;
+}

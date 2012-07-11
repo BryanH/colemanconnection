@@ -1,0 +1,17 @@
+/*
+* Variable overrides go here
+*/
+
+// Navbar
+//$navbarBackground: $clove;
+//$navbarBackgroundHighlight: $clove;
+//$navbarText: $mossyRock;
+//$navbarLinkColor: $mossyRock;
+
+// Body
+//$bodyBackground: $elderflower;
+
+// Import bootsrap files
+@import 'bootstrap';
+body { padding-top: 90px; }
+@import 'bootstrap-responsive';
