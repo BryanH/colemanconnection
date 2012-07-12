@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120213170651) do
+ActiveRecord::Schema.define(:version => 20120712212127) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(:version => 20120213170651) do
     t.datetime "updated_at"
   end
 
+  create_table "program_dates", :force => true do |t|
+    t.string   "program"
+    t.date     "occurs_on"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "program_dates", ["occurs_on"], :name => "index_program_dates_on_occurs_on"
+  add_index "program_dates", ["program"], :name => "index_program_dates_on_program"
+
   create_table "sessions", :force => true do |t|
     t.integer  "user_id"
     t.integer  "er_date_id"
@@ -80,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20120213170651) do
     t.text     "breakout_session"
     t.boolean  "attended"
     t.boolean  "arrival_acknowledgement"
+    t.integer  "program_date_id"
   end
 
   create_table "users", :force => true do |t|

@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   
   has_many    :permissions, dependent: :destroy
   has_many    :sessions, dependent: :destroy
+  has_many    :program_dates, through: :sessions
   belongs_to  :demographic, autosave: true, dependent: :destroy
   
   validates :first_name,  presence: true

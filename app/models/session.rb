@@ -18,6 +18,7 @@ class Session < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :er_date
+  belongs_to :program_date
   
   validates :user_id,           presence: true
   validates :er_date_id,        presence: true

@@ -31,6 +31,7 @@ describe Session do
   
   it { should belong_to(:er_date) }
   it { should belong_to(:user) }
+  it { should belong_to(:program_date) }
   
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:er_date_id) }
