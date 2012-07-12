@@ -1,0 +1,17 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div id='mast' class='container'>
+        <%= link_to signed_in? ? root_path_for(current_user) : root_path do %>
+        <h1 id='mast-logo'>HCC Coleman Connection</h1>
+        <%- end -%>
+      </div>
+
+      <%- if signed_in? -%>
+        <%= render "#{current_user.is_a?(Staff) ? 'staff' : 'students'}/common/logged_in_menu" -%>
+      <%- else %>
+        <%= render 'common/login_menu' -%>
+      <%- end -%>
+    </div>
+  </div>
+</div>

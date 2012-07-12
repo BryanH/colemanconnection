@@ -17,9 +17,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'common/mast' %>
 
-  <%= render 'common/flash_messages' %>
-  <%= yield %>
-
+  <div class="container paper">
+    <div>
+      <%= render 'common/flash_messages' %>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
