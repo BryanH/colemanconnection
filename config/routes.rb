@@ -8,6 +8,16 @@ ColemanConnection::Application.routes.draw do
   
   devise_for :users
   
+  # Routes for students
+  namespace :students do
+    root to: 'base#index'
+  end
+
+  # Routes for staff
+  namespace :staff do
+    root to: 'base#index'
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
