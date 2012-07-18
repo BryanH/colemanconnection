@@ -1,0 +1,59 @@
+<section class='quiz-container'>
+  <h2>Why HCC Coleman College is the right choice</h2>
+  <div class="gallery-view">
+    <div class="gallery-slide">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>The TMC</h1>
+      </div>
+    </div>
+    <div class="gallery-slide">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>SACS/HCC Student ID</h1>
+      </div>
+    </div>
+    <div class="gallery-slide">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>HCC Coleman Programs</h1>
+      </div>
+    </div>
+    <div class="gallery-slide">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>Placement Tests</h1>
+      </div>
+    </div>
+    <div class="gallery-slide">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>Computer Skills</h1>
+      </div>
+    </div>
+    <div class="gallery-slide">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>Background Check</h1>
+      </div>
+    </div>
+    <div class="gallery-slide gallery-quiz">
+      <div class='inner'>
+        <h1 class='title'>Review</h1>
+        <%= simple_form_for :about_coleman_quiz, html: { data: { quiz_form: ''}} do |f| %>
+          <h2>Let's review</h2>
+          <%= f.input :tmc, label: "The Texas Medical Center is the second largest medical center in the country", 
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['True', 'False'],
+                      input_html: { data: { answer: 'False' }} %>
+          <%= f.input :student_id, label: "You are required to have an HCC Student ID before applying for an HCC Coleman program",
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['True', 'False'],
+                      input_html: { data: { answer: 'True' }} %>
+          <hr>
+          <%= f.submit 'Continue &#x2192;'.html_safe %>
+        <%- end -%>
+      </div>
+    </div>
+  </div>
+</section>

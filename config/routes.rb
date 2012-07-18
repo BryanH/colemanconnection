@@ -3,6 +3,7 @@ ColemanConnection::Application.routes.draw do
   root to: 'welcome#index'
   
   match '/pathway', to: 'welcome#pathway'
+  match '/quiz/:id', to: 'welcome#quiz', as: :next_quiz
   
   resource :welcome
   

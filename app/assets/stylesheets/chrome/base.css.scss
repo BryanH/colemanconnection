@@ -24,3 +24,16 @@
   height: 85px;
   text-indent: -99999999px;
 }
+
+.masthead {
+  text-align: center;
+
+  margin: $gridGutterWidth*2 0;
+
+  h2 { margin-bottom: 18px; }
+
+  .btn-large {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+}

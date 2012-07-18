@@ -1,0 +1,88 @@
+@import 'bootstrap/_variables';
+@import 'bootstrap/_mixins';
+
+.quiz-container {
+  margin-top: $gridGutterWidth*3;
+}
+
+.gallery {
+  margin: 0;
+  padding: 0;
+  
+  position: relative;
+  z-index: 1001;
+  
+  .gallery-view {
+    position: relative;
+    
+    .gallery-slide {
+      height: 460px;
+      background-color: #d9d9d9;
+      margin: 0;
+      padding: 0;
+      
+      figure {
+        display: inline-block;
+        width: 605.3px;
+        height: 460px;
+        background-color: #333;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    
+    .gallery-quiz {
+      background-color: $grayLighter;
+      
+      margin: 0;
+      padding: 0;
+      
+      & .inner {
+        padding: 20px 45px;
+      }
+      
+      .title {
+        display: none;
+      }
+    }
+  }
+  
+  .btn-group {
+    margin: 30px auto;
+  }
+  
+  .arrow-container {
+    position: absolute;
+    z-index: 999;
+    top: 185px;
+    
+    &.next {
+      right: -55px;
+    }
+    
+    &.prev {
+      left: -55px;
+    }
+    
+    .arrow {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white !important;
+      
+      font-size: 1.4em;
+      line-height: 90px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none !important;
+      
+      display: block;
+      height: 90px;
+      width: 90px;
+      
+      @include border-radius(90px)
+    }   
+  }
+}
+
+.hideMe {
+  display: none !important;
+}
