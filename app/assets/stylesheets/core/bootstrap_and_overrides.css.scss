@@ -1,16 +1,8 @@
 /*
 * Variable overrides go here
 */
+@import 'bootstrap/variables';
+@import 'core/bootstrap/overrides/navbar';
 
-// Navbar
-//$navbarBackground: $clove;
-//$navbarBackgroundHighlight: $clove;
-//$navbarText: $mossyRock;
-//$navbarLinkColor: $mossyRock;
-
-// Body
-//$bodyBackground: $elderflower;
-
-// Import bootsrap files
+// Import bootsrap 
 @import 'bootstrap';
-/*@import 'bootstrap-responsive';*/

@@ -11,15 +11,11 @@
  *= require_self
 */
 
-// Variables
-@import 'core/paddings_and_margins';
-@import 'core/colors';
-
 // Twitter Bootstrap
 @import 'core/bootstrap_and_overrides';
-@import 'core/fonts';
 
 // Fonts
+@import 'core/fonts';
 
 // Chrome
 @import 'chrome/base';

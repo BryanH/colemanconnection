@@ -6,34 +6,5 @@
   position: relative;
 }
 
-.paper {
-  background-color: white;
-  padding-top: 110px;
-}
-
-#mast {
-  position: absolute;
-  left: -10px;
-  top: -10px;
-}
-
-#mast-logo {
-  display: block;
-  background: url(image_path('sprite.png')) no-repeat -28px -9px;
-  width: 169px;
-  height: 85px;
-  text-indent: -99999999px;
-}
-
-.masthead {
-  text-align: center;
-
-  margin: $gridGutterWidth*2 0;
-
-  h2 { margin-bottom: 18px; }
-
-  .btn-large {
-    font-size: 1.5em;
-    margin: 0 10px;
-  }
-}
+@import 'chrome/paper';
+@import 'chrome/masthead';
