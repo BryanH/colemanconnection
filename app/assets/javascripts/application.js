@@ -15,3 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require plugins/logger
+
+jQuery(document).ready(function () {
+  jQuery('[rel="popover"]').popover();
+})

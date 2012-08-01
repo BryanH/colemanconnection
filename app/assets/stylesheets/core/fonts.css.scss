@@ -27,24 +27,3 @@ h4 {
 	line-height: 1.2em;
 	margin-bottom: 1.2em;
 }
-p, ul, blockquote, pre, td, th {
-	margin: 0;
-	font-size: 1em;
-	line-height: 1.3846153846153846em;
-	margin-bottom: 1.3846153846153846em;
-	
-	&:last-child {
-	  margin: 0;
-	}
-	
-  &.small {
-	  margin: 0;
-  	font-size: 0.8461538461538461em;
-  	line-height: 1.6363636363636365em;
-  	margin-bottom: 1.6363636363636365em;
-  }
-}
-table {
-	border-collapse: collapse;
-	margin-bottom: 1.3846153846153846em;
-}

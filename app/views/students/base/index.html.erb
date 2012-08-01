@@ -1,1 +1,53 @@
-<h1>Hello from Student::Base#index</h1>
+<h1>Where would you like to go?</h1>
+
+<div class='row dashbaord'>
+  <!-- Personal Information -->
+  <div class='span4'>
+    <div class='well'>
+      <h2 class='headline-underlined'>Personal Information</h2>
+      <p>
+        Here you can...
+      </p>
+      <ul>
+        <%= content_tag :li, link_to('view your profile') %>
+        <%= content_tag :li, link_to('update your information') %>
+        <%= content_tag :li, link_to('change your password', edit_registration_path(current_user)) %>
+        <%= content_tag :li, link_to('cancel your account') %>
+      </ul>
+    </div>
+  </div>
+  <!-- end Personal Information -->
+  
+  <!-- Program Sessions -->
+  <div class='span4'>
+    <div class='well'>
+      <h2 class="headline-underlined">Program Sessions</h2>
+      <p>
+        Here you can...
+      </p>
+      <ul>
+        <%= content_tag :li, link_to('view sessions you are registered for') %>
+        <%= content_tag :li, link_to('manage any active sessions') %>
+        <%= content_tag :li, link_to('register for a new session') %>
+      </ul>
+    </div>
+  </div>
+  <!-- end Program Sessions -->
+  
+  <!-- Program Sessions -->
+  <div class='span4'>
+    <div class='well coming-soon'
+         rel='popover' data-title='Applying to a Program'
+         data-placement="left"
+         data-content="We are working on creating an online application process to make it even easier for you to apply to one of our outstanding programs. Unfortunately, we haven't quite worked out all the kinks yet. But not to worry, you can still apply the old fashioned way by dropping by the college and filling out a paper application.">
+      <a href='#'>
+      <h2 class='headline-underlined'>Program Applications</h2>
+      <p>
+        Submit or manage applications for any of our programs. You can check the
+        status, submit required documents or correspond with our helpful staff.
+      </p>
+      </a>
+    </div>
+  </div>
+  <!-- end Program Sessions -->
+</div>
