@@ -2,8 +2,8 @@
   <div class="navbar-inner">
     <div class="container">
       <div id='mast' class='container'>
-        <%= link_to signed_in? ? root_path_for(current_user) : root_path do %>
-        <h1 id='mast-logo'>HCC Coleman Connection</h1>
+        <%= link_to root_path_for(current_user), id: 'mast-logo' do %>
+        <h1>HCC Coleman Connection</h1>
         <%- end -%>
       </div>
 
