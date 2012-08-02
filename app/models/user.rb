@@ -31,12 +31,12 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me,
+                  :first_name, :last_name
   
   has_many    :permissions, dependent: :destroy
   has_many    :sessions, dependent: :destroy
@@ -48,5 +48,13 @@ class User < ActiveRecord::Base
   validates :email,       presence: true,
                           format: { with: VALID_EMAIL_REGEX },
                           uniqueness: { case_sensitive: false }
+  
+  before_create :set_sti
+  
+private
+  
+  def set_sti
+    self.type = self.type || "Student"
+  end
   
 end

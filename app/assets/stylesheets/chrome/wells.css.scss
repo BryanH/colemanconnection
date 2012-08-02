@@ -33,21 +33,21 @@
   -ms-transform-origin: bottom center;
   -o-transform-origin: bottom center;
   
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
+  transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+  -moz-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  -o-transform: rotate(50deg);
   
   z-index: 0;
 }
 
 .well-transform-container:hover .well-transformer {
-  transform: rotate(35deg);
-  -webkit-transform: rotate(35deg);
-  -moz-transform: rotate(35deg);
-  -ms-transform: rotate(35deg);
-  -o-transform: rotate(35deg);
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
 }
 
 .well-information .well-transformer {

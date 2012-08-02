@@ -81,4 +81,13 @@ describe User do
   %w[user@foo.com A_USER@f.b.org frst.lst@foo.jp a+b@baz.com].each do |valid_address|
     it { should allow_value(valid_address).for(:email) }
   end
+  
+  context "on create" do
+    context "type is nil" do
+      it "should be a Student" do
+        new_user = FactoryGirl.create(:user)
+        new_user.type.should == "Student"
+      end
+    end
+  end
 end
