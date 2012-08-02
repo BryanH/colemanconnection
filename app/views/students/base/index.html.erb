@@ -3,7 +3,7 @@
 <div class='row dashbaord'>
   <!-- Personal Information -->
   <div class='span4'>
-    <div class='well'>
+    <div class='well well-information well-transform-container'>
       <h2 class='headline-underlined'>Personal Information</h2>
       <p>
         Here you can...
@@ -14,13 +14,14 @@
         <%= content_tag :li, link_to('change your password', edit_registration_path(current_user)) %>
         <%= content_tag :li, link_to('cancel your account') %>
       </ul>
+      <b class='well-transformer'></b>
     </div>
   </div>
   <!-- end Personal Information -->
   
   <!-- Program Sessions -->
   <div class='span4'>
-    <div class='well'>
+    <div class='well well-session well-transform-container'>
       <h2 class="headline-underlined">Program Sessions</h2>
       <p>
         Here you can...
@@ -30,23 +31,23 @@
         <%= content_tag :li, link_to('manage any active sessions') %>
         <%= content_tag :li, link_to('register for a new session') %>
       </ul>
+      <b class='well-transformer'></b>
     </div>
   </div>
   <!-- end Program Sessions -->
   
   <!-- Program Sessions -->
   <div class='span4'>
-    <div class='well coming-soon'
+    <div class='well well-application well-transform-container coming-soon'
          rel='popover' data-title='Applying to a Program'
          data-placement="left"
          data-content="We are working on creating an online application process to make it even easier for you to apply to one of our outstanding programs. Unfortunately, we haven't quite worked out all the kinks yet. But not to worry, you can still apply the old fashioned way by dropping by the college and filling out a paper application.">
-      <a href='#'>
-      <h2 class='headline-underlined'>Program Applications</h2>
+      <h2 class='headline-underlined'>Apply to a Program</h2>
       <p>
         Submit or manage applications for any of our programs. You can check the
         status, submit required documents or correspond with our helpful staff.
       </p>
-      </a>
+      <b class='well-transformer'></b>
     </div>
   </div>
   <!-- end Program Sessions -->

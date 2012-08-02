@@ -20,5 +20,7 @@
   text-align: center;
   line-height: 4.5;
   
-  @include border-radius(4px)
+  @include border-radius(4px);
+  
+  z-index: 999;
 }
