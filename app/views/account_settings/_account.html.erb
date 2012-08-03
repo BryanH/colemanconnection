@@ -1,0 +1,18 @@
+<%= simple_form_for(current_user, as: :user, url: update_account_settings_path(current_user),
+    html: { class: 'form-horizontal'}) do |f| %>
+  <header>
+    <h1>Account</h1>
+    <h2 class="metadata">Change your basic account information</h2>
+  </header>
+  
+  <fieldset>
+    <%= hidden_field_tag :section, params[:section] %>
+    <%= f.error_notification %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+  </fieldset>
+  <div class='form-actions boxed-in'>
+    <%= f.button :submit, 'Update' %>
+  </div>
+<%- end -%>

@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name
+                  :first_name, :last_name, :demographic_attributes
   
   has_many    :permissions, dependent: :destroy
   has_many    :sessions, dependent: :destroy
@@ -49,7 +49,13 @@ class User < ActiveRecord::Base
                           format: { with: VALID_EMAIL_REGEX },
                           uniqueness: { case_sensitive: false }
   
+  accepts_nested_attributes_for :demographic
+  
   before_create :set_sti
+  
+  def name
+    [first_name, last_name].join(' ')
+  end
   
 private
   

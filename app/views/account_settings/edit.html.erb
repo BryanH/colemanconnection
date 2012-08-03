@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="span4">
+    <section class="boxed profile-owner">
+      <%= link_to do %>
+      <strong class='fullname'><%= current_user.name %></strong>
+      <small class='metadata'>View your profile</small>
+      <%- end -%>
+    </section>
+    
+    <section class="boxed menu">
+      <ol class="settings-menu">
+        <li><%= link_to "Account", edit_account_settings_path(:account), class: "#{'active' if params[:section] == 'account'}" %></li>
+        <li><%= link_to "Password", edit_account_settings_path(:password), class: "#{'active' if params[:section] == 'password'}" %></li>
+        <li><%= link_to "Demographic Information", edit_account_settings_path(:demographics), class: "#{'active' if params[:section] == 'demographics'}" %></li>
+        <li><%= link_to "Houston Community College", edit_account_settings_path(:hcc), class: "#{'active' if params[:section] == 'hcc'}" %></li>
+        <li><%= link_to "HCC Coleman College", edit_account_settings_path(:coleman), class: "#{'active' if params[:section] == 'coleman'}" %></li>
+      </ol>
+    </section>
+  </div>
+  
+  <div class="span8">
+    <section class="boxed boxed-main form-container">
+      <%= render params[:section] %>
+    </section>
+  </div>
+</div>
