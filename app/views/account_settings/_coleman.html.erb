@@ -17,7 +17,7 @@
       <hr/>
       <%= demographic_fields.input :first_program_choice, label: "Primary Program Interest", hint: "Which program offered at HCC Coleman College are you primary interested in learning about?", collection: ProgramOfferings.programs %>
       <%= demographic_fields.input :second_program_choice, label: "Secondary Program Interest", hint: "Which program would be your second choice?", collection: ProgramOfferings.programs %>
-      <%= demographic_fields.input :second_program_choice, label: "Preferred Start Date", hint: "When would you like to start taking classes at HCC Coleman College?", collection: Demographic::START_DATES %>
+      <%= demographic_fields.input :preferred_start_date, label: "Preferred Start Date", hint: "When would you like to start taking classes at HCC Coleman College?", collection: Demographic::START_DATES %>
     <%- end -%>
   </fieldset>
   <div class='form-actions boxed-in'>
