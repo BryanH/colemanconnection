@@ -59,6 +59,7 @@ describe User do
   it { should respond_to(:reset_password_sent_at) }
   it { should respond_to(:reset_password_token) }
   it { should respond_to(:sign_in_count) }
+  it { should respond_to(:name) }
   
   # Misc dates
   it { should respond_to(:created_at) }
@@ -89,5 +90,10 @@ describe User do
         new_user.type.should == "Student"
       end
     end
+  end
+  
+  describe "#name" do
+    let(:user) { FactoryGirl.build(:user, first_name: 'Terry', last_name: 'Tester') }
+    its(:name) { should == "Terry Tester" }
   end
 end

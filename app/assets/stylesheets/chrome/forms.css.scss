@@ -1,0 +1,32 @@
+form header {
+  border-bottom: 1px solid $grayLighter;
+  padding: 10px;
+  
+  & .metadata {
+    color: $grayLight;
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+}
+
+.boxed form {
+  margin: 0;
+}
+
+form fieldset {
+  padding-top: $gridGutterWidth;
+}
+
+form .form-actions.boxed-in {
+  margin: 0;
+  @include border-radius(#{0 0 3px 3px})
+}
+
+form .help-block {
+  color: $grayLight;
+}
+
+form label.required {
+  color: $infoText;
+}

@@ -2,6 +2,8 @@ ColemanConnection::Application.routes.draw do
   
   match '/pathway', to: 'welcome#pathway'
   match '/quiz/:id', to: 'welcome#quiz', as: :next_quiz
+  get '/settings/:section', to: 'account_settings#edit', as: :edit_account_settings
+  put '/settings/:id', to: 'account_settings#update', as: :update_account_settings
   
   resource :welcome
   
