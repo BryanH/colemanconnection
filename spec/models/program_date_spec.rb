@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: program_dates
+#
+#  created_at :datetime         not null
+#  id         :integer          not null, primary key
+#  occurs_on  :date
+#  program    :string(255)
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe ProgramDate do

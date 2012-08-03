@@ -10,6 +10,7 @@
 #  details                 :text
 #  er_date_id              :integer
 #  id                      :integer          not null, primary key
+#  program_date_id         :integer
 #  updated_at              :datetime
 #  user_id                 :integer
 #
