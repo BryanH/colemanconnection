@@ -1,0 +1,21 @@
+<h1>Your Registered Program Sessions</h1>
+
+<%- if current_user.program_sessions.any? -%>
+<ol>
+  <%- current_user.program_sessions.each do |session| -%>
+  <li>
+    <%= session.program_date.program %> on <%= session.program_date.occurs_on.to_formatted_s(:pretty) %>
+    ( <%= link_to 'cancel', students_program_session_path(session), method: :delete, confirm: "Once you have cancelled this session you will no longer be registered to attend. If you change your mind and wish to attend in the future, please re-register.",
+                  data: { confirm_title: "Are you sure?", }%> )
+  </li>
+  <%- end -%>
+</ol>
+
+<%- else -%>
+  <div class="well alert">
+    <p>
+      You are not currently registered for any program sessions.
+      <%= link_to 'Click here', new_students_program_session_path %> to register for one.
+    </p>
+  </div>
+<%- end -%>

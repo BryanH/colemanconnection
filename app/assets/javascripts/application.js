@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require plugins/logger
+//= require jquery.twitter_bootstrap_confirm
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();
