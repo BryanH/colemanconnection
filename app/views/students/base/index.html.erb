@@ -26,9 +26,8 @@
         Here you can...
       </p>
       <ul>
-        <%= content_tag :li, link_to('view sessions you are registered for') %>
-        <%= content_tag :li, link_to('manage any active sessions') %>
-        <%= content_tag :li, link_to('register for a new session') %>
+        <%= content_tag :li, link_to('manage active sessions') %>
+        <%= content_tag :li, link_to('register for a session', new_students_program_session_path) %>
       </ul>
       <b class='well-transformer'></b>
     </div>

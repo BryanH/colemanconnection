@@ -15,5 +15,9 @@ class ProgramDate < ActiveRecord::Base
 
   has_many :sessions
   has_many :students, through: :sessions
+  
+  def name
+    program + " " + occurs_on.to_formatted_s(:pretty)
+  end
 
 end
