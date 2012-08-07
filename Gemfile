@@ -8,6 +8,8 @@ gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
+gem 'chronic'
+gem 'squeel'
 
 # Deployment
 gem 'capistrano',         '2.12.0'

@@ -12,6 +12,11 @@ ColemanConnection::Application.routes.draw do
   # Routes for students
   namespace :students do
     root to: 'base#index'
+    resources :program_sessions do
+      collection do
+        post :date_list
+      end
+    end
   end
 
   # Routes for staff

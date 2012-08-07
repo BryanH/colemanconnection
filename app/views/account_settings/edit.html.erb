@@ -1,12 +1,5 @@
 <div class="row">
   <div class="span4">
-    <section class="boxed profile-owner">
-      <%= link_to do %>
-      <strong class='fullname'><%= current_user.name %></strong>
-      <small class='metadata'>View your profile</small>
-      <%- end -%>
-    </section>
-    
     <section class="boxed menu">
       <ol class="settings-menu">
         <li><%= link_to "Account", edit_account_settings_path(:account), class: "#{'active' if params[:section] == 'account'}" %></li>

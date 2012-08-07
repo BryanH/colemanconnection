@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712212127) do
+ActiveRecord::Schema.define(:version => 20120807142756) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20120712212127) do
 
   create_table "program_dates", :force => true do |t|
     t.string   "program"
-    t.date     "occurs_on"
+    t.datetime "occurs_on"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
