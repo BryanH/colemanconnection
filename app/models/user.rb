@@ -57,6 +57,10 @@ class User < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
   
+  def reversed_name
+    [last_name, first_name].join(', ')
+  end
+  
   def program_sessions
     sessions.where{ program_date_id.not_eq nil }
   end

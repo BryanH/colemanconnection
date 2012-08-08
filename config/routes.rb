@@ -22,6 +22,7 @@ ColemanConnection::Application.routes.draw do
   # Routes for Coleman Employees
   namespace :employee do
     root to: 'base#index'
+    resources :users
   end
   
   root to: 'welcome#index'

@@ -50,7 +50,8 @@
   -o-transform: rotate(0deg);
 }
 
-.well-information .well-transformer {
+.well-information .well-transformer,
+.well-user .well-transformer {
   background: url(image_path('user.png')) no-repeat 0 0;
 }
 

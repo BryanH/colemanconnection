@@ -1,0 +1,81 @@
+// Typically added to a UL or OL element
+.menu {
+  margin: 0;
+  padding: 0;
+  
+  li {
+    list-style: none;
+    
+    & > a {
+      background-color: $grayLighter;
+      color: $gray;
+      display: block;
+      padding: 8px 10px;
+      border-bottom: 1px solid;
+      text-decoration: none;
+      position: relative;
+      
+      &.active:after {
+        content: '.';
+        background: transparent url(image_path('glyphicons-halflings.png')) no-repeat -456px -72px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 14px;
+        width: 14px;
+        overflow: hidden;
+        text-indent: -999999px;
+      }
+      
+      &.active, &:hover {
+        background-color: white;
+      }
+    }
+    
+    &:last-child > a {
+      border: none;
+    }
+  }
+}
+
+.menu-list {
+  padding-bottom: 10px;
+  
+  li {
+    padding: 4px 10px;
+    white-space: nowrap;
+    
+    .metadata {
+      display: none;
+    }
+    
+    .label-link {
+      background-color: $grayLighter;
+      
+      a {
+        color: $grayLight;
+      }
+    }
+    
+    &:hover {
+      background-color: lighten($grayLighter, 3%);
+      
+      .metadata {
+        display: inline;
+      }
+    }
+    
+    &:hover .label-link {
+      background-color: $blue;
+      
+      a {
+        color: white;
+      }
+    }
+    
+    &:hover .label-important {
+      background-color: $red;
+      a { color: white; }
+    }
+  }
+}
