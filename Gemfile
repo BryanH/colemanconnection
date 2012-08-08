@@ -30,6 +30,7 @@ group :development do
   gem 'annotate',         '>= 2.4.1.beta'
   gem 'pry-rails'
   gem 'guard-rspec',      '>= 0.5.5'
+  gem 'bullet'
 end
 
 group :test do
