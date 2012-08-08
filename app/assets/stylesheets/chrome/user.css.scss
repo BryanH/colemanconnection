@@ -1,4 +1,5 @@
 .profile-owner {
+  background-color: $successBackground;
   padding: 10px;
   
   .fullname {
@@ -7,5 +8,9 @@
   
   a:hover {
     text-decoration: none !important;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
   }
 }

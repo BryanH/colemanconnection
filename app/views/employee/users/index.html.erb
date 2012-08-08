@@ -35,7 +35,7 @@
               <span class='label label-link'><%= link_to 'activate' %></span>
               <%- else -%>
               <span class='label label-link'><%= link_to 'permissions' %></span>
-              <span class='label label-link'><%= link_to 'account settings' %></span>
+              <span class='label label-link'><%= link_to 'account settings', edit_employee_user_path(user) %></span>
               <%- unless user === current_user -%>
               <span class='label label-important label-link'>
                 <%= link_to 'deactivate', '#', confirm: 'Once deactivated, the user will no longer be able to access the system.',
