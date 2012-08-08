@@ -1,33 +1,43 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  active                 :boolean          default(TRUE)
-#  confirmation_sent_at   :datetime
-#  confirmation_token     :string(255)
-#  confirmed_at           :datetime
-#  created_at             :datetime
-#  current_sign_in_at     :datetime
-#  current_sign_in_ip     :string(255)
-#  demographic_id         :integer
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(128)      default(""), not null
-#  first_name             :string(255)
-#  id                     :integer          not null, primary key
-#  last_name              :string(255)
-#  last_sign_in_at        :datetime
-#  last_sign_in_ip        :string(255)
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
-#  reset_password_token   :string(255)
-#  role_mask              :integer
-#  sign_in_count          :integer          default(0)
-#  type                   :string(255)
-#  updated_at             :datetime
-#
-
 require 'spec_helper'
 
 describe Staff do
+  
+  describe "search scope" do
+    let(:terry) { FactoryGirl.create(:staff, first_name: "Terry", last_name: "Schmidt") }
+    let(:brian) { FactoryGirl.create(:staff, first_name: "Brian", last_name: "Waddle") }
+    
+    it "should not list Terry" do
+      Staff.search('Brian').should_not include(terry)
+      Staff.search('Brian').should include(brian)
+    end
+    
+    it "should not list Brian" do
+      Staff.search('Terry').should_not include(brian)
+      Staff.search('Terry').should include(terry)
+    end
+    
+    it "should return all staff" do
+      Staff.search(nil).should == [terry, brian]
+    end
+  end
+  
+  describe "active scope" do
+    let(:terry) { FactoryGirl.create(:staff, :active, first_name: "Terry", last_name: "Schmidt") }
+    let(:brian) { FactoryGirl.create(:staff, :inactive, first_name: "Brian", last_name: "Waddle") }
+    
+    it "should return Terry" do
+      Staff.active(true).should include(terry)
+      Staff.active(true).should_not include(brian)
+    end
+    
+    it "should return Brian" do
+      Staff.active(false).should include(brian)
+      Staff.active(false).should_not include(terry)
+    end
+    
+    it "should not return anything" do
+      Staff.active(nil).should be_blank
+    end
+  end
   
 end

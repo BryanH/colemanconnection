@@ -27,4 +27,10 @@
 #
 
 class Staff < User
+  
+  scope :active, lambda { |isactive| where(active: isactive) }
+  scope :search, lambda { |query| where{first_name.matches("%#{query}%") | 
+                                        last_name.matches("%#{query}%") |
+                                        email.matches("%#{query}%") }}
+  
 end
