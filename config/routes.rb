@@ -19,8 +19,8 @@ ColemanConnection::Application.routes.draw do
     end
   end
 
-  # Routes for staff
-  namespace :staff do
+  # Routes for Coleman Employees
+  namespace :employee do
     root to: 'base#index'
   end
   
