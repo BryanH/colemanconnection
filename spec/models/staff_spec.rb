@@ -2,6 +2,20 @@ require 'spec_helper'
 
 describe Staff do
   
+  describe '#activate!' do
+    let(:terry) { FactoryGirl.create(:staff, :inactive) }
+    subject { terry }
+    before { terry.activate! }
+    it { should be_active }
+  end
+  
+  describe '#deactivate!' do
+    let(:terry) { FactoryGirl.create(:staff, :active) }
+    subject { terry }
+    before { terry.deactivate! }
+    it { should_not be_active }
+  end
+  
   describe "search scope" do
     let(:terry) { FactoryGirl.create(:staff, first_name: "Terry", last_name: "Schmidt") }
     let(:brian) { FactoryGirl.create(:staff, first_name: "Brian", last_name: "Waddle") }
