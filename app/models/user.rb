@@ -56,7 +56,9 @@ class User < ActiveRecord::Base
   default_scope order(:last_name)
   
   def name
-    [first_name, last_name].join(' ')
+    fname = first_name.blank? ? changes["first_name"].first : first_name
+    lname = last_name.blank? ? changes["last_name"].first : last_name
+    [fname, lname].join(' ')
   end
   
   def reversed_name
