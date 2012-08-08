@@ -33,4 +33,14 @@ class Staff < User
                                         last_name.matches("%#{query}%") |
                                         email.matches("%#{query}%") }}
   
+  def activate!
+    self.active = true
+    save!
+  end
+  
+  def deactivate!
+    self.active = false
+    save!
+  end
+  
 end

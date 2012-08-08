@@ -21,6 +21,7 @@ ColemanConnection::Application.routes.draw do
   # Routes for Coleman Employees
   namespace :employee do
     resources :users
+    resources :activations, only: [:create, :destroy]
     
     root to: 'base#index'
   end
