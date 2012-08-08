@@ -7,23 +7,25 @@ ColemanConnection::Application.routes.draw do
   
   resource :welcome
   
-  devise_for :users
-  
-  # Routes for students
+  # Routes for potential students
   namespace :students do
-    root to: 'base#index'
     resources :program_sessions do
       collection do
         post :date_list
       end
     end
+    
+    root to: 'base#index'
   end
 
   # Routes for Coleman Employees
   namespace :employee do
-    root to: 'base#index'
     resources :users
+    
+    root to: 'base#index'
   end
+  
+  devise_for :users
   
   root to: 'welcome#index'
   

@@ -5,6 +5,26 @@ class Employee::UsersController < Employee::BaseController
     @users = Staff.paginate(page: params[:page]).active(isactive).search(params[:q])
   end
   
+  def new
+    @user = Staff.new
+  end
+  
+  def create
+    @user = Staff.new(params[:staff])
+    if @user.save
+      redirect_to employee_users_path, 
+      flash: { success: %Q[
+#{@user.name} was added successfully. Please perform the following:
+<ul>
+<li>Have #{@user.name} log in and change their password</li>
+<li>Set the permissions for #{@user.name}</li>
+</ul>
+].html_safe}
+    else
+      render :new
+    end
+  end
+  
   def edit
     @user = Staff.find_by_id(params[:id])
   end

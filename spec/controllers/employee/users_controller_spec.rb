@@ -22,5 +22,13 @@ describe Employee::UsersController do
       it { should respond_with(:success) }
       it { should assign_to(:user) }
     end
+    
+    describe '#new' do
+      before { get :new }
+      
+      it { should render_template(:new) }
+      it { should respond_with(:success) }
+      it { should assign_to(:user) }
+    end
   end
 end
