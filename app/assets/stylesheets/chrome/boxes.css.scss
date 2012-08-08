@@ -11,4 +11,10 @@
   @include box-shadow(#{
     0 0 0 1px $grayLight,
     0 0 0 4px $grayLighter});
+    
+  & > header {
+    border-bottom: 1px solid $grayLighter;
+    padding: 10px 10px 0;
+    margin-bottom: 10px;
+  }
 }

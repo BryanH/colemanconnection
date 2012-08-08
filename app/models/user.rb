@@ -53,8 +53,14 @@ class User < ActiveRecord::Base
   
   before_create :set_sti
   
+  default_scope order(:last_name)
+  
   def name
     [first_name, last_name].join(' ')
+  end
+  
+  def reversed_name
+    [last_name, first_name].join(', ')
   end
   
   def program_sessions

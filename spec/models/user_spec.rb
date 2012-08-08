@@ -61,6 +61,10 @@ describe User do
   it { should respond_to(:sign_in_count) }
   it { should respond_to(:name) }
   
+  # Custom Methods
+  it { should respond_to(:name) }
+  it { should respond_to(:reversed_name) }
+  
   # Misc dates
   it { should respond_to(:created_at) }
   it { should respond_to(:updated_at) }
@@ -95,5 +99,10 @@ describe User do
   describe "#name" do
     let(:user) { FactoryGirl.build(:user, first_name: 'Terry', last_name: 'Tester') }
     its(:name) { should == "Terry Tester" }
+  end
+  
+  describe "#reversed_name" do
+    let(:user) { FactoryGirl.build(:user, first_name: 'Terry', last_name: 'Tester') }
+    its(:reversed_name) { should == 'Tester, Terry' }
   end
 end
