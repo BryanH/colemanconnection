@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807142756) do
+ActiveRecord::Schema.define(:version => 20120808165351) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20120807142756) do
     t.datetime "updated_at"
   end
 
+  add_index "permissions", ["user_id"], :name => "index_permissions_on_user_id"
+
   create_table "program_dates", :force => true do |t|
     t.string   "program"
     t.datetime "occurs_on"
@@ -92,6 +94,10 @@ ActiveRecord::Schema.define(:version => 20120807142756) do
     t.boolean  "arrival_acknowledgement"
     t.integer  "program_date_id"
   end
+
+  add_index "sessions", ["er_date_id"], :name => "index_sessions_on_er_date_id"
+  add_index "sessions", ["program_date_id"], :name => "index_sessions_on_program_date_id"
+  add_index "sessions", ["user_id"], :name => "index_sessions_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "",   :null => false
@@ -117,8 +123,13 @@ ActiveRecord::Schema.define(:version => 20120807142756) do
     t.string   "type"
   end
 
+  add_index "users", ["active"], :name => "index_users_on_active"
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
+  add_index "users", ["demographic_id"], :name => "index_users_on_demographic_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["first_name"], :name => "index_users_on_first_name"
+  add_index "users", ["last_name"], :name => "index_users_on_last_name"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["type"], :name => "index_users_on_type"
 
 end
