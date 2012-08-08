@@ -14,7 +14,7 @@ private
   def root_path_for(user)
     case
     when user.is_a?(Staff)
-      staff_root_path
+      employee_root_path
     when user.is_a?(Student)
       students_root_path
     else
