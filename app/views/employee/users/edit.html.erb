@@ -8,7 +8,7 @@
     
     <div class='boxed'>
       <ul class='menu'>
-        <li><%= link_to "Return to user list", employee_users_path %></li>
+        <li><%= link_to "View user list", employee_users_path %></li>
       </ul>
     </div>
   </div>
@@ -31,7 +31,7 @@
         </fieldset>
         
         <div class='form-actions'>
-          <%= f.button :submit, "Update Account" %>
+          <%= f.button :submit, "Update Account" %> or <%= link_to "go to the dashboard", employee_root_path %>
         </div>
       <%- end -%>
     </section>

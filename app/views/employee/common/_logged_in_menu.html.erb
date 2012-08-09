@@ -6,7 +6,8 @@
         <b class='caret'></b>
       </a>
       <ul class='dropdown-menu'>
-        <li><a>Edit Your Profile</a></li>
+        <li><%= link_to 'Edit your account settings', edit_employee_user_path(current_user) %></li>
+        <li><%= link_to 'View the dashboard', employee_root_path %></li>
         <li class='divider'></li>
         <li><%= link_to "Sign out", destroy_user_session_path %></li>
       </ul>
