@@ -2,15 +2,15 @@ class Employee::UsersController < Employee::BaseController
   
   def index
     isactive = params[:active] ? false : true
-    @users = Staff.paginate(page: params[:page]).active(isactive).search(params[:q])
+    @users = Employee.paginate(page: params[:page]).active(isactive).search(params[:q])
   end
   
   def new
-    @user = Staff.new
+    @user = Employee.new
   end
   
   def create
-    @user = Staff.new(params[:staff])
+    @user = Employee.new(params[:employee])
     if @user.save
       redirect_to employee_users_path, 
       flash: { success: %Q[
@@ -26,12 +26,12 @@ class Employee::UsersController < Employee::BaseController
   end
   
   def edit
-    @user = Staff.find_by_id(params[:id])
+    @user = Employee.find_by_id(params[:id])
   end
   
   def update
-    @user = Staff.find_by_id(params[:id])
-    if @user.update_attributes(params[:staff])
+    @user = Employee.find_by_id(params[:id])
+    if @user.update_attributes(params[:employee])
       redirect_to edit_employee_user_path(@user), flash: { success: "Account details have been updated for #{@user.name}" }
     else
       render :edit

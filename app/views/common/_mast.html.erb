@@ -15,7 +15,7 @@
       </div>
 
       <%- if signed_in? -%>
-        <%= render "#{current_user.is_a?(Staff) ? 'employee' : 'candidate'}/common/logged_in_menu" -%>
+        <%= render "#{current_user.is_a?(Employee) ? 'employee' : 'candidate'}/common/logged_in_menu" -%>
       <%- else %>
         <%= render 'common/login_menu' -%>
       <%- end -%>
