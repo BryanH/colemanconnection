@@ -14,7 +14,7 @@ class ProgramDate < ActiveRecord::Base
   attr_accessible :program, :occurs_on
 
   has_many :sessions
-  has_many :students, through: :sessions
+  has_many :candidates, through: :sessions, source: :user
   
   def name
     program + " " + occurs_on.to_formatted_s(:pretty)

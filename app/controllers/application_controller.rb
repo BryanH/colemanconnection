@@ -15,8 +15,8 @@ private
     case
     when user.is_a?(Staff)
       employee_root_path
-    when user.is_a?(Student)
-      students_root_path
+    when user.is_a?(Candidate)
+      candidate_root_path
     else
       root_path
     end

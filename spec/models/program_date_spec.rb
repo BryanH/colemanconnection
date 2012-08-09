@@ -20,5 +20,5 @@ describe ProgramDate do
   it { should respond_to(:occurs_on) }
 
   it { should have_many(:sessions) }
-  it { should have_many(:students) }
+  it { should have_many(:candidates) }
 end

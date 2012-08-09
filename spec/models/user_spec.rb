@@ -89,9 +89,9 @@ describe User do
   
   context "on create" do
     context "type is nil" do
-      it "should be a Student" do
+      it "should be a Candidate" do
         new_user = FactoryGirl.create(:user)
-        new_user.type.should == "Student"
+        new_user.type.should == "Candidate"
       end
     end
   end

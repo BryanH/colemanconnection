@@ -3,7 +3,7 @@ jQuery ->
     $this = $(this)
     $dateSelect = $("#session_program_date_id")
     if $this.val() isnt ''
-      $dateSelect.load "/students/program_sessions/date_list", program: $this.val(), ->
+      $dateSelect.load "/candidate/program_sessions/date_list", program: $this.val(), ->
         $dateSelect.val($('#selected').val())
     else
       $dateSelect.html("<option>Please choose a program first</option>")

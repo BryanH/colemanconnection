@@ -8,7 +8,7 @@
       <ul class='dropdown-menu'>
         <%= content_tag :li, link_to("Edit Your Profile", edit_account_settings_path(:account)) %>
         <%= content_tag :li, link_to("Manage Program Session Registrations") %>
-        <%= content_tag :li, link_to("View Your Dashboard", students_root_path) %>
+        <%= content_tag :li, link_to("View Your Dashboard", candidate_root_path) %>
         <li class='divider'></li>
         <li><%= link_to "Sign out", destroy_user_session_path %></li>
       </ul>
