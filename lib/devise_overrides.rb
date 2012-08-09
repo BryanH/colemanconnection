@@ -7,7 +7,7 @@ module DeviseOverrides
     case 
     when current_user.is_a?(Candidate)
       raise "Candidate root path"
-    when current_user.is_a?(Staff)
+    when current_user.is_a?(Employee)
       raise "Employee root path"
     else
       raise "We aren't anything"

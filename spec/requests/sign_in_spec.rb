@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "User Sign In" do
   context "as an employee" do
-    let(:user) { FactoryGirl.create(:staff) }
+    let(:user) { FactoryGirl.create(:employee) }
     include_examples "successful sign in"
     it_should_behave_like "successful sign in"
   end

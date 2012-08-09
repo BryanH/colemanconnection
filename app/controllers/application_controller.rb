@@ -13,7 +13,7 @@ private
   
   def root_path_for(user)
     case
-    when user.is_a?(Staff)
+    when user.is_a?(Employee)
       employee_root_path
     when user.is_a?(Candidate)
       candidate_root_path
