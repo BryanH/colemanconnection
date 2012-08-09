@@ -37,8 +37,8 @@ FactoryGirl.define do
       type            "Staff"
     end
 
-    factory :student, aliases: [:prospects], class: Student do
-      type            "Student"
+    factory :student, aliases: [:candidate], class: Candidate do
+      type            "Candidate"
     end
     
     trait :active do

@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
 private
   
   def set_sti
-    self.type = self.type || "Student"
+    self.type = self.type || "Candidate"
   end
   
 end

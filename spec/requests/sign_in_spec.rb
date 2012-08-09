@@ -7,8 +7,8 @@ describe "User Sign In" do
     it_should_behave_like "successful sign in"
   end
 
-  context "as a student" do
-    let(:user) { FactoryGirl.create(:student) }
+  context "as a candidate" do
+    let(:user) { FactoryGirl.create(:candidate) }
     include_examples "successful sign in"
     it_should_behave_like "successful sign in"
   end

@@ -7,8 +7,8 @@ ColemanConnection::Application.routes.draw do
   
   resource :welcome
   
-  # Routes for potential students
-  namespace :students do
+  # Routes for potential candidates
+  namespace :candidate do
     resources :program_sessions do
       collection do
         post :date_list
