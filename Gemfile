@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'chronic'
 gem 'squeel'
+gem 'yaml_db'
 
 # Deployment
 gem 'capistrano',         '2.12.0'
