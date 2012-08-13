@@ -1,6 +1,6 @@
 .boxed {
   border: 1px solid $grayLight;
-  margin-bottom: $gridGutterWidth/2;
+  margin-bottom: $gridGutterWidth;
   
   @include border-radius(2px);
   @include box-shadow(#{0 0 3px rgba(0,0,0,.25)});
@@ -20,5 +20,12 @@
     border-bottom: 1px solid $grayLighter;
     padding: 10px 10px 0;
     margin-bottom: 10px;
+  }
+}
+
+.profile-owner {
+  font-size: 1.3em;
+  strong {
+    display: block;
   }
 }
