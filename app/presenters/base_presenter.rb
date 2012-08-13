@@ -15,4 +15,18 @@ class BasePresenter
     @template
   end
   
+private
+
+  def handle_blank(value)
+    if value.present?
+      if block_given?
+        yield
+      else
+        value
+      end
+    else
+      h.raw('<span class="metadata">not available</span>')
+    end
+  end
+  
 end
