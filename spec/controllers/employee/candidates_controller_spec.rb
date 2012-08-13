@@ -13,5 +13,15 @@ describe Employee::CandidatesController do
       it { should respond_with(:success) }
       it { should assign_to(:candidates) }
     end
+    
+    describe '#show' do
+      let(:candidate) { FactoryGirl.create(:candidate) }
+      before { get :show, id: candidate.id }
+      
+      it { should render_template(:show) }
+      it { should respond_with(:success) }
+      it { should assign_to(:candidate) }
+      it { should assign_to(:section) }
+    end
   end
 end

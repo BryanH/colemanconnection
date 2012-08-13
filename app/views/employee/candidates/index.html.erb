@@ -27,7 +27,7 @@
             <%= content_tag_for :li, candidate do %>
               <%= candidate.reversed_name %> <small class='metadata'>( <%= candidate.email %> )</small>
               <section class='pull-right'>
-                <span class='label label-link'><%= link_to 'view profile' %></span>
+                <span class='label label-link'><%= link_to 'view profile', employee_candidate_path(candidate) %></span>
               </section>
             <%- end -%>
           <%- end -%>

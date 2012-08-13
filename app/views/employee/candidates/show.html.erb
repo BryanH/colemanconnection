@@ -1,0 +1,35 @@
+<%- present @candidate.demographic do |demographic_presenter| -%>
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed profile-owner'>
+      <p>Profile information for <strong><%= @candidate.name %></strong></p>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to "Demographics", employee_candidate_path(@candidate.id, section: :demographics), class: "#{'active' if @section == 'demographics'}" %></li>
+        <li><%= link_to "Houston Community College", employee_candidate_path(@candidate.id, section: :hcc), class: "#{'active' if @section == 'hcc'}" %></li>
+        <li><%= link_to "HCC Coleman College", employee_candidate_path(@candidate.id, section: :coleman), class: "#{'active' if @section == 'coleman'}" %></li>
+      </ol>
+    </div>
+    
+    <div class="boxed">
+      <ol class='menu'>
+        <li><%= link_to "View PeopleSoft Data" %></li>
+      </ol>
+    </div>
+    
+    <div class="boxed">
+      <ol class='menu'>
+        <li><%= link_to "View all candidates", employee_candidates_path %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main demographics'>
+      <%= render "/employee/candidates/#{@section}", demographic_presenter: demographic_presenter %>
+    </div>
+  </div>
+</div>
+<%- end -%>
