@@ -11,5 +11,12 @@ module ApplicationHelper
       raw(javascripts.map { |j| javascript_include_tag(j) }.join("\n"))
     end
   end
+  
+  def present(object, klass = nil, &block)
+    klass ||= "#{object.class}Presenter".constantize
+    presenter = klass.new(object, self)
+    yield presenter if block_given?
+    presenter
+  end
 
 end

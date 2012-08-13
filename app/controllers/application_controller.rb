@@ -23,5 +23,10 @@ private
   end
   helper_method :root_path_for
   
+  def present(object, klass = nil)
+    klass ||= "#{object.class}Presenter".constantize
+    klass.new(object, view_context)
+  end
+  
 end
 
