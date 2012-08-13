@@ -12,3 +12,19 @@
   color: $grayLight;
   font-size: .9;
 }
+
+.demographics {
+  p {
+    color: $gray;
+    font-size: 1.2em;
+    padding: 10px 10px 0;
+  }
+  
+  p:last-child {
+    padding-bottom: 10px;
+  }
+  
+  strong {
+    color: $grayDarker;
+  }
+}

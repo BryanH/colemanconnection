@@ -1,0 +1,35 @@
+<div class='padded'>
+  <h1>Interest in HCC Coleman College</h1>
+
+  <table class='table table-bordered table-striped'>
+    <tbody>
+      <tr>
+        <td class='attr'>Referral Source</td>
+        <td><%= demographic_presenter.hcc_referral_source %></td>
+      </tr>
+      <tr>
+        <td class='attr'>College for Referring Advisor</td>
+        <td><%= demographic_presenter.other_advisor_college %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table class='table table-bordered table-striped'>
+    <tbody>
+      <tr>
+        <td class='attr'>Primary Program Interest</td>
+        <td><%= demographic_presenter.first_program_choice %></td>
+      </tr>
+      
+      <tr>
+        <td class='attr'>Secondary Program Interest</td>
+        <td><%= demographic_presenter.second_program_choice %></td>
+      </tr>
+      
+      <tr>
+        <td class='attr'>Preferred Start Date</td>
+        <td><%= demographic_presenter.preferred_start_date %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

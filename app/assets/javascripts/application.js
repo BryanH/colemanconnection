@@ -13,6 +13,7 @@
 //= require modernizr
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing
 //= require bootstrap
 //= require plugins/logger
 //= require jquery.twitter_bootstrap_confirm

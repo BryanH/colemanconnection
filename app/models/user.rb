@@ -53,7 +53,11 @@ class User < ActiveRecord::Base
   
   before_create :set_sti
   
-  default_scope order(:last_name)
+  default_scope order('lower(last_name) ASC')
+  
+  scope :search, lambda { |query| where{first_name.matches("%#{query}%") | 
+                                        last_name.matches("%#{query}%") |
+                                        email.matches("%#{query}%") }}
   
   def name
     fname = first_name.blank? ? changes["first_name"].first : first_name

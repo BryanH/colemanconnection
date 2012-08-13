@@ -1,0 +1,64 @@
+<div class='padded'>
+  <h1>Demographics</h1>
+
+  <table class='table table-bordered table-striped'>
+    <tbody>
+      <tr>
+        <td class='attr'>Email</td>
+        <td><%= @candidate.email %><%= content_tag :span, raw(" ( #{link_to 'change', edit_employee_candidate_path(@candidate)} )"), class: 'metadata' %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table class='table table-bordered table-striped'>
+    <tbody>
+      <tr>
+        <td class='attr'>Gender</td>
+        <td><%= demographic_presenter.gender %></td>
+      </tr>
+
+      <tr>
+        <td class='attr'>Age Group</td>
+        <td><%= demographic_presenter.age_group %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td class='attr'>Street Address</td>
+        <td><%= demographic_presenter.address %></td>
+      </tr>
+      
+      <tr>
+        <td class='attr'>City</td>
+        <td><%= demographic_presenter.city %></td>
+      </tr>
+      
+      <tr>
+        <td class='attr'>State</td>
+        <td><%= demographic_presenter.state %></td>
+      </tr>
+      
+      <tr>
+        <td class='attr'>Zipcode</td>
+        <td><%= demographic_presenter.zip %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table class='table table-bordered table-striped'>
+    <tbody>
+      <tr>
+        <td class='attr'>Home Phone</td>
+        <td><%= demographic_presenter.home_phone %></td>
+      </tr>
+      
+      <tr>
+        <td class='attr'>Mobile Phone</td>
+        <td><%= demographic_presenter.mobile_phone %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

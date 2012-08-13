@@ -41,10 +41,10 @@ class Demographic < ActiveRecord::Base
   
   HCC_CAMPUSES = %w(
     Central
-    North\ West
-    North\ East
-    South\ West
-    South\ East
+    Northwest
+    Northeast
+    Southwest
+    Southeast
   ).freeze
   
   REFERRAL_SOURCES = %w(
