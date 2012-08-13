@@ -43,7 +43,7 @@ class BasePresenter
   def self.wraps_attrs(*args)
     args.each do |meth|
       define_method(meth) do
-        handle_blank(object.send(meth))
+        handle_blank(@object.send(meth))
       end
     end
   end
