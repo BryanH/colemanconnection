@@ -31,7 +31,7 @@ class BasePresenter
   #
   # Example
   #
-  #   wrap_attrs :gender
+  #   wraps_attrs :gender
   #
   #   # Is equivalent to writing
   #
