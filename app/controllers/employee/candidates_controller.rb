@@ -6,7 +6,20 @@ class Employee::CandidatesController < Employee::BaseController
   
   def show
     @candidate = Candidate.find_by_id(params[:id])
-    @section = params[:section] || 'demographics'
+    @section = params.delete(:section) || 'demographics'
+  end
+  
+  def edit
+    @candidate = Candidate.find_by_id(params[:id])
+  end
+  
+  def update
+    @candidate = Candidate.find_by_id(params[:id])
+    if @candidate.update_attributes(params[:candidate])
+      redirect_to employee_candidate_path(@candidate), flash: { success: "The email was updated successfully." }
+    else
+      render :edit
+    end
   end
   
 end

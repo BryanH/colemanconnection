@@ -23,5 +23,14 @@ describe Employee::CandidatesController do
       it { should assign_to(:candidate) }
       it { should assign_to(:section) }
     end
+    
+    describe '#edit' do
+      let(:candidate) { FactoryGirl.create(:candidate) }
+      before { get :edit, id: candidate.id }
+      
+      it { should render_template(:edit) }
+      it { should respond_with(:success) }
+      it { should assign_to(:candidate) }
+    end
   end
 end
