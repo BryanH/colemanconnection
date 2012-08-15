@@ -1,0 +1,40 @@
+// Collapsables
+//
+// Creates accordian style widgets on the page. Should be used with block
+// level HTML elements such as <p>, <div>, <section>, etc.
+//
+// Format
+//
+//   .collapse-group
+//     .collapse-heading
+//       .collapse-toggle
+//     .collapse-content
+
+// Creates a container for the collapsable heading and content.
+//
+// No styleguide reference
+.collapse-group {
+  border: 1px solid $grayLighter;
+  overflow: visible;
+  
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+// Creates the header for the collapsable group
+//
+// No styleguide reference
+.collapse-heading {}
+
+.collapse-toggle {
+  display: block;
+}
+
+// Creates the content area for the collapsable. The 
+//
+// No styleguide reference
+.collapse-content {
+  margin-top: 10px;
+  padding: 10px 10px 0;
+  border-top: 1px solid $grayLighter;
+}

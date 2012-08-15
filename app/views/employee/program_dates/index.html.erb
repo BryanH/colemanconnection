@@ -1,0 +1,17 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Choose a date', '#', class: 'active' %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main'>
+      <div id='programDates' class='padded-half'>
+        <%= render 'employee/program_dates/program_dates' %>
+      </div>
+    </div>
+  </div>
+</div>

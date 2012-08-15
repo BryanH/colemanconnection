@@ -23,6 +23,7 @@ ColemanConnection::Application.routes.draw do
     resources :users
     resources :activations, only: [:create, :destroy]
     resources :candidates
+    resources :program_dates, only: [:index, :show]
     
     root to: 'base#index'
   end
