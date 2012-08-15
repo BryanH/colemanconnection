@@ -7,7 +7,10 @@
     <div class='collapse-content'>
       <ol>
         <%- dates.each do |date| -%>
-        <li><%= link_to date.occurs_on.to_formatted_s(:pretty), employee_program_date_path(date) %></li>
+        <li>
+          <%= link_to date.occurs_on.to_formatted_s(:pretty), employee_program_date_path(date) %>
+          <span class='badge'><%= date.sessions.count %></span>
+        </li>
         <%- end -%>
       </ol>
     </div>

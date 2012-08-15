@@ -14,5 +14,15 @@ describe Employee::ProgramDatesController do
       it { should respond_with(:success) }
       it { should assign_to(:dates) }
     end
+    
+    describe '#show' do
+      let(:program_date) { FactoryGirl.create(:program_date) }
+      before { get :show, id: program_date.id }
+
+      it { should render_template(:show) }
+      it { should respond_with(:success) }
+      it { should assign_to(:date) }
+      it { should assign_to(:sessions) }
+    end
   end
 end

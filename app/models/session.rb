@@ -29,7 +29,19 @@ class Session < ActiveRecord::Base
   validates :program_date_id,   presence: true, 
                                 numericality: { message: "is not a valid session time"},
                                 uniqueness: { scope: :user_id, message: "You are already registered for the selected time"}
-    
-
+  
+  scope :search_on_user, lambda { |query| joins(:user).where{ user.first_name.matches("%#{query}%") | 
+                                        user.last_name.matches("%#{query}%") |
+                                        user.email.matches("%#{query}%") }}
+  
+  def attended!
+    self.attended = true
+    self.save!
+  end
+  
+  def not_attended!
+    self.attended = false
+    self.save!
+  end
   
 end

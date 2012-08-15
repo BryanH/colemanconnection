@@ -19,11 +19,7 @@
       <header>
         <h1>
           <%= params[:active] ? "Inactive" : "Active" %> Users List
-          <form class="form-search pull-right">
-            <input type="text" name='q' class="input-medium search-query">
-            <%= hidden_field :active, false if params[:active] %>
-            <button type="submit" class="btn">Search</button>
-          </form>
+          <%= render 'common/search_form' %>
         </h1>
       </header>
       <ol class="menu menu-list">

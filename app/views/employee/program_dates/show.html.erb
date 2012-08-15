@@ -1,0 +1,51 @@
+<%- additional_js 'pages/attendance' -%>
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Registered Candidates', employee_program_date_path(params[:id]), class: ('active' unless params[:q]) %></li>
+        <%= content_tag :li, link_to("Results for '#{params[:q]}'", '#', class: 'active') if params[:q] %>
+      </ol>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Return to Program Dates', employee_program_dates_path %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main'>
+      <header>
+        <h1>
+          Registered Candidates
+          <%= render 'common/search_form' %>
+        </h1>
+      </header>
+      
+      <%- if @sessions.any? -%>
+        <ol class='menu menu-list'>
+          <%- @sessions.each do |session| -%>
+            <%= content_tag_for :li, session do %>
+              <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
+              <%= session.user.reversed_name %> <small class='metadata'>( <%= session.user.email %> )</small>
+              <section class='pull-right'>
+                <span class='label label-link'><%= link_to 'profile', employee_candidate_path(session.user), target: '_blank' %></span>
+              </section>
+            <%- end -%>
+          <%- end -%>
+        </ol>
+      <%- else -%>
+        <div class='padded'>
+          <%- if params[:q] -%>
+          <p>No registered candidates were found matching <span class='highlight'>'<%= params[:q] %>'</span></p>
+          <%- else -%>
+          <p>No one has registered for this session yet.</p>
+          <%- end -%>
+        </div>
+      <%- end -%>
+    </div>
+    <%= will_paginate @sessions %>
+  </div>
+</div>
