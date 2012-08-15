@@ -28,3 +28,9 @@
     color: $grayDarker;
   }
 }
+
+.highlight {
+  border: 1px solid $warningText;
+  background-color: $warningBackground;
+  padding: 3px;
+}
