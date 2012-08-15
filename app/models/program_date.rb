@@ -16,6 +16,8 @@ class ProgramDate < ActiveRecord::Base
   has_many :sessions
   has_many :candidates, through: :sessions, source: :user
   
+  default_scope order('occurs_on ASC')
+  
   def name
     program + " " + occurs_on.to_formatted_s(:pretty)
   end

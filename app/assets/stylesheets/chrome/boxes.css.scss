@@ -8,6 +8,10 @@
   .padded {
     padding: 20px 20px 10px;
   }
+  
+  .padded-half {
+    padding: 10px 10px 5px;
+  }
 }
 
 .boxed-main {
@@ -20,12 +24,5 @@
     border-bottom: 1px solid $grayLighter;
     padding: 10px 10px 0;
     margin-bottom: 10px;
-  }
-}
-
-.profile-owner {
-  font-size: 1.3em;
-  strong {
-    display: block;
   }
 }

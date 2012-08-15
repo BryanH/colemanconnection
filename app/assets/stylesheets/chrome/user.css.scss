@@ -1,5 +1,6 @@
 .profile-owner {
-  background-color: $successBackground;
+  background-color: $infoBackground;
+  font-size: 1.3em;
   padding: 10px;
   
   .fullname {
@@ -12,5 +13,9 @@
   
   p:last-child {
     margin-bottom: 0;
+  }
+  
+  strong {
+    display: block;
   }
 }
