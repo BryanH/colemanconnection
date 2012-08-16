@@ -29,5 +29,7 @@
   </div>
   
   <%= yield :additional_js %>
+  
+  <%= render 'employee/common/audit_log' if @audits %>
 </body>
 </html>

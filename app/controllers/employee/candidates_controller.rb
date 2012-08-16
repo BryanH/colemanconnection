@@ -2,6 +2,7 @@ class Employee::CandidatesController < Employee::BaseController
   
   def index
     @candidates = Candidate.paginate(page: params[:page]).search(params[:q])
+    @audits = Audit.where(auditable_type: 'Candidate').reorder('created_at DESC').limit(100)
   end
   
   def show
