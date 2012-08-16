@@ -34,6 +34,8 @@ class Session < ActiveRecord::Base
                                         user.last_name.matches("%#{query}%") |
                                         user.email.matches("%#{query}%") }}
   
+  audit(:update, only: :attended) { |session, user, action| session.snitches_on(user).for_marking_attendance }
+  
   def attended!
     self.attended = true
     self.save!
@@ -42,6 +44,10 @@ class Session < ActiveRecord::Base
   def not_attended!
     self.attended = false
     self.save!
+  end
+  
+  def snitches_on(user)
+    Snitches::AttendanceSnitch.new(self, user)
   end
   
 end

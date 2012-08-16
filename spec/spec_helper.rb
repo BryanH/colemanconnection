@@ -42,6 +42,15 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     
     config.include ActionView::TestCase::Behavior, example_group: { file_path: %r{spec/presenters} }
+    
+    config.before(:each) do
+      Auditor::User.current_user = FactoryGirl.create(:employee)
+    end
+    
+    config.after(:each) do
+      Auditor::User.current_user = nil
+      Employee.destroy_all
+    end
   end
 
 end

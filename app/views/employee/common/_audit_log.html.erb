@@ -1,0 +1,20 @@
+<div class="modal fade hide modal-audit-log" id="auditModal">
+  <div class="modal-header">
+    <h3>Audit Log</h3>
+  </div>
+  <div class="modal-body">
+    <table class='table'>
+      <tbody>
+        <%- @audits.each do |audit| -%>
+        <tr>
+          <td class='metadata'><%= audit.created_at.to_formatted_s(:pretty) %></td>
+          <td><%= raw audit.comment %></td>
+        </tr>
+        <%- end -%>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+  </div>
+</div>

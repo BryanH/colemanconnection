@@ -34,3 +34,12 @@
   background-color: $warningBackground;
   padding: 3px;
 }
+
+a.disabled {
+  color: $grayLight;
+}
+
+.dropdown-menu li > a.disabled:hover {
+  color: $grayLight;
+  background-color: $grayLighter;
+}

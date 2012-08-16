@@ -32,6 +32,8 @@ GEM
     annotate (2.5.0.pre1)
       rake
     arel (3.0.2)
+    auditor (2.3.1)
+      activerecord (~> 3.0)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.4.0)
     bootstrap-will_paginate (0.0.7)
@@ -230,15 +232,16 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (>= 2.4.1.beta)
-  bootstrap-sass
-  bootstrap-will_paginate
+  auditor (= 2.3.1)
+  bootstrap-sass (= 2.0.4.0)
+  bootstrap-will_paginate (= 0.0.7)
   bullet
   capistrano (= 2.12.0)
   capybara (>= 1.1.2)
-  chronic
+  chronic (= 0.7.0)
   coffee-rails (>= 3.2.1)
   database_cleaner
-  devise
+  devise (= 2.1.2)
   factory_girl_rails (>= 1.4.0)
   ffaker (>= 1.14.0)
   guard-rspec (>= 0.5.5)
@@ -246,16 +249,16 @@ DEPENDENCIES
   jquery-rails (= 2.0.2)
   launchy (>= 2.1.0)
   mail_view (>= 1.0)
-  modernizr-rails
+  modernizr-rails (= 2.0.6)
   pg (= 0.14.0)
   pry-rails
   rails (= 3.2.6)
   rspec-rails (>= 2.10)
   sass-rails (>= 3.2.3)
   shoulda-matchers
-  simple_form
+  simple_form (= 2.0.2)
   spork (>= 0.9.0)
-  squeel
+  squeel (= 1.0.9)
   uglifier (>= 1.0.3)
   unicorn
   yaml_db

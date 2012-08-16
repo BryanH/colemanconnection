@@ -31,7 +31,7 @@ describe Employee do
     end
     
     it "should return all employees" do
-      Employee.search(nil).should == [terry, brian]
+      Employee.search(nil).should include(terry, brian)
     end
   end
   
