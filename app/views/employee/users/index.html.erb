@@ -2,8 +2,9 @@
   <div class='span4'>
     <div class='boxed'>
       <ul class='menu'>
-        <li><%= link_to "Show Active Users", employee_users_path, class: ('active' unless params.has_key?(:active)) %></li>
-        <li><%= link_to "Show Inactive Users", employee_users_path(active: false), class: ('active' if params.has_key?(:active)) %></li>
+        <li><%= link_to "Show Active Users", employee_users_path, class: ('active' unless params[:active] || params[:q]) %></li>
+        <li><%= link_to "Show Inactive Users", employee_users_path(active: false), class: ('active' if params[:active] && !params[:q]) %></li>
+        <%= content_tag :li, link_to("Search results for '#{params[:q]}'", '#', class: 'active') if params[:q] %>
       </ul>
     </div>
     
