@@ -34,6 +34,7 @@ group :development do
   gem 'mail_view',        '>= 1.0'
   gem 'pry-rails'
   gem 'yaml_db'
+  gem 'flair'
 end
 
 group :test do

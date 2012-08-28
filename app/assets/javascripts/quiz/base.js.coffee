@@ -11,7 +11,8 @@ jQuery ->
       .parent()
         .hide()
         .delay(600)
-        .slideDown()
+        .slideDown ->
+          $.scrollTo(($('.gallery-view:last').offset().top - 100), 300);
   $('a.been-there').click ->
     $(this).parents('.masthead').slideUp()
   $('.gallery-view').toGallery()
@@ -39,6 +40,12 @@ jQuery.fn.toGallery = ->
 
 jQuery.fn.validateQuiz = ->
   $form = $(this)
+  $buttons = $form.find('.radio_buttons')
+  
+  $('.radio_buttons .controls', $form).each ->
+    $controls = $(this)
+    if $controls.find('input:not(:checked)').length > 1
+      $controls.parent().addClass('error')
   $form.find('.radio_buttons:checked').each ->
     $input = $(this)
     $group = $input.parents('.control-group')
@@ -47,7 +54,24 @@ jQuery.fn.validateQuiz = ->
     else
       $group.removeClass("error")
   unless $form.find(".control-group.error").length > 0
-    $form
+    $('.actions', $form).html("<p>Getting next section...")
+    if $form.data('nextQuiz') == 'sign_up'
+      $.get $form.data('nextQuiz'), (xhr) ->
+        $('.gallery').append(xhr)
+          .find('.sign-up')
+          .hide()
+          .delay(600)
+          .slideDown ->
+            $.scrollTo(($('.sign-up:first').offset().top - 100), 300)
+    else
+      $.get $form.data('nextQuiz'), (xhr) ->
+         $('.gallery').append(xhr)
+            .find('.gallery-view:last')
+            .toGallery()
+            .hide()
+            .delay(600)
+            .slideDown ->
+              $.scrollTo(($('.gallery-view:last').offset().top - 100), 300)
 
 Quiz =
   onReviewPanel: (parent) ->

@@ -9,7 +9,10 @@
           process. The number of students <b class='highlight'>admitted</b> into each program is <b class='highlight'>limited</b>,
           which is why it's so important that you are as prepared as you can be. The first step is just a click away.
         </p>
-        <%= link_to "Get started &rarr;".html_safe, new_user_registration_path, class: 'btn btn-info btn-large' %> 
+        <p>
+          <%= link_to "Get started &rarr;".html_safe, new_user_registration_path, class: 'btn btn-info btn-large' %>
+          or <%= link_to 'log in if you already have an account', new_user_session_path %>
+        </p>
       </div>
     </div>
   </div>
@@ -17,7 +20,7 @@
 
 <section id="signin" class='well non-rounded'>
   <div class="container">
-    <p>Have you already registered? <%= link_to 'Login', new_user_session_path %> to your account.</p>
+    <p>Have you already registered? <%= link_to 'Log in', new_user_session_path %> to your account.</p>
   </div>
 </section>
 

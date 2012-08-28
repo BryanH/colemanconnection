@@ -1,5 +1,7 @@
 ColemanConnection::Application.routes.draw do
   
+  mount Flair::Engine => "/flair" if Rails.env.development?
+  
   match '/pathway', to: 'welcome#pathway'
   match '/quiz/:id', to: 'welcome#quiz', as: :next_quiz
   get '/settings/:section', to: 'account_settings#edit', as: :edit_account_settings

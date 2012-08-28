@@ -1,50 +1,72 @@
-<div class="gallery-view" id='postStudentQuiz'>
-  <div class="gallery-slide">
+<div class="gallery-view" id='postStudent Quiz'>
+  <div class="gallery-slide slide-financial-aid">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>Financial Aid</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide slide-navigator">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>Navigator</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide slide-cumulative-education">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>Cumulative Education</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide slide-professional-environment">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>Professional Environment</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide slide-the-center">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>The Center</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide slide-certifications">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>Certifications</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide slide-parking">
     <div class='inner'>
       <figure></figure>
       <h1 class='title'>Parking</h1>
     </div>
   </div>
-  <div class="gallery-slide">
+  <div class="gallery-slide gallery-quiz">
     <div class='inner'>
-      <figure></figure>
-      <h1 class='title'>Quiz</h1>
+      <h1 class='title'>Review</h1>
+      <%= simple_form_for :student_experience_quiz, html: { data: { quiz_form: '', next_quiz: next_quiz_path('post_student')}} do |f| %>
+      <h2>Let's Review</h2>
+      
+      <div class='row-fluid'>
+        <div class='span6'>
+          <%= f.input :tmc, label: "The Texas Medical Center is the second largest medical center in the country", 
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['True', 'False'],
+                      input_html: { data: { answer: 'False' }} %>
+        </div>
+        <div class='span6'>
+          <%= f.input :student_id, label: "You are required to have an HCC Student ID before applying for an HCC Coleman program",
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['True', 'False'],
+                      input_html: { data: { answer: 'True' }} %>
+        </div>
+      </div>
+      
+      <hr>
+      <div class='actions'>
+        <%= f.submit 'Continue &#x2192;'.html_safe %>
+      </div>
+      <%- end -%>
     </div>
   </div>
 </div>
