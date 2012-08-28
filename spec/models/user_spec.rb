@@ -59,6 +59,11 @@ describe User do
   it { should respond_to(:reset_password_sent_at) }
   it { should respond_to(:reset_password_token) }
   it { should respond_to(:sign_in_count) }
+  it { should respond_to(:name) }
+  
+  # Custom Methods
+  it { should respond_to(:name) }
+  it { should respond_to(:reversed_name) }
   
   # Misc dates
   it { should respond_to(:created_at) }
@@ -80,5 +85,24 @@ describe User do
   
   %w[user@foo.com A_USER@f.b.org frst.lst@foo.jp a+b@baz.com].each do |valid_address|
     it { should allow_value(valid_address).for(:email) }
+  end
+  
+  context "on create" do
+    context "type is nil" do
+      it "should be a Candidate" do
+        new_user = FactoryGirl.create(:user)
+        new_user.type.should == "Candidate"
+      end
+    end
+  end
+  
+  describe "#name" do
+    let(:user) { FactoryGirl.build(:user, first_name: 'Terry', last_name: 'Tester') }
+    its(:name) { should == "Terry Tester" }
+  end
+  
+  describe "#reversed_name" do
+    let(:user) { FactoryGirl.build(:user, first_name: 'Terry', last_name: 'Tester') }
+    its(:reversed_name) { should == 'Tester, Terry' }
   end
 end

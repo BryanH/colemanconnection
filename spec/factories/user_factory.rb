@@ -33,12 +33,20 @@ FactoryGirl.define do
     sequence(:email)  { |n| Faker::Internet.email("user#{n}") }
     password          { Faker.letterify '????????????' }
 
-    factory :staff do
-      type            "Staff"
+    factory :staff, aliases: [:employee], class: Employee do
+      type            "Employee"
     end
 
-    factory :student do
-      type            "Student"
+    factory :student, aliases: [:candidate], class: Candidate do
+      type            "Candidate"
+    end
+    
+    trait :active do
+      active true
+    end
+    
+    trait :inactive do
+      active false
     end
   end
 end

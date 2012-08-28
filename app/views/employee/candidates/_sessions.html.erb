@@ -1,0 +1,30 @@
+<div class='padded'>
+  <h1>Program Sessions</h1>
+
+  <%- if @candidate.program_sessions.any? -%>
+  <table class='table table-bordered table-striped'>
+    <thead>
+      <tr>
+        <th>Program</th>
+        <th>Date</th>
+        <th>Attended?</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+        <%- @candidate.program_sessions.includes(:program_date).each do |session| -%>
+          <%- present session do |session_presenter| -%>
+          <tr>
+            <td><%= session_presenter.program %></td>
+            <td><%= session_presenter.occurs_on %></td>
+            <td><%= session_presenter.attended? %></td>
+          </tr>
+          <%- end -%>
+        <%- end -%>
+
+    </tbody>
+  </table>
+  <%- else -%>
+    <p>Not currently registered</p>
+  <%- end -%>
+</div>

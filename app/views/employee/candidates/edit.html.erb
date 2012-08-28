@@ -1,0 +1,35 @@
+<div class="row">
+  <div class='span4'>
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to "Update Email for #{@candidate.name}", '#', class: 'active' %></li>
+      </ol>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to "Return to #{@candidate.name}'s Profile", employee_candidate_path(@candidate) %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main form-container'>
+      <%= simple_form_for @candidate, as: :candidate, url: employee_candidate_path(@candidate) do |f| %>
+        <header>
+          <h1>
+            Update Email Address
+          </h1>
+        </header>
+        
+        <fieldset>
+          <%= f.input :email %>
+        </fieldset>
+        
+        <div class='form-actions'>
+          <%= f.button :submit, "Submit" %>
+        </div>
+      <%- end -%>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<%- @dates.each_pair do |program, dates| -%>
+<div class='collapse-group'>
+  <div class='collapse-heading'>
+    <%= link_to program, '#', class: 'collapse-toggle', data: { parent: '#programDates', toggle: 'collapse', target: ".collapse-#{program.parameterize}"} %>
+  </div>
+  <div class='collapse collapse-<%= program.parameterize %>'>
+    <div class='collapse-content'>
+      <ol>
+        <%- dates.each do |date| -%>
+        <li>
+          <%= link_to date.occurs_on.to_formatted_s(:pretty), employee_program_date_path(date) %>
+          <span class='badge'><%= date.sessions.count %></span>
+        </li>
+        <%- end -%>
+      </ol>
+    </div>
+  </div>
+</div> <!-- .collapse-group-<%= program.parameterize %> -->
+<%- end -%>

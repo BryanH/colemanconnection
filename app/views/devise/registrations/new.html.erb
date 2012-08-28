@@ -1,0 +1,26 @@
+<%= additional_styles 'slideshow/base' %>
+<%= additional_js 'jquery.scrollTo.min', 'jquery.content_player', 'quiz/base' %>
+<h1>Getting started...</h1>
+
+<p>
+  Before you create an account on HCC Coleman Connection, we'd like to share some important information
+  with you. This information will prepare you to meet with the program you have decided to apply for.
+</p>
+
+<p>
+  We've split the information into 3 sections. These sections discuss life before you become an HCC Coleman
+  College student, what you can expect after you've been accepted into one of programs, and what life is
+  like for a student that graduates from HCC Coleman College.
+</p>
+
+<p>
+  It may seem like a lot of information, but don't worry, it goes pretty quickly.
+</p>
+
+<section class='well jumbotron masthead'>
+  <h2>Have you already attended college?</h2>
+  <%= link_to "Yes, I have", next_quiz_path('about_coleman'), remote: true, class: 'btn btn-large btn-primary next-quiz been-there' %>
+  <%= link_to "No, I have not", root_path, class: 'btn btn-large' %>
+</section>
+
+<div class="gallery"></div>

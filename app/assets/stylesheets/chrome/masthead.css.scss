@@ -1,0 +1,33 @@
+/*
+    Generates the mast logo that is present on each page. It should appear only
+    one time per-page and should be placed at the top. Unless you need to create
+    a new layout, the application.html.erb layout will handle this for you.
+    
+    Styleguide 2.0
+*/
+#mast {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+}
+
+#mast-logo {
+  display: block;
+  background: url(image_path('sprite.png')) no-repeat -28px -9px;
+  width: 169px;
+  height: 85px;
+  text-indent: -99999999px;
+}
+
+.masthead {
+  text-align: center;
+
+  margin: $gridGutterWidth*2 0;
+
+  h2 { margin-bottom: 18px; }
+
+  .btn-large {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+}

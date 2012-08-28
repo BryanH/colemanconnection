@@ -1,0 +1,87 @@
+<section class='quiz-container'>
+  <h2>Why HCC Coleman College is the right choice</h2>
+  <div class="gallery-view">
+    <div class="gallery-slide slide-tmc">
+      <div class='inner'>
+        <h3 class='title'>The TMC</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+          aliquip ex ea commodo consequat. Duis aute irure dolor in 
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+    <div class="gallery-slide slide-sacs">
+      <div class='inner'>
+        <figure></figure>
+        <h3 class='title'>SACS/HCC Student ID</h3>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="gallery-slide slide-programs">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>HCC Coleman Programs</h1>
+      </div>
+    </div>
+    <div class="gallery-slide slide-placement-tests">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>Placement Tests</h1>
+      </div>
+    </div>
+    <div class="gallery-slide slide-computer-skills">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>Computer Skills</h1>
+      </div>
+    </div>
+    <div class="gallery-slide slide-background-check">
+      <div class='inner'>
+        <figure></figure>
+        <h1 class='title'>Background Check</h1>
+      </div>
+    </div>
+    <div class="gallery-slide gallery-quiz">
+      <div class='inner'>
+        <h1 class='title'>Review</h1>
+        <%= simple_form_for :about_coleman_quiz, html: { data: { quiz_form: '', next_quiz: next_quiz_path('student_experience')}} do |f| %>
+          <h2>Let's review</h2>
+          
+          <div class='row-fluid'>
+            <div class='span6'>
+              <%= f.input :tmc, label: "The Texas Medical Center is the second largest medical center in the country", 
+                          item_wrapper_class: 'inline',
+                          as: :radio_buttons, collection: ['True', 'False'],
+                          input_html: { data: { answer: 'False' }} %>
+            </div>
+            <div class='span6'>
+              <%= f.input :student_id, label: "You are required to have an HCC Student ID before applying for an HCC Coleman program",
+                          item_wrapper_class: 'inline',
+                          as: :radio_buttons, collection: ['True', 'False'],
+                          input_html: { data: { answer: 'True' }} %>
+            </div>
+          </div>
+          
+          <hr>
+          <div class='actions'>
+            <%= f.submit 'Continue &#x2192;'.html_safe %>
+          </div>
+        <%- end -%>
+      </div>
+    </div>
+  </div>
+</section>

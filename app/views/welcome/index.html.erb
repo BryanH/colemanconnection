@@ -1,15 +1,26 @@
 <section id="comehither">
   <div class="container">
-    <div class="row">
-      <div class="span4 offset8">
-        <a href="#" class="sign-in">Sign In</a>
-        <p class="gotcha">
-          Save More Than Your Future<br><br>
-          A Career in Health Care is Waiting
+    <div>
+      <div class="gotcha">
+        <h2>Welcome! A career in health care is waiting for you.</h2>
+        <p>
+          There a few things you should know though. Enrolling
+          at <b class="highlight">HCC Coleman College</b> is a <b class="highlight">competitive</b> and <b class="highlight">selective</b>
+          process. The number of students <b class='highlight'>admitted</b> into each program is <b class='highlight'>limited</b>,
+          which is why it's so important that you are as prepared as you can be. The first step is just a click away.
         </p>
-        <a href="#" class="btn btn-large btn-info register">Register Today</a>
+        <p>
+          <%= link_to "Get started &rarr;".html_safe, new_user_registration_path, class: 'btn btn-info btn-large' %>
+          or <%= link_to 'log in if you already have an account', new_user_session_path %>
+        </p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="signin" class='well non-rounded'>
+  <div class="container">
+    <p>Have you already registered? <%= link_to 'Log in', new_user_session_path %> to your account.</p>
   </div>
 </section>
 
@@ -27,13 +38,11 @@
     </section>
     <section class="span4">
       <div class="well">
-        <h3>What is an ER meeting?</h3>
+        <h3>Do you have questions?</h3>
         <p>
-          ER &#151; or Essential Requirement &#151; is an information
-          workshop designed to give you
-          the tools you need to make an informed decision about which program you
-          would like to pursue at HCC Coleman College. Attending an ER
-          meeting is the first step in your journey.
+          We have answers! We know there are a lot of details involved with applying to an HCC Coleman health science program. For that reason,
+          we have established a live chat service called <%= link_to 'askColeman', 'http://coleman.hccs.edu/askcoleman' %>. Feel free to start a chat today and get your
+          questions answered.
         </p>
       </div>
     </section>

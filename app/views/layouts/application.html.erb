@@ -13,13 +13,23 @@
 	
 	<!-- Application Assets -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= yield :additional_styles %>
   <%= javascript_include_tag "application" %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'common/mast' %>
 
-  <%= render 'common/flash_messages' %>
-  <%= yield %>
-
+  <div class="container paper">
+    <div>
+      <%= render 'common/flash_messages' %>
+      <%= yield %>
+    </div>
+  </div>
+  
+  <%= yield :additional_js %>
+  
+  <%= render 'employee/common/audit_log' if @audits %>
 </body>
 </html>

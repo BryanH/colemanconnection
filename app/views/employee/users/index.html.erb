@@ -1,0 +1,50 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ul class='menu'>
+        <li><%= link_to "Show Active Users", employee_users_path, class: ('active' unless params[:active] || params[:q]) %></li>
+        <li><%= link_to "Show Inactive Users", employee_users_path(active: false), class: ('active' if params[:active] && !params[:q]) %></li>
+        <%= content_tag :li, link_to("Search results for '#{params[:q]}'", '#', class: 'active') if params[:q] %>
+      </ul>
+    </div>
+    
+    <div class='boxed'>
+      <ul class='menu'>
+        <li><%= link_to "Add New User", new_employee_user_path %></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="span8">
+    <div class="boxed-main">
+      <header>
+        <h1>
+          <%= params[:active] ? "Inactive" : "Active" %> Users List
+          <%= render 'common/search_form' %>
+        </h1>
+      </header>
+      <ol class="menu menu-list">
+        <%- @users.each do |user| -%>
+          <%= content_tag_for :li, user do %>
+            <%= user.reversed_name %> <small class='metadata'>( <%= user.email %> )</small>
+            <section class='pull-right'>
+              <%- if params[:active] -%>
+              <span class='label label-link'><%= link_to 'activate', employee_activations_path(id: user.id), method: :post %></span>
+              <%- else -%>
+              <span class='label label-link'><%= link_to 'permissions' %></span>
+              <span class='label label-link'><%= link_to 'account settings', edit_employee_user_path(user) %></span>
+              <%- unless user === current_user -%>
+              <span class='label label-important label-link'>
+                <%= link_to 'deactivate', employee_activation_path(user), method: :delete, confirm: 'Once deactivated, the user will no longer be able to access the system.',
+                            data: { confirm_title: 'Are you sure?', confirm_proceed: 'Deactivate' } %>
+              </span>
+              <%- end -%>
+              <%- end -%>
+            </section>
+          <%- end -%>
+        <%- end -%>
+      </ol>
+    </div>
+    <%= will_paginate @users, class: 'pagination pagination-centered' %>
+  </div>
+</div>

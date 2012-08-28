@@ -1,0 +1,64 @@
+.well-transform-container {
+  overflow: hidden;
+  position: relative;
+  
+  height: 150px;
+}
+
+  .well-transform-container * {
+    position: relative;
+    z-index: 99;
+  }
+
+.well-transformer {
+  content: '';
+  
+  display: block;
+  height: 300px;
+  width: 110px;
+  
+  position: absolute;
+  right: 0;
+  top: 50px;
+  
+  transition: all 2s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  
+  transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  
+  transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+  -moz-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  -o-transform: rotate(50deg);
+  
+  z-index: 0;
+}
+
+.well-transform-container:hover .well-transformer {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+
+.well-information .well-transformer,
+.well-user .well-transformer {
+  background: url(image_path('user.png')) no-repeat 0 0;
+}
+
+.well-session .well-transformer {
+  background: url(image_path('calendar.png')) no-repeat 0 0;
+}
+
+.well-application .well-transformer {
+  background: url(image_path('laptop.png')) no-repeat 0 0;
+}

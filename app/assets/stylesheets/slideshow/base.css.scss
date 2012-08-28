@@ -1,0 +1,199 @@
+@import 'bootstrap/_variables';
+@import 'bootstrap/_mixins';
+
+.quiz-container {
+  margin-top: $gridGutterWidth*3;
+}
+
+.gallery {
+  margin: 0 auto;
+  padding: 0;
+  
+  position: relative;
+  z-index: 1001;
+  
+  width: 940px;
+  
+  .gallery-view {
+    position: relative;
+    
+    .gallery-slide {
+      height: 460px;
+      background: #fff url(image-path('presentation-sprite.jpg')) no-repeat left top;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    
+    .gallery-slide:after {
+      content: '';
+      display: block;
+      background-color: #353535;
+      background-color: rgba(35, 35, 35, .9);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 350px;
+    }
+    
+    .slide-tmc {
+      background-position: 0 0;
+    }
+    
+    .slide-sacs {
+      background-position: 0 -469px;
+    }
+    
+    .slide-programs {
+      background-position: 0 -942px;
+    }
+    
+    .slide-placement-tests {
+      background-position: 0 -1413px;
+    }
+    
+    .slide-computer-skills {
+      background-position: 0 -1885px;
+    }
+    
+    .slide-background-check {
+      background-position: 0 -2356px;
+    }
+    
+    .slide-financial-aid {
+      background-position: 0 -2827px;
+    }
+    
+    .slide-navigator {
+      background-position: 0 -3299px;
+    }
+    
+    .slide-cumulative-education {
+      background-position: 0 -3772px;
+    }
+    
+    .slide-professional-environment {
+      background-position: 0 -4242px;
+    }
+    
+    .slide-the-center {
+      background-position: 0 -4716px;
+    }
+    
+    .slide-certifications {
+      background-position: 0 -5191px;
+    }
+    
+    .slide-parking {
+      background-position: 0 -5662px;
+    }
+    
+    .slide-chp {
+      background-position: 0 -6135px;
+    }
+    
+    .slide-tmc-connections {
+      background-position: 0 -7080px;
+    }
+    
+    .slide-faq {
+      background-position: 0 -6606px;
+    }
+    
+    .active .inner {
+      top: 0;
+      opacity: 1;
+      z-index: 1;
+    }
+    
+    .inner {
+      @include box-sizing(border-box);
+      color: #fff;
+      position: absolute;
+      top: -470px;
+      bottom: 0;
+      right: 0;
+      width: 350px;
+      padding: 60px;
+      
+      opacity: 0;
+      
+      transition: all 2s;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -ms-transition: all .5s;
+      -o-transition: all .5s;
+    }
+    
+    .gallery-quiz {
+      background: $grayLighter;
+      
+      margin: 0;
+      padding: 0;
+      
+      &:after {
+        display: none;
+      }
+      
+      .inner {
+        color: #353535;
+        padding: 20px 45px;
+        position: relative;
+        width: 100%;
+      }
+      
+      .title {
+        display: none;
+      }
+      
+      .control-label {
+        text-align: left;
+        width: 250px;
+      }
+      
+      .controls {
+        margin-left: 270px;
+      }
+    }
+  }
+  
+  .btn-group {
+    margin: 30px auto;
+  }
+  
+  .arrow-container {
+    position: absolute;
+    z-index: 999;
+    top: 185px;
+    
+    &.next {
+      right: -55px;
+    }
+    
+    &.prev {
+      left: -55px;
+    }
+    
+    .arrow {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white !important;
+      
+      font-size: 1.4em;
+      line-height: 90px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none !important;
+      
+      display: block;
+      height: 90px;
+      width: 90px;
+      
+      @include border-radius(90px)
+    }   
+  }
+}
+
+.hideMe {
+  display: block !important;
+}

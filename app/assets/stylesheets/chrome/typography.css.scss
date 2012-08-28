@@ -1,0 +1,45 @@
+.headline-underlined {
+  padding-bottom: .3em;
+  border-bottom: 1px solid;
+}
+
+.info-required {
+  color: $infoText;
+  font-style: italic;
+}
+
+.metadata {
+  color: $grayLight;
+  font-size: .9;
+}
+
+.demographics {
+  p {
+    color: $gray;
+    font-size: 1.2em;
+    padding: 10px 10px 0;
+  }
+  
+  p:last-child {
+    padding-bottom: 10px;
+  }
+  
+  strong {
+    color: $grayDarker;
+  }
+}
+
+.highlight {
+  border: 1px solid $warningText;
+  background-color: $warningBackground;
+  padding: 3px;
+}
+
+a.disabled {
+  color: $grayLight;
+}
+
+.dropdown-menu li > a.disabled:hover {
+  color: $grayLight;
+  background-color: $grayLighter;
+}

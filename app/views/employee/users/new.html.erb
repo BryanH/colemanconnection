@@ -1,0 +1,23 @@
+<section class="boxed boxed-main form-container">
+  <%= simple_form_for @user, url: employee_users_path do |f| %>
+    <header>
+      <h1>
+        Create a New User
+      </h1>
+    </header>
+    
+    <fieldset>
+      <%= f.error_notification %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <hr>
+      <%= f.input :email %>
+      <%= f.input :password, required: true, label: "Temporary Password" %>
+      <%= f.input :password_confirmation, required: true, label: "Re-type Password" %>
+    </fieldset>
+    
+    <div class='form-actions'>
+      <%= f.button :submit, "Create User" %> or <%= link_to 'return to the dashboard', employee_root_path %>
+    </div>
+  <%- end -%>
+</section>

@@ -1,0 +1,23 @@
+<%= simple_form_for(current_user, as: :user, url: update_account_settings_path(current_user),
+    html: { class: 'form-horizontal'}) do |f| %>
+  <header>
+    <h1>Houston Community College</h1>
+    <h2 class="metadata">
+      Please fill out the following information if you are currently or have previously attended classes at HCC.
+    </h2>
+  </header>
+  
+  <fieldset>
+    <%= hidden_field_tag :section, params[:section] %>
+    <%= f.error_notification %>
+    
+    <%= f.simple_fields_for :demographic do |demographic_fields| %>
+      <%= demographic_fields.input :current_hcc_college, :label => "HCC College", hint: "If you are currently enrolled or were previously enrolled at an HCC College, please specify which one.", collection: Demographic::HCC_CAMPUSES %>
+      <%= demographic_fields.input :hcc_email_address, :label => "HCC Email Address", hint: "The format for this email address is typically first_name.last_name@student.hccs.edu" %>
+      <%= demographic_fields.input :hcc_student_id, :required => true, :label => "HCC Student ID" %>
+    <%- end -%>
+  </fieldset>
+  <div class='form-actions boxed-in'>
+    <%= f.button :submit, 'Update' %> or <%= link_to 'return to the dashboard', candidate_root_path %>
+  </div>
+<%- end -%>

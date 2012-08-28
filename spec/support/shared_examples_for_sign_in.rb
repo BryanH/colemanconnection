@@ -2,6 +2,6 @@ shared_examples "successful sign in" do
   it "should sign in successfully" do
     visit new_user_session_path
     submit_sign_in_form
-    page.should have_content("Signed in successfully")
+    ['/candidate', '/employee'].should include(page.current_path)
   end
 end

@@ -29,6 +29,43 @@
 
 class Demographic < ActiveRecord::Base
   
+  AGE_GROUPS = [
+    '18 - 20',
+    '21 - 25',
+    '26 - 31',
+    '32 - 40',
+    '41 - 50',
+    '51 - 60',
+    '61 & Over'
+  ].freeze
+  
+  HCC_CAMPUSES = %w(
+    Central
+    Northwest
+    Northeast
+    Southwest
+    Southeast
+  ).freeze
+  
+  REFERRAL_SOURCES = %w(
+    Faculty\ or\ Staff
+    Friend
+    HCC\ Coleman\ College\ Alumni
+    HCC\ Coleman\ College\ Student
+    HCC\ Student
+    Advisor\ from\ another\ college
+    Print\ Advertisement
+    Recruiting\ Events
+    Search\ Engine
+  ).freeze
+  
+  START_DATES = [
+    "As soon as possible",
+    "Begining of the next semester",
+    "In six months",
+    "Longer than six months"
+  ]
+  
   validates :zip, format: { with: /^(\d{5}|\d{9}|\d{5}\-\d{4})$/ },
                   allow_blank: true, allow_nil: true
   
@@ -40,6 +77,11 @@ class Demographic < ActiveRecord::Base
             allow_blank: true
   
   validates :hcc_student_id, numericality: true
+  
+  attr_accessible :address, :age_group, :city, :current_hcc_college, :current_hcc_student,
+                  :first_program_choice, :gender, :hcc_email_address, :hcc_referral_source,
+                  :hcc_student_id, :home_phone, :mobile_phone, :other_advisor_college,
+                  :preferred_start_date, :second_program_choice, :state, :zip
   
   before_validation :upcase_state
   

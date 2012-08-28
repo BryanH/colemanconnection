@@ -1,0 +1,39 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ul class='menu'>
+        <li><%= link_to "#{@user.name}'s Account Details", '#', class: 'active' %></li>
+      </ul>
+    </div>
+    
+    <div class='boxed'>
+      <ul class='menu'>
+        <li><%= link_to "View user list", employee_users_path %></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="span8">
+    <section class="boxed boxed-main form-container">
+      <%= simple_form_for @user, url: employee_user_path(@user) do |f| %>
+        <header>
+          <h1>
+            Edit Account Details
+          </h1>
+        </header>
+        
+        <fieldset>
+          <%= f.error_notification %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <hr>
+          <%= f.input :email %>
+        </fieldset>
+        
+        <div class='form-actions'>
+          <%= f.button :submit, "Update Account" %> or <%= link_to "go to the dashboard", employee_root_path %>
+        </div>
+      <%- end -%>
+    </section>
+  </div>
+</div>
