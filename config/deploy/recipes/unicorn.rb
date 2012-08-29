@@ -21,7 +21,7 @@ namespace :unicorn do
     task command, roles: :app do
       run_rootsh "service unicorn_#{application} #{command}"
     end
-    after "deploy:#{command}", "uniconr:#{command}"
+    after "deploy:#{command}", "unicorn:#{command}"
   end
 end
 
