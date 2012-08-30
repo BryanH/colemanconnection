@@ -43,3 +43,11 @@ a.disabled {
   color: $grayLight;
   background-color: $grayLighter;
 }
+
+hr.large {
+  border-width: 2px;
+}
+
+hr.bold {
+  border-color: #ccc;
+}

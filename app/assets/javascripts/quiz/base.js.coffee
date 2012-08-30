@@ -1,21 +1,15 @@
 jQuery ->
-  $('.gallery').on 'mousemove', '.quiz-container', (e) ->
-    $(this).find('.arrow-container.prev a')[Quiz.previousAction(this, e)]('hideMe')
-    $(this).find('.arrow-container.next a')[Quiz.nextAction(this, e)]('hideMe')
-  $('.gallery').on 'mouseleave', '.quiz-container', ->
-    $(this).find('.arrow-container a').addClass('hideMe')
-  $('.next-quiz').bind 'ajax:success', (evt, xhr, settings) -> 
-    $('.gallery').append(xhr)
-      .find('.gallery-view:last')
-      .toGallery()
-      .parent()
-        .hide()
-        .delay(600)
-        .slideDown ->
-          $.scrollTo(($('.gallery-view:last').offset().top - 100), 300);
+  $('.paper').on 'click', '.content-player-tabs-container a.btn', (e) ->
+    Quiz.handleHideMe this
+    
+  $('.paper').on 'click', 'a', (e) ->
+    Quiz.handleHideMe $(this).parents('.gallery-view').prev().find('.btn-primary')
+    
   $('a.been-there').click ->
     $(this).parents('.masthead').slideUp()
+    
   $('.gallery-view').toGallery()
+  
   $('.gallery').on 'submit', '[data-quiz-form]', (e) ->
     e.preventDefault()
     $(this).validateQuiz()
@@ -25,10 +19,9 @@ jQuery.fn.toGallery = ->
     $this = $(this)
     linkWidth = 0
     $this.content_player
-      dynamicTabsPosition: 'bottom',
       dynamicArrowsPrevText: '<',
-      dynamicArrowsNextText: '>'
-    btnGroup = $this.next().find('.btn-group')
+      dynamicArrowsNextText: '>',
+    btnGroup = $this.prev().find('.btn-group')
     arrowLinks = $this.find('.arrow-container a')
     
     btnGroup.children().map (i, el) ->
@@ -36,7 +29,6 @@ jQuery.fn.toGallery = ->
     
     btnGroup.css
       width: linkWidth
-    arrowLinks.addClass 'hideMe'
 
 jQuery.fn.validateQuiz = ->
   $form = $(this)
@@ -65,7 +57,7 @@ jQuery.fn.validateQuiz = ->
             $.scrollTo(($('.sign-up:first').offset().top - 100), 300)
     else
       $.get $form.data('nextQuiz'), (xhr) ->
-         $('.gallery').append(xhr)
+         $('.quiz-container').append(xhr)
             .find('.gallery-view:last')
             .toGallery()
             .hide()
@@ -79,6 +71,19 @@ Quiz =
   postitionOverDiv: (parent, e) ->
     e.pageX - $(parent).offset().left
   previousAction: (parent, e) ->
-    if (Quiz.postitionOverDiv(parent, e) <= 90) && !Quiz.onReviewPanel(parent) then 'removeClass' else 'addClass'
+    if (Quiz.postitionOverDiv(parent, e) <= 90) then 'removeClass' else 'addClass'
   nextAction: (parent, e) ->
-    if (Quiz.postitionOverDiv(parent, e) >= 850) && !Quiz.onReviewPanel(parent) then 'removeClass' else 'addClass'
+    if (Quiz.postitionOverDiv(parent, e) >= 850) then 'removeClass' else 'addClass'
+  handleHideMe: (elem) ->
+    $this = $(elem)
+    if $this.text() == 'Review'
+      $this.parents('.content-player-tabs-container').next().find('.arrow-container a').addClass('hideMe')
+      $this.parents('.content-player-tabs-container').next().on 'mousemove', (e) ->
+        $(this).find('.arrow-container.prev a')[Quiz.previousAction(this, e)]('hideMe')
+        $(this).find('.arrow-container.next a')[Quiz.nextAction(this, e)]('hideMe')
+      $this.parents('.content-player-tabs-container').next().on 'mouseleave', (e) ->
+        $(this).find('.arrow-container a').addClass('hideMe')
+    else
+      $this.parents('.content-player-tabs-container').next().find('.hideMe').removeClass 'hideMe'
+      $this.parents('.content-player-tabs-container').next().unbind('mousemove')
+      $this.parents('.content-player-tabs-container').next().unbind('mouseleave')
