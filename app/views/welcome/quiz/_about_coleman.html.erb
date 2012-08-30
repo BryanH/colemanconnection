@@ -64,27 +64,20 @@
           <h2>Let's review</h2>
 
           <%= f.input :programs, label: "Which of the following is NOT one of the six discipline teams at HCC Coleman College for Health Sciences?",
-                      item_wrapper_class: 'inline',
                       as: :radio_buttons, collection: ['Nursing', 'Patient Care', 'Diagnostic', 'Physical Therapy'],
                       input_html: { data: { answer: 'Physical Therapy' }} %>
           
-          <div class='row-fluid'>
-            <div class='span6'>
-              <%= f.input :tmc, label: "HCC Coleman College is a member institution of the Texas Medical Center, the largest collection of hospitals and medical research facilities in North America.", 
-                          item_wrapper_class: 'inline',
-                          as: :radio_buttons, collection: ['True', 'False'],
-                          input_html: { data: { answer: 'False' }} %>
-            </div>
-            <div class='span6'>
-              <%= f.input :computer_skills, label: "Students are required to be proficient in the use of computers, word processing applications and web browsers.",
-                          item_wrapper_class: 'inline',
-                          as: :radio_buttons, collection: ['True', 'False'],
-                          input_html: { data: { answer: 'True' }} %>
-            </div>
-          </div>
+          <%= f.input :tmc, label: "HCC Coleman College is a member institution of the Texas Medical Center, the largest collection of hospitals and medical research facilities in North America.", 
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['True', 'False'],
+                      input_html: { data: { answer: 'False' }} %>
+          
+          <%= f.input :computer_skills, label: "Students are required to be proficient in the use of computers, word processing applications and web browsers.",
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['True', 'False'],
+                      input_html: { data: { answer: 'True' }} %>
           
           <%= f.input :ssn, label: "Upon acceptance into a program, students will be required to have specific immunizations and/or records, criminal background checks and, for most programs, a...",
-                      item_wrapper_class: 'inline',
                       as: :radio_buttons, collection: ['Drivers License #', 'Birth Certificate', 'Social Security #', 'None of the above'],
                       input_html: { data: { answer: 'Social Security #' }} %>
           
@@ -95,6 +88,7 @@
           <hr>
           <div class='actions'>
             <%= f.submit 'Continue &#x2192;'.html_safe, class: 'btn btn-primary' %>
+            <small class='metadata'>( All responses must be correct before you can move on. )</small>
           </div>
         <%- end -%>
       </div>
