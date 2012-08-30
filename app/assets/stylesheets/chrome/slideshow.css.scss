@@ -166,6 +166,7 @@
     .inner.program-listing {
       ul {
         margin-top: 60px;
+        margin-bottom: 60px;
       }
       
       li {
@@ -215,7 +216,7 @@
     
     .gallery-quiz {
       background: $grayLighter;
-      
+      overflow: auto;
       margin: 0;
       padding: 0;
       
