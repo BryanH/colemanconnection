@@ -2,47 +2,39 @@
   <div class="gallery-slide slide-chp">
     <div class='inner'>
       <figure></figure>
-      <h1 class='title'>CHP/Ongoing Education</h1>
+      <h3 class='title'>CHP/Ongoing Education</h3>
+      <p>Graduation from HCC Coleman College is only the beginning of a lifetime of learning.</p>
+      <p>Healthcare professionals must take classes to keep up to date on new technologies and to refresh their knowledge on basic skills.</p>
     </div>
   </div>
   <div class="gallery-slide slide-tmc-connections">
     <div class='inner'>
       <figure></figure>
-      <h1 class='title'>TMC Connections</h1>
+      <h3 class='title'>TMC Connections</h3>
     </div>
   </div>
-  <div class="gallery-slide slide-faq">
+  <div class="gallery-slide slide-faq bottom">
     <div class='inner'>
       <figure></figure>
-      <h1 class='title'>FAQ</h1>
+      <h3 class='title'>Questions?</h3>
+      <p>For more information about HCC Coleman College and the admission process, please visit <a href='http://coleman.hccs.edu' target='_blank'>coleman.hccs.edu</a>.</p>
+      <p>Ask Coleman allows students to chat directly with an HCC Coleman representative. Visit the <a href='http://coleman.hccs.edu/askcoleman' target='_blank'>askColeman page</a> for availability.</p>
+      <p>Students can email questions to <a href='mailto:studentsfirst@hccs.edu'>studentsfirst@hccs.edu</a>. One of our representatives will respond as soon as possible.</p>
+      <p>HCC Coleman is on <a href='http://twitter.com/HCC_Coleman'>Twitter</a> and <a href='www.facebook.com/hcccolemancollege' target='_blank'>Facebook</a>.</p>
     </div>
   </div>
   <div class="gallery-slide gallery-quiz">
     <div class='inner'>
-      <h1 class='title'>Review</h1>
-      <%= simple_form_for :post_student_quiz, html: { data: { quiz_form: '', next_quiz: next_quiz_path('sign_up')}} do |f| %>
-        <h2>Let's review</h2>
-        
-        <div class='row-fluid'>
-          <div class='span6'>
-            <%= f.input :tmc, label: "The Texas Medical Center is the second largest medical center in the country", 
-                        item_wrapper_class: 'inline',
-                        as: :radio_buttons, collection: ['True', 'False'],
-                        input_html: { data: { answer: 'False' }} %>
-          </div>
-          <div class='span6'>
-            <%= f.input :student_id, label: "You are required to have an HCC Student ID before applying for an HCC Coleman program",
-                        item_wrapper_class: 'inline',
-                        as: :radio_buttons, collection: ['True', 'False'],
-                        input_html: { data: { answer: 'True' }} %>
-          </div>
-        </div>
-        
-        <hr>
-        <div class='actions'>
-          <%= f.submit 'Continue &#x2192;'.html_safe %>
-        </div>
-      <%- end -%>
+      <h3 class='title'>Review</h3>
+      <h3>Contgratulations!</h3>
+      <p>
+        You should now have a better understanding of why HCC Coleman
+        College is the right choice for you. Now all you need to do is...
+      </p>
+      <hr>
+      <div class='masthead'>
+        <%= link_to "Create an Account", new_user_registration_path, class: 'btn btn-large btn-primary next-quiz been-there' %>
+      </div>
     </div>
   </div>
 </div>

@@ -15,6 +15,10 @@
 //= require jquery_ujs
 //= require jquery.easing
 //= require jquery.quicksand
+//= require jquery.scrollTo.min
+//= require jquery.content_player
+//= require quiz/base
+//
 
 // Custom sorting plugin
 (function($) {

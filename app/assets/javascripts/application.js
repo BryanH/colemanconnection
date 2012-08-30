@@ -17,6 +17,11 @@
 //= require bootstrap
 //= require plugins/logger
 //= require jquery.twitter_bootstrap_confirm
+//= require pages/sessions/new
+//= require pages/attendance
+//= require jquery.scrollTo.min
+//= require jquery.content_player
+//= require quiz/base
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();

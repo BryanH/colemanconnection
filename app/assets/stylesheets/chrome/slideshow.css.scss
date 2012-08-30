@@ -37,68 +37,105 @@
       width: 350px;
     }
     
+    .gallery-slide.full .inner {
+      color: #454545;
+      width: 100%;
+      left: 0;
+      background-color: transparent;
+    }
+    
+    .gallery-slide.full:after {
+      display: none;
+    }
+    
+    .gallery-slide.left .inner {
+      left: 0;
+      right: none;
+    }
+    
+    .gallery-slide.left:after {
+      left: 0;
+      right: none;
+    }
+    
+    .gallery-slide.bottom .inner {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 200px;
+      width: 100%;
+    }
+    
+    .gallery-slide.bottom:after {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 200px;
+      width: 100%;
+    }
+    
     .slide-tmc {
       background-position: 0 0;
     }
     
     .slide-sacs {
-      background-position: 0 -469px;
+      background-position: 0 -511px;
     }
     
     .slide-programs {
-      background-position: 0 -942px;
+      background-position: 0 -1022px;
     }
     
     .slide-placement-tests {
-      background-position: 0 -1413px;
+      background-position: 0 -1533px;
     }
     
     .slide-computer-skills {
-      background-position: 0 -1885px;
+      background-position: 0 -2045px;
     }
     
     .slide-background-check {
-      background-position: 0 -2356px;
+      background-position: 0 -2556px;
     }
     
     .slide-financial-aid {
-      background-position: 0 -2827px;
+      background-position: 0 -3066px;
     }
     
     .slide-navigator {
-      background-position: 0 -3299px;
+      background-position: 0 -3580px;
     }
     
     .slide-cumulative-education {
-      background-position: 0 -3772px;
+      background-position: 0 -4601px;
     }
     
     .slide-professional-environment {
-      background-position: 0 -4242px;
+      background-position: 0 -4090px;
     }
     
     .slide-the-center {
-      background-position: 0 -4716px;
+      background-position: 0 -5113px;
     }
     
     .slide-certifications {
-      background-position: 0 -5191px;
+      background-position: 0 -5623px;
     }
     
     .slide-parking {
-      background-position: 0 -5662px;
+      background-position: 0 -6100px;
     }
     
     .slide-chp {
-      background-position: 0 -6135px;
+      background-position: 0 -6646px;
     }
     
     .slide-tmc-connections {
-      background-position: 0 -7080px;
+      background-position: 0 -7158px;
     }
     
     .slide-faq {
-      background-position: 0 -6606px;
+      background-position: 0 -7668px;
     }
     
     .active .inner {
@@ -124,6 +161,56 @@
       -moz-transition: all .5s;
       -ms-transition: all .5s;
       -o-transition: all .5s;
+    }
+    
+    .inner.program-listing {
+      ul {
+        margin-top: 60px;
+      }
+      
+      li {
+        color: #fff;
+        text-align: center;
+        
+        padding: 5px;
+        padding-top: (128 / 2) - $baseLineHeight;
+        
+        @include box-sizing(border-box);
+        background-color: #e5e5e5;
+        display: block;
+        float: left;
+        margin-right: 10px;
+        height: 128px;
+        width: 128px;
+      }
+      
+      li:last-of-type {
+        margin: 0;
+      }
+      
+      .program.nursing {
+        background-color: #4f0b7b;
+      }
+
+      .program.patient-care {
+        background-color: #b734bb;
+      }
+
+      .program.therapeutic-services {
+        background-color: #00c473;
+      }
+
+      .program.diagnostic-services {
+        background-color: #6aade4;
+      }
+
+      .program.health-care-admin {
+        background-color: #ec7a08;
+      }
+
+      .program.dental-services {
+        background-color: #c4262e;
+      }
     }
     
     .gallery-quiz {
@@ -193,6 +280,8 @@
     }   
   }
 }
+
+
 
 .hideMe {
   display: block !important;
