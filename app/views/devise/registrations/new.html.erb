@@ -6,6 +6,19 @@
   <div class="form-inputs">
     <%= f.input :first_name, required: true, autofocus: true %>
     <%= f.input :last_name, required: true %>
+    <%- @demographic = resource.demographic || resource.build_demographic -%>
+    <%= f.simple_fields_for :demographic do |demographic_fields| %>
+      <%= demographic_fields.input :hcc_student_id, 
+            label: "HCC Student ID", 
+            hint: "Creating an account on HCC Coleman Connection requires an HCC 
+                  student id which typically contains 9 numbers. This ID number 
+                  is also required if you would like to apply to an HCC Coleman 
+                  College program. If you need to register at HCC and create an 
+                  ID number, please click <a href='https://hccapp.hccs.edu:9200/psp/adm/EMPLOYEE/HRMS/c/HCC_CUSTOM_MENU.HAD_APPLICATION.GBL' target='_blank'>here</a>.
+                  If you need to retrieve your Student ID please click <a href='https://hccsaweb.hccs.edu:8080/psp/cspwd/EMPLOYEE/HRMS/c/HCCS_CUST_MENU.HCC_UAT.GBL' target='_blank'>here</a>.".html_safe,
+            required: true %>
+    <%- end -%>
+    <hr>
     <%= f.input :email, :required => true %>
     <%= f.input :password, :autocomplete => "off", :required => true %>
     <%= f.input :password_confirmation, :required => true %>

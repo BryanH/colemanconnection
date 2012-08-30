@@ -70,7 +70,8 @@ class Demographic < ActiveRecord::Base
                   allow_blank: true, allow_nil: true
   
   validates :state, length: { is: 2 },
-                    inclusion: { in: UnitedStates.abbreviated_names }
+                    inclusion: { in: UnitedStates.abbreviated_names },
+                    allow_blank: true, allow_nil: true
   
   validates :home_phone, :mobile_phone, phone_number: true, 
             allow_nil: true,
