@@ -47,36 +47,39 @@ jQuery.fn.validateQuiz = ->
       $group.removeClass("error")
   unless $form.find(".control-group.error").length > 0
     $('.actions', $form).html("<p>Getting next section...")
-    if $form.data('nextQuiz') == 'sign_up'
-      $.get $form.data('nextQuiz'), (xhr) ->
-        $('.gallery').append(xhr)
-          .find('.sign-up')
-          .hide()
-          .delay(600)
-          .slideDown ->
-            $.scrollTo(($('.sign-up:first').offset().top - 100), 300)
-    else
-      $.get $form.data('nextQuiz'), (xhr) ->
-         $('.quiz-container').append(xhr)
-            .find('.gallery-view:last')
-            .toGallery()
-            .hide()
-            .delay(600)
-            .slideDown ->
-              $.scrollTo(($('.gallery-view:last').offset().top - 100), 300)
+    $('.quiz-container')
+      .find('.gallery-view:first')
+        .prev()
+          .remove()
+        .end()
+        .fadeOut ->
+          $(this).remove()
+          $.get $form.data('nextQuiz'), (xhr) ->
+            $('.quiz-container').append(xhr)
+              .find('.gallery-view:last')
+                .toGallery()
+                .hide()
+                .delay(600)
+                .slideDown ->
+                  $.scrollTo(($('.gallery-view:last').offset().top - 100), 300)
 
 Quiz =
   onReviewPanel: (parent) ->
-    $('.btn-primary', parent).text() == 'Review'
+    txt = $('.btn-primary', parent).text()
+    (txt == 'Review') || (txt == "That's a wrap!")
+    
   postitionOverDiv: (parent, e) ->
     e.pageX - $(parent).offset().left
+    
   previousAction: (parent, e) ->
     if (Quiz.postitionOverDiv(parent, e) <= 90) then 'removeClass' else 'addClass'
+    
   nextAction: (parent, e) ->
     if (Quiz.postitionOverDiv(parent, e) >= 850) then 'removeClass' else 'addClass'
+    
   handleHideMe: (elem) ->
     $this = $(elem)
-    if $this.text() == 'Review'
+    if Quiz.onReviewPanel($this.parent())
       $this.parents('.content-player-tabs-container').next().find('.arrow-container a').addClass('hideMe')
       $this.parents('.content-player-tabs-container').next().on 'mousemove', (e) ->
         $(this).find('.arrow-container.prev a')[Quiz.previousAction(this, e)]('hideMe')
