@@ -1,4 +1,4 @@
-<%- present @candidate.demographic do |demographic_presenter| -%>
+<%- present (@candidate.demographic || @candidate.build_demographic) do |demographic_presenter| -%>
 <div class='row'>
   <div class='span4'>
     <div class='boxed profile-owner'>
