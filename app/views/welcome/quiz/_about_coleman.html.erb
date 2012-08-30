@@ -6,11 +6,10 @@
         <h3 class='title'>The TMC</h3>
         <p>
           HCC Coleman College for Health Sciences is a member institute of the 
-          Texas Medical Center.
+          <a href="http://texasmedicalcenter.org" target="_blank">Texas Medical Center</a>.
         </p>
         <p>
-          The Texas Medical Center is the largest collection of hospitals and
-          medical research facilities in the world.
+          The Texas Medical Center is the world leader in patient care, research, education and prevention since 1945 and is the largest collection of hospitals and medical research and education institutions in the world.
         </p>
       </div>
     </div>
@@ -26,7 +25,7 @@
       <div class='inner program-listing'>
         <h3 class='title'>HCC Coleman Programs</h3>
         <p>The programs at HCC Coleman College for Health Sciences are divided into six discipline groups:</p>
-        <ul class='unstyled'>
+        <ul class='unstyled clearfix'>
           <li class='program nursing'>Nursing</li>
           <li class='program patient-care'>Patient Care Services</li>
           <li class='program therapeutic-services'>Therapeutic Services</li>
@@ -34,20 +33,21 @@
           <li class='program health-care-admin'>Health Care &amp; Administration</li>
           <li class='program dental-services'>Dental Services</li>
         </ul>
+        <p>Most students at HCC Coleman have three primary learning environments:  lecture, skills lab, both on-campus, and clinical placement, where students assist in health care practice, supervised by a licensed professional.</p>
       </div>
     </div>
     <div class="gallery-slide slide-placement-tests left">
       <div class='inner'>
         <h3 class='title'>Placement Tests</h3>
         <p>Students applying to an HCC Coleman College program may be required to take a placement test to gauge their ability to successfully complete their desired program.</p>
-        <p>• (A list of tests that students may or must take)</p>
+        <p>Students with no prior college experience are required to take the COMPASS test in reading, writing and mathematics.</p>
       </div>
     </div>
     <div class="gallery-slide slide-computer-skills">
       <div class='inner'>
         <h3 class='title'>Computer Skills</h3>
         <p>HCC Coleman College students are expected to be proficient in using computers, word processing applications and web browsers.</p>
-        <p>(Where can students go if they aren’t proficient?)</p>
+        <p>Students seeking to improve their computer skills may take POFT 1329 (Beginning Keyboarding) or POFI 1301 (Computer Applications).</p>
       </div>
     </div>
     <div class="gallery-slide slide-background-check bottom">
@@ -62,21 +62,35 @@
         <h1 class='title'>Review</h1>
         <%= simple_form_for :about_coleman_quiz, html: { data: { quiz_form: '', next_quiz: next_quiz_path('student_experience')}} do |f| %>
           <h2>Let's review</h2>
+
+          <%= f.input :programs, label: "Which of the following is NOT one of the six discipline teams at HCC Coleman College for Health Sciences?",
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['Nursing', 'Patient Care', 'Diagnostic', 'Physical Therapy'],
+                      input_html: { data: { answer: 'Physical Therapy' }} %>
           
           <div class='row-fluid'>
             <div class='span6'>
-              <%= f.input :tmc, label: "The Texas Medical Center is the second largest medical center in the country", 
+              <%= f.input :tmc, label: ": HCC Coleman College is a member institution of the Texas Medical Center, the largest collection of hospitals and medical research facilities in North America.", 
                           item_wrapper_class: 'inline',
                           as: :radio_buttons, collection: ['True', 'False'],
-                          input_html: { data: { answer: 'False' }} %>
+                          input_html: { data: { answer: 'True' }} %>
             </div>
             <div class='span6'>
-              <%= f.input :student_id, label: "You are required to have an HCC Student ID before applying for an HCC Coleman program",
+              <%= f.input :computer_skills, label: "Students are required to be proficient in the use of computers, word processing applications and web browsers.",
                           item_wrapper_class: 'inline',
                           as: :radio_buttons, collection: ['True', 'False'],
                           input_html: { data: { answer: 'True' }} %>
             </div>
           </div>
+          
+          <%= f.input :ssn, label: "Upon acceptance into a program, students will be required to have specific immunizations and/or records, criminal background checks and, for most programs, a...",
+                      item_wrapper_class: 'inline',
+                      as: :radio_buttons, collection: ['Drivers License #', 'Birth Certificate', 'Social Security #', 'None of the above'],
+                      input_html: { data: { answer: 'Social Security #' }} %>
+          
+          <%= f.input :accreditation, label: "Both Houston Community College and HCC Coleman College for Health Sciences are accredited by which of the following?",
+                      as: :radio_buttons, collection: ['Accrediting Bureau of Health Education Schools', 'SACS (Southern Association of Colleges and Schools)', 'Accrediting Commission of Career Schools and Colleges', 'None of the above'],
+                      input_html: { data: { answer: 'SACS (Southern Association of Colleges and Schools)' }} %>
           
           <hr>
           <div class='actions'>

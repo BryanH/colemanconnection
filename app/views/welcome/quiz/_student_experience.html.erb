@@ -5,22 +5,22 @@
       <p>All HCC Coleman College for Health Science students should apply for financial aid.</p>
       <p>All students should complete a Free Application for Federal Student Aid, or FAFSA, form.</p>
       <p>HCC’s school code is 010422. This number is necessary when completing a FAFSA form.</p>
-      <p>The HCC Foundation offers financial aid specifically for HCC Coleman students.</p>
+      <p>The <a href='hccsfoundation.org' target='_blank'>HCC Foundation</a> offers financial aid specifically for HCC Coleman students.</p>
     </div>
   </div>
   <div class="gallery-slide slide-navigator">
     <div class='inner'>
       <h3 class='title'>Navigator</h3>
       <p>All new HCC Coleman Students admitted into any one or two-year program will have to complete the Navigator program.</p>
-      <p>The Navigator program is designed to pinpoint risks to the student’s academic success.</p>
+      <p>The Navigator program is designed to pinpoint risks to the your academic success.</p>
     </div>
   </div>
   <div class="gallery-slide slide-cumulative-education bottom">
     <div class='inner'>
       <h3 class='title'>Cumulative Education</h3>
-      <p>Students who are accepted into an HCC Coleman program progress through the program with the same group of students from the first class to graduation.</p>
-      <p>Each course this cohort of students takes together provides a basis for the next course they take.</p>
-      <p>Information from a class taken during a student’s first semester at HCC Coleman College can serve as groundwork for lessons during the student’s fourth semester or even a certification exam.</p>
+      <p>Students who are accepted into an HCC Coleman program progress through it with the same group of students from the first class to graduation; this is your program cohort.</p>
+      <p>Your health science education is cumulative – every class you complete provides a basis for the next course you take.</p>
+      <p>Information from a class taken during your first semester at HCC Coleman College can serve as groundwork for lessons during your fourth semester or even a certification exam.</p>
     </div>
   </div>
   <div class="gallery-slide slide-professional-environment">
@@ -29,7 +29,7 @@
       <p>Part of HCC Coleman College’s mission is to prepare students for the professional environment.</p>
       <p>The professional culture of the health care industry is reflected on the HCC Coleman campus through attire, behavior, parking costs, etc. </p>
       <p>Many programs require students to wear scrubs and/or lab coats while on campus.</p>
-      <p>Programs also require students to hide tattoos while on campus.</p>
+      <p>Programs also require students to hide tattoos and or remove certain piercings while on campus and off campus, learning in clinical affiliates.</p>
     </div>
   </div>
   <div class="gallery-slide slide-the-center">
@@ -56,27 +56,34 @@
     <div class='inner'>
       <h1 class='title'>Review</h1>
       <%= simple_form_for :student_experience_quiz, html: { data: { quiz_form: '', next_quiz: next_quiz_path('post_student')}} do |f| %>
-      <h2>Let's Review</h2>
-      
-      <div class='row-fluid'>
-        <div class='span6'>
-          <%= f.input :tmc, label: "The Texas Medical Center is the second largest medical center in the country", 
-                      item_wrapper_class: 'inline',
-                      as: :radio_buttons, collection: ['True', 'False'],
-                      input_html: { data: { answer: 'False' }} %>
+        <h2>Let's review</h2>
+
+        <%= f.input :faculty, label: "HCC Coleman College faculty strive to prepare students for graduation and professional certification.",
+                    item_wrapper_class: 'inline',
+                    as: :radio_buttons, collection: ['True', 'False'],
+                    input_html: { data: { answer: 'True' }} %>
+        
+        <%= f.input :professional_culture, label: "HCC Coleman College reflects the professional culture of the healthcare industry through proper clothing attire, behavior and...", 
+                    as: :radio_buttons, collection: ['Parking Costs', 'Eating Habits', 'All of the above', 'None of the above'],
+                    input_html: { data: { answer: 'None of the above' }} %>
+        
+        <%= f.input :financial_aid_code, label: "The HCC school code for financial aid is 010422.", 
+                    item_wrapper_class: 'inline',
+                    as: :radio_buttons, collection: ['True', 'False'],
+                    input_html: { data: { answer: 'True' }} %>
+        
+        <%= f.input :cumulative_education, label: "HCC Coleman College practices cumulative education, which means", 
+                    as: :radio_buttons, collection: ['A student will never have to remember what they learned in the class', 'Every class is its own separate entity', 'Every class a student completes provides a basis for the next class he or she takes', 'None of the above'],
+                    input_html: { data: { answer: 'Every class a student completes provides a basis for the next class he or she takes' }} %>
+        
+        <%= f.input :cohort, label: "HCC Coleman College students enter and progress through their programs as a group.", 
+                    item_wrapper_class: 'inline',
+                    as: :radio_buttons, collection: ['True', 'False'],
+                    input_html: { data: { answer: 'True' }} %>
+        <hr>
+        <div class='actions'>
+          <%= f.submit 'Continue &#x2192;'.html_safe, class: 'btn btn-primary' %>
         </div>
-        <div class='span6'>
-          <%= f.input :student_id, label: "You are required to have an HCC Student ID before applying for an HCC Coleman program",
-                      item_wrapper_class: 'inline',
-                      as: :radio_buttons, collection: ['True', 'False'],
-                      input_html: { data: { answer: 'True' }} %>
-        </div>
-      </div>
-      
-      <hr>
-      <div class='actions'>
-        <%= f.submit 'Continue &#x2192;'.html_safe, class: 'btn btn-primary' %>
-      </div>
       <%- end -%>
     </div>
   </div>
