@@ -1,0 +1,10 @@
+<%- if current_user && current_user.sign_in_count == 1 && ((Time.current.to_i - current_user.current_sign_in_at.to_i)/60) <= 15 -%>
+  <div class='alert alert-info fade in'>
+    <span class='close' data-dismiss='alert'>x</span>
+    <h1 class='page-header'>Congratulations!</h1>
+    <p>
+      You have successfully created an account. Now, you should sign up for a
+      <%= link_to "program session", new_candidate_program_session_path %>.
+    </p>
+  </div>
+<%- end -%>

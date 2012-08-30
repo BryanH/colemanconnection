@@ -1,3 +1,15 @@
 .paper {
   padding-top: 110px;
 }
+
+.dropdown-menu p {
+  color: #353535;
+  padding: 10px 10px 0;
+  width: 250px;
+  
+  a {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+}

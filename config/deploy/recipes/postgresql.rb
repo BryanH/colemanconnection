@@ -1,7 +1,8 @@
 set_default(:postgresql_host, "127.0.0.1")
-set_default(:postgresql_user) { user }
+set_default(:postgresql_user)     { user }
 set_default(:postgresql_password) { Capistrano::CLI.password_prompt "PostgreSQL Password: " }
 set_default(:postgresql_database) { "#{application}_production" }
+set_default(:postgresql_pid)      { "/var/lib/pgsql/data/postmaster.pid" }
 
 namespace :postgresql do
   desc "Generate the database.yml configuration file."

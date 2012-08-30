@@ -1,4 +1,3 @@
-<%- additional_js 'pages/attendance' -%>
 <div class='row'>
   <div class='span4'>
     <div class='boxed'>
@@ -7,6 +6,10 @@
         <%= content_tag :li, link_to("Results for '#{params[:q]}'", '#', class: 'active') if params[:q] %>
       </ol>
     </div>
+    
+    <%= Session.joins(user: :demographic).where{ user.demographic.gender == 'Female' }.count %>
+    <%= Session.joins(user: :demographic).where{ user.demographic.gender == 'Male' }.count %>
+    <%= Session.count %>
     
     <div class='boxed'>
       <ol class='menu'>
