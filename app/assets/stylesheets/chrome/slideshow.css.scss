@@ -6,7 +6,7 @@
 }
 
 .gallery {
-  margin: 0 auto;
+  margin: 0 auto 60px;
   padding: 0;
   
   position: relative;
@@ -219,6 +219,7 @@
       overflow: auto;
       margin: 0;
       padding: 0;
+      height: auto;
       
       &:after {
         display: none;
@@ -285,5 +286,5 @@
 
 
 .hideMe {
-  display: block !important;
+  display: none !important;
 }
