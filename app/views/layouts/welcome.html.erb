@@ -18,6 +18,8 @@
   <%= render 'common/analytics' if Rails.env.production? %>
 </head>
 <body>
+  <%= render 'common/undesireables' %>
+  
 	<header>
 		<div id='mast' class='container'>
 			<%= link_to root_path do %>
