@@ -5,3 +5,7 @@ $navbarBackgroundHighlight: $gray;
 .navbar {
   margin-top: 0;
 }
+
+.dropdown-menu > p a {
+  color: $linkColor;
+}
