@@ -15,8 +15,11 @@
   <%= stylesheet_link_tag    "welcome", :media => "all" %>
   <%= javascript_include_tag "welcome" %>
   <%= csrf_meta_tags %>
+  <%= render 'common/analytics' if Rails.env.production? %>
 </head>
 <body>
+  <%= render 'common/undesireables' %>
+  
 	<header>
 		<div id='mast' class='container'>
 			<%= link_to root_path do %>
@@ -48,6 +51,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
