@@ -21,9 +21,11 @@ namespace :monit do
   task(:postgresql, roles: :db) { monit_config "postgresql" }
   task(:unicorn, roles: :app) { monit_config "unicorn" }
   
-  %w[start stop restart syntax reload].each do |command|
-    desc "Run Monit #{command} script"
-    task command { run_rootsh "service monit #{command}"}
+  %w[start stop restart syntax reload].each do |cmd|
+    desc "Run Monit #{cmd} script"
+    task cmd do
+      run_rootsh "service monit #{cmd}"
+    end
   end
 end
 
