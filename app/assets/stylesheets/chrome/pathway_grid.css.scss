@@ -1,111 +1,94 @@
-.image-grid, .image-grid li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+@import 'compass/css3/transform';
+
+$hexagonWidth: 100px;
+$hexagonHeight: ($hexagonWidth * cos(30deg)) * 2;
+$hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
 
 .image-grid {
-  overflow: hidden;
-}
+  padding: 50px 0;
+  
+  li, a {
+    color: #fff;
+    display: block;
+    text-align: center;
+  }
+  
+  li p {
+    display: inline-block;
+    font-size: 1.3em;
+    line-height: 1.2;
+    vertical-align: middle;
+  }
+  
+  li {
+    display: inline-block;
+    float: left;
+    
+    background-color: $grayLight;
+    
+    line-height: $hexagonHeight;
+    
+    width: $hexagonWidth;
+    height: $hexagonHeight;
+    margin: 2px 0;
+    margin-right: $hexagonMargin;
+    margin-left: $hexagonMargin;
+    
+    position: relative;
+  }
+  
+  li:nth-child(even) {
+    top: 43.3px;
+  }
+  
+  li:nth-child(odd) {
+    top: -44.8px;
+  }
+  
+  li:before, li:after {
+    content: '';
+    display: block;
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+  
+  li:before {
+    z-index: -1;
+    @include transform(rotate(60deg));
+  }
+  
+  li:after {
+    z-index: -2;
+    @include transform(rotate(-60deg));
+  }
+  
+  .nursing {
+    background-color: #4f0b7b;
+  }
 
-.image-grid li {
-  display: block;
-  float: left;
-  margin: 5px 19px;
-}
+  .patient-care {
+    background-color: #b734bb;
+  }
 
-.image-grid li a {
-  display: block;
-  background-image: url(image_path('SimDayIcons.png'));
-  text-indent: -9999px;
-  width: 150px;
-  height: 130px;
-}
+  .therapeutic {
+    background-color: #00c473;
+  }
 
-.dental-assisting p a {
-  background-position: -172px 0px;
-}
+  .diagnostic {
+    background-color: #6aade4;
+  }
 
-.community-health-worker p a {
-  background-position: -341px 0px;
-}
+  .health-admin {
+    background-color: #ec7a08;
+  }
 
-.certified-prevention-specialist p a {
-  background-position: -509px 0;
-}
-
-.pharmacy-technician p a {
-  background-position: -679px 0;
-}
-
-.human-services-technology p a {
-  background-position: 0 -167px;
-}
-
-.health-information-technology p a {
-  background-position: -172px -167px;
-}
-
-.biosafety p a {
-  background-position: -341px -167px;
-}
-
-.radiography p a {
-  background-position: -509px -167px;
-}
-
-.nuclear-medicine-technologist p a {
-  background-position: -679px -167px;
-}
-
-.histology-technician p a {
-  background-position: 0 -336px;
-}
-
-.diagnostic-medical-sonography p a {
-  background-position: -172px -336px;
-}
-
-.computed-tomography p a {
-  background-position: -341px -336px;
-}
-
-.clinical-laboratory-technician p a {
-  background-position: -509px -336px;
-}
-
-.respiratory-therapist p a {
-  background-position: -679px -336px;
-}
-
-.physical-therapy-assistant p a {
-  background-position: 0 -505px;
-}
-
-.occupational-therapy-assistant p a {
-  background-position: -172px -505px;
-}
-
-.gamw p a {
-  background-position: -341px -505px;
-}
-
-.hcca p a {
-  background-position: -509px -505px;
-}
-
-.surgical-technology p a {
-  background-position: -679px -505px;
-}
-
-.medical-assistant p a {
-  background-position: 0 -669px;
-}
-
-.registered-nurse p a {
-  background-position: -172px -669px;
-}
-
-.vocational-nurse p a {
-  background-position: -341px -669px;
+  .dental {
+    background-color: #c4262e;
+  }
+  
 }

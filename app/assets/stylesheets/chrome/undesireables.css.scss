@@ -1,0 +1,45 @@
+.csstransforms {
+  .time-for-change {
+    display: none;
+  }
+}
+
+// Change this to .no-csstransforms after you finish developing it
+.no-csstransforms {
+  .time-for-change {
+    background-color: #fff;
+    display: block;
+    
+    font-size: 1.1em;
+    text-align: center;
+    
+    margin: 50px auto;
+    padding: 25px;
+    width: 920px;
+    
+    border: 2px solid $grayLight;
+    @include border-radius(15px)
+  }
+  
+  .browsers {
+    margin-left: 75px;
+  }
+  
+  .time-for-change p {
+    color: darken($red, 5%);
+  }
+  
+  .logo {
+    display: block;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px;
+    background: url(image-path("browser-logos.png")) no-repeat top left;
+  }
+  
+  .browser-chrome-logo{ background-position: 0 0; width: 75px; height: 75px; } 
+  .browser-firefox-logo{ background-position: 0 -85px; width: 78px; height: 75px; } 
+  .browser-ie9-logo{ background-position: 0 -170px; width: 75px; height: 75px; } 
+  .browser-opera-logo{ background-position: 0 -255px; width: 69px; height: 75px; } 
+  .browser-safari-logo{ background-position: 0 -340px; width: 75px; height: 75px; }
+}
