@@ -14,8 +14,8 @@
                   student id which typically contains 9 numbers. This ID number 
                   is also required if you would like to apply to an HCC Coleman 
                   College program. If you need to register at HCC and create an 
-                  ID number, please click <a href='https://hccapp.hccs.edu:9200/psp/adm/EMPLOYEE/HRMS/c/HCC_CUSTOM_MENU.HAD_APPLICATION.GBL' target='_blank'>here</a>.
-                  If you need to retrieve your Student ID please click <a href='https://hccsaweb.hccs.edu:8080/psp/cspwd/EMPLOYEE/HRMS/c/HCCS_CUST_MENU.HCC_UAT.GBL' target='_blank'>here</a>.".html_safe,
+                  ID number, please <a href='https://hccapp.hccs.edu:9200/psp/adm/EMPLOYEE/HRMS/c/HCC_CUSTOM_MENU.HAD_APPLICATION.GBL' target='_blank'>click here</a>.
+                  If you need to retrieve your Student ID please <a href='https://hccsaweb.hccs.edu:8080/psp/cspwd/EMPLOYEE/HRMS/c/HCCS_CUST_MENU.HCC_UAT.GBL' target='_blank'>click here</a>.".html_safe,
             required: true %>
     <%- end -%>
     <hr>
@@ -25,6 +25,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Create Account" %>
+    <%= f.button :submit, raw("Create This Account"), class: 'btn btn-primary' %>
   </div>
 <% end %>
