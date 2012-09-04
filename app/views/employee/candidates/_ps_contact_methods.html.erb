@@ -1,0 +1,56 @@
+<div class='collapse-group'>
+  <div class='collapse-heading'>
+    <%= link_to 'Contact Methods', '#', class: 'collapse-toggle', data: { toggle: 'collapse', target: ".collapse-contact-methods" } %>
+  </div>
+  <div class='collapse collapse-contact-methods'>
+    <div class='collapse-content'>
+      
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'><%= link_to 'Phone Numbers', '#phone_numbers', data: { toggle: 'tab'} %></li>
+          <li><%= link_to 'Email', '#email_addresses', data: { toggle: 'tab'} %></li>
+        </ul>
+        
+        <div class='tab-content'>
+          <div class='tab-pane active' id='phone_numbers'>
+            <table class='table table-bordered table-striped'>
+              <tbody>
+                <tr>
+                  <td class='attr'>Preferred Phone</td>
+                  <td><%= @details[:hcc_prf_phone] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>Home Phone</td>
+                  <td><%= @details[:home_phone] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>Cell Phone</td>
+                  <td><%= @details[:hcc_cell_phone] %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class='tab-pane' id='email_addresses'>
+            <table class='table table-bordered table-striped'>
+              <tbody>
+                <tr>
+                  <td class='attr'>Preferred Email Address</td>
+                  <td><%= @details[:hcc_prf_email] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>Email Address</td>
+                  <td><%= @details[:email_addr] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>HCC Email Address</td>
+                  <td><%= @details[:hcc_email_addr] %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

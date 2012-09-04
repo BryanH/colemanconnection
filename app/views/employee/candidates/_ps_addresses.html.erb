@@ -1,0 +1,87 @@
+<div class='collapse-group'>
+  <div class='collapse-heading'>
+    <%= link_to 'Addresses', '#', class: 'collapse-toggle', data: { toggle: 'collapse', target: ".collapse-addresses" } %>
+  </div>
+  <div class='collapse collapse-addresses'>
+    <div class='collapse-content'>
+      
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'><%= link_to 'Home', "#home_address", data: { toggle: 'tab'} %></li>
+          <li><%= link_to 'Mailing', "#mailing_address", data: { toggle: 'tab'} %></li>
+          <li><%= link_to 'Permanent', "#permanent_address", data: { toggle: 'tab'} %></li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active' id='home_address'>
+            <table class='table table-bordered table-striped'>
+              <tbody>
+                <tr>
+                  <td class='attr'>Street</td>
+                  <td><%= @details[:home_address1] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>City</td>
+                  <td><%= @details[:home_city] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>State</td>
+                  <td><%= @details[:home_state] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>Zip</td>
+                  <td><%= @details[:home_postal] %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class='tab-pane' id='mailing_address'>
+            <table class='table table-bordered table-striped'>
+              <tbody>
+                <tr>
+                  <td class='attr'>Street</td>
+                  <td><%= @details[:mail_address1] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>City</td>
+                  <td><%= @details[:mail_city] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>State</td>
+                  <td><%= @details[:mail_state] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>Zip</td>
+                  <td><%= @details[:mail_postal] %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class='tab-pane' id='permanent_address'>
+            <table class='table table-bordered table-striped'>
+              <tbody>
+                <tr>
+                  <td class='attr'>Street</td>
+                  <td><%= @details[:perm_address1] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>City</td>
+                  <td><%= @details[:perm_city] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>State</td>
+                  <td><%= @details[:perm_state] %></td>
+                </tr>
+                <tr>
+                  <td class='attr'>Zip</td>
+                  <td><%= @details[:perm_postal] %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
