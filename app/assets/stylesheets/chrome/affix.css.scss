@@ -1,0 +1,20 @@
+.affixable {
+  min-height: 1px;
+}
+
+.affix-container {
+  min-height: 1px;
+  position: relative;
+}
+
+.affix {
+  position: fixed;
+  width: 465px;
+  top: 50px;
+}
+
+.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+}

@@ -28,6 +28,7 @@
 
 .collapse-toggle {
   display: block;
+  font-size: 1.1rem;
 }
 
 // Creates the content area for the collapsable. The 
@@ -37,4 +38,8 @@
   margin-top: 10px;
   padding: 10px 10px 0;
   border-top: 1px solid $grayLighter;
+}
+
+[data-toggle="tab"] {
+  color: $grayLight;
 }
