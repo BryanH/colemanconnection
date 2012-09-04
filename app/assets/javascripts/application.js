@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery.easing
 //= require bootstrap
+//= require extensions/bootstrap/bootstrap-affix
 //= require plugins/logger
 //= require jquery.twitter_bootstrap_confirm
 //= require pages/sessions/new
@@ -22,7 +23,9 @@
 //= require jquery.scrollTo.min
 //= require jquery.content_player
 //= require quiz/base
+//= require plugins/affixable
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();
-})
+  jQuery('.collapse-toggle').click(function (e) {e.preventDefault();});
+});

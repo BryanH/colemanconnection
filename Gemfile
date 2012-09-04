@@ -12,6 +12,7 @@ gem 'jquery-rails',       '2.0.2'
 gem 'modernizr-rails',    '2.0.6'
 gem 'simple_form',        '2.0.2'
 gem 'squeel',             '1.0.9'
+gem 'savon',              '1.1.0'
 
 # Deployment
 gem 'capistrano',         '2.12.0'

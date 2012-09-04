@@ -1,0 +1,25 @@
+<div class='collapse-group'>
+  <div class='collapse-heading'>
+    <%= link_to 'Military', '#', class: 'collapse-toggle', data: { toggle: 'collapse', target: ".collapse-military" } %>
+  </div>
+  <div class='collapse collapse-military'>
+    <div class='collapse-content'>
+      <table class='table table-bordered table-striped'>
+        <tbody>
+          <tr>
+            <td class='attr'>Military Status</td>
+            <td><%= @details[:military_status] %> - <%= @peoplesoft_candidate.military_status %></td>
+          </tr>
+          <tr>
+            <td class='attr'>Affiliation</td>
+            <td><%= @peoplesoft_candidate.affiliation %></td>
+          </tr>
+          <tr>
+            <td class='attr'>Disabled Veteran</td>
+            <td><%= @details[:disabled_vet] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
