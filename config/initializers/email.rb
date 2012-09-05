@@ -20,5 +20,6 @@ ActionMailer::Base.smtp_settings = {
 
 ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.default from: 'noreply@hccs.edu'
 
 ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
