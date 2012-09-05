@@ -1,5 +1,4 @@
 require 'bundler/capistrano'
-require 'delayed/recipes'
 
 load 'config/deploy/recipes/base'
 load 'config/deploy/recipes/nginx'
@@ -9,6 +8,7 @@ load 'config/deploy/recipes/postgresql'
 load 'config/deploy/recipes/rbenv'
 load 'config/deploy/recipes/git_check'
 load 'config/deploy/recipes/monit'
+load 'config/deploy/recipes/delayed_job'
 
 server 'sy-colcon.hccs.edu', :web, :app, :db, :primary => true
 
