@@ -33,6 +33,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  # Run devise mailers asynchronously
+  include Devise::Async::Model
+  
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
