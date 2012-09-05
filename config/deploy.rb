@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'delayed/recipes'
 
 load 'config/deploy/recipes/base'
 load 'config/deploy/recipes/nginx'
