@@ -14,6 +14,11 @@ gem 'simple_form',        '2.0.2'
 gem 'squeel',             '1.0.9'
 gem 'savon',              '1.1.0'
 
+gem 'delayed_job_active_record'
+gem 'devise-async'
+gem 'premailer-rails3'
+gem 'nokogiri'
+
 # Deployment
 gem 'capistrano',         '2.12.0'
 
