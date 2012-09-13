@@ -32,6 +32,13 @@ class Employee::UsersController < Employee::BaseController
   
   def update
     @user = Employee.find_by_id(params[:id])
+    
+    if params[:employee][:password].blank?
+      params[:employee].delete(:password)
+      params[:employee].delete(:password_confirmation)
+      params[:employee].delete(:current_password)
+    end
+    
     if @user.update_attributes(params[:employee])
       redirect_to edit_employee_user_path(@user), flash: { success: "Account details have been updated for #{@user.name}" }
     else
