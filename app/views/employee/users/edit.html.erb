@@ -28,6 +28,15 @@
           <%= f.input :last_name %>
           <hr>
           <%= f.input :email %>
+          <% if @user == current_user %>
+          <hr>
+          <p class='alert alert-info'>
+            If you change your password you will be logged out and asked to log back in. This will ensure that the
+            password is updated correctly. 
+          </p>
+          <%= f.input :password, label: 'New Password' %>
+          <%= f.input :password_confirmation, label: 'Confirm New Password' %>
+          <%- end -%>
         </fieldset>
         
         <div class='form-actions'>
