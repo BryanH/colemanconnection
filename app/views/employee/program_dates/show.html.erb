@@ -7,10 +7,6 @@
       </ol>
     </div>
     
-    <%= Session.joins(user: :demographic).where{ user.demographic.gender == 'Female' }.count %>
-    <%= Session.joins(user: :demographic).where{ user.demographic.gender == 'Male' }.count %>
-    <%= Session.count %>
-    
     <div class='boxed'>
       <ol class='menu'>
         <li><%= link_to 'Return to Program Dates', employee_program_dates_path %></li>
