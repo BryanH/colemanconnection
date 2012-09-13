@@ -39,3 +39,12 @@ input.checkbox {
   margin-right: 5px;
   vertical-align: text-bottom;
 }
+
+label.control-label.checkbox {
+  text-align: left;
+  width: 400px;
+}
+
+.control-group.boolean {
+  margin-bottom: 5px;
+}

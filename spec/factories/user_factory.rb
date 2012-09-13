@@ -35,6 +35,12 @@ FactoryGirl.define do
 
     factory :staff, aliases: [:employee], class: Employee do
       type            "Employee"
+      
+      trait :who_can_set_permissions do
+        after(:create) do |instance|
+          instance.permissions.create!(action: 'set_permissions', subject_class: 'Employee')
+        end
+      end
     end
 
     factory :student, aliases: [:candidate], class: Candidate do

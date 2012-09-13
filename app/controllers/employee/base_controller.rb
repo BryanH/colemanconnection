@@ -1,5 +1,9 @@
 class Employee::BaseController < ApplicationController
   before_filter :authorize_employee!
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to employee_root_path, flash: { error: "You do not have permission to do that." }
+  end
 
 private
 

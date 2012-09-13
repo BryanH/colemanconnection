@@ -24,25 +24,7 @@
         </h1>
       </header>
       <ol class="menu menu-list">
-        <%- @users.each do |user| -%>
-          <%= content_tag_for :li, user do %>
-            <%= user.reversed_name %> <small class='metadata'>( <%= user.email %> )</small>
-            <section class='pull-right'>
-              <%- if params[:active] -%>
-              <span class='label label-link'><%= link_to 'activate', employee_activations_path(id: user.id), method: :post %></span>
-              <%- else -%>
-              <span class='label label-link'><%= link_to 'permissions' %></span>
-              <span class='label label-link'><%= link_to 'account settings', edit_employee_user_path(user) %></span>
-              <%- unless user === current_user -%>
-              <span class='label label-important label-link'>
-                <%= link_to 'deactivate', employee_activation_path(user), method: :delete, confirm: 'Once deactivated, the user will no longer be able to access the system.',
-                            data: { confirm_title: 'Are you sure?', confirm_proceed: 'Deactivate' } %>
-              </span>
-              <%- end -%>
-              <%- end -%>
-            </section>
-          <%- end -%>
-        <%- end -%>
+        <%= render partial: 'user', collection: @users, as: :user, locals: { title: 'Test' } %>
       </ol>
     </div>
     <%= will_paginate @users, class: 'pagination pagination-centered' %>

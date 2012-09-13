@@ -1,0 +1,15 @@
+<%- present user, EmployeePresenter do |employee_presenter| -%>
+  <%= content_tag_for :li, user do %>
+    <%= employee_presenter.list_name %>
+    
+    <section class='pull-right'>
+      <%- if params[:active] -%>
+        <%= employee_presenter.activation_link %>
+      <%- else -%>
+        <%= employee_presenter.permissions_link %>
+        <%= employee_presenter.account_settings_link %>
+        <%= employee_presenter.deactivation_link %>
+      <%- end -%>
+    </section>
+  <%- end -%>
+<%- end -%>

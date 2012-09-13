@@ -1,0 +1,20 @@
+<header>
+  <h1>Permissions under 'Users'</h1>
+  <p class='metadata'>
+    These permissions pertain to the employees of HCC Coleman College.
+  </p>
+</header>
+
+<%= simple_form_for @employee, url: employee_permission_path(@employee) do |f| %>
+  <%= f.input :permission_employee_can_view, as: :boolean, label: raw("Can <strong>#{@employee.first_name}</strong> view other users information?"),
+              input_html: { name: 'permissions[employee][view]' },
+              wrapper: :checkbox %>
+  
+  <%= f.input :permission_employee_can_edit, as: :boolean, label: raw("Can <strong>#{@employee.first_name}</strong> edit other users information?"),
+              input_html: { name: 'permissions[employee][edit]' },
+              wrapper: :checkbox %>
+  
+  <div class='form-actions'>
+    <%= f.button :submit, "Set Permissions" %> or <%= link_to 'list employees', employee_users_path %>
+  </div>
+<%- end -%>

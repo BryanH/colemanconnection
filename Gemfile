@@ -20,6 +20,8 @@ gem 'devise-async'
 gem 'premailer-rails3'
 gem 'nokogiri'
 
+gem 'cancan'
+
 # Deployment
 gem 'capistrano',         '2.12.0'
 
