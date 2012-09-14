@@ -14,7 +14,11 @@ class Ability
     # Loop through the permissions for a user and set what they are able to do.
     if user.kind_of?(Employee)
       user.permissions.each do |permission|
-        can permission.action.to_sym, permission.subject_class.constantize
+        if permission.subject_class.downcase == 'all'
+          can permission.action.to_sym, :all
+        else
+          can permission.action.to_sym, permission.subject_class.constantize
+        end
       end
     else
       can [:read, :update, :destroy], Candidate, id: user.id

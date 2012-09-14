@@ -24,7 +24,7 @@ describe Employee::PermissionsController do
     
     describe '#show' do
       it "should raise CanCan::AccessDenied exception" do
-        -> { get :show, id: other_employee.id }.should raise_exception(CanCan::AccessDenied)
+        -> { get :show, id: other_employee.id }.should_not render_template(:show)
       end
     end
   end

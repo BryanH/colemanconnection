@@ -34,17 +34,23 @@ FactoryGirl.define do
     password          { Faker.letterify '????????????' }
 
     factory :staff, aliases: [:employee], class: Employee do
-      type            "Employee"
+      type "Employee"
       
       trait :who_can_set_permissions do
         after(:create) do |instance|
           instance.permissions.create!(action: 'set_permissions', subject_class: 'Employee')
         end
       end
+      
+      trait :overlord do
+        after(:create) do |instance|
+          instance.permissions.create!(action: 'manage', subject_class: 'all')
+        end
+      end
     end
 
     factory :student, aliases: [:candidate], class: Candidate do
-      type            "Candidate"
+      type "Candidate"
     end
     
     trait :active do

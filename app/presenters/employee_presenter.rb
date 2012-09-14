@@ -22,7 +22,7 @@ class EmployeePresenter < BasePresenter
   end
   
   def account_settings_link
-    if h.current_user.can?(:edit_account_settings, employee)
+    if h.current_user.can?(:edit, employee)
       h.content_tag :span, class: 'label label-link' do
         h.link_to 'account settings', h.edit_employee_user_path(employee)
       end

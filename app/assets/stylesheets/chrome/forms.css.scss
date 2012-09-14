@@ -48,3 +48,22 @@ label.control-label.checkbox {
 .control-group.boolean {
   margin-bottom: 5px;
 }
+
+.form-permissions {
+  .controls {
+    margin-left: $gridGutterWidth / 2;
+    
+    select {
+      margin-right: .15rem;
+      width: 120px;
+    }
+    
+    span {
+      color: $grayLight;
+    }
+    
+    .allowed {
+      color: $green;
+    }
+  }
+}
