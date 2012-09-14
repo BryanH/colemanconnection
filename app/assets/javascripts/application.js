@@ -24,6 +24,8 @@
 //= require jquery.content_player
 //= require quiz/base
 //= require plugins/affixable
+//= require pages/employee/permissions
+//= require pages/employee/select_toggle
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();

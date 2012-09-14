@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Employee::ActivationsController do
   context 'employee signed in' do
-    let(:employee) { FactoryGirl.create(:employee) }
+    let(:employee) { FactoryGirl.create(:employee, :overlord) }
     before { sign_in employee }
     after { sign_out employee }
 

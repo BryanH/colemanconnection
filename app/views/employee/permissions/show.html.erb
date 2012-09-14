@@ -1,0 +1,30 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed profile-owner'>
+      <p>
+        You are setting permissions for <strong><%= @employee.name %></strong>
+      </p>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Users', employee_permission_path(@employee, section: 'users'), class: "#{'active' if @section == 'users'}" %></li>
+        <li><%= link_to 'Candidates', employee_permission_path(@employee, section: 'candidates'), class: "#{'active' if @section == 'candidates'}" %></li>
+        <li><%= link_to 'Program Sessions', employee_permission_path(@employee, section: 'program_sessions'), class: "#{'active' if @section == 'program_sessions'}" %></li>
+        <li><%= link_to 'Reports', employee_permission_path(@employee, section: 'reports'), class: "#{'active' if @section == 'reports'}" %></li>
+      </ol>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'List all employees', employee_users_path %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main'>
+      <%= render "/employee/permissions/#{@section}" %>
+    </div>
+  </div>
+</div>

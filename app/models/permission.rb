@@ -14,4 +14,6 @@ class Permission < ActiveRecord::Base
   
   belongs_to :user
   
+  attr_accessible :action, :subject_class, :user_id
+  
 end
