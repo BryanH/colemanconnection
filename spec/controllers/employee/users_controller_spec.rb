@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Employee::UsersController do
   context 'employee signed in' do
-    let(:employee) { FactoryGirl.create(:employee) }
+    let(:employee) { FactoryGirl.create(:employee, :overlord) }
     let(:other_employee) { FactoryGirl.create(:employee) }
     before { sign_in employee }
     after { sign_out employee }

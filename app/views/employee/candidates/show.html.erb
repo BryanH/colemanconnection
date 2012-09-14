@@ -16,7 +16,7 @@
     <div class="boxed">
       <ol class='menu'>
         <li><%= link_to "Program Sessions", employee_candidate_path(@candidate, section: :sessions), class: "#{'active' if @section == 'sessions'}" %></li>
-        <%= content_tag :li, (link_to "PeopleSoft Data", employee_candidate_path(@candidate, section: :peoplesoft), class: "#{'active' if @section == 'peoplesoft'}") if @candidate.try(:demographic).try(:hcc_student_id) %></li>
+        <%= content_tag :li, (link_to "PeopleSoft Data", employee_candidate_path(@candidate, section: :peoplesoft), class: "#{'active' if @section == 'peoplesoft'}") if @candidate.try(:demographic).try(:hcc_student_id) && current_user.is_able_to(:view_peoplesoft_data, @candidate) %></li>
       </ol>
     </div>
     

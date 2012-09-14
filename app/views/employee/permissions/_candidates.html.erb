@@ -1,0 +1,46 @@
+<header>
+  <h1>Permissions under 'Candidates'</h1>
+  <p class='metadata'>
+    These permissions pertain to the candidates - or potential students - of HCC Coleman College.
+  </p>
+</header>
+
+<%= simple_form_for @employee, url: employee_permission_path(@employee), html: { class: "form-permissions" } do |f| %>
+  
+  <%= hidden_field_tag :section, @section %>
+  <%= hidden_field_tag :permission_group, 'Candidate' %>
+  
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_candidate_can_view, 
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
+          { selected: @employee.can?(:view, Candidate) }, 
+          { name: 'permissions[candidate][view]', data: { permission: 'view' } }  %>
+      <span><strong>view</strong> details for a candidate</span>
+    </div>
+  </div>
+  
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_candidate_can_edit, 
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
+          { selected: @employee.can?(:edit, Candidate) }, 
+          { name: 'permissions[candidate][edit]', data: { permission: 'edit', permission_dependency: 'view' } }  %>
+      <span><strong>edit</strong> a candidates information</span>
+    </div>
+  </div>
+  
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_candidate_can_view_peoplesoft, 
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
+          { selected: @employee.can?(:view_peoplesoft_data, Candidate) }, 
+          { name: 'permissions[candidate][view_peoplesoft_data]', data: { permission: 'peoplesoft', permission_dependency: 'view' } }  %>
+      <span><strong>view PeopleSoft Data</strong> for a candidate</span>
+    </div>
+  </div>
+  
+  <div class='form-actions'>
+    <%= f.button :submit, "Update Permissions", class: 'btn btn-primary' %> or <%= link_to 'list employees', employee_users_path %>
+  </div>
+<%- end -%>

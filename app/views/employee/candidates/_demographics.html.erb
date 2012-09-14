@@ -5,7 +5,7 @@
     <tbody>
       <tr>
         <td class='attr'>Email</td>
-        <td><%= @candidate.email %><%= content_tag :span, raw(" ( #{link_to 'change', edit_employee_candidate_path(@candidate)} )"), class: 'metadata' %></td>
+        <td><%= @candidate.email %><%= content_tag :span, raw(" ( #{link_to 'change', edit_employee_candidate_path(@candidate)} )"), class: 'metadata' if current_user.is_able_to(:edit, @candidate) %></td>
       </tr>
     </tbody>
   </table>

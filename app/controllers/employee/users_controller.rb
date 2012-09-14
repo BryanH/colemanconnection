@@ -8,10 +8,13 @@ class Employee::UsersController < Employee::BaseController
   
   def new
     @user = Employee.new
+    authorize! :create, @user
   end
   
   def create
     @user = Employee.new(params[:employee])
+    authorize! :create, @user
+    
     if @user.save
       redirect_to employee_users_path, 
       flash: { success: %Q[
@@ -28,10 +31,12 @@ class Employee::UsersController < Employee::BaseController
   
   def edit
     @user = Employee.find_by_id(params[:id])
+    authorize! :edit, @user
   end
   
   def update
     @user = Employee.find_by_id(params[:id])
+    authorize! :edit, @user
     
     if params[:employee][:password].blank?
       params[:employee].delete(:password)

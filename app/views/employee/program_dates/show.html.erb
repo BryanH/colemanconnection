@@ -27,7 +27,9 @@
         <ol class='menu menu-list'>
           <%- @sessions.each do |session| -%>
             <%= content_tag_for :li, session do %>
-              <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
+              <%- if current_user.can?(:mark_attendance, ProgramDate) -%>
+                <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
+              <%- end -%>
               <%= session.user.reversed_name %> <small class='metadata'>( <%= session.user.email %> )</small>
               <section class='pull-right'>
                 <span class='label label-link'><%= link_to 'profile', employee_candidate_path(session.user), target: '_blank' %></span>
