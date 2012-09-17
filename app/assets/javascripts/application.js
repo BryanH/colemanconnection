@@ -27,6 +27,8 @@
 //= require pages/employee/permissions
 //= require pages/employee/select_toggle
 //= require pages/candidate/program_session
+//= require jquery.tour.min
+//= require pages/tours/getting_started
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();

@@ -18,5 +18,9 @@ module ApplicationHelper
     yield presenter if block_given?
     presenter
   end
+  
+  def link_to_help_me(tour)
+    content_tag :p, raw("<a href='#' data-help-me='#{tour}'>Take a tour of this page</a>.") if tour
+  end
 
 end
