@@ -26,6 +26,7 @@
 //= require plugins/affixable
 //= require pages/employee/permissions
 //= require pages/employee/select_toggle
+//= require pages/candidate/program_session
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();
