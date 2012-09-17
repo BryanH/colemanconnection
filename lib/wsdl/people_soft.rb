@@ -13,7 +13,7 @@ module WSDL
     include WSDL::Extensions::Testing
     include WSDL::Extensions::Transcripts
     
-    HCC_WSDL = Savon::Client.new('https://67.226.65.97:8200/PSIGW/PeopleSoftServiceListeningConnector/CI_HSS_COLEMAN.1.wsdl')
+    HCC_WSDL = Savon::Client.new('https://pscsigwbn.hccs.edu:8080/PSIGW/PeopleSoftServiceListeningConnector/CI_HSS_COLEMAN.1.wsdl')
     
     def initialize(student_id)
       @client = HCC_WSDL
