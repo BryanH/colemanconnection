@@ -13,6 +13,15 @@
       <%= f.association :program_date, label: "Select a time" %>
     </fieldset>
     
+    <p class='alert alert-info hide' id='mcgovernInfo'>
+      <strong>Attention!</strong> You have specified that you would like to attend
+      the Pharmacy Technician Program Session. This session will take place at our
+      McGovern Campus on <span></span> located at:<br><br>
+      
+      2450 Holcombe Blvd., Ste. 3<br>
+      Houston, TX 77021 ( <%= link_to "map view", 'http://www.google.com/maps?q=2450+Holcombe+Blvd.,+Ste.+3+Houston,+TX+77021&hl=en&sll=29.817178,-95.46224&sspn=1.124758,1.2854&hnear=2450+Holcombe+Blvd+%233,+Houston,+Harris,+Texas+77021&t=m&z=17', target: :_blank %> )
+    </p>
+    
     <div class='form-actions boxed-in'>
       <%= f.button :submit, 'Register' %> or <%= link_to 'return to the dashboard', candidate_root_path %>
     </div>
