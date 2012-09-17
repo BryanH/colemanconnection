@@ -2,3 +2,7 @@ div.jTour_progress_bar {
   background-color: $green;
   height: 2px;
 }
+
+div.jTour_content a {
+  color: $linkColor !important;
+}

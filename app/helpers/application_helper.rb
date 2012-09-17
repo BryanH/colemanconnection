@@ -20,7 +20,7 @@ module ApplicationHelper
   end
   
   def link_to_help_me(tour)
-    content_tag :p, raw("<a href='#' data-help-me='#{tour}'>Take a tour of this page</a>.") if tour
+    content_tag :p, raw("<a href='#' data-help-me='#{tour}'>Find out how to use this page</a>.") if tour
   end
 
 end
