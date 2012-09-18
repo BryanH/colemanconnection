@@ -29,7 +29,7 @@
         <ol class='menu menu-list'>
           <%- @sessions.each do |session| -%>
             <%= content_tag_for :li, session do %>
-              <%- if current_user.can?(:mark_attendance, ProgramDate) -%>
+              <%- if current_user.can?(:mark_attendance, ProgramDate.new) -%>
                 <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
               <%- end -%>
               <%= session.user.reversed_name %> <small class='metadata'>( <%= session.user.email %> )</small>

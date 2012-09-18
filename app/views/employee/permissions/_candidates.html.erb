@@ -14,7 +14,7 @@
     <div class='controls'>
       <%= f.select :permission_candidate_can_view, 
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
-          { selected: @employee.can?(:view, Candidate) }, 
+          { selected: @employee.can?(:view, Candidate.new) }, 
           { name: 'permissions[candidate][view]', data: { permission: 'view' } }  %>
       <span><strong>view</strong> details for a candidate</span>
     </div>
@@ -24,7 +24,7 @@
     <div class='controls'>
       <%= f.select :permission_candidate_can_edit, 
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
-          { selected: @employee.can?(:edit, Candidate) }, 
+          { selected: @employee.can?(:edit, Candidate.new) }, 
           { name: 'permissions[candidate][edit]', data: { permission: 'edit', permission_dependency: 'view' } }  %>
       <span><strong>edit</strong> a candidates information</span>
     </div>
@@ -34,7 +34,7 @@
     <div class='controls'>
       <%= f.select :permission_candidate_can_view_peoplesoft, 
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
-          { selected: @employee.can?(:view_peoplesoft_data, Candidate) }, 
+          { selected: @employee.can?(:view_peoplesoft_data, Candidate.new) }, 
           { name: 'permissions[candidate][view_peoplesoft_data]', data: { permission: 'peoplesoft', permission_dependency: 'view' } }  %>
       <span><strong>view PeopleSoft Data</strong> for a candidate</span>
     </div>
