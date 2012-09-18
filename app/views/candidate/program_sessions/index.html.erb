@@ -1,21 +1,44 @@
-<h1>Your Registered Program Sessions</h1>
-
-<%- if current_user.program_sessions.any? -%>
-<ol>
-  <%- current_user.program_sessions.includes(:program_date).each do |session| -%>
-  <li>
-    <%= session.program_date.program %> on <%= session.program_date.occurs_on.to_formatted_s(:pretty) %>
-    ( <%= link_to 'cancel', candidate_program_session_path(session), method: :delete, confirm: "Once you have cancelled this session you will no longer be registered to attend. If you change your mind and wish to attend in the future, please re-register.",
-                  data: { confirm_title: "Are you sure?", }%> )
-  </li>
-  <%- end -%>
-</ol>
-
-<%- else -%>
-  <div class="well alert">
-    <p>
-      You are not currently registered for any program sessions.
-      <%= link_to 'Click here', new_candidate_program_session_path %> to register for one.
-    </p>
+<div class='row'>
+  <div class='span4'>
+    <section class='boxed'>
+      <ol id="settings-menu" class='menu'>
+        <li><%= link_to "Select a program session", '#', class: "active" %></li>
+        <li><%= link_to "Sign up for another session", new_candidate_program_session_path %></li>
+      </ol>
+    </section>
   </div>
-<%- end -%>
+  
+  <div class='span8'>
+    <section class='boxed boxed-main'>
+      <header>
+        <h1>Your Registered Program Sessions</h1>
+      </header>
+
+      <%- if current_user.program_sessions.any? -%>
+      <section>
+        <ol class='menu menu-list'>
+          <%- current_user.program_sessions.includes(:program_date).each do |session| -%>
+          <li>
+            <%= session.program_date.program %> on <%= session.program_date.occurs_on.to_formatted_s(:pretty) %>
+            <span class='pull-right'>
+              <%= link_to 'cancel', candidate_program_session_path(session), method: :delete, confirm: "Once you have cancelled this session you will no longer be registered to attend. If you change your mind and wish to attend in the future, please re-register.",
+                            data: { confirm_title: "Are you sure?" },
+                            class: 'label label-info label-link' %>
+            </span>
+          </li>
+          <%- end -%>
+        </ol>
+      </section>
+
+      <%- else -%>
+      <div class='padded'>
+        <p class='well alert'>
+          You are not currently registered for any program sessions.
+          <%= link_to 'Click here', new_candidate_program_session_path %> to register for one.
+        </p>
+      </div>
+      <%- end -%>
+    </section>
+  </div>
+</div>
+
