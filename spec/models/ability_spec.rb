@@ -69,5 +69,15 @@ describe Employee do
       end
     end
     
+    context 'for a users own account information' do
+      let(:user) { FactoryGirl.create(:employee) }
+      let(:other_user) { FactoryGirl.create(:employee) }
+      
+      it { should be_able_to(:view, user) }
+      it { should be_able_to(:edit, user) }
+      it { should_not be_able_to(:view, other_user) }
+      it { should_not be_able_to(:edit, other_user) }
+    end
+    
   end
 end
