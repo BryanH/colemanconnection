@@ -14,7 +14,7 @@
     <div class='controls'>
       <%= f.select :permission_program_date_view, 
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
-          { selected: @employee.can?(:view, ProgramDate) }, 
+          { selected: @employee.can?(:view, ProgramDate.new) }, 
           { name: 'permissions[program_date][view]', data: { permission: 'view' } }  %>
       <span><strong>view</strong> Program Session details</span>
     </div>
@@ -24,7 +24,7 @@
     <div class='controls'>
       <%= f.select :permission_session_mark_attendance,
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
-          { selected: @employee.can?(:mark_attendance, ProgramDate) },
+          { selected: @employee.can?(:mark_attendance, ProgramDate.new) },
           { name: 'permissions[program_date][mark_attendance]', data: { permission: 'mark_attendance', permission_dependency: 'view' } } %> 
       <span><strong>mark attendance</strong></span>
     </div>
