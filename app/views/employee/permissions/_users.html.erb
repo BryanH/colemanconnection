@@ -14,7 +14,7 @@
     <div class='controls'>
       <%= f.select :permission_employee_can_view,
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
-          { selected: @employee.can?(:view, Employee) },
+          { selected: @employee.can?(:view, Employee.new) },
           { name: 'permissions[employee][view]', data: { permission: 'view' } } %> 
       <span><strong>view</strong> other users' account settings</span>
     </div>
@@ -24,7 +24,7 @@
     <div class='controls'>
       <%= f.select :permission_employee_can_edit,
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
-          { selected: @employee.can?(:edit, Employee) },
+          { selected: @employee.can?(:edit, Employee.new) },
           { name: 'permissions[employee][edit]', data: { permission: 'edit', permission_dependency: 'view' } } %> 
       <span><strong>edit</strong> other users' account settings</span>
     </div>
@@ -34,7 +34,7 @@
     <div class='controls'>
       <%= f.select :permission_employee_can_create,
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
-          { selected: @employee.can?(:create, Employee) },
+          { selected: @employee.can?(:create, Employee.new) },
           { name: 'permissions[employee][create]', data: { permission: 'create', permission_dependency: 'view' } } %> 
       <span><strong>create</strong> new users</span>
     </div>
@@ -44,7 +44,7 @@
     <div class='controls'>
       <%= f.select :permission_employee_can_change_active_status,
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]], 
-          { selected: @employee.can?(:change_active_status, Employee) }, 
+          { selected: @employee.can?(:change_active_status, Employee.new) }, 
           { name: 'permissions[employee][change_active_status]', data: { permission: 'activate', permission_dependency: 'edit|view' } } %>
       <span><strong>activate/deactivate</strong> other users</span>
     </div>
@@ -54,7 +54,7 @@
     <div class='controls'>
       <%= f.select :permission_employee_can_set_permissions,
           [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
-          { selected: @employee.can?(:set_permissions, Employee) },
+          { selected: @employee.can?(:set_permissions, Employee.new) },
           { name: 'permissions[employee][set_permissions]', data: { permission: 'set-permissions', permission_dependency: 'edit|view' } } %>
       <span><strong>set permissions</strong> for other users</span>
     </div>

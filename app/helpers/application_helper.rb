@@ -18,5 +18,9 @@ module ApplicationHelper
     yield presenter if block_given?
     presenter
   end
+  
+  def link_to_help_me(tour)
+    link_to 'Find out how to use this page', '#', data: { help_me: tour } if tour
+  end
 
 end

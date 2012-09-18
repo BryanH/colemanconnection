@@ -1,3 +1,4 @@
+<%- @help_tour = 'programSessions' -%>
 <div class='row'>
   <div class='span4'>
     <div class='boxed'>
@@ -21,13 +22,14 @@
           Registered Candidates
           <%= render 'common/search_form' %>
         </h1>
+        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program %></small></h2>
       </header>
       
       <%- if @sessions.any? -%>
         <ol class='menu menu-list'>
           <%- @sessions.each do |session| -%>
             <%= content_tag_for :li, session do %>
-              <%- if current_user.can?(:mark_attendance, ProgramDate) -%>
+              <%- if current_user.can?(:mark_attendance, ProgramDate.new) -%>
                 <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
               <%- end -%>
               <%= session.user.reversed_name %> <small class='metadata'>( <%= session.user.email %> )</small>

@@ -20,6 +20,9 @@ class Ability
           can permission.action.to_sym, permission.subject_class.constantize
         end
       end
+      
+      # Employees should be able to edit their own account information
+      can [:read, :view, :edit, :update], Employee, id: user.id
     else
       can [:read, :update, :destroy], Candidate, id: user.id
     end

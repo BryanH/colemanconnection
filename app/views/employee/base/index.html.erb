@@ -1,5 +1,6 @@
-<div class="row">
-  <%= render 'employees' if current_user.is_able_to :view, Employee %>
-  <%= render 'candidates' if current_user.is_able_to :view, Candidate %>
-  <%= render 'program_sessions' if current_user.is_able_to :view, ProgramDate %>
+<%- @help_tour = 'dashboard' -%>
+<div class="row dashboard">
+  <%= render 'employees' if current_user.is_able_to :view, Employee.new %>
+  <%= render 'candidates' if current_user.is_able_to :view, Candidate.new %>
+  <%= render 'program_sessions' if current_user.is_able_to :view, ProgramDate.new %>
 </div>
