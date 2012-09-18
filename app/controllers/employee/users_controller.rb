@@ -16,7 +16,7 @@ class Employee::UsersController < Employee::BaseController
     authorize! :create, @user
     
     if @user.save
-      redirect_to employee_users_path, 
+      redirect_to employee_permission_path(@user), 
       flash: { success: %Q[
 #{@user.name} was added successfully. Please perform the following:
 <ul>
