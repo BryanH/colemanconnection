@@ -42,7 +42,7 @@ jQuery ->
         goTo: '/settings/demographics'
       },
       {
-        html: 'Here, we ask you to fill out some demographic information. This will help our staff contact you about program sessions you are currently signed up for as well as applicaitons you may have submitted.'
+        html: 'Here, we ask you to fill out some demographic information. This will help our staff contact you about program sessions you are currently signed up for as well as applications you may have submitted.'
         element: $('.row .span4 li').eq(2)
         position: 'e'
         expose: true
@@ -74,14 +74,14 @@ jQuery ->
         expose: true
       },
       {
-        html: "This information will give us a better understanding into what your interests are in our programs"
+        html: "This information will give us a better understanding of what your interests are in our programs"
         element: $('.row .span8')
         position: 'n'
         expose: true
         goTo: '/settings/account'
       },
       {
-        html: "Now you know everything you need to update your account settings."
+        html: "Now you know the basics of updating your account settings."
       }
     ],
       overlayOpacity: 0.6)
