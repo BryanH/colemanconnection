@@ -1,3 +1,4 @@
+<%- @help_tour = 'programSessions' -%>
 <div class='row'>
   <div class='span4'>
     <div class='boxed'>
@@ -21,6 +22,7 @@
           Registered Candidates
           <%= render 'common/search_form' %>
         </h1>
+        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program %></small></h2>
       </header>
       
       <%- if @sessions.any? -%>
