@@ -1,0 +1,29 @@
+<div class="modal fade hide modal-keyboard-shortcuts" id="keyboardShortcuts">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Keyboard Shortcuts</h3>
+  </div>
+  <div class="modal-body">
+    <section class='shortcuts shortcuts-global'>
+      <h4>Site wide shortcuts</h4>
+      <ol class='unstyled shortcuts-combos'>
+        <li>
+          <span class='shortcuts-combo'>s</span> Focus the search box <small class='metadata'>( if present )</small>
+        </li>
+        <li>
+          <span class='shortcuts-combo'>?</span> Display this help dialog
+        </li>
+      </ol>
+    </section>
+    <hr>
+    <section class='shortcuts shortcuts-navigation'>
+      <h4>Site wide navigation</h4>
+      <ol class='unstyled shortcuts-combos'>
+        <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>e'), class: 'shortcuts-combo')} Goto Employees".html_safe if current_user.is_able_to(:view, Employee) %>
+        <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>c'), class: 'shortcuts-combo')} Goto Candidates".html_safe if current_user.is_able_to(:view, Candidate) %>
+        <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>p'), class: 'shortcuts-combo')} Goto Program Sessions".html_safe if current_user.is_able_to(:view, ProgramDate) %>
+
+      </ol>
+    </section>
+  </div>
+</div>
