@@ -16,4 +16,11 @@ class Permission < ActiveRecord::Base
   
   attr_accessible :action, :subject_class, :user_id
   
+  audit(:create, on: :user) { |permission, user, action| permission.snitches_on(user).for_creating }
+  audit(:destroy, on: :user) { |permission, user, action| permission.snitches_on(user).for_removing }
+  
+  def snitches_on(user)
+    Snitches::PermissionSnitch.new(self, user)
+  end
+  
 end
