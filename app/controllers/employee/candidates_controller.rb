@@ -2,12 +2,12 @@ class Employee::CandidatesController < Employee::BaseController
   
   def index
     @candidates = Candidate.paginate(page: params[:page]).search(params[:q])
-    @audits = Audit.where(auditable_type: 'Candidate').reorder('created_at DESC').limit(100)
   end
   
   def show
     @candidate = Candidate.find_by_id(params[:id])
     authorize! :view, @candidate
+    @audits = Audit.where(auditable_type: 'Candidate', owner_id: @candidate.id).reorder('created_at DESC')
     
     @section = params.delete(:section) || 'demographics'
     if @section == 'peoplesoft' && @candidate.demographic && @candidate.demographic.hcc_student_id.present?

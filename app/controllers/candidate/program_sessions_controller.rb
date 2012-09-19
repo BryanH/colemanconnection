@@ -24,7 +24,7 @@ class  Candidate::ProgramSessionsController < Candidate::BaseController
   end
   
   def date_list
-    @program_dates = ProgramDate.where{program.eq(my{params[:program]}) & occurs_on.gte(Time.now)}
+    @program_dates = ProgramDate.where{program.eq(my{params[:program]}) & occurs_on.gt(Time.now.end_of_day)}
     render partial: '/candidate/program_sessions/date_list', collection: @program_dates, as: :date
   end
 end

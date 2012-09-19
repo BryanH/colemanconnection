@@ -30,5 +30,13 @@ describe Employee::UsersController do
       it { should respond_with(:success) }
       it { should assign_to(:user) }
     end
+    
+    describe '#create' do
+      before { get :create, employee: { first_name: 'Test', last_name: 'Test', email: 'testtest@example.com', password: 'secret', password_confirmation: 'secret'} }
+      
+      it { should redirect_to(employee_permission_path(Employee.find_by_email('testtest@example.com'))) }
+      it { should respond_with(:redirect) }
+      it { should assign_to(:user) }
+    end
   end
 end
