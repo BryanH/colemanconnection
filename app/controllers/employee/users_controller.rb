@@ -31,7 +31,7 @@ class Employee::UsersController < Employee::BaseController
   def edit
     @user = Employee.find_by_id(params[:id])
     authorize! :edit, @user
-    @audits = Audit.where(owner_id: @user.id, auditable_type: 'Employee')
+    @audits = Audit.where(owner_id: @user.id, auditable_type: 'Employee').reorder('created_at DESC')
   end
   
   def update

@@ -6,7 +6,7 @@ class Employee::PermissionsController < Employee::BaseController
     authorize! :set_permissions, @employee
     @section = params[:section] || 'users'
     @permissions ||= @employee.permissions
-    @audits ||= Audit.where(owner_id: @employee.id, auditable_type: 'Permission')
+    @audits ||= Audit.where(owner_id: @employee.id, auditable_type: 'Permission').reorder('created_at DESC')
   end
   
   def update
