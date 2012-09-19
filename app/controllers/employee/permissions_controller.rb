@@ -6,13 +6,14 @@ class Employee::PermissionsController < Employee::BaseController
     authorize! :set_permissions, @employee
     @section = params[:section] || 'users'
     @permissions ||= @employee.permissions
+    @audits ||= Audit.where(owner_id: @employee.id, auditable_type: 'Permission').reorder('created_at DESC')
   end
   
   def update
     authorize! :set_permissions, @employee
     
     if params.has_key?(:permissions)
-      @employee.permissions.where(subject_class: params[:permission_group]).destroy_all
+      permissions = @employee.permissions.where(subject_class: params[:permission_group]).destroy_all
       build_permissions(params[:permissions])
     end
     

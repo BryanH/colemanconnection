@@ -3,7 +3,6 @@ class Employee::UsersController < Employee::BaseController
   def index
     isactive = params[:active] ? false : true
     @users = Employee.paginate(page: params[:page]).active(isactive).search(params[:q])
-    @audits = Audit.where(auditable_type: "Employee").reorder('created_at DESC').limit(50)
   end
   
   def new
@@ -16,7 +15,7 @@ class Employee::UsersController < Employee::BaseController
     authorize! :create, @user
     
     if @user.save
-      redirect_to employee_users_path, 
+      redirect_to employee_permission_path(@user), 
       flash: { success: %Q[
 #{@user.name} was added successfully. Please perform the following:
 <ul>
@@ -32,6 +31,7 @@ class Employee::UsersController < Employee::BaseController
   def edit
     @user = Employee.find_by_id(params[:id])
     authorize! :edit, @user
+    @audits = Audit.where(owner_id: @user.id, auditable_type: 'Employee').reorder('created_at DESC')
   end
   
   def update
