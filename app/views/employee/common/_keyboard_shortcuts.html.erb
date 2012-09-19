@@ -22,7 +22,6 @@
         <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>e'), class: 'shortcuts-combo')} Goto Employees".html_safe if current_user.is_able_to(:view, Employee) %>
         <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>c'), class: 'shortcuts-combo')} Goto Candidates".html_safe if current_user.is_able_to(:view, Candidate) %>
         <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>p'), class: 'shortcuts-combo')} Goto Program Sessions".html_safe if current_user.is_able_to(:view, ProgramDate) %>
-
       </ol>
     </section>
   </div>
