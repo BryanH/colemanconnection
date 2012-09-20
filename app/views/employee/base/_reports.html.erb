@@ -1,0 +1,10 @@
+<div class='span4'>
+  <div class='well well-reports well-transform-container'>
+    <h2>Reports</h2>
+    <p>You can view the following reports...</p>
+    <ul>
+      <%= content_tag :li, link_to('Program Sessions') if current_user.is_able_to(:view_session, Reports) %>
+    </ul>
+    <b class='well-transformer'></b>
+  </div>
+</div>

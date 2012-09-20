@@ -3,4 +3,5 @@
   <%= render 'employees' if current_user.is_able_to :view, Employee.new %>
   <%= render 'candidates' if current_user.is_able_to :view, Candidate.new %>
   <%= render 'program_sessions' if current_user.is_able_to :view, ProgramDate.new %>
+  <%= render 'reports' if current_user.is_able_to :view, Reports %>
 </div>
