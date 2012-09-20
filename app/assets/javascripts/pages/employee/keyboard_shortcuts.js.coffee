@@ -24,4 +24,15 @@ jQuery ->
     if not $('input, textarea').is(':focus')
       window.location = '/employee/program_dates'
 
+  jwerty.key 'g,d', ->
+    if not $('input, textarea').is(':focus')
+      window.location = '/employee'
   
+  # Employee Navigation
+  jwerty.key 'x,x', ->
+    if not $('input, textarea').is(':focus')
+      window.location = '/users/sign_out'
+  
+  jwerty.key 'e,e', ->
+    if not $('input, textarea').is(':focus')
+      window.location = $('.navbar-inner .pull-right .dropdown-menu li:first a').attr('href')
