@@ -1,0 +1,31 @@
+.shortcuts-combos {
+  li {
+    margin: 0 0 5px;
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.shortcuts-combo {
+  background-color: #333;
+  color: #eee;
+  
+  display: inline-block;
+  margin: 0;
+  padding: 3px 6px;
+  
+  @include border-radius(2px);
+  text-shadow: 1px 1px 0 black;
+  
+  em {
+    color: #999;
+    font-family: Helvetica, arial, freesans, clean, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0 4px;
+    text-shadow: none;
+  }
+}
