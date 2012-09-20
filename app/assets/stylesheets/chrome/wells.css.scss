@@ -55,10 +55,14 @@
   background: url(image_path('user.png')) no-repeat 0 0;
 }
 
-.well-session .well-transformer {
-  background: url(image_path('calendar.png')) no-repeat 0 0;
+.well-candidates .well-transformer {
+  background: url(image_path('people.png')) no-repeat 0 0;
+}
+
+.well-sessions .well-transformer {
+  background: url(image_path('sessions.png')) no-repeat 0 0;
 }
 
 .well-application .well-transformer {
-  background: url(image_path('laptop.png')) no-repeat 0 0;
+  background: url(image_path('applications.png')) no-repeat 0 0;
 }
