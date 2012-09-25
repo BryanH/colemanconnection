@@ -25,8 +25,10 @@
       <section>
         <ol class='menu menu-list'>
           <%- @candidates.each do |candidate| -%>
-            <%= content_tag_for :li, candidate do %>
-              <%= candidate.reversed_name %> <small class='metadata'>( <%= candidate.email %> )</small>
+            <%= content_tag_for :li, candidate, class: 'clearfix' do %>
+              <section class='pull-left'>
+                <%= candidate.reversed_name %> <small class='metadata'>( <%= candidate.email %> )</small>
+              </section>
               <section class='pull-right'>
                 <span class='label label-link'><%= link_to 'profile', employee_candidate_path(candidate) %></span>
                 <span class='label label-link'><%= link_to 'program sessions', employee_candidate_path(candidate, section: :sessions) %></span>
