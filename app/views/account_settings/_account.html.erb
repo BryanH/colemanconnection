@@ -11,6 +11,7 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :email %>
+    <%= f.input :username, hint: 'Must be between 4 and 32 characters long. You may use letters, numbers, underscores, or one dot (.) in your username.' %>
   </fieldset>
   <div class='form-actions boxed-in'>
     <%= f.button :submit, 'Update' %> or <%= link_to 'return to the dashboard', candidate_root_path %>
