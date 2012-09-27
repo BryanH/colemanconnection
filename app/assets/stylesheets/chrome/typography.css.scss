@@ -1,3 +1,189 @@
+/*
+  1. Typography
+  
+  The following rules apply to typographical elements of the site. These are the
+  base styles and should be modified with the addition of classes rather than
+  editing the styles for a specific element.
+  
+  Most of these styles are inherited from Twitter Bootstrap and will therefore
+  not have any CSS Rules shown.
+*/
+
+/*
+ *  1.1 - Headings
+ *
+ *  Headings are used to denote different section of a page. The heirarchy of the
+ *  headings is essential to setting proper page flow.
+ * ========================================================================== */
+
+/*
+  H1 should be used only once per page. This is the primary heading for a
+  given page and should have the most visual importance.
+  
+  .page-header - Adds additional styling to denote primary heading
+  
+  Styleguide 1.1.1
+*/
+
+/*
+  H2 Heading
+  
+  Styleguide 1.1.2
+*/
+
+/*
+  H3 Heading
+  
+  Styleguide 1.1.3
+*/
+
+/*
+  H4 Heading
+  
+  Styleguide 1.1.4
+*/
+
+/*
+  H5 Heading
+  
+  Styleguide 1.1.5
+*/
+
+/*
+  H6 Heading
+  
+  Styleguide 1.1.6
+*/
+
+
+
+
+/*
+ *  1.2 Paragraphs
+ * ========================================================================== */
+
+/*
+  A standard paragraph of text
+  
+  Styleguide 1.2.1
+*/
+
+/*
+  Sometimes, there is a need to add extra flair to a paragraph. The following
+  are variants of the paragraph element.
+  
+  .lead - Typically used as the introduction paragraph of a page.
+  
+  Styleguide 1.2.2
+*/
+
+
+
+
+/*
+ *  1.3 Lists
+ * ========================================================================== */
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+ margin: 10px 0;
+}
+
+ul.unstyled ul.unstyled,
+ol.unstyled ol.unstyled,
+ul.unstyled ol.unstyled,
+ol.unstyled ul.unstyled {
+  margin: 0 10px 10px;
+}
+
+/*
+  Ordered Lists
+  
+  .unstyled - Use this to denote that the list should not have any list-style
+  
+  Styleguide 1.3.1
+*/
+
+/*
+  Unrdered Lists
+  
+  .unstyled - Use this to denote that the list should not have any list-style
+  
+  Styleguide 1.3.2
+*/
+
+/*
+  Definition lists
+  
+  .dl-horizontal - Present the definition list in a horizontal layout
+  
+  Styleguide 1.3.3
+*/
+ 
+ 
+ 
+
+/*
+ *  1.4 Miscellaneous
+ * ========================================================================== */
+
+/*
+  Horizontal rule
+  
+  .large  - Increases the visual height of the horizontal rule
+  .bold   - Darkens the background color for the horizontal rule
+  
+  Styleguide 1.4.1
+*/
+hr.large {
+  border-width: 2px;
+}
+
+hr.bold {
+  border-color: #ccc;
+}
+
+/*
+  Abbreviations and accronyms. These should follow the <abbr title='...'>...</abbr>
+  format.
+  
+  .initialism - Upcases the acronym/abbreviation
+  
+  Styleguide 1.4.2
+*/
+
+/*
+  Blockquotes
+  
+  .pull-right - Float right with text-align right as well
+  
+  Styleguide 1.4.3
+*/
+
+/*
+  Quotations
+  
+  Styleguide 1.4.4
+*/
+
+/*
+  Addresses
+  
+  Styleguide 1.4.5
+*/
+
+
+.flair-styleguide-example {
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.flair-styleguide-modifier-name {
+  background-color: #fff;
+}
+
 .headline-underlined {
   padding-bottom: .3em;
   border-bottom: 1px solid;
@@ -44,10 +230,6 @@ a.disabled {
   background-color: $grayLighter;
 }
 
-hr.large {
-  border-width: 2px;
-}
-
-hr.bold {
-  border-color: #ccc;
+pre {
+  margin: ($gridGutterWidth / 2) 0;
 }

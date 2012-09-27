@@ -1,0 +1,177 @@
+<h1 class='page-header'>KSS Style Guide</h1>
+
+<p>
+  We utilizes KSS style comments in CSS and SCSS files. KSS was inspired by
+  TomDoc and attempts to provide a methodology for writing maintainable,
+  documented CSS within a team. It is primary a style format for how you write
+  and document your CSS code. 
+</p>
+
+<p>
+  With that said, not every css rule should be commented. When creating new
+  CSS rules, you should check to see whether there is an existing module that
+  your new definitions relate too.
+</p>
+
+<p>
+  By breaking the CSS rules into modules, or groups of similar visual definitions,
+  we can eliminate duplication and increase re-usability throughout the site.
+</p>
+
+<p>
+  All of the CSS modules that we utilize in this site are under
+  <code>/app/assets/stylesheets/chrome</code>. Each file is labeled with the
+  name of the module that the file represents (for example 
+  <code>alerts.css.scss</code> or <code>modals.css.scss</code> or
+  <code>buttons.css.scss</code>).
+</p>
+
+<h2>Documentation Style</h2>
+
+<p>
+  You should document a rule declaration when the rule can accurately describe 
+  a visual UI element in the styleguide. Each element should have one 
+  documentation block describing that particular UI element's various states.
+</p>
+
+<p>
+  Any documentation blocks at any point within the style guide hierarchy apply 
+  to the documentation blocks beneath that level. This means that documentation
+  for <code>2.1</code> applies to documentation for <code>2.1.3</code>.
+</p>
+
+<h3>Format</h3>
+
+<p>
+  The basic format for KSS documentation is best described with an example:
+</p>
+
+<pre><code>/*
+  A button suitable for giving stars to someone.
+  
+  :hover              - Subtle hover highlight.
+  .stars-given        - A highlight indicating you've already given a star.
+  .start-given:hover  - Subtle hover highlight on top of stars-given styling.
+  .disabled           - Dims the button to indicate it cannot be used.
+  
+  Styleguide 4.1.3
+*/
+.button.star {
+  ...
+}
+
+.button.star:hover {
+  ...
+}
+
+.button.star.stars-given {
+  ...
+}
+
+.button.star.stars-given:hover{
+  ...
+}
+
+.button.star.disabled {
+  
+}</code></pre>
+
+<p>
+  There are three main parts to the above KSS documentation: a description,
+  a list of modifier classes or pseudo-classes with descriptions as to how they
+  will modify the element, and a reference to the styleguide location.
+</p>
+
+<h3>The Description Section</h3>
+
+<p>
+  The description should be plain sentences of what the CSS rule or hierarchy 
+  does and looks like. A good description gives guidance toward the application
+  of elements the CSS rules style.
+</p>
+
+<p>
+  CSS rules that depend on specific HTML structures should describe those
+  structures using <element#id.class:pseudo> notation. For example:
+</p>
+
+<pre><code>/*
+  A feed of activity items. Within each &lt;section.feed&gt;, there should be
+  many &lt;article&gt;s which are the feed items.
+*/</code></pre>
+
+<h3>Modifier Section</h3>
+
+<p>
+  If the UI element you are documenting has multiple states or styles depending
+  on added classes or pseudo-classes, you should document them in the modifiers
+  section.
+</p>
+
+<h3>Styleguide Section</h3>
+
+<p>
+  If the UI element you are documenting has an example in the styleguide, you 
+  should reference it using the "Styleguide [ref]" syntax.
+</p>
+
+<p>
+  References should be integer sections separated by periods. Each period
+  denotes a hierarchy of the styleguide. Styleguide references can point to
+  entire sections, a portion of the section, or a specific example.
+</p>
+
+<p>
+  If there is no example, then you must note that there is no reference with:
+</p>
+
+<pre><code>/*
+  ...
+  
+  No styleguide reference.
+*/</code></pre>
+
+<h3>OrganizatIon</h3>
+
+<p>
+  The styleguide should be organized by numbered sections. These sections can
+  go as deep as you like. Every element should have a numbered section to refer
+  to. For example:
+</p>
+
+<pre><code>1. Buttons
+  1.1 Form Buttons
+    1.1.1 Primary Form Button
+    1.1.2 Secondary Form Button
+    1.1.3 Cancel Form Button
+  1.2 Social Media Buttons
+    1.2.1 Twitter Button
+    1.2.2 Facebook Button
+2. Form Elements
+  2.1 Text Fields
+  2.2 Textareas
+  2.3 Radio and Checkboxes
+3. Text styling
+  3.1 H1 Heading
+  3.2 H2 Heading
+  3.3 H3 Heading
+  ...
+  3.7 Paragraphs
+  3.8 Bold Text
+4. Lists
+  4.1 Ordered Lists
+  4.2 Unordered Lists
+  4.3 Definition Lists</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+

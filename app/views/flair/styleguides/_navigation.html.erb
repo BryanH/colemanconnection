@@ -1,22 +1,46 @@
+<h3>Editing/Editors</h3>
+
+<ul class='unstyled'>
+  <li><%= link_to_styleguide 'Overview', styleguide_path(:general_editing) %></li>
+</ul>
+
+<hr>
+
 <h3>HTML</h3>
 
-<ul>
-  <li><%= link_to_styleguide '1.0 General Styling', styleguide_path(:html_general) %></li>
+<ul class='unstyled'>
+  <li><%= link_to_styleguide 'General Styling', styleguide_path(:html_general) %></li>
 </ul>
 
 <hr>
 
 <h3>CSS</h3>
 
-<ul>
-  <li><%= link_to_styleguide '1.0 General Styling', styleguide_path(:css_general) %></li>
-  <li><%= link_to_styleguide '2.0 Mast Logo', styleguide_path(:mast) %></li>
+<ul class='unstyled'>
+  <li><%= link_to_styleguide 'General Styling', styleguide_path(:css_general) %></li>
+  <li><%= link_to_styleguide 'Formatting', styleguide_path(:css_formatting) %></li>
+  <li><%= link_to_styleguide 'KSS Style Guide', styleguide_path(:kss_styling) %></li>
+  <li><%= link_to_styleguide 'Sass Style Guide', styleguide_path(:sass_styling) %></li>
+</ul>
+
+<ul class='unstyled'>
+  <li>
+    <%= link_to_styleguide '1 - Typography', styleguide_path(:styleguide_typography) %>
+    <ol class='unstyled'>
+      <li><%= link_to '1.1 - Headings', styleguide_path(:styleguide_typography, anchor: 'headings') %></li>
+      <li><%= link_to '1.2 - Paragraphs', styleguide_path(:styleguide_typography, anchor: 'paragraphs') %></li>
+      <li><%= link_to '1.3 - Lists', styleguide_path(:styleguide_typography, anchor: 'lists') %></li>
+      <li><%= link_to '1.4 - Misc', styleguide_path(:styleguide_typography, anchor: 'misc') %></li>
+    </ol>
+  </li>
+  <li><%= link_to_styleguide 'Mast Logo', styleguide_path(:mast) %></li>
 </ul>
 
 <hr>
 
 <h3>Ruby / Rails</h3>
 
-<ul>
-  <li><%= link_to_styleguide '1.0 General Styling', styleguide_path(:ruby_general) %></li>
+<ul class='unstyled'>
+  <li><%= link_to_styleguide 'Ruby Style Guide', styleguide_path(:ruby_general) %></li>
+  <li><%= link_to_styleguide 'Rails Style Guide', styleguide_path(:rails_general) %></li>
 </ul>
