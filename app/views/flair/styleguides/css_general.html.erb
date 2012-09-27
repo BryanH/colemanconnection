@@ -1,0 +1,130 @@
+<h1 class='page-header'>CSS General Style Guides</h1>
+
+<p>
+  When it comes to CSS, we all know that hacks are sometimes a necessary evil.
+  However, try and use only valid CSS. If a hack is required, it should be
+  placed into a separate stylesheet file and included as necessary.
+</p>
+
+<h2>IDs vs Classes</h2>
+
+<p>
+  <strong>DO NOT USE IDs</strong> for styling purposes. The specificity that
+  comes along with using IDs is unnecessary and will ultimately lead to using
+  <code>!important</code> being added to CSS rules.
+</p>
+
+<p>
+  IDs should only be used to hook into Javascript.
+</p>
+
+<h2>Naming Conventions</h2>
+
+<p>
+  Whether you are naming an ID or a class, always use names that reflect the
+  purpose of the element in question. If the name is not specific to the element,
+  then use a generic, descriptive word.
+</p>
+
+<pre><code><strong>Do this:</strong>
+&lt;p class='well'&gt;
+&lt;p class='well alt'&gt;
+&lt;p class='well well-alert'&gt;
+&lt;section id='userList'&gt;&lt;/section&gt;
+
+<strong>Not this:</strong>
+&lt;p class='xyz-123'&gt;
+&lt;p class='g-biz-25'&gt;
+&lt;p class='tms-1980'&gt;
+&lt;section id='uList'&gt;&lt;/section&gt;</code></pre>
+
+<p>
+  If you need to use multiple words in the class name then use dashes to
+  separate the words.
+</p>
+
+<pre><code><strong>Do this:</strong>
+&lt;p class='well well-alert'&gt;
+
+<strong>Not this:</strong>
+&lt;p class='well wellalert'&gt;
+&lt;p class='well wellAlert'&gt;
+&lt;p class='well well_alert'&gt;</code></pre>
+
+<p>
+  As for IDs, use camelcase for the naming convention.
+</p>
+
+<pre><code><strong>Dot this:</strong>
+&lt;p id='userList'&gt;
+
+<strong>Not this:</strong>
+&lt;p id='user-list'&gt;
+&lt;p id='user_list&gt;
+&lt;p id='userlist&gt;</code></pre>
+
+<h2>Selectors</h2>
+
+<p>
+  Avoid using element selectors in conjunction with class names. Not only will
+  this prevent CSS rules from being tied to a specific HTML element it will
+  <%= link_to "help with performance", 'http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/' %>
+  as well.
+</p>
+
+<pre><code><strong>Do this:</strong>
+.well {}
+
+<strong>Not this:</strong>
+div.well {}
+p.well {}</code></pre>
+
+<h2>Shorthand Properties</h2>
+
+<p>
+  Whenever possible, use the shorthand version for style definitions. There are
+  a <%= link_to "variety of CSS properties", 'http://www.w3.org/TR/CSS21/about.html#shorthand' %>
+  that offer a shorthand variation.
+</p>
+
+<h2>Omit Units on 0</h2>
+
+<p>
+  Certain properties accept <code>0</code> as a value. In these situations omit
+  the unit afterwards as they are not required.
+</p>
+
+<pre><code><strong>Do this:</strong>
+margin: 0;
+
+<strong>Not this:</strong>
+margin: 0px;</code></pre>
+
+<p>
+  This holds true for definitions that accepts multiple values as well.
+</p>
+
+<pre><code><strong>Do this:</strong>
+margin: 10px 0;
+
+<strong>Not this:</strong>
+margin: 10px 0px;</code></pre>
+
+<h2>Hexadecimal Notation</h2>
+
+<p>
+  When referencing a hexadecimal value for colors, use the 3 character shorthand
+  when possible. This not only removes unnecessary characters, it is more
+  succinct.
+</p>
+
+<pre><code><strong>Do this:</strong>
+color: #fff;
+color: #ebc;
+color: #123;
+
+<strong>Not this:</strong>
+color: #ffffff;
+color: #eebbcc;
+color: #112233;</code></pre>
+

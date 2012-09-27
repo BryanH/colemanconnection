@@ -1,0 +1,152 @@
+<h1 class='page-header'>1. Typography</h1>
+
+<p>
+  The following sections will showcase each of the different typographical
+  elements and how they will appear in this site. Where appropriate, supporting
+  HTML code and CSS are displayed for your reference.
+</p>
+
+<section id='headings'>
+  <h2>1.1 - Headings</h2>
+  
+  <%= styleguide_block '1.1.1' do %>
+    <h1 class='$modifier_class'>I am a Level 1 Heading</h1>
+    <h1 class='$modifier_class'>I am a Level 1 Heading <small>with secondary info</small></h1>
+  <%- end -%>
+  
+  <%= styleguide_block '1.1.2' do %>
+    <h2 class='$modifier_class'>I am a Level 2 Heading</h2>
+    <h2 class='$modifier_class'>I am a Level 2 Heading <small>with secondary info</small></h2>
+  <%- end -%>
+  
+  <%= styleguide_block '1.1.3' do %>
+    <h3 class='$modifier_class'>I am a Level 3 Heading</h3>
+    <h3 class='$modifier_class'>I am a Level 3 Heading <small>with secondary info</small></h3>
+  <%- end -%>
+  
+  <%= styleguide_block '1.1.4' do %>
+    <h4 class='$modifier_class'>I am a Level 4 Heading</h4>
+    <h4 class='$modifier_class'>I am a Level 4 Heading <small>with secondary info</small></h4>
+  <%- end -%>
+  
+  <%= styleguide_block '1.1.5' do %>
+    <h5 class='$modifier_class'>I am a Level 5 Heading</h5>
+    <h5 class='$modifier_class'>I am a Level 5 Heading <small>with secondary info</small></h5>
+  <%- end -%>
+  
+  <%= styleguide_block '1.1.6' do %>
+    <h6 class='$modifier_class'>I am a Level 6 Heading</h6>
+    <h6 class='$modifier_class'>I am a Level 6 Heading <small>with secondary info</small></h6>
+  <%- end -%>
+</section>
+
+<hr>
+
+<section id='paragraphs'>
+  <h2>1.2 - Paragraphs</h2>
+  
+  <%= styleguide_block '1.2.1' do %>
+    <p class='$modifier_class'>I am a standard paragraph of text.</p>
+    <p class='$modifier_class'>I am another standard paragraph of text.</p>
+    <p class='$modifier_class'>
+      I am a paragraph that has a lot to say. Lorem ipsum dolor sit amet, 
+      consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+      culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  <%- end -%>
+  
+  <%= styleguide_block '1.2.2' do %>
+    <p class='$modifier_class'>
+      I am a paragraph that has a lot to say. Lorem ipsum dolor sit amet, 
+      consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+      culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  <%- end -%>
+</section>
+
+<hr>
+
+<section id='lists'>
+  <h2>1.3 - Lists</h2>
+  
+  <%= styleguide_block '1.3.1' do %>
+    <ol class='$modifier_class'>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+    </ol>
+  <%- end -%>
+  
+  <%= styleguide_block '1.3.2' do %>
+    <ul class='$modifier_class'>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+    </ul>
+  <%- end -%>
+  
+  <%= styleguide_block '1.3.3' do %>
+    <dl class='$modifier_class'>
+      <dt>Frog</dt>
+      <dd>Slimy, green thing</dd>
+      
+      <dt>Rabbit</dt>
+      <dd>Warm, fluffy thing</dd>
+      
+      <dt>Punt</dt>
+      <dd>Kick a ball</dd>
+      <dd>Take a bet</dd>
+    </ul>
+  <%- end -%>
+</section>
+
+<hr>
+
+<section id='misc'>
+  <h2>1.4 - Miscellaneous</h2>
+  
+  <%= styleguide_block '1.4.1' do %>
+    <hr class='$modifier_class'>
+  <%- end -%>
+  
+  <%= styleguide_block '1.4.2' do %>
+    <abbr title='Oh My God!' class='$modifier_class'>omg</abbr>
+  <%- end -%>
+  
+  <%= styleguide_block '1.4.3' do %>
+    <blockquote class='$modifier_class'>
+      <p>
+        People often say that motivation doesn’t last. Well, neither does 
+        bathing. That’s why we recommend it daily.
+      </p>
+      <small>Zig Zigler</small>
+    </blockquote>
+  <%- end -%>
+  
+  <%= styleguide_block '1.4.4' do %>
+    <p>
+      WWF's goal is to: <q class='$modifier_class'>build a future where people live in harmony with nature</q>.
+      We hope they succeed.
+    </p>
+  <%- end -%>
+  
+  <%= styleguide_block '1.4.5' do %>
+    <address class='$modifier_class'>
+      Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+      <strong>Visit us at:</strong><br>
+      Example.com<br>
+      Box 564, Disneyland<br>
+      USA
+    </address>
+  <%- end -%>
+</section>
