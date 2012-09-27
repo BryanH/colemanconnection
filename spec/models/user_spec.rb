@@ -60,6 +60,8 @@ describe User do
   it { should respond_to(:reset_password_token) }
   it { should respond_to(:sign_in_count) }
   it { should respond_to(:name) }
+  it { should respond_to(:username) }
+  it { should respond_to(:login) }
   
   # Custom Methods
   it { should respond_to(:name) }
@@ -77,6 +79,27 @@ describe User do
   context "email should be unique" do
     before { FactoryGirl.create(:user) }
     it { should validate_uniqueness_of(:email) }
+  end
+  
+  context "username should be unique" do
+    before { FactoryGirl.create(:user, username: 'tschmidt') }
+    it "should have an error" do
+      other_user = FactoryGirl.build(:user, username: 'tschmidt')
+      other_user.valid?.should be_false
+      other_user.errors[:username].should include("has already been taken")
+    end
+  end
+  
+  context "username should only accept certain characters" do
+    %w(tschmidt t_schmidt t.schmidt tschmidt1 tschmidt1980 tschmidt.1980 terry.schmidt).each do |username|
+      let(:user) { FactoryGirl.build(:user) }
+      it { should validate_format_of(:username).with(username) }
+    end
+    
+    %w(t.schmi.dt t@schmidt t\ schmidt !tschmidt #tschmidt $tschmidt).each do |username|
+      let(:user) { FactoryGirl.build(:user, username: username) }
+      it { should validate_format_of(:username).not_with(username) }
+    end
   end
   
   %w[user@foo,com user_at_foo.org example.user@foo.].each do |invalid_address|

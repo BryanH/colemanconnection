@@ -37,9 +37,14 @@ class User < ActiveRecord::Base
   include Devise::Async::Model
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_USERNAME_REGEX = /^[a-z](?=[\w.]{3,31}$)\w*\.?\w*$/i
+  
+  # Virtual attribute for authenticating by either the username or email
+  attr_accessor :login
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :demographic_attributes
+                  :first_name, :last_name, :demographic_attributes, :username,
+                  :login
   
   has_many    :permissions, dependent: :destroy
   has_many    :sessions, dependent: :destroy
@@ -48,6 +53,14 @@ class User < ActiveRecord::Base
   
   validates :first_name,  presence: true
   validates :last_name,   presence: true
+  validates :username,    uniqueness: { case_sensitive: false,
+                                        allow_blank: true, 
+                                        allow_nil: true
+                                      },
+                          format: { with: VALID_USERNAME_REGEX,
+                                    allow_blank: true,
+                                    allow_nil: true
+                                  }
   validates :email,       presence: true,
                           format: { with: VALID_EMAIL_REGEX },
                           uniqueness: { case_sensitive: false }
@@ -61,6 +74,19 @@ class User < ActiveRecord::Base
   scope :search, lambda { |query| where{first_name.matches("%#{query}%") | 
                                         last_name.matches("%#{query}%") |
                                         email.matches("%#{query}%") }}
+  
+  
+  # Need to overwrite the Devise method to support logging in by either
+  # username or email address
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(['lower(username) = :value or lower(email) = :value',
+                                { value: login.downcase }]).first
+    else
+      where(conditions).first
+    end
+  end
   
   def name
     fname = first_name.blank? ? changes["first_name"].first : first_name
