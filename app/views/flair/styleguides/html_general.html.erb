@@ -1,0 +1,161 @@
+<h1 class='page-header'>HTML Styleguide</h1>
+
+<p>
+  This guide will walk you through the preferred styles when writing HTML files.
+  Following the guidelines presented here will create a consistent look-and-feel
+  for our HTML files making it easier for other members of the team to work on
+  this project.
+</p>
+
+<h2>Doctype</h2>
+
+<p>
+  A proper Doctype which triggers standards mode in your browser should always
+  be used. Quirks mode should always be avoided.
+</p>
+
+<p>
+  For simplicity, we will use the <code>html5</code> doctype, which is easy to
+  use and remember.
+</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+<h2>HTML Guidelines</h2>
+
+<ul>
+  <li>
+    Paragraphs of text should always be placed in a <code>&lt;p&gt;</code> tag.
+    Never use multiple <code>&lt;br/&gt;</code> tags.
+  </li>
+  <li>
+    Items in list form should always be in <code>&lt;ul&gt;</code>,
+    <code>&lt;ol&gt;</code>, or <code>&lt;dl&gt;</code>. Never use a set of
+    <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code> elements.
+  </li>
+  <li>
+    Every form input that has text attached should utilize a 
+    <code>&lt;label&gt;</code> tag. Especially radio or checkbox elments.
+  </li>
+  <li>
+    Even though quotes around attributes are optional, always put quotes around
+    attributes for readability.
+    <ol class='unstyled'>
+      <li>
+        <strong>Do this:</strong>
+        <pre><code>&lt;p class='alert' data-attribute='106'&gt;Special paragraph of text&lt;/p&gt;</code></pre>
+      </li>
+      <li>
+        <strong>Not this:</strong>
+        <pre><code>&lt;p class=alert data-attribute=106&gt;Special paragraph of text&lt;/p&gt;</code></pre>
+      </li>
+    </ol>
+  </li>
+  <li>
+    When creating tables, make use of <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>,
+    <code>&lt;tbody&gt;</code>, and <code>&lt;th&gt;</code> tags. If using the
+    <code>&lt;tfoot&gt;</code> tag it should appear <strong>before</strong> the
+    <code>&lt;tbody&gt;</code> tag. For speed reasons, this will allow the table
+    footer to load before the potentially large amount of data in the tbody.
+    
+    <pre><code>&lt;table summary='This is a chart of invoices for 2011.'&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope='col'&gt;Table header 1&lt;/th&gt;
+      &lt;th scope='col'&gt;Table header 2&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table footer 1&lt;/td&gt;
+      &lt;td&gt;Table footer 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table data 1&lt;/td&gt;
+      &lt;td&gt;Table data 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+  </li>
+</ul>
+
+<h2>Basic Page Layout</h2>
+
+<p>
+  When starting a new HTML project the following is the standard page structure
+  that should be used.
+</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang='en'&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    
+    &lt;title&gt;&lt;/title&gt;
+    
+    &lt;meta name="description" content=""&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    
+    &lt;!-- Link to stylesheets here --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+    &lt;!-- Typically, you will place JS files at the end of the HTML document --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>General Style Rules</h2>
+
+<p>
+  These general style rules should be followed when writing any HTML. That
+  includes stand-alone HTML pages or Rails flavored HTML.
+</p>
+
+<h3>Comments</h3>
+
+<p>
+  Use comments when needed to add clarity. Use the following formats for writing
+  comments.
+</p>
+
+<pre><code>&lt;!-- This is a single line comment --&gt;
+
+&lt;!--
+  This is an example of a multi-line comment.
+  Use standard tab indents when writing your multi-line comments.
+--&gt;</code></pre>
+
+<h3>Semantic Markup</h3>
+
+<p>
+  Use HTML elements for what they were created for. For example, use heading
+  elements for headings, <code>p</code> elements for paragraphs of text and
+  <code>a</code> elements for links.
+</p>
+
+<p>
+  Using HTML according to its intended purpose is important for accessibility,
+  reuse and code efficiency.
+</p>
+
+<h3>General Formatting</h3>
+
+<p>
+  Use a new line for every block, list, or table element and indent every child
+  element. If you change an inline element to be <code>display: block;</code>
+  then apply this rule as well.
+</p>
+
+<pre><code><strong>Do this:</strong>
+&lt;blockquote&gt;
+  &lt;p&gt;
+    &lt;em&gt;Space&lt;/em&gt;, it's big.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+<strong>Not this:</strong>
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;Space&lt;/em&gt;, it's big.&lt;/p&gt;&lt;/blockquote&gt;</code></pre>

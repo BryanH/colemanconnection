@@ -1,0 +1,177 @@
+<h1 class='page-header'>CSS Formatting</h1>
+
+<p>
+  The following guidelines should be followed when writing CSS. This will allow
+  every CSS file that is created for this project to be consistent in look.
+</p>
+
+<h2>Declaration Order</h2>
+
+<p>
+  When writing CSS declarations, put them in alphabetical order. You should also
+  group properties by their type (e.g. border properties, display properties,
+  font properties, etc). If the use of vendor prefixes is required, they should
+  appear <strong>before</strong> the non-prefixed form.
+</p>
+
+<p>
+  You should also align values for each block of declartions so that they can
+  be scanned quickly.
+</p>
+
+<pre><code>.some-special-class {
+  background: fuchsia;
+  
+  -moz-border-radius:     4px;
+  -webkit-border-radius:  4px;
+  border-radius:          4px;
+  
+  color:        #000;
+  text-align:   center;
+  text-indent:  2rem;
+}</code></pre>
+
+<h2>Declaration Stops</h2>
+
+<p>
+  Although the CSS spec allows you to omit the final semi-colon,
+  <strong>always end your declarations with a semi-colon</strong>. This will
+  ensure that any developer that adds declarations to your CSS will not get
+  bit by a missing semi-colon.
+</p>
+
+<pre><code><strong>Do this:</strong>
+.test {
+  display: block;
+  height:  100px;
+}
+
+<strong>Not this:</strong>
+.test {
+  display: block;
+  height:  100px
+}</code></pre>
+
+<h2>Whitespace</h2>
+
+<p>
+  Use of white-space if encouraged for readability purposes. While eliminating
+  white-space is a good thing for computers, it is not for human beings. Also,
+  we utilize tools that can format and compress CSS files before they are
+  deployed in production. For that reason, always use proper white space.
+</p>
+
+<pre><code><strong>Do this:</strong>
+.test {
+  display: block;
+  height:  100px;
+}
+
+<strong>Not this:</strong>
+.test {
+display:block;
+height:100px
+}
+
+<strong>Or this:</strong>
+.test{display:block;height:100px}</code></pre>
+
+<h2>Selector and Declaration Separation</h2>
+
+<p>
+  Similar to the previous section, selectors and declarations should appear on
+  a separate line. This allows us meat-bags to read without too much difficulty.
+  Again, use of compression tools will remove this extra white-space before
+  the CSS is deployed.
+</p>
+
+<pre><code><strong>Do this:</strong>
+a,
+a:hover,
+a:active,
+a:visited {
+  display: block;
+  height:  100px;
+}
+
+<strong>Not this:</strong>
+a, a:hover, a:active, a:visited {
+  display:block; height:100px;
+}</code></pre>
+
+<h2>Single Line Definitions</h2>
+
+<p>
+  The only exception to the 2 previous guidelines is when you have a single
+  selector and a single declaration. In this case you may place the entire
+  definition on a single line. Be sure to use proper spacing though.
+</p>
+
+<pre><code>.my-awesome-thing { color: #bada55; }</code></pre>
+
+<h2>Rule Separation</h2>
+
+<p>
+  Always separate rules with a single line between them. This will help visually
+  break rules up for readability.
+</p>
+
+<pre><code><strong>Do this:</strong>
+html {
+  background: #fff;
+}
+
+body {
+  margin: auto;
+  width:  50%;
+}
+
+<strong>Not this:</strong>
+html {
+  background: #fff;
+}
+body {
+  margin: auto;
+  width:  50%;
+}</code></pre>
+
+<h2>Quotation Marks</h2>
+
+<p>
+  Use single quotation marks for attribute selectors and property values where
+  necessary. <strong>Do not use quotation marks</strong> in URI values such as
+  <code>url(...)</code>.
+</p>
+
+<pre><code><strong>Do this:</strong>
+@import url(/css/other_stylesheet.css);
+
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+
+<strong>Not this:</strong>
+@import url("/css/other_stylesheet.css");
+
+html {
+  font-family: "open sans", arial, sans-serif;
+}</code></pre>
+
+<h2>In Closing...</h2>
+
+<p>
+  Use common sense and <em>be consistent</em>.
+</p>
+
+<p>
+  The point of having style guidelines is to have a common approach to coding
+  so that people can concentrate on what you're saying rather than how you're
+  saying it. These guidelines are here so people know the vocabulary that we
+  want to use.
+</p>
+
+<p>
+  The bottom line is that if the code you add to a file looks drastically 
+  different from the existing code around it, it throws readers out of the
+  rhythm when they need to read it. <strong>Do not do that</strong>, it's rude.
+</p>

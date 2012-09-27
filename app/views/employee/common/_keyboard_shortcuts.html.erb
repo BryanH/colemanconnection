@@ -22,9 +22,9 @@
       <div class='row-fluid'>
         <div class='span6'>
           <ol class='unstyled shortcuts-combos'>
-            <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>e'), class: 'shortcuts-combo')} Goto Employees".html_safe if current_user.is_able_to(:view, Employee) %>
-            <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>c'), class: 'shortcuts-combo')} Goto Candidates".html_safe if current_user.is_able_to(:view, Candidate) %>
-            <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>p'), class: 'shortcuts-combo')} Goto Program Sessions".html_safe if current_user.is_able_to(:view, ProgramDate) %>
+            <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>e'), class: 'shortcuts-combo')} Goto Employees".html_safe if current_user.is_able_to(:view, Employee.new) %>
+            <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>c'), class: 'shortcuts-combo')} Goto Candidates".html_safe if current_user.is_able_to(:view, Candidate.new) %>
+            <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>p'), class: 'shortcuts-combo')} Goto Program Sessions".html_safe if current_user.is_able_to(:view, ProgramDate.new) %>
             <%= content_tag :li, "#{content_tag(:span, raw('g<em>,</em>d'), class: 'shortcuts-combo')} Goto Dashboard".html_safe %>
           </ol>
         </div>
