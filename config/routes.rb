@@ -2,6 +2,7 @@ ColemanConnection::Application.routes.draw do
   
   mount Flair::Engine => "/flair" if Rails.env.development?
   mount EmailPreviewers::Devise::Preview => 'devise_preview' if Rails.env.development?
+  mount Announcements::Preview => 'announcement_emails' if Rails.env.development?
   
   match '/pathway', to: 'welcome#pathway'
   match '/quiz/:id', to: 'welcome#quiz', as: :next_quiz

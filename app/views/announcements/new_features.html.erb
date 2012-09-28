@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>HCC Coleman Connection | New Features</title>
+    <link rel="stylesheet" href="/assets/emails/email.css" type="text/css" charset="utf-8">
+	</head>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+  	<center>
+      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+        <tr>
+          <td align="center" valign="top">
+            <!-- // Begin Template Preheader \\ -->
+            <table border="0" cellpadding="10" cellspacing="0" width="600" id="templatePreheader">
+              <tr>
+                <td valign="top" class="preheaderContent">
+                  <!-- // Begin Module: Standard Preheader \ -->
+                  <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                    <tr>
+                      <td valign="top">
+                        <div mc:edit="std_preheader_content">
+                          Do not reply to this message. This account is not monitored by human beings.
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Module: Standard Preheader \ -->
+                </td>
+              </tr>
+            </table>
+            <!-- // End Template Preheader \\ -->
+            
+            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Header \\ -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                    <tr>
+                      <td class="headerContent">
+                        <%= image_tag "#{root_url}assets/email_banner.jpg", size: '600' %>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Header \\ -->
+                </td>
+              </tr>
+
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Body \\ -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                    <tr>
+                      <td valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="600">
+                          <tr>
+                            <td valign="top" class="bodyContent">
+                              <!-- // Begin Module: Standard Content \\ -->
+                              <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                <tr>
+                                  <td valign="top">
+                                    <div mc:edit="std_content00">
+                                      <h3 class="h3 primary-header">Fresh New Features</h3>
+                                      <p>
+                                        Hi <%= @recipient.first_name %>,
+                                      </p>
+                                      <p>
+                                        Great news! We just launched some new features and wanted you to know
+                                        about them. Take a look at what you now have available in Coleman Connection:
+                                      </p>
+                                      
+                                      <dl>
+                                        <dt>Login with your email or username</dt>
+                                        <dd>
+                                          You now have the option of setting a username in your account settings.
+                                          Once you've done this, you can log into Coleman Connection with either your
+                                          username or email address.
+                                        </dd>
+                                        
+                                        <dt>Hate using the mouse? Say hello to keyboard shortcuts!</dt>
+                                        <dd>
+                                          You now have access to some pretty useful keyboard shortcuts when logged into
+                                          Coleman Connection. Check them out by pressing <code>shift + ?</code>.
+                                        </dd>
+                                        
+                                        <dt>Shiny New Icons</dt>
+                                        <dd>
+                                          When you mouseover the sections on your dashboard, you will see some
+                                          brand spankin' new icons. Who doesn't love some eye candy? Big thanks
+                                          to our design team for coming up with those.
+                                        </dd>
+                                        
+                                        <dt>Mozilla Firefox Display Issue</dt>
+                                        <dd>
+                                          In some versions of Firefox there was a display problem that showed the
+                                          actions for a candidate on the wrong line. This was causing confusion
+                                          and we are pleased to announce it has been resolved. Yay!!
+                                        </dd>
+                                      </dl>
+                                      
+                                      <p>
+                                        That's all for now, but rest assured, we are already hard at work on the next
+                                        set of features. If you have comments or suggestions please don't hesitate to
+                                        <%= mail_to 'terry.schmidt@hccs.edu', 'give us feedback' %>. Have a great day!
+                                      </p>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <!-- // End Module: Standard Content \\ -->
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Body \\ -->
+                </td>
+              </tr>
+
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Footer \\ -->
+                  <table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                    <tr>
+                      <td valign="top" class="footerContent">
+
+                        <!-- // Begin Module: Standard Footer \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                          <tr>
+                            <td valign="middle" id="social">
+                              <div mc:edit="std_social">
+                                &nbsp;<%= link_to 'Follow us on Twitter', 'https://twitter.com/#!/HCC_Coleman' %> | <%= link_to 'Like us on Facebook', 'https://www.facebook.com/HCCColemanCollege' %> | <%= link_to 'Log into your account', new_user_session_url %>&nbsp;
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" width="350">
+                              <div class='copyright' mc:edit="std_footer">
+
+                                <strong>HCC Coleman College for Health Sciences</strong><br />
+                                1900 Pressler St<br />
+                                Houston, TX &nbsp;&nbsp; 77030<br />
+                                <%= mail_to 'studentsfirst@hccs.edu' %>
+                                <br />
+                                <br />
+                                <em>Copyright &copy; <%= Date.today.year %> HCC Coleman College for Health Sciences, All rights reserved.</em>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // End Module: Standard Footer \\ -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Footer \\ -->
+                </td>
+              </tr>
+            </table>
+            <br />
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
