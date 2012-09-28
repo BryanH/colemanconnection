@@ -7,6 +7,7 @@ class Announcements < ActionMailer::Base
     mail :to => "#{@recipient.name} <#{@recipient.email}>"
   end
   
+if Rails.env.development?
   class Preview < MailView
     
     def new_features
@@ -15,5 +16,6 @@ class Announcements < ActionMailer::Base
     end
     
   end
+end
   
 end
