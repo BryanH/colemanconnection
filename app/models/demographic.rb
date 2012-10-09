@@ -77,7 +77,7 @@ class Demographic < ActiveRecord::Base
             allow_nil: true,
             allow_blank: true
   
-  validates :hcc_student_id, numericality: true
+  validates :hcc_student_id, numericality: { message: "is required and connot contain letters. Did you enter your 'W' number by mistake?" }
   
   attr_accessible :address, :age_group, :city, :current_hcc_college, :current_hcc_student,
                   :first_program_choice, :gender, :hcc_email_address, :hcc_referral_source,
