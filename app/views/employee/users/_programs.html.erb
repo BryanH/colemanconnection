@@ -18,7 +18,7 @@
     <%- ProgramOfferings.programs.each do |program| -%>
       <div class='controls'>
         <%= label_tag program, class: 'checkbox' do %>
-          <%= check_box_tag 'employee[program_affiliations][]', program, current_user.affiliated_with?(program), class: 'checkbox', id: program.gsub(/[ \(\)]/, '_') %>
+          <%= check_box_tag 'employee[program_affiliations][]', program, @user.affiliated_with?(program), class: 'checkbox', id: program.gsub(/[ \(\)]/, '_') %>
           <%= program %>
         <%- end -%>
       </div>
