@@ -121,6 +121,6 @@ describe Demographic do
   it { should allow_value('').for(:mobile_phone) }
   
   # HCC Student ID
-  it { should validate_numericality_of(:hcc_student_id) }
+  it { should validate_numericality_of(:hcc_student_id).with_message(/required/) }
   
 end

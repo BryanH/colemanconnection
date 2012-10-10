@@ -1,0 +1,30 @@
+<%= simple_form_for @user, url: employee_user_path(@user) do |f| %>
+  <header>
+    <h1>
+      Edit Account Details
+    </h1>
+  </header>
+  
+  <fieldset>
+    <%= hidden_field_tag :section, @section %>
+    <%= f.error_notification %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <hr>
+    <%= f.input :email %>
+    <%= f.input :username %>
+    <% if @user == current_user %>
+    <hr>
+    <p class='alert alert-info'>
+      If you change your password you will be logged out and asked to log back in. This will ensure that the
+      password is updated correctly. 
+    </p>
+    <%= f.input :password, label: 'New Password' %>
+    <%= f.input :password_confirmation, label: 'Confirm New Password' %>
+    <%- end -%>
+  </fieldset>
+  
+  <div class='form-actions'>
+    <%= f.button :submit, "Update Account" %> or <%= link_to "go to the dashboard", employee_root_path %>
+  </div>
+<%- end -%>
