@@ -9,6 +9,7 @@ load 'config/deploy/recipes/rbenv'
 load 'config/deploy/recipes/git_check'
 load 'config/deploy/recipes/monit'
 load 'config/deploy/recipes/delayed_job'
+load 'config/deploy/recipes/notifications'
 
 server 'sy-colcon.hccs.edu', :web, :app, :db, :primary => true
 
