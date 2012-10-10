@@ -1,7 +1,7 @@
 class Employee::ProgramDatesController < Employee::BaseController
   
   def index
-    @dates = Hash[ProgramDate.all.group_by(&:program).sort]
+    @dates = Hash[ProgramDate.where(program: (current_user.affiliated_programs)).group_by(&:program).sort]
   end
   
   def show

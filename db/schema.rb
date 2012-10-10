@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927163532) do
+ActiveRecord::Schema.define(:version => 20121010195737) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(:version => 20120927163532) do
     t.boolean  "active",                                :default => true
     t.string   "type"
     t.string   "username"
+    t.text     "program_affiliations"
   end
 
   add_index "users", ["active"], :name => "index_users_on_active"

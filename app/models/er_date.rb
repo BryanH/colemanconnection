@@ -15,6 +15,8 @@
 # for legacy data
 class ErDate < ActiveRecord::Base
   
+  has_many :sessions
+  
   validates :cap,           presence: true
   validates :session_time,  presence: true,
                             uniqueness: true

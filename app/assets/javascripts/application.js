@@ -39,4 +39,13 @@
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();
   jQuery('.collapse-toggle').click(function (e) {e.preventDefault();});
+  jQuery('[data-checkbox-selector]').click(function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.data('checkbox-selector') == 'all') {
+      $(':checkbox').prop('checked', true);
+    } else {
+      $(':checkbox').prop('checked', false);
+    }
+  })
 });

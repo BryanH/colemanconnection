@@ -30,6 +30,7 @@ class Employee::UsersController < Employee::BaseController
   
   def edit
     @user = Employee.find_by_id(params[:id])
+    @section = params[:section] || 'account'
     authorize! :edit, @user
     @audits = Audit.where(owner_id: @user.id, auditable_type: 'Employee').reorder('created_at DESC')
   end
@@ -38,14 +39,19 @@ class Employee::UsersController < Employee::BaseController
     @user = Employee.find_by_id(params[:id])
     authorize! :edit, @user
     
-    if params[:employee][:password].blank?
+    if params[:employee] && params[:employee][:password].blank?
       params[:employee].delete(:password)
       params[:employee].delete(:password_confirmation)
       params[:employee].delete(:current_password)
     end
     
+    if params[:section] == 'programs' && params[:employee].blank?
+      params[:employee] = {}
+      params[:employee][:program_affiliations] = nil
+    end
+    
     if @user.update_attributes(params[:employee])
-      redirect_to edit_employee_user_path(@user), flash: { success: "Account details have been updated for #{@user.name}" }
+      redirect_to edit_employee_user_path(@user, section: params[:section]), flash: { success: "Account details have been updated for #{@user.name}" }
     else
       render :edit
     end

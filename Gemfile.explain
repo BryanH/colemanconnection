@@ -1,0 +1,93 @@
+# Web framework
+gem 'rails',              '3.2.6'
+
+# Used to connect to postgresql database
+gem 'pg',                 '0.14.0'
+
+# Audit the actions taken by users logged into the system
+gem 'auditor',            '2.3.1'
+
+# A gemefied, SASS converted version of the Twitter Bootstrap CSS framework
+gem 'bootstrap-sass',     '2.0.4.0'
+
+# Modified version of WillPaginate that uses HTML and CSS compliant with Bootstrap
+gem 'bootstrap-will_paginate', '0.0.7'
+
+# A Natural language data/time parser
+gem 'chronic',            '0.7.0'
+
+# A flexible authentication solution for Rails
+gem 'devise',             '2.1.2'
+
+# Gemified version of jQuery
+gem 'jquery-rails',       '2.0.2'
+
+# Gemified version of Modernizr
+gem 'modernizr-rails',    '2.0.6'
+
+# Makes building forms super simple
+gem 'simple_form',        '2.0.2'
+
+# Improves upon and adds better functionality to ActiveRecord 
+gem 'squeel',             '1.0.9'
+
+# Used for working with WSDLs
+gem 'savon',              '1.1.0'
+
+# Runs jobs in a background process
+gem 'delayed_job_active_record'
+
+# Required for the DelayedJob gem above
+gem 'daemons'
+
+# Allows Devise emails to be sent in a background process
+gem 'devise-async'
+
+# A gem that makes it easy to inline CSS before email is delivered
+gem 'premailer-rails3'
+
+# Required for Premailer gem above
+gem 'nokogiri'
+
+# A badass permissions gem. Makes adding abilities for a user a snap.
+gem 'cancan'
+
+# Deployment
+gem 'capistrano',         '2.12.0'
+
+# App server
+gem 'unicorn'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'coffee-rails',     '>= 3.2.1'
+  gem 'sass-rails',       '>= 3.2.3'
+  gem 'compass-rails',    '>= 1.0.3'
+  gem 'uglifier',         '>= 1.0.3'
+end
+
+group :development do
+  gem 'annotate',         '>= 2.4.1.beta'
+  gem 'bullet'
+  gem 'guard-rspec',      '>= 0.5.5'
+  gem 'mail_view',        '>= 1.0'
+  gem 'pry-rails'
+  gem 'yaml_db'
+  gem 'flair'
+end
+
+group :test do
+  gem 'capybara',         '>= 1.1.2'
+  gem 'database_cleaner'
+  gem 'guard-spork',      '>= 0.3.2'
+  gem 'launchy',          '>= 2.1.0'
+  gem 'shoulda-matchers'
+  gem 'spork',            '>= 0.9.0'
+end
+
+group :test, :development do
+  gem 'factory_girl_rails', '>= 1.4.0'
+  gem 'ffaker',             '>= 1.14.0'
+  gem 'rspec-rails',        '>= 2.10'
+end

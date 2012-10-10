@@ -1,0 +1,31 @@
+<%= simple_form_for @user, url: employee_user_path(@user) do |f| %>
+  <header>
+    <h1>
+      Select Programs
+    </h1>
+    <h2><small>Here, you may specify the programs that you would like to view under "Program Sessions"</small></h2>
+  </header>
+  
+  <fieldset>
+    <%= hidden_field_tag :section, @section %>
+    <%= f.error_notification %>
+    
+    <div class='controls'>
+      <%= link_to "Select all", '#', data: { checkbox_selector: :all } %> or
+      <%= link_to "Select none", '#', data: { checkbox_selector: :none } %>
+    </div>
+
+    <%- ProgramOfferings.programs.each do |program| -%>
+      <div class='controls'>
+        <%= label_tag program, class: 'checkbox' do %>
+          <%= check_box_tag 'employee[program_affiliations][]', program, @user.affiliated_with?(program), class: 'checkbox', id: program.gsub(/[ \(\)]/, '_') %>
+          <%= program %>
+        <%- end -%>
+      </div>
+    <%- end -%>
+  </fieldset>
+  
+  <div class='form-actions'>
+    <%= f.button :submit, "Update Account" %> or <%= link_to "go to the dashboard", employee_root_path %>
+  </div>
+<%- end -%>

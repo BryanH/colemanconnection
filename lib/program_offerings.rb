@@ -16,7 +16,7 @@ class ProgramOfferings
           'Respiratory Therapist' => { :color => '#00c473'}
         },
       'Diagnostic Services' => {
-          'Clinical Laboratory Technician' => { :color => '#6aade4'},
+          'Medical Laboratory Technician' => { :color => '#6aade4'},
           'Computed Tomography' => { :color => '#6aade4'},
           'Diagnostic Medical Sonography' => { :color => '#6aade4'},
           'Histology Technician' => { :color => '#6aade4'},

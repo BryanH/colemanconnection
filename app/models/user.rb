@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :demographic_attributes, :username,
-                  :login
+                  :login, :program_affiliations
   
   has_many    :permissions, dependent: :destroy
   has_many    :sessions, dependent: :destroy
@@ -100,6 +100,21 @@ class User < ActiveRecord::Base
   
   def program_sessions
     sessions.where{ program_date_id.not_eq nil }
+  end
+  
+  def affiliated_programs
+    if self.program_affiliations
+      @programs ||= YAML.load self.program_affiliations
+    else
+      @programs = nil
+    end
+  end
+  
+  def affiliated_with?(program=nil)
+    return false unless program.present?
+    return false unless self.program_affiliations.present?
+    programs = YAML.load self.program_affiliations
+    programs.include?(program)
   end
   
 private
