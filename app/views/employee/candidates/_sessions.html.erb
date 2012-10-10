@@ -21,10 +21,18 @@
           </tr>
           <%- end -%>
         <%- end -%>
-
     </tbody>
   </table>
   <%- else -%>
     <p>Not currently registered</p>
+  <%- end -%>
+  
+  <%- if @candidate.sessions.er_sessions.attended(true).any? -%>
+  <hr>
+  
+  <p class='alert alert-info'>
+    <%= @candidate.first_name %> was marked as 'attended' for an ER Session on
+    <%= @candidate.sessions.er_sessions.attended(true).first.er_date.session_time.to_formatted_s(:pretty) %>.
+  </p>
   <%- end -%>
 </div>
