@@ -33,6 +33,8 @@ class Session < ActiveRecord::Base
   scope :search_on_user, lambda { |query| joins(:user).where{ user.first_name.matches("%#{query}%") | 
                                         user.last_name.matches("%#{query}%") |
                                         user.email.matches("%#{query}%") }}
+  scope :attended, lambda { |state| where(attended: state) }
+  scope :er_sessions, where{ er_date_id.not_eq nil }
   
   audit(:update, only: :attended) { |session, user, action| session.snitches_on(user).for_marking_attendance }
   
