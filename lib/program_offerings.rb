@@ -30,7 +30,8 @@ class ProgramOfferings
           'Pharmacy Technician' => { :color => '#ec7a08'},
           'Retail Pharmacy (MSA)' => { :color => '#ec7a08'},
           'Certified Prevention Specialist' => {:color => '#ec7a08'},
-          'Community Health Worker' => {:color => '#ec7a08'}
+          'Community Health Worker' => {:color => '#ec7a08'},
+          'Chemical Dependency Certificate (LCDC)' => {:color => '#ec7a08'}
         },
       'Dental Services' => {
           'Dental Assisting' => { :color => '#c4262e'},
