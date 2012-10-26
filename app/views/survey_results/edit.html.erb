@@ -1,0 +1,18 @@
+<div class='boxed boxed-main'>
+  <header>
+    <h1 class='smiley-heading'>
+      <span class='smiley smiley-<%= @survey_result.result %>'></span>
+      <%= survey_heading(@survey_result) %>
+    </h1>
+  </header>
+    
+  <%= simple_form_for @survey_result, url: survey_result_path(@survey_result.token) do |f| %>
+    <div class='survey-comments'>
+      <textarea name='survey_result[comment]' rows=7 cols=140 placeholder='My experience was <%= @survey_result.result %> because...'></textarea>
+    </div>
+    <div class='form-actions'>
+      <%= f.button :submit, 'Submit Comments', class: 'btn-primary' %>
+    </div>
+  <%- end -%>
+
+</div>

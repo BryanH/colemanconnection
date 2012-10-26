@@ -31,7 +31,7 @@ form label.required {
   color: $infoText;
 }
 
-form p {
+form p:not(.help-block) {
   margin: 0 10px;
 }
 
@@ -65,5 +65,13 @@ label.control-label.checkbox {
     .allowed {
       color: $green;
     }
+  }
+}
+
+.survey-comments {
+  text-align: center;
+  textarea {
+    margin: 10px auto;
+    width: 60%;
   }
 }

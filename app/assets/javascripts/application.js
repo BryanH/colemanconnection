@@ -38,6 +38,7 @@
 
 jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();
+  jQuery('[rel="tooltip"]').tooltip();
   jQuery('.collapse-toggle').click(function (e) {e.preventDefault();});
   jQuery('[data-checkbox-selector]').click(function (e) {
     e.preventDefault();

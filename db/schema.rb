@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011193709) do
+ActiveRecord::Schema.define(:version => 20121022201232) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -117,6 +117,18 @@ ActiveRecord::Schema.define(:version => 20121011193709) do
   add_index "sessions", ["er_date_id"], :name => "index_sessions_on_er_date_id"
   add_index "sessions", ["program_date_id"], :name => "index_sessions_on_program_date_id"
   add_index "sessions", ["user_id"], :name => "index_sessions_on_user_id"
+
+  create_table "survey_results", :force => true do |t|
+    t.string   "result",          :null => false
+    t.text     "comment"
+    t.string   "token",           :null => false
+    t.integer  "program_date_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "survey_results", ["program_date_id"], :name => "index_survey_results_on_program_date_id"
+  add_index "survey_results", ["token"], :name => "index_survey_results_on_token", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "",   :null => false
