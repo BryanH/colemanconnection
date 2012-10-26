@@ -2,6 +2,7 @@
 @import 'bootstrap/mixins';
 @import 'bootstrap/buttons';
 @import 'bootstrap/code';
+@import 'bootstrap/grid';
 
 /* Client-specific Styles */
 #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
@@ -529,3 +530,5 @@ dl dt {
   padding-bottom: 8px;
   margin-bottom: 20px;
 }
+
+@import 'satisfaction_survey';

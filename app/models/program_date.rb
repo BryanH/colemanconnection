@@ -16,6 +16,7 @@ class ProgramDate < ActiveRecord::Base
   has_many :sessions
   has_many :candidates, through: :sessions, source: :user
   has_many :attendance_audits, through: :sessions, source: :audits
+  has_many :survey_results, dependent: :destroy
   
   default_scope order('occurs_on ASC')
   
