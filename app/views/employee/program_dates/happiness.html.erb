@@ -33,7 +33,7 @@
         <%- @completed_survey_results.each do |result| -%>
           <%= content_tag_for :li, result do %>
             <div class='smiley smiley-<%= result.result %>' rel='tooltip' data-placement='top' data-original-title="<%= result.comment %>">
-              <%= content_tag :span, '', class: 'smiley-comment icon-comment' if result.comment %>
+              <%= content_tag :span, '', class: 'smiley-comment icon-comment' if result.comment? %>
             </div>
           <%- end -%>
         <%- end -%>
