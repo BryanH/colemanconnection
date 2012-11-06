@@ -22,6 +22,8 @@ gem 'nokogiri'
 
 gem 'cancan'
 
+gem 'whenever', require: false
+
 # Deployment
 gem 'capistrano',         '2.12.0'
 
