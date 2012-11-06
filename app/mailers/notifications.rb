@@ -13,7 +13,7 @@ if Rails.env.development?
   class Preview < MailView
     
     def satisfaction_survey
-      recipient = Candidate.first
+      recipient = Employee.first
       program_session = ProgramDate.first
       Notifications.satisfaction_survey(recipient, program_session, 'randomtoken')
     end
