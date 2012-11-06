@@ -1,8 +1,19 @@
+if ENV.has_key?("DEVISE_USERNAME")
+  username = ENV["DEVISE_USERNAME"]
+  password = ENV["DEVISE_PASSWORD"]
+else
+  if File.exist?('/home/tschmidt/.howdy')
+    attrs = YAML.load(File.open('/home/tschmidt/.howdy'))
+    username = attrs['username']
+    password = attrs['pass']
+  end
+end
+
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address                      => "webmail.hccs.edu",
-  :user_name                    => ENV["DEVISE_USERNAME"],
-  :password                     => ENV["DEVISE_PASSWORD"],
+  :user_name                    => username,
+  :password                     => password,
   :authentication               => :login,
   :enable_starttls_auto         => true
 }
