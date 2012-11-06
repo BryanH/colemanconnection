@@ -1,0 +1,43 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Registered Candidates', employee_program_date_path(params[:id]) %></li>
+      </ol>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Happiness results', happiness_employee_program_date_path(params[:id]), class: 'active' %></li>
+      </ol>
+    </div>
+    
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Return to Program Dates', employee_program_dates_path %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main'>
+      <header>
+        <h1>
+          Program Session Happiness Results
+          <small>(<%= @completed_survey_results.count %> of <%= @date.survey_results.count %> responded)</small>
+        </h1>
+        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program %></small></h2>
+      </header>
+      
+      <ol class='smiley-results unstyled'>
+        <%- @completed_survey_results.each do |result| -%>
+          <%= content_tag_for :li, result do %>
+            <div class='smiley smiley-<%= result.result %>' rel='tooltip' data-placement='top' data-original-title="<%= result.comment %>">
+              <%= content_tag :span, '', class: 'smiley-comment icon-comment' if result.comment %>
+            </div>
+          <%- end -%>
+        <%- end -%>
+      </ol>
+    </div>
+  </div>
+</div>

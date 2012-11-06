@@ -3,6 +3,7 @@ ColemanConnection::Application.routes.draw do
   mount Flair::Engine => "/flair" if Rails.env.development?
   mount EmailPreviewers::Devise::Preview => 'devise_preview' if Rails.env.development?
   mount Announcements::Preview => 'announcement_emails' if Rails.env.development?
+  mount Notifications::Preview => 'notification_emails' if Rails.env.development?
   
   match '/pathway', to: 'welcome#pathway'
   match '/quiz/:id', to: 'welcome#quiz', as: :next_quiz
@@ -14,6 +15,7 @@ ColemanConnection::Application.routes.draw do
   end
   
   resource :welcome
+  resources :survey_results
   
   # Routes for potential candidates
   namespace :candidate do
@@ -31,7 +33,9 @@ ColemanConnection::Application.routes.draw do
     resources :users
     resources :activations, only: [:create, :destroy]
     resources :candidates
-    resources :program_dates, only: [:index, :show]
+    resources :program_dates, only: [:index, :show] do
+      get 'happiness', on: :member
+    end
     resources :session_attendance, only: [:create, :destroy]
     resources :permissions, only: [:show, :update]
     
