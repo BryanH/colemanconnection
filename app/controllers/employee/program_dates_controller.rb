@@ -16,7 +16,7 @@ class Employee::ProgramDatesController < Employee::BaseController
   def happiness
     authorize! :view, ProgramDate
     
-    @survey_results ||= @date.survey_results.not_pending
+    @completed_survey_results ||= @date.survey_results.not_pending.order(:id)
   end
   
 private
