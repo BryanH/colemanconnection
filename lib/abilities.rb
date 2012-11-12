@@ -8,7 +8,7 @@ module Abilities
                   :permission_employee_can_create, :permission_employee_can_view_audits,
                   :permission_program_date_view, :permission_session_mark_attendance,
                   :permission_candidate_can_view, :permission_candidate_can_edit,
-                  :permission_candidate_can_view_peoplesoft
+                  :permission_candidate_can_view_peoplesoft, :permission_employee_can_view_happiness_report
   end
   
 end

@@ -1,0 +1,15 @@
+<div class='padded'>
+  <header>
+    <h1 class='page-header'>Happiness Results by Program <small>since February 20th, 2012</small></h1>
+  </header>
+
+  <div class='row'>
+    <% SurveyResult.happiness_counts.each do |k, v| %>
+    <div class='span5 card'>
+      <h3><%= k %></h3>
+      
+      <div class='flot-container' data-series="<%= [{ label: "Great", data: v[:great], color: '#4da74d' }, { label: "Okay", data: v[:okay], color: '#edc240' }, { label: "Bad", data: v[:bad], color: '#cb4b4b' }, { label: "Pending", data: v[:pending], color: '#afd8f8' }].to_json %>"></div>
+    </div>
+    <% end %>
+  </div>
+</div>

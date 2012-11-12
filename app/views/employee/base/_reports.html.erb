@@ -3,7 +3,7 @@
     <h2>Reports</h2>
     <p>You can view the following reports...</p>
     <ul>
-      <%= content_tag :li, link_to('Program Sessions') if current_user.is_able_to(:view_session, Reports) %>
+      <%= content_tag :li, link_to('Happiness Results', employee_report_path(:happiness_results)) if current_user.is_able_to(:view_happiness_report, :all) %>
     </ul>
     <b class='well-transformer'></b>
   </div>
