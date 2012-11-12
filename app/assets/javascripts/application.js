@@ -19,6 +19,10 @@
 //= require jquery.content_player
 //= require jquery.jwerty
 //
+//= require jquery.flot
+//= require jquery.flot.pie
+//= require jquery.flot.resize
+//
 //= require bootstrap
 //= require extensions/bootstrap/bootstrap-affix
 //= require jquery.twitter_bootstrap_confirm
@@ -40,6 +44,28 @@ jQuery(document).ready(function () {
   jQuery('[rel="popover"]').popover();
   jQuery('[rel="tooltip"]').tooltip();
   jQuery('.collapse-toggle').click(function (e) {e.preventDefault();});
+  
+  if (jQuery('.flot-container').length) {
+    jQuery('.flot-container').each(function () {
+      var $this = $(this);
+      $.plot($this, $this.data('series'), {
+        series: {
+          pie: {
+            show: true,
+            innerRadius: 0.4,
+            label: {
+              show: true,
+              radius: 1,
+              formatter: function(label, series) {
+                return '<div>' + Math.round(series.percent) + '%</div>';
+              }
+            }
+          }
+        }
+      });
+    });
+  }
+  
   jQuery('[data-checkbox-selector]').click(function (e) {
     e.preventDefault();
     var $this = $(this);

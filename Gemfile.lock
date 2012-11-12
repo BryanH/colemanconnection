@@ -109,6 +109,8 @@ GEM
       bootstrap-sass (~> 2.0.4)
       kss (~> 0.4.0)
       rails (~> 3.2)
+    flot-rails (0.0.2)
+      jquery-rails
     fssm (0.2.9)
     guard (1.2.1)
       listen (>= 0.4.2)
@@ -305,6 +307,7 @@ DEPENDENCIES
   factory_girl_rails (>= 1.4.0)
   ffaker (>= 1.14.0)
   flair
+  flot-rails
   guard-rspec (>= 0.5.5)
   guard-spork (>= 0.3.2)
   jquery-rails (= 2.0.2)

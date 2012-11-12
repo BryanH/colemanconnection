@@ -2,3 +2,25 @@
   font-weight: normal;
   text-shadow: none;
 }
+
+.card {
+  @include box-shadow(0 0 3px $grayLight);
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+  opacity: .3;
+  
+  @include transition(opacity .9s);
+  
+  &:hover {
+    opacity: 1;
+  }
+  
+  h3 {
+    height: 40px;
+  }
+}
+
+.flot-container {
+  height: 190px;
+}
