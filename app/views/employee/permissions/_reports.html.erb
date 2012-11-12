@@ -20,6 +20,16 @@
     </div>
   </div>
   
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_employee_can_view_happiness_report,
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
+          { selected: @employee.can?(:view_happiness_report, Reports) },
+          { name: 'permissions[all][view_happiness_report]', data: { permission: 'happiness_report' } } %> 
+      <span><strong>view Happiness Report</strong></span>
+    </div>
+  </div>
+  
   <div class='form-actions'>
     <%= f.button :submit, "Update Permissions", class: 'btn btn-primary' %> or <%= link_to 'list employees', employee_users_path %>
   </div>

@@ -35,4 +35,8 @@ class Employee < User
     Snitches::EmployeeSnitch.new(self, user)
   end
   
+  def can_view_reports?
+    self.permissions.where{ subject_class.eq("All") & action.not_eq('audit') }.count > 0
+  end
+  
 end
