@@ -20,7 +20,14 @@ class ProgramDate < ActiveRecord::Base
   
   default_scope order('occurs_on ASC')
   
-  scope :all_with_sessions, joins(:sessions).select([:id, :program, :occurs_on]).select('COUNT(sessions.id) AS registration_count').group(:id)
+  scope :all_with_sessions, select('program_dates.id, 
+                                    program_dates.program, 
+                                    program_dates.occurs_on, 
+                                    (
+                                      SELECT COUNT(sessions.id)
+                                      FROM sessions
+                                      WHERE sessions.program_date_id = program_dates.id
+                                    ) AS registration_count')
   
   def name
     program + " " + occurs_on.to_formatted_s(:pretty)
