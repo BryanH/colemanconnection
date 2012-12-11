@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022201232) do
+ActiveRecord::Schema.define(:version => 20121211171144) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20121022201232) do
     t.datetime "updated_at"
     t.datetime "cancelled_at"
     t.text     "breakout_session"
-    t.boolean  "attended"
+    t.boolean  "attended",                :default => false
     t.boolean  "arrival_acknowledgement"
     t.integer  "program_date_id"
   end
