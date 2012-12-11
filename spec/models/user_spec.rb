@@ -128,4 +128,13 @@ describe User do
     let(:user) { FactoryGirl.build(:user, first_name: 'Terry', last_name: 'Tester') }
     its(:reversed_name) { should == 'Tester, Terry' }
   end
+  
+  context "search for user on password reset" do
+    let!(:user) { FactoryGirl.create(:candidate, email: 'Test.Email@fake.web') }
+    it "should be case-insensitive" do
+      User.send_reset_password_instructions(email: 'Test.Email@fake.web').should == user
+      User.send_reset_password_instructions(email: 'Test.email@fake.web').should == user
+      User.send_reset_password_instructions(email: 'test.email@fake.web').should == user
+    end
+  end
 end

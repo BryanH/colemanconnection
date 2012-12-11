@@ -12,10 +12,7 @@ namespace :notifications do
     # 2. loop through each of the candidates that attended
     #   2a. Create a survey result with a unique token
     #   2b. call the Notifications.satisfaction_survey with [:candidate, :program_date, :token]
-    week = 1.week.ago
-    beginning = week.beginning_of_week.to_date
-    ending = week.end_of_week.to_date
-    ProgramDate.includes(sessions: :user).where{ date(occurs_on).in beginning..ending }.each do |program_date|
+    ProgramDate.includes(sessions: :user).where{ date(occurs_on).in week_start(1.week.ago)..week_end(1.week.ago) }.each do |program_date|
       program_date.sessions.attended(true).each do |session|
         recipient = session.user
         program_session = program_date
@@ -23,5 +20,24 @@ namespace :notifications do
         Notifications.satisfaction_survey(recipient, program_session, survey_result.token).deliver
       end
     end
+  end
+  
+  desc "Send reminder emails to Program Session registrants"
+  task session_reminder: :environment do
+    ProgramDate.includes(sessions: :user).where{ date(occurs_on).in week_start..week_end }.each do |program_date|
+      program_date.sessions.each do |session|
+        Notifications.session_reminder(session.user, program_date).deliver
+      end
+    end
+  end
+  
+private
+  
+  def week_start(date = Date.today)
+    date.beginning_of_week
+  end
+  
+  def week_end(date = Date.today)
+    date.end_of_week
   end
 end

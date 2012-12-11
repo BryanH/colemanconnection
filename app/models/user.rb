@@ -117,6 +117,12 @@ class User < ActiveRecord::Base
     programs.include?(program)
   end
   
+  # Override the behavior of the email lookup for Devise Password reset
+  def self.send_reset_password_instructions(attributes={})
+    attributes[:email] = attributes[:email].try(:downcase)
+    super(attributes)
+  end
+  
 private
   
   def set_sti

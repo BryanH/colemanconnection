@@ -5,3 +5,7 @@ job_type :coleman_rake, "cd :path && RAILS_ENV=:environment :bundler exec rake :
 every :tuesday, at: '9:00am' do
   coleman_rake 'notifications:program_session_survey'
 end
+
+every :monday, at: '9:00am' do
+  coleman_rake 'notifications:program_session_reminder'
+end
