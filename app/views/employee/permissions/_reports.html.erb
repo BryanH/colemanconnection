@@ -30,6 +30,16 @@
     </div>
   </div>
   
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_employee_can_view_attendance_report,
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
+          { selected: @employee.can?(:view_attendance_report, Reports) },
+          { name: 'permissions[all][view_attendance_report]', data: { permission: 'attendance_report' } } %> 
+      <span><strong>view Program Session Attendance Report</strong></span>
+    </div>
+  </div>
+  
   <div class='form-actions'>
     <%= f.button :submit, "Update Permissions", class: 'btn btn-primary' %> or <%= link_to 'list employees', employee_users_path %>
   </div>
