@@ -29,6 +29,22 @@ class ProgramDate < ActiveRecord::Base
                                       WHERE sessions.program_date_id = program_dates.id
                                     ) AS registration_count')
   
+  scope :all_with_attendance, select('program_dates.id,
+                                      program_dates.program,
+                                      program_dates.occurs_on,
+                                      (
+                                        SELECT COUNT(sessions.id)
+                                        FROM sessions
+                                        WHERE sessions.program_date_id = program_dates.id
+                                        AND sessions.attended = true
+                                      ) AS sessions_attended,
+                                      (
+                                        SELECT COUNT(sessions.id)
+                                        FROM sessions
+                                        WHERE sessions.program_date_id = program_dates.id
+                                        AND sessions.attended = false
+                                      ) AS sessions_not_attended')
+  
   def name
     program + " " + occurs_on.to_formatted_s(:pretty)
   end
