@@ -64,34 +64,63 @@
                                         Hi <%= @recipient.first_name %>,
                                       </p>
                                       <p>
-                                        Great news! We just launched some new features and wanted you to know
-                                        about them. Take a look at what you now have available in Coleman Connection:
+                                        We've been getting a lot of great feedback about features we can add
+                                        to Coleman Connection. One of those suggestions was to create a means for
+                                        program session attendees to give us some feedback
+                                        on their experience. We are really excited to announce that this has officially
+                                        gone live!
                                       </p>
                                       
-                                      <dl>
-                                        <dt>ER Session Information</dt>
-                                        <dd>
-                                          If a candidate had previously attended an ER Session, this will now
-                                          show in their profile under Program Sessions.
-                                        </dd>
-                                        
-                                        <dt>Updated Clinical Laboratory Technician Program Name</dt>
-                                        <dd>
-                                          We've relabeled Clinical Laboratory Technician to Medical Laboratory Technician.
-                                          This will now be displayed when a candidate is searching for a program session
-                                          to attend as well as when you are viewing program session details.
-                                        </dd>
-                                        
-                                        <dt>Better Validation Message for Student ID</dt>
-                                        <dd>
-                                          Some of our potential students were confused when they entered what they thought
-                                          was their Student ID during registraion and they were told it was incorrect. The reason for this was
-                                          that they were entering their 'W' number...which is not the same as their Student ID.
-                                          We've made this more clear in the message they will receive by explaining that the
-                                          Student ID (also called the EMPLID) is all digits and that they may have entered their
-                                          'W' number by mistake.
-                                        </dd>
-                                      </dl>
+                                      <p>
+                                        Each Tuesday following a program session, emails will be sent out to the candidates
+                                        that were marked as attended. This email contains 3 different "quick responses"
+                                        that the attendee can select: Great, Okay, or Bad.
+                                      </p>
+                                      
+                                      <p class='center'>
+                                        <%= image_tag "#{root_url}assets/emails/survey_email.png", size: '300' %>
+                                      </p>
+                                      
+                                      <p>
+                                        Once they select the response
+                                        they feel best represents their experience, they will be encouraged to leave
+                                        additional comments.
+                                      </p>
+                                      
+                                      <p class='center'>
+                                        <%= image_tag "#{root_url}assets/emails/survey_comments.png", size: '300'  %>
+                                      </p>
+                                      
+                                      <p>
+                                        These responses are completely anonymous and are not tied to the candidate
+                                        in any way. By offering a confidential survey, we are hoping to receive more candid
+                                        feedback about candidates' satisfaction with our program sessions.
+                                      </p>
+                                      
+                                      <p>
+                                        You, as the faculty or staff for the program, are able to see the results
+                                        of these surveys by viewing the details for a particular date. A new link has
+                                        been added to the navigation on the left-side of the screen labeled "Happiness Results".
+                                        Here, you are able to see very quickly how happy candidates were with the program session they attended.
+                                      </p>
+                                      
+                                      <p class='center'>
+                                        <%= image_tag "#{root_url}assets/emails/survey_results.png", size: '300' %>
+                                      </p>
+                                      
+                                      <p>
+                                        If you notice a speech bubble above the smiley,
+                                        it means a candidate added comments to their response. Just place your mouse over that
+                                        smiley and the comment will be displayed.
+                                      </p>
+                                      
+                                      <h3 class="h3 primary-header">What does this mean for you?</h3>
+                                      
+                                      <p>
+                                        <span style='font-weight: bold; color: red;'>It is incredibly important</span> that you are marking attendance for your program sessions.
+                                        Not only will this determine who will receive the survey emails, but it will give your
+                                        program credit for the number of people you contact during these sessions.
+                                      </p>
                                       
                                       <p>
                                         That's all for now, but rest assured, we are already hard at work on the next
