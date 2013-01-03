@@ -7,5 +7,5 @@ every :tuesday, at: '9:00am' do
 end
 
 every :monday, at: '9:00am' do
-  coleman_rake 'notifications:program_session_reminder'
+  coleman_rake 'notifications:session_reminder'
 end
