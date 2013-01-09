@@ -18,6 +18,8 @@ class ProgramDate < ActiveRecord::Base
   has_many :attendance_audits, through: :sessions, source: :audits
   has_many :survey_results, dependent: :destroy
   
+  validates :occurs_on, uniqueness: { scope: :program }
+  
   default_scope order('occurs_on ASC')
   
   scope :all_with_sessions, select('program_dates.id, 

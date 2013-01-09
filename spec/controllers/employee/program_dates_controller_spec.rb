@@ -23,5 +23,14 @@ describe Employee::ProgramDatesController do
       it { should assign_to(:date) }
       it { should assign_to(:sessions) }
     end
+    
+    describe '#new' do
+      let(:program_date) { ProgramDate.new }
+      before { get :new }
+      
+      it { should render_template(:new) }
+      it { should respond_with(:success) }
+      it { should assign_to(:program_date) }
+    end
   end
 end

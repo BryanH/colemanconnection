@@ -30,6 +30,16 @@
     </div>
   </div>
   
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_manage_program_sessions,
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
+          { selected: @employee.can?(:manage, ProgramDate) },
+          { name: 'permissions[program_date][manage]', data: { permission: 'manage', permission_dependency: 'view' } } %> 
+      <span><strong>manage program session dates</strong></span>
+    </div>
+  </div>
+  
   <div class='form-actions'>
     <%= f.button :submit, "Update Permissions", class: 'btn btn-primary' %> or <%= link_to 'list employees', employee_users_path %>
   </div>

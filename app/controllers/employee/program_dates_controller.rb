@@ -13,6 +13,21 @@ class Employee::ProgramDatesController < Employee::BaseController
     @audits ||= @date.attendance_audits.reorder('created_at DESC')
   end
   
+  def new
+    @program_date = ProgramDate.new
+  end
+  
+  def create
+    occurs_on = params[:program_date].delete(:occurs_on)
+    @program_date = ProgramDate.new(params[:program_date])
+    @program_date.occurs_on = occurs_on
+    if @program_date.save
+      redirect_to new_employee_program_date_path, notice: 'The program session date was created successfully.'
+    else
+      render action: :new
+    end
+  end
+  
   def happiness
     authorize! :view, ProgramDate
     
