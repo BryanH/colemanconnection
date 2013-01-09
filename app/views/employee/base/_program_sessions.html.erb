@@ -4,6 +4,7 @@
     <p>Here you can...</p>
     <ul>
       <%= content_tag :li, link_to('view session details', employee_program_dates_path) %>
+      <%= content_tag :li, link_to('add program sessions', new_employee_program_date_path) if current_user.is_able_to(:manage, ProgramDate) %>
     </ul>
     <b class='well-transformer'></b>
   </div>
