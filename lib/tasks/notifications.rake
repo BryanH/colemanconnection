@@ -2,7 +2,7 @@ namespace :notifications do
   desc "Send New Features Email to Employees"
   task new_features: :environment do
     Employee.active(true).each do |employee|
-      Announcements.new_features(employee).deliver rescue next
+      Announcements.delay.new_features(employee) rescue next
     end
   end
   
@@ -17,7 +17,7 @@ namespace :notifications do
         recipient = session.user
         program_session = program_date
         survey_result = program_session.survey_results.create!(token: SurveyResult.generate_token, result: 'pending')
-        Notifications.satisfaction_survey(recipient, program_session, survey_result.token).deliver
+        Notifications.delay.satisfaction_survey(recipient, program_session, survey_result.token)
       end
     end
   end
@@ -26,7 +26,7 @@ namespace :notifications do
   task session_reminder: :environment do
     ProgramDate.includes(sessions: :user).where{ date(occurs_on).in week_start..week_end }.each do |program_date|
       program_date.sessions.each do |session|
-        Notifications.session_reminder(session.user, program_date).deliver
+        Notifications.delay.session_reminder(session.user, program_date)
       end
     end
   end
