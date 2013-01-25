@@ -21,4 +21,11 @@ describe ProgramDate do
 
   it { should have_many(:sessions) }
   it { should have_many(:candidates) }
+  
+  context 'existing program date' do
+    let(:program_time) { Chronic.parse("Oct 4th @ 5:30pm") }
+    let(:porogram_date) { ProgramDate.new }
+    before { ProgramDate.create!(program: 'Biosafety', occurs_on: program_time) }
+    it { should validate_uniqueness_of(:occurs_on).scoped_to(:program) }
+  end
 end

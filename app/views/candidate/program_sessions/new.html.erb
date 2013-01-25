@@ -6,18 +6,36 @@
       <h1>Register for a Program Session</h1>
     </header>
     
-    <fieldset>
-      <%= f.error_notification %>
-      <%= hidden_field_tag :selected, @session.program_date_id %>
-      <%= f.input :program_name, label: "Choose a program", collection: ProgramOfferings.programs %>
-      <%= f.association :program_date, label: "Select a time" %>
-    </fieldset>
+    <div class='row-fluid'>
+      <div class='span6'>
+        <fieldset>
+          <%= f.error_notification %>
+          <%= hidden_field_tag :selected, @session.program_date_id %>
+          <%= f.input :program_name, label: "Choose a program", collection: ProgramOfferings.programs %>
+          <%= f.association :program_date, label: "Select a time" %>
+        </fieldset>
+      </div>
+      
+      <div class='span6 padded'>
+        <p>
+          <span class='label label-info'>Important Information</span> Program Session
+          room locations will be listed when you arrive
+          at the HCC Coleman College main campus located at 1900 Pressler Street. If you are
+          attending the Pharmacy Technician program session, please disregard this message.
+        </p>
+        
+        <p>
+          Please be aware that there is also a fee for parking. You can find more information about parking locations
+          and the fees associated with parking in the Texas Medical Center <%= link_to 'here', 'http://coleman.hccs.edu/portal/site/coleman/contactus', target: :_blank %>.
+        </p>
+      </div>
+    </div>
     
     <p class='alert alert-info hide' id='mcgovernInfo'>
       <strong>Attention!</strong> You have specified that you would like to attend
       the Pharmacy Technician Program Session. This session will take place at our
       McGovern Campus on <span></span> located at:<br><br>
-      
+
       2450 Holcombe Blvd., Ste. 3<br>
       Houston, TX 77021 ( <%= link_to "map view", 'http://www.google.com/maps?q=2450+Holcombe+Blvd.,+Ste.+3+Houston,+TX+77021&hl=en&sll=29.817178,-95.46224&sspn=1.124758,1.2854&hnear=2450+Holcombe+Blvd+%233,+Houston,+Harris,+Texas+77021&t=m&z=17', target: :_blank %> )
     </p>

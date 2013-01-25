@@ -1,0 +1,32 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ol class='menu'>
+        <li><%= link_to 'Add New Date', '#', class: ('active' unless params[:q]) %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main form-container'>
+      
+      <%= simple_form_for [:employee, @program_date] do |f| %>
+        <header>
+          <h1>
+            New Program Session Date
+          </h1>
+        </header>
+        
+        <fieldset>
+          <%= f.input :program, collection: ProgramOfferings.programs %>
+          <%= f.input :occurs_on, as: :string, hint: "example: Feb 3rd @ 5:30pm" %>
+        </fieldset>
+        
+        <div class='form-actions'>
+          <%= f.button :submit, "Create Program Date" %> or <%= link_to 'return to the dashboard', employee_root_path %>
+        </div>
+      <%- end -%>
+      
+    </div>
+  </div>
+</div>
