@@ -68,7 +68,8 @@
                                         <%= @program_session.program %> Program Session this Thursday at
                                         <%= @program_session.occurs_on.localtime.strftime("%l:%M%P") %>.
                                         You may want to plan on arriving a little early though, to get a good
-                                        parking spot.
+                                        parking spot. Please be aware that there is a fee for parking. More
+                                        information about parking can be found <%= link_to 'here', 'http://coleman.hccs.edu/portal/site/coleman/contactus', target: :_blank %>.
                                       </p>
                                       
                                       <%- if @program_session.program.include?("Pharmacy") -%>
@@ -90,6 +91,11 @@
                                         1900 Pressler St.<br>
                                         Houston, TX 77030 ( <%= link_to "see it on a map", 'https://maps.google.com/maps?q=HCC+Coleman+College&hl=en&ll=29.705425,-95.406153&spn=0.016662,0.016372&sll=29.817178,-95.46224&sspn=1.065185,1.047821&t=h&hq=HCC+Coleman+College&z=16&iwloc=A', target: :_blank %>)
                                       </address>
+                                      
+                                      <p>
+                                        The room location for your program session will be listed on the first floor
+                                        when you arrive on the day of your chosen Program Session.
+                                      </p>
                                       <%- end -%>
                                       
                                       <p>
