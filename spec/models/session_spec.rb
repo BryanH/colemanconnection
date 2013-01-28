@@ -32,6 +32,8 @@ describe Session do
     it { should respond_to(:user_id) }
     it { should respond_to(:program_date_program) }
     it { should respond_to(:program_date_occurs_on) }
+    it { should respond_to(:user_reversed_name) }
+    it { should respond_to(:user_email) }
 
     it { should belong_to(:er_date) }
     it { should belong_to(:user) }
