@@ -18,3 +18,4 @@ pickle-email-*.html
 config/*.yml
 .DS_Store
 /public/assets
+config/initializers/secret_token.rb
