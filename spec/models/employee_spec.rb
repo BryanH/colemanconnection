@@ -21,17 +21,17 @@ describe Employee do
     let(:brian) { FactoryGirl.create(:employee, first_name: "Brian", last_name: "Waddle") }
     
     it "should not list Terry" do
-      Employee.search('Brian').should_not include(terry)
-      Employee.search('Brian').should include(brian)
+      expect(Employee.search('Brian')).to_not include(terry)
+      expect(Employee.search('Brian')).to include(brian)
     end
     
     it "should not list Brian" do
-      Employee.search('Terry').should_not include(brian)
-      Employee.search('Terry').should include(terry)
+      expect(Employee.search('Terry')).to_not include(brian)
+      expect(Employee.search('Terry')).to include(terry)
     end
     
     it "should return all employees" do
-      Employee.search(nil).should include(terry, brian)
+      expect(Employee.search(nil)).to include(terry, brian)
     end
   end
   
@@ -40,17 +40,17 @@ describe Employee do
     let(:brian) { FactoryGirl.create(:employee, :inactive, first_name: "Brian", last_name: "Waddle") }
     
     it "should return Terry" do
-      Employee.active(true).should include(terry)
-      Employee.active(true).should_not include(brian)
+      expect(Employee.active(true)).to include(terry)
+      expect(Employee.active(true)).to_not include(brian)
     end
     
     it "should return Brian" do
-      Employee.active(false).should include(brian)
-      Employee.active(false).should_not include(terry)
+      expect(Employee.active(false)).to include(brian)
+      expect(Employee.active(false)).to_not include(terry)
     end
     
     it "should not return anything" do
-      Employee.active(nil).should be_blank
+      expect(Employee.active(nil)).to be_blank
     end
   end
   
