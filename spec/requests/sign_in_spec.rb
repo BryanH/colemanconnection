@@ -17,6 +17,6 @@ describe "User Sign In" do
   it "should not sign in a user that does not exist" do
     visit new_user_session_path
     submit_sign_in_form
-    page.should have_content "Invalid email, username, or password"
+    expect(page).to have_content "Invalid email, username, or password"
   end
 end

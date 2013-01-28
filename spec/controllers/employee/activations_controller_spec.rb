@@ -11,7 +11,7 @@ describe Employee::ActivationsController do
       before { post :create, id: other_employee.id }
 
       it "should activate the employee" do
-        other_employee.reload.should be_active
+        expect(other_employee.reload).to be_active
       end
     end
     
@@ -20,7 +20,7 @@ describe Employee::ActivationsController do
       before { delete :destroy, id: other_employee.id }
       
       it "should deactivate the employee" do
-        other_employee.reload.should_not be_active
+        expect(other_employee.reload).to_not be_active
       end
     end
   end

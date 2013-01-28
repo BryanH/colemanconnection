@@ -29,7 +29,7 @@ describe Employee do
       [:view, :edit, :create, :change_active_status, :set_permission].each do |action|
         it "should be allowed to #{action}Employee" do
           user.permissions.create!(action: action, subject_class: 'Employee')
-          ability.should be_able_to(action, employee)
+          expect(ability).to be_able_to(action, employee)
         end
       end
     end
@@ -41,7 +41,7 @@ describe Employee do
       [:view, :edit, :view_peoplesoft_data].each do |action|
         it "should be allowed to #{action}" do
           user.permissions.create!(action: action, subject_class: 'Candidate')
-          ability.should be_able_to(action, candidate)
+          expect(ability).to be_able_to(action, candidate)
         end
       end
     end
@@ -53,7 +53,7 @@ describe Employee do
       [:view, :mark_attendance].each do |action|
         it "should be allowed to #{action}" do
           user.permissions.create!(action: action, subject_class: 'ProgramDate')
-          ability.should be_able_to(action, program_session)
+          expect(ability).to be_able_to(action, program_session)
         end
       end
     end
@@ -64,7 +64,7 @@ describe Employee do
       [:audit].each do |action|
         it "should be allowed to #{action}" do
           user.permissions.create!(action: action, subject_class: 'all')
-          ability.should be_able_to(action, :all)
+          expect(ability).to be_able_to(action, :all)
         end
       end
     end
