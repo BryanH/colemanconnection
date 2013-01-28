@@ -30,6 +30,8 @@ describe Session do
     it { should respond_to(:er_date_id) }
     it { should respond_to(:updated_at) }
     it { should respond_to(:user_id) }
+    it { should respond_to(:program_date_program) }
+    it { should respond_to(:program_date_occurs_on) }
 
     it { should belong_to(:er_date) }
     it { should belong_to(:user) }

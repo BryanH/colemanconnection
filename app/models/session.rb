@@ -25,6 +25,8 @@ class Session < ActiveRecord::Base
   belongs_to :er_date
   belongs_to :program_date
   
+  delegate :program, :occurs_on, to: :program_date, prefix: true
+  
   validates :user_id,           presence: true
   validates :program_date_id,   presence: true, 
                                 numericality: { message: "is not a valid session time"},
