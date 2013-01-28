@@ -66,7 +66,7 @@ class Demographic < ActiveRecord::Base
     "Longer than six months"
   ]
   
-  validates :zip, format: { with: /^(\d{5}|\d{9}|\d{5}\-\d{4})$/ },
+  validates :zip, format: { with: /\A(\d{5}|\d{9}|\d{5}\-\d{4})\z/ },
                   allow_blank: true, allow_nil: true
   
   validates :state, length: { is: 2 },
