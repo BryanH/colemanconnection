@@ -15,14 +15,9 @@ class Employee::UsersController < Employee::BaseController
     authorize! :create, @user
     
     if @user.save
+      EmployeeMailer.send_new_account_email(@user)
       redirect_to employee_permission_path(@user), 
-      flash: { success: %Q[
-#{@user.name} was added successfully. Please perform the following:
-<ul>
-<li>Have #{@user.name} log in and change their password</li>
-<li>Set the permissions for #{@user.name}</li>
-</ul>
-].html_safe}
+      flash: { success: "#{@user.name} was added successfully. Please add permissions for this employee." }
     else
       render :new
     end
