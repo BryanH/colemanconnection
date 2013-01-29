@@ -19,7 +19,7 @@
         <ol class='menu menu-list'>
           <%- current_user.program_sessions.includes(:program_date).each do |session| -%>
           <li>
-            <%= session.program_date.program %> on <%= session.program_date.occurs_on.to_formatted_s(:pretty) %>
+            <%= session.program_date_program %> on <%= session.program_date_occurs_on.to_formatted_s(:pretty) %>
             <span class='pull-right'>
               <%= link_to 'cancel', candidate_program_session_path(session), method: :delete, confirm: "Once you have cancelled this session you will no longer be registered to attend. If you change your mind and wish to attend in the future, please re-register.",
                             data: { confirm_title: "Are you sure?" },

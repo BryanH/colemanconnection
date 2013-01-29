@@ -11,7 +11,7 @@ class SurveyResultsController < ApplicationController
       if @survey_result.comment.present?
         redirect_to survey_result_path(@survey_result.token)
       else
-        @survey_result.update_attributes(result: params[:survey_response]) if @survey_result.result == 'pending'
+        @survey_result.update_attributes!(result: params[:survey_response]) if @survey_result.result == 'pending'
         redirect_to edit_survey_result_path(@survey_result.token) and return
       end
     else
