@@ -23,12 +23,14 @@ class Employee < User
   
   def activate!
     self.active = true
+    self.password = 'coleman123'
     save!
   end
   
   def deactivate!
     self.active = false
     save!
+    self.permissions.destroy_all
   end
   
   def snitches_on(user)

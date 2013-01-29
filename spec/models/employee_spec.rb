@@ -12,8 +12,15 @@ describe Employee do
   describe '#deactivate!' do
     let(:terry) { FactoryGirl.create(:employee, :active) }
     subject { terry }
-    before { terry.deactivate! }
+    
+    before do
+      terry.permissions.create!(action: 'view', subject_class: 'Employee')
+      expect(terry.reload.permissions.count).to be 1
+      terry.deactivate!
+    end
+    
     it { should_not be_active }
+    its(:permissions) { should be_blank }
   end
   
   describe "search scope" do
