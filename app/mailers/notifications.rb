@@ -15,6 +15,11 @@ class Notifications < ActionMailer::Base
     mail to: "#{@recipient.name} <#{@recipient.email}>", subject: "Program Session Reminder"
   end
   
+  def new_account(recipient)
+    @recipient ||= recipient
+    mail to: "#{@recipient.name} <#{@recipient.email}>", subject: "Welcome to Coleman Connection"
+  end
+  
 if Rails.env.development?
   class Preview < MailView
     
@@ -28,6 +33,11 @@ if Rails.env.development?
       recipient = Candidate.first
       program_session = ProgramDate.first
       Notifications.session_reminder(recipient, program_session)
+    end
+    
+    def new_account
+      recipient = Employee.first
+      Notifications.new_account(recipient)
     end
     
   end

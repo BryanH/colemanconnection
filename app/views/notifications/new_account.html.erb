@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>HCC Coleman Connection | New Account</title>
+    <link rel="stylesheet" href="/assets/emails/email.css" type="text/css" charset="utf-8">
+	</head>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+  	<center>
+      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+        <tr>
+          <td align="center" valign="top">
+            <!-- // Begin Template Preheader \\ -->
+            <table border="0" cellpadding="10" cellspacing="0" width="600" id="templatePreheader">
+              <tr>
+                <td valign="top" class="preheaderContent">
+                  <!-- // Begin Module: Standard Preheader \ -->
+                  <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                    <tr>
+                      <td valign="top">
+                        <div mc:edit="std_preheader_content">
+                          Do not reply to this message. This account is not monitored by human beings.
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Module: Standard Preheader \ -->
+                </td>
+              </tr>
+            </table>
+            <!-- // End Template Preheader \\ -->
+            
+            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Header \\ -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                    <tr>
+                      <td class="headerContent">
+                        <%= image_tag "#{root_url}assets/email_banner.jpg", size: '600' %>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Header \\ -->
+                </td>
+              </tr>
+
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Body \\ -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                    <tr>
+                      <td valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="600">
+                          <tr>
+                            <td valign="top" class="bodyContent">
+                              <!-- // Begin Module: Standard Content \\ -->
+                              <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                <tr>
+                                  <td valign="top">
+                                    <div mc:edit="std_content00">
+                                      <h3 class="h3 primary-header">Welcome to Coleman Connection</h3>
+                                      <p>
+                                        Hi <%= @recipient.first_name %>,
+                                      </p>
+                                      <p>
+                                        Your Coleman Connection account has been created. Before you can start using it,
+                                        there are a few things you will need to do. Please follow these steps to complete
+                                        your account setup.
+                                      </p>
+                                      
+                                      <ol>
+                                        <li>
+                                          Go to <%= link_to "http://colemanconnection.org", "http://colemanconnection.org" %>
+                                          <ul>
+                                            <li>
+                                              Click the button labeled "<strong>Log in if you already have an account</strong>".
+                                            </li>
+                                            
+                                            <li>
+                                              Enter "<span class='text-success'><%= @recipient.email %></span>" in the <strong>Username or Email</strong> field.
+                                            </li>
+                                            
+                                            <li>
+                                              Enter "<span class='text-success'>coleman123</span>" in the <strong>Password</strong> field.
+                                            </li>
+                                            
+                                            <li>
+                                              Click <strong>Sign in</strong>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                        
+                                        <li>
+                                          Once logged in:
+                                          <ul>
+                                            <li>Click "<strong>Hi <%= @recipient.first_name %></strong>" in the upper right corner of the window.</li>
+                                            <li>Select "<strong>Edit your account settings</strong>" from the dropdown menu.</li>
+                                            <li>After the page loads, enter a <strong>username</strong>. This can be used instead of your email when logging into Coleman Connection.</li>
+                                            <li>Enter a new, more secure <strong>password</strong>. You will also be asked to <strong>confirm the password</strong>.</li>
+                                            <li>Click "<strong>Update Account</strong>"</li>
+                                          </ul>
+                                        </li>
+                                        
+                                        <li>
+                                          Because you changed your password, you will be logged out. Enter the new password along with your email or username
+                                          to log back in.
+                                        </li>
+                                        
+                                        <li>
+                                          Once you are logged back in:
+                                          <ul>
+                                            <li>
+                                              Click "<strong>Hi <%= @recipient.first_name %></strong>" and then "<strong>Edit your account settings</strong>" again.
+                                            </li>
+                                            <li>
+                                              On the left side of the window, click "<strong>Select Programs</strong>".
+                                            </li>
+                                            <li>
+                                              Click each program you would like to be associated with to add a checkbox next to it. This will allow you
+                                              to see the program date information for those programs.
+                                            </li>
+                                            <li>
+                                              Click "<strong>Update Account</strong>"
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ol>
+                                      
+                                      <p>
+                                        Congratulations! Your account is now set up. If you would like additional training, <a href='mailto:terry.schmidt@hccs.edu?subject=Coleman%20Connection%20Training'>please email your request here</a>
+                                        to schedule a time.
+                                      </p>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <!-- // End Module: Standard Content \\ -->
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Body \\ -->
+                </td>
+              </tr>
+
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Footer \\ -->
+                  <table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                    <tr>
+                      <td valign="top" class="footerContent">
+
+                        <!-- // Begin Module: Standard Footer \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                          <tr>
+                            
+                          </tr>
+                          <tr>
+                            <td valign="top" width="350">
+                              <div class='copyright' mc:edit="std_footer">
+
+                                <strong>HCC Coleman College for Health Sciences</strong><br />
+                                1900 Pressler St<br />
+                                Houston, TX &nbsp;&nbsp; 77030<br />
+                                <%= mail_to 'studentsfirst@hccs.edu' %>
+                                <br />
+                                <br />
+                                <em>Copyright &copy; <%= Date.today.year %> HCC Coleman College for Health Sciences, All rights reserved.</em>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // End Module: Standard Footer \\ -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Footer \\ -->
+                </td>
+              </tr>
+            </table>
+            <br />
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
