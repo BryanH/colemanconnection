@@ -85,8 +85,9 @@ describe User do
     before { FactoryGirl.create(:user, username: 'tschmidt') }
     it "should have an error" do
       other_user = FactoryGirl.build(:user, username: 'tschmidt')
-      other_user.valid?.should be_false
-      other_user.errors[:username].should include("has already been taken")
+      
+      expect(other_user).to_not be_valid
+      expect(other_user.errors[:username]).to include("has already been taken")
     end
   end
   
@@ -114,7 +115,7 @@ describe User do
     context "type is nil" do
       it "should be a Candidate" do
         new_user = FactoryGirl.create(:user)
-        new_user.type.should == "Candidate"
+        expect(new_user.type).to eq "Candidate"
       end
     end
   end
@@ -132,9 +133,9 @@ describe User do
   context "search for user on password reset" do
     let!(:user) { FactoryGirl.create(:candidate, email: 'Test.Email@fake.web') }
     it "should be case-insensitive" do
-      User.send_reset_password_instructions(email: 'Test.Email@fake.web').should == user
-      User.send_reset_password_instructions(email: 'Test.email@fake.web').should == user
-      User.send_reset_password_instructions(email: 'test.email@fake.web').should == user
+      expect(User.send_reset_password_instructions(email: 'Test.Email@fake.web')).to eq user
+      expect(User.send_reset_password_instructions(email: 'Test.email@fake.web')).to eq user
+      expect(User.send_reset_password_instructions(email: 'test.email@fake.web')).to eq user
     end
   end
 end

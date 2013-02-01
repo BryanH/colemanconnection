@@ -14,32 +14,32 @@ describe BasePresenter do
   end
   
   it "should give access to the template" do
-    base_presenter.h == view
+    expect(base_presenter.h).to eq view
   end
   
   it "should define a method by a given name that returns the object" do
     presenter = MyPresenter.new(object, view)
-    presenter.warlock.should == object
+    expect(presenter.warlock).to eq object
   end
   
   describe '#handle_blank' do
     context 'without block' do
       it 'returns not available if value is blank' do
-        base_presenter.send(:handle_blank, '').should include('not available')
+        expect(base_presenter.send(:handle_blank, '')).to include('not available')
       end
       
       it 'returns value if present' do
-        base_presenter.send(:handle_blank, 'some value').should include('some value')
+        expect(base_presenter.send(:handle_blank, 'some value')).to include('some value')
       end
     end
     
     context 'with block' do
       it 'returns not available if value is blank' do
-        base_presenter.send(:handle_blank, '') { "some other value" }.should include('not available')
+        expect(base_presenter.send(:handle_blank, '') { "some other value"}).to include('not available')
       end
       
       it 'returns value of the block if present' do
-        base_presenter.send(:handle_blank, 'some value') { "some other value" }.should include('some other value')
+        expect(base_presenter.send(:handle_blank, 'some value') { "some other value"}).to include('some other value')
       end
     end
   end

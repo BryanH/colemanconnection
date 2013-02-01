@@ -1,12 +1,9 @@
 class SessionPresenter < BasePresenter
-  presents :session 
-  
-  def program
-    session.program_date.program
-  end
+  presents :session
+  delegate :program, :occurs_on, to: :program_date, prefix: true
   
   def occurs_on
-    session.program_date.occurs_on.to_formatted_s(:pretty)
+    session.program_date_occurs_on.to_formatted_s(:pretty)
   end
   
   def attended?

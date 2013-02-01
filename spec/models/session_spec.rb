@@ -30,6 +30,10 @@ describe Session do
     it { should respond_to(:er_date_id) }
     it { should respond_to(:updated_at) }
     it { should respond_to(:user_id) }
+    it { should respond_to(:program_date_program) }
+    it { should respond_to(:program_date_occurs_on) }
+    it { should respond_to(:user_reversed_name) }
+    it { should respond_to(:user_email) }
 
     it { should belong_to(:er_date) }
     it { should belong_to(:user) }
@@ -42,8 +46,9 @@ describe Session do
       describe '#program_date_id' do
         it "should be unique" do
           Session.create(user_id: 1, program_date_id: 1)
-          Session.new(user_id: 1, program_date_id: 1).should_not be_valid
-          Session.new(user_id: 2, program_date_id: 1).should be_valid
+          
+          expect(Session.new(user_id: 1, program_date_id: 1)).to_not be_valid
+          expect(Session.new(user_id: 2, program_date_id: 1)).to be_valid
         end
       end
     end

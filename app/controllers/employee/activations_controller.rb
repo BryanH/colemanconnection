@@ -4,11 +4,11 @@ class Employee::ActivationsController < Employee::BaseController
     @user = Employee.find_by_id(params[:id])
     authorize! :change_active_status, @user
     if @user.activate!
-      flash = { success: "The user was activated successfully." }
+      EmployeeMailer.send_new_account_email(@user)
+      redirect_to employee_permission_path(@user), success: "The user was activated successfully."
     else
-      flash = { alert: "The user could not be activated. Please try again."}
+      redirect_to employee_users_path, alert: "The user could not be activated. Please try again."
     end
-    redirect_to employee_users_path, flash: flash
   end
   
   def destroy
