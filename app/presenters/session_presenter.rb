@@ -9,4 +9,8 @@ class SessionPresenter < BasePresenter
   def attended?
     h.raw('<i class="icon-ok"></i>') if session.attended?
   end
+  
+  def program
+    session.program_date_program
+  end
 end
