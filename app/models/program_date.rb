@@ -22,6 +22,8 @@ class ProgramDate < ActiveRecord::Base
   
   default_scope order('occurs_on ASC')
   
+  audit(:update, only: :no_attendance) { |program_date, user, action| program_date.snitches_on(user).for_marking_program_attendance }
+  
   scope :all_with_sessions, select('program_dates.id, 
                                     program_dates.program, 
                                     program_dates.occurs_on, 
@@ -34,6 +36,7 @@ class ProgramDate < ActiveRecord::Base
   scope :all_with_attendance, select('program_dates.id,
                                       program_dates.program,
                                       program_dates.occurs_on,
+                                      program_dates.no_attendance,
                                       (
                                         SELECT COUNT(sessions.id)
                                         FROM sessions
@@ -49,6 +52,21 @@ class ProgramDate < ActiveRecord::Base
   
   def name
     program + " " + occurs_on.to_formatted_s(:pretty)
+  end
+  
+  def no_attendance!
+    return false if self.sessions.attended(true).any?
+    self.no_attendance = true
+    self.save!
+  end
+  
+  def attendance!
+    self.no_attendance = false
+    self.save!
+  end
+  
+  def snitches_on(user)
+    Snitches::AttendanceSnitch.new(self, user)
   end
 
 end
