@@ -41,6 +41,13 @@ class Session < ActiveRecord::Base
   
   audit(:update, only: :attended) { |session, user, action| session.snitches_on(user).for_marking_attendance }
   
+  def self.attendance_rate(end_date = Date.today)
+    # We are only concernced with program session attendance, not prior ER sessions
+    session_scope = self.joins(:program_date).where{program_date_id.not_eq(nil) & program_date.occurs_on.lt(end_date)}
+    percentage = (session_scope.attended(true).count.to_f / session_scope.count.to_f) * 100
+    percentage.round(2)
+  end
+  
   def attended!
     self.attended = true
     self.save!

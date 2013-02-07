@@ -32,6 +32,14 @@
       </header>
       
       <%- if @sessions.any? -%>
+        
+        <ol class='menu menu-list'>
+          <li>
+            <input <%= 'checked' if @date.no_attendance? %> type='checkbox' class='checkbox' data-session-attendance data-attendance-url='<%= employee_program_attendance_index_url %>' value='<%= @date.id %>'>
+            No candidates attended this session
+          </li>
+        </ol>
+        
         <ol class='menu menu-list'>
           <%- @sessions.each do |session| -%>
             <%= content_tag_for :li, session do %>
