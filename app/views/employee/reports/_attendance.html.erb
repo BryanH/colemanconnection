@@ -28,11 +28,18 @@
         <%- days.each do |day| -%>
         <tr>
           <td><%= day.occurs_on.to_formatted_s(:pretty) %></td>
+          <%- if day.no_attendance? -%>
+          <td colspan=3>This session was marked as having no attendance</td>
+          <%- else -%>
           <td><%= day.sessions_attended %></td>
           <td><%= day.sessions_not_attended %></td>
           <td><%= day.sessions.count %></td>
+          <%- end -%>
         </tr>
         <%- end -%>
+        <tr class='alt'>
+          <td colspan=4>To date, <strong><%= days.sum{|d| d.sessions_attended.to_i} %></strong> out of <strong><%= days.sum{|d| d.sessions.count} %></strong> potential students have attended program sessions for <%= program_name %>.</td>
+        </tr>
       </table>
       <%- end -%>
     </div>

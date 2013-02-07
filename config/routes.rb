@@ -38,6 +38,7 @@ ColemanConnection::Application.routes.draw do
       get 'happiness', on: :member
     end
     resources :session_attendance, only: [:create, :destroy]
+    resources :program_attendance, only: [:create, :destroy]
     resources :permissions, only: [:show, :update]
     
     root to: 'base#index'

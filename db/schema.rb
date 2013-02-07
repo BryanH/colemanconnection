@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128215332) do
+ActiveRecord::Schema.define(:version => 20130206201724) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -95,8 +95,9 @@ ActiveRecord::Schema.define(:version => 20130128215332) do
   create_table "program_dates", :force => true do |t|
     t.string   "program"
     t.datetime "occurs_on"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "no_attendance", :default => false
   end
 
   add_index "program_dates", ["occurs_on"], :name => "index_program_dates_on_occurs_on"
