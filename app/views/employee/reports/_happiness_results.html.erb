@@ -2,6 +2,13 @@
   <header>
     <h1 class='page-header'>Happiness Results by Program <small>since February 20th, 2012</small></h1>
   </header>
+  
+  <%- if SurveyResult.programs_without_surveys.any? -%>
+  <section class='alert alert-warning no-survey-results'>
+    The following programs have no survey results: <%= SurveyResult.programs_without_surveys.map{ |p| content_tag(:strong, p) }.to_sentence %>
+  </section>
+
+  <%- end -%>
 
   <div class='row'>
     <% SurveyResult.happiness_counts.each do |k, v| %>
