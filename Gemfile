@@ -48,6 +48,7 @@ group :development do
   gem 'pry-rails'
   gem 'yaml_db'
   gem 'flair'
+  gem 'better_errors'
 end
 
 group :test do
