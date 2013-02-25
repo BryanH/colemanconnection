@@ -5,7 +5,7 @@
   
   <%- if SurveyResult.programs_without_surveys.any? -%>
   <section class='alert alert-warning no-survey-results'>
-    The following programs have no survey results: <%= SurveyResult.programs_without_surveys.map{ |p| content_tag(:strong, p) }.to_sentence %>
+    The following programs have no survey results: <%= SurveyResult.programs_without_surveys.map{ |p| content_tag(:strong, p) }.to_sentence.html_safe %>
   </section>
 
   <%- end -%>
