@@ -34,7 +34,7 @@ module WSDL
           if self.details[:military_status].present?
             STATUSES[self.details[:military_status].to_s]
           else
-            nil
+            "Not Available"
           end
         end
         
@@ -42,8 +42,12 @@ module WSDL
           if self.details[:had_mil_affil].present?
             AFFILIATES[self.details[:had_mil_affil].to_s]
           else
-            nil
+            "Not Available"
           end
+        end
+        
+        def disabled_veteran
+          self.details[:disabled_vet] || "Not Available"
         end
       end
       

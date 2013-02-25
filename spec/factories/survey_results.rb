@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :survey_result do
-    result "MyString"
-    token "MyString"
+    result 'pending'
+    token  { SurveyResult.generate_token }
     program_date
   end
 end

@@ -12,7 +12,7 @@ gem 'jquery-rails',       '2.0.2'
 gem 'modernizr-rails',    '2.0.6'
 gem 'simple_form',        '2.0.2'
 gem 'squeel',             '1.0.9'
-gem 'savon',              '1.1.0'
+gem 'savon'
 
 gem 'delayed_job_active_record'
 gem 'daemons'
@@ -48,6 +48,7 @@ group :development do
   gem 'pry-rails'
   gem 'yaml_db'
   gem 'flair'
+  gem 'better_errors'
 end
 
 group :test do

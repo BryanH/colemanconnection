@@ -8,7 +8,7 @@
         <tbody>
           <tr>
             <td class='attr'>Military Status</td>
-            <td><%= @details[:military_status] %> - <%= @peoplesoft_candidate.military_status %></td>
+            <td><%= @peoplesoft_candidate.details[:military_status] %> - <%= @peoplesoft_candidate.military_status %></td>
           </tr>
           <tr>
             <td class='attr'>Affiliation</td>
@@ -16,7 +16,7 @@
           </tr>
           <tr>
             <td class='attr'>Disabled Veteran</td>
-            <td><%= @details[:disabled_vet] %></td>
+            <td><%= @peoplesoft_candidate.disabled_veteran %></td>
           </tr>
         </tbody>
       </table>

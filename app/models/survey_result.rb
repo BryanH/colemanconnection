@@ -46,4 +46,11 @@ class SurveyResult < ActiveRecord::Base
     end
   end
   
+  # Return the list of programs that have no survey results. This can happen in
+  # one of 2 ways: No candidate has attended the sessions for that program or
+  # the program is marking attendance after surveys are sent out.
+  def self.programs_without_surveys
+    (ProgramOfferings.programs - self.happiness_counts.keys.map(&:to_s))
+  end
+  
 end
