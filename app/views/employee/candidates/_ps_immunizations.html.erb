@@ -1,14 +1,24 @@
 <div class='collapse-group'>
   <div class='collapse-heading'>
-    <%= link_to 'Personal Details', '#', class: 'collapse-toggle', data: { toggle: 'collapse', target: ".collapse-personal-details" } %>
+    <%= link_to 'Immunizations', '#', class: 'collapse-toggle', data: { toggle: 'collapse', target: ".collapse-immunization-details" } %>
   </div>
-  <div class='collapse collapse-personal-details'>
+  <div class='collapse collapse-immunization-details'>
     <div class='collapse-content'>
       <table class='table table-striped table-bordered'>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
+            <td class='attr'>Immunization</td>
+            <td><%= @peoplesoft_candidate.immunization %></td>
+          </tr>
+          
+          <tr>
+            <td class='attr'>Date Received</td>
+            <td><%= @peoplesoft_candidate.immunization_received.is_a?(Date) ? @peoplesoft_candidate.immunization_received.strftime("%B %d, %Y") : @peoplesoft_candidate.immunization_received %></td>
+          </tr>
+          
+          <tr>
+            <td class='attr'>Expiration Date</td>
+            <td><%= @peoplesoft_candidate.immunization_expiration_date.is_a?(Date) ? @peoplesoft_candidate.immunization_expiration_date.strftime("%B %d, %Y") : @peoplesoft_candidate.immunization_expiration_date %></td>
           </tr>
         </tbody>
       </table>

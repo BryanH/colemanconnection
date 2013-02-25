@@ -8,23 +8,23 @@
         <tbody>
           <tr>
             <td class='attr'>Name</td>
-            <td><%= @details[:first_name] + ' ' + @details[:last_name] %></td>
+            <td><%= @peoplesoft_candidate.full_name %></td>
           </tr>
           <tr>
             <td class='attr'>HCC Student ID</td>
-            <td><%= @details[:emplid] %></td>
+            <td><%= @peoplesoft_candidate.emplid %></td>
           </tr>
           <tr>
             <td class='attr'>Gender</td>
-            <td><%= @details[:sex] %></td>
+            <td><%= @peoplesoft_candidate.sex %></td>
           </tr>
           <tr>
             <td class='attr'>Ethnicity</td>
-            <td><%= @details[:h_ethnic_grp_list] %></td>
+            <td><%= @peoplesoft_candidate.details[:h_ethnic_grp_list] %></td>
           </tr>
           <tr>
             <td class='attr'>Citizenship</td>
-            <td><%= @details[:citizenship_status] %> - <%= @peoplesoft_candidate.citizenship %></td>
+            <td><%= @peoplesoft_candidate.details[:citizenship_status] %> - <%= @peoplesoft_candidate.citizenship %></td>
           </tr>
         </tbody>
       </table>

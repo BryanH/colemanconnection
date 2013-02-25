@@ -1,13 +1,13 @@
 <div class='padded'>
   <h1 class='page-header'>Demographics and Transcript Data from PeopleSoft</h1>
   
-  <%- if @details -%>
+  <%- if @peoplesoft_candidate -%>
   
   <%= render 'ps_personal_details' %>
   <%= render 'ps_addresses' %>
   <%= render 'ps_contact_methods' %>
   <%= render 'ps_military' %>
-  <%# render 'ps_immunizations' %>
+  <%= render 'ps_immunizations' %>
   <hr class='bold'>
   <%= render 'ps_testing' %>
   <%= render 'ps_transcripts_internal' %>
