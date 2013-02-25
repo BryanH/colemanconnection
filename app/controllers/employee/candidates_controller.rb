@@ -11,7 +11,7 @@ class Employee::CandidatesController < Employee::BaseController
     
     @section = params.delete(:section) || 'demographics'
     if @section == 'peoplesoft' && @candidate.demographic && @candidate.demographic.hcc_student_id.present?
-      @peoplesoft_candidate ||= WSDL::PeopleSoft.new(@candidate.demographic.hcc_student_id.to_i)
+      @peoplesoft_candidate ||= WSDL::PeopleSoft.new(@candidate.demographic.hcc_student_id.to_s)
       begin
         @peoplesoft_candidate.details
       rescue Savon::SOAPFault
