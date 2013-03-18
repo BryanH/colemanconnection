@@ -38,6 +38,7 @@ group :assets do
   gem 'compass-rails',    '>= 1.0.3'
   gem 'uglifier',         '>= 1.0.3'
   gem 'flot-rails'
+  gem 'turbo-sprockets-rails3'
 end
 
 group :development do
