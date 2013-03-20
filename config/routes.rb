@@ -1,6 +1,6 @@
 ColemanConnection::Application.routes.draw do
   
-  mount Flair::Engine => "/flair" if Rails.env.development?
+  # mount Flair::Engine => "/flair" if Rails.env.development?
   mount EmailPreviewers::Devise::Preview => 'devise_preview' if Rails.env.development?
   mount Announcements::Preview => 'announcement_emails' if Rails.env.development?
   mount Notifications::Preview => 'notification_emails' if Rails.env.development?

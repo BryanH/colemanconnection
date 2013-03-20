@@ -3,7 +3,6 @@ class Ability
 
   def initialize(user)
     alias_action :view, to: :read
-    alias_action :index, to: :view
     
     # Calling User.new will create a 'guest' user if one is not already set.
     user ||= User.new
