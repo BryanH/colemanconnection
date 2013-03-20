@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '3.2.13'
-gem 'pg',                 '0.14.0'
+gem 'pg',                 '0.14.1'
 
-gem 'auditor',            '2.3.1'
-gem 'bootstrap-sass',     '2.0.4.0'
-gem 'bootstrap-will_paginate', '0.0.7'
+gem 'auditor',            '2.3.3'
+gem 'bootstrap-sass',     '2.3.1.0'
+gem 'bootstrap-will_paginate', '0.0.9'
 gem 'chronic',            '0.7.0'
 gem 'devise',             '2.1.2'
 gem 'jquery-rails',       '2.0.2'
@@ -34,7 +34,7 @@ gem 'unicorn'
 # in production environments by default.
 group :assets do
   gem 'coffee-rails',     '>= 3.2.1'
-  gem 'sass-rails',       '>= 3.2.3'
+  gem 'sass-rails',       '>= 3.2.6'
   gem 'compass-rails',    '>= 1.0.3'
   gem 'uglifier',         '>= 1.0.3'
   gem 'flot-rails'
@@ -48,7 +48,6 @@ group :development do
   gem 'mail_view',        '>= 1.0'
   gem 'pry-rails'
   gem 'yaml_db'
-  gem 'flair'
   gem 'better_errors'
 end
 
