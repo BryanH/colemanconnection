@@ -21,6 +21,7 @@ gem 'premailer-rails3'
 gem 'nokogiri'
 
 gem 'cancan'
+gem 'god'
 
 gem 'whenever', require: false
 
@@ -43,7 +44,6 @@ end
 
 group :development do
   gem 'annotate',         '>= 2.4.1.beta'
-  gem 'bullet'
   gem 'guard-rspec',      '>= 0.5.5'
   gem 'mail_view',        '>= 1.0'
   gem 'pry-rails'
