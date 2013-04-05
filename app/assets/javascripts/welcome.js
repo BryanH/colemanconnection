@@ -46,22 +46,19 @@
 // DOMContentLoaded
 $(function() {
   
-  var $buttons = $('#filter button'),
+  var $opts = $('#filter select'),
       $programs = $('#program_offerings');
 
   // clone applications to get a second collection
   var $data = $programs.clone();
 
-  // attempt to call Quicksand on every button click
-  $buttons.click(function(e) {
-    var $triggeredButton = $(this);
-    $('button.btn-primary').removeClass('btn-primary');
-    $triggeredButton.addClass('btn-primary');
-    
-    if ($triggeredButton.val() == 'all') {
+  // attempt to call Quicksand on every change
+  $opts.change(function(e) {
+    var $this = $(this);
+    if ($this.val() == 'all') {
       var $filteredData = $data.find('li');
     } else {
-      var $filteredData = $data.find('li[data-type*=' + $triggeredButton.val() + ']');
+      var $filteredData = $data.find('li[data-type*=' + $this.val() + ']');
     }
 
     // sort by name
@@ -77,6 +74,6 @@ $(function() {
       easing: 'easeInOutQuad'
     });
 
-  }).filter(':first').click();
+  }).filter(':first').change();
 
 });

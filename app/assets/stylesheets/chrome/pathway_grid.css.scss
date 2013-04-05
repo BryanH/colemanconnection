@@ -4,6 +4,23 @@ $hexagonWidth: 100px;
 $hexagonHeight: ($hexagonWidth * cos(30deg)) * 2;
 $hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
 
+.path-tool {
+  .control-label,
+  select {
+    font-size: 30px;
+  }
+  
+  .control-label {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  select {
+    height: auto;
+    width: auto;
+  }
+}
+
 .image-grid {
   padding: 50px 0;
   
