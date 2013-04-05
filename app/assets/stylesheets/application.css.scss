@@ -11,8 +11,12 @@
  *= require_self
 */
 
+// Twitter Bootstrap Overrides
+@import 'core/bootstrap/overrides/variables';
+
 // Twitter Bootstrap
-@import 'core/bootstrap_and_overrides';
+@import 'bootstrap';
+@import 'bootstrap-responsive';
 
 // Fonts
 @import 'core/fonts';
