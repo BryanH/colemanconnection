@@ -19,3 +19,4 @@ config/*.yml
 .DS_Store
 /public/assets
 config/initializers/secret_token.rb
+lib/program_session_times.rb
