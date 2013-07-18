@@ -21,8 +21,7 @@ class ProgramOfferings
           'Diagnostic Medical Sonography' => { :color => '#6aade4'},
           'Histology Technician' => { :color => '#6aade4'},
           'Nuclear Medicine Technologist' => { :color => '#6aade4'},
-          'Radiography' => { :color => '#6aade4'},
-          'Biosafety' => {:color => '#6aade4'}
+          'Radiography' => { :color => '#6aade4'}
         },
       'Health Care & Admin' => {
           'Health Information Technology' => { :color => '#ec7a08'},
