@@ -31,7 +31,7 @@ if Rails.env.development?
     
     def session_reminder
       recipient = Candidate.first
-      program_session = ProgramDate.first
+      program_session = ProgramDate.where(program: 'Pharmacy Technician').first
       Notifications.session_reminder(recipient, program_session)
     end
     
