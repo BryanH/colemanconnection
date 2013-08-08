@@ -76,4 +76,16 @@ $(function() {
 
   }).filter(':first').change();
 
+	var $getStarted = $("#getstarted");
+	
+	if ($getStarted.length > 0) {
+		var bounceInterval = setInterval(function () {
+			var $link = $getStarted.find('a');
+			$link.removeClass('bounce');
+			setTimeout(function () {
+				$link.addClass('bounce');
+			}, 100);
+		}, 5000);
+	}
+
 });
