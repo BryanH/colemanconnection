@@ -121,10 +121,6 @@ $hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
 		clear: both;
 	}
 	
-	.actions.pull-right {
-		display: none;
-	}
-	
 	.path-tool {
 	  .control-label,
 	  select {

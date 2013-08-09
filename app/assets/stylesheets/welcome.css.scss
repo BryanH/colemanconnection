@@ -26,6 +26,10 @@
   @include border-radius(0);
 }
 
+.highlight {
+	color: #49afcd;
+}
+
 body { 
   background: #f5f5f5;
 }
@@ -58,14 +62,14 @@ body > header {
   width: 100%;
   
   #mast-logo {
-    position: absolute;
+		position:absolute;
     top: -10px;
-    z-index: 100;
+		z-index: 1000;
     display: block;
     background: url(image_path('logo.png')) no-repeat;
     width: 264px;
     height: 130px;
-    text-indent: -99999999px;
+    text-indent: -99999px;
     margin-left: -10px;
   }
 
@@ -153,13 +157,15 @@ body > footer {
 		}
 		
 		span:nth-child(1) {
-			font-size: 67.659pt;
-			text-transform: uppercase;
+			font-size: 40pt;
+			line-height: 1.4;
+			letter-spacing: 2px;
+			text-transform: normal;
 		}
 		
 		span:nth-child(2) {
 			font-family: Sans-Serif;
-			font-size: 38.238pt;
+			font-size: 34.238pt;
 			font-weight: normal;
 		}
 		
@@ -251,7 +257,7 @@ body > footer {
 	}
 }
 
-#getstarted {
+.info {
 	background-color: #fff;
 	padding: 110px 0;
 	line-height: 1.6;
@@ -259,7 +265,7 @@ body > footer {
 	text-align: left;
 	color: #444;
 	
-	p:last-of-type {
+	p + p {
 		margin-top: 110px;
 		text-align: center;
 	}
@@ -295,46 +301,58 @@ body > footer {
 }
 
 
+
+// Responsive Stuffs
+
+@media (max-width: 780px) {
+	.stats div:nth-child(2):after {
+		border-right-width: 61px;
+		border-left-width: 61px;
+		left: -61px;
+	}
+}
+
+
 // Fun CSS Animation stuffs
 
-@-webkit-keyframes fadeInLeft {
-	from { -webkit-transform: translateX(-200px) translateY(-15px); opacity: 0 }
-	to { -webkit-transform: translateX(0px) translateY(0px); opacity: 1 }
+@-webkit-keyframes fadeInTop {
+	from { -webkit-transform: translateY(-200px); opacity: 0 }
+	to { -webkit-transform: translateY(0px); opacity: 1 }
 }
 
-@-moz-keyframes fadeInLeft {
-	from { -moz-transform: translateX(-200px) translateY(-15px); opacity: 0 }
-	to { -moz-transform: translateX(0px) translateY(0px); opacity: 1 }
+@-moz-keyframes fadeInTop {
+	from { -moz-transform: translateY(-200px); opacity: 0 }
+	to { -moz-transform: translateY(0px); opacity: 1 }
 }
 
-@-o-keyframes fadeInLeft {
-	from { -o-transform: translateX(-200px) translateY(-15px); opacity: 0 }
-	to { -o-transform: translateX(0px) translateY(0px); opacity: 1 }
+@-o-keyframes fadeInTop {
+	from { -o-transform: translateY(-200px); opacity: 0 }
+	to { -o-transform: translateY(0px); opacity: 1 }
 }
 
-@keyframes fadeInLeft {
-	from { transform: translateX(-200px) translateY(-15px); opacity: 0 }
-	to { transform: translateX(0px) translateY(0px); opacity: 1 }
+@keyframes fadeInTop {
+	from { transform: translateY(-200px); opacity: 0 }
+	to { transform: translateY(0px); opacity: 1 }
 }
 
-@-webkit-keyframes fadeInRight {
-	from { -webkit-transform: translateX(200px); opacity: 0 }
-	to { -webkit-transform: translateX(0px); opacity: 1 }
+@-webkit-keyframes fadeInBottom {
+	from { -webkit-transform: translateY(200px); opacity: 0 }
+	to { -webkit-transform: translateY(0px); opacity: 1 }
 }
 
-@-moz-keyframes fadeInRight {
-	from { -moz-transform: translateX(200px); opacity: 0 }
-	to { -moz-transform: translateX(0px); opacity: 1 }
+@-moz-keyframes fadeInBottom {
+	from { -moz-transform: translateY(200px); opacity: 0 }
+	to { -moz-transform: translateY(0px); opacity: 1 }
 }
 
-@-o-keyframes fadeInRight {
-	from { -o-transform: translateX(200px); opacity: 0 }
-	to { -o-transform: translateX(0px); opacity: 1 }
+@-o-keyframes fadeInBottom {
+	from { -o-transform: translateY(200px); opacity: 0 }
+	to { -o-transform: translateY(0px); opacity: 1 }
 }
 
-@keyframes fadeInRight {
-	from { transform: translateX(200px); opacity: 0 }
-	to { transform: translateX(0px); opacity: 1 }
+@keyframes fadeInBottom {
+	from { transform: translateY(200px); opacity: 0 }
+	to { transform: translateY(0px); opacity: 1 }
 }
 
 @-webkit-keyframes bounce {
@@ -369,40 +387,39 @@ body > footer {
 
 .cssanimations {
 	.gotcha {
-		overflow: hidden;
 		span:nth-child(1) {
 			opacity: 0;
-			-webkit-animation: fadeInLeft 1s ease .5s;
+			-webkit-animation: fadeInTop 1s ease .5s;
 			-webkit-animation-fill-mode: forwards;
-			-moz-animation: fadeInLeft 1s ease .5s;
+			-moz-animation: fadeInTop 1s ease .5s;
 			-moz-animation-fill-mode: forwards;
-			-o-animation: fadeInLeft 1s ease .5s;
+			-o-animation: fadeInTop 1s ease .5s;
 			-o-animation-fill-mode: forwards;
-			animation: fadeInLeft 1s ease .5s;
+			animation: fadeInTop 1s ease .5s;
 			animation-fill-mode: forwards;
 		}
 		
 		span:nth-child(2) {
 			opacity: 0;
-			-webkit-animation: fadeInRight 1s ease .7s;
+			-webkit-animation: fadeInBottom 1s ease 1.7s;
 			-webkit-animation-fill-mode: forwards;
-			-moz-animation: fadeInRight 1s ease .7s;
+			-moz-animation: fadeInBottom 1s ease 1.7s;
 			-moz-animation-fill-mode: forwards;
-			-o-animation: fadeInRight 1s ease .7s;
+			-o-animation: fadeInBottom 1s ease 1.7s;
 			-o-animation-fill-mode: forwards;
-			animation: fadeInRight 1s ease .7s;
+			animation: fadeInBottom 1s ease 1.7s;
 			animation-fill-mode: forwards;
 		}
 		
 		span:nth-child(3) {
 			opacity: 0;
-			-webkit-animation: fadeInLeft 1s ease .9s;
+			-webkit-animation: fadeInBottom 1s ease 2.1s;
 			-webkit-animation-fill-mode: forwards;
-			-moz-animation: fadeInLeft 1s ease .9s;
+			-moz-animation: fadeInBottom 1s ease 2.1s;
 			-moz-animation-fill-mode: forwards;
-			-o-animation: fadeInLeft 1s ease .9s;
+			-o-animation: fadeInBottom 1s ease 2.1s;
 			-o-animation-fill-mode: forwards;
-			animation: fadeInLeft 1s ease .9s;
+			animation: fadeInBottom 1s ease 2.1s;
 			animation-fill-mode: forwards;
 		}
 	}
