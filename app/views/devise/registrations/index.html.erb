@@ -1,23 +1,179 @@
 <%- @help_tour = 'gettingStarted' -%>
-<section class='well jumbotron'>
-  <h1>Getting started...</h1>
 
-  <p>
-    Before you create an account on HCC Coleman Connection, we'd like to share some important information
-    with you. This information will prepare you to meet with the program you have decided to apply for.
-  </p>
+<div class='gs-progress'>
+	<div class='gs-progress-bar'></div>
+</div>
 
-  <p>
-    We've split the information into 3 sections. These sections discuss life before you become an HCC Coleman
-    College student, what you can expect after you've been accepted into one of programs, and what life is
-    like for a student that graduates from HCC Coleman College.
-  </p>
-
-  <p>
-    It may seem like a lot of information, but don't worry, it goes pretty quickly.
-  </p>
-</section>
-
-<div class="gallery">
-  <%= render '/welcome/quiz/about_coleman' %>
+<div id="gs-main" class='gs-perspective'>
+	<section id='page1' class='gs-page gs-page-1' data-out-class='transitions-unglueRight' data-in-class='transitions-slideInRight'>
+		<div>
+			<h1>Smart Decision</h1>
+			<p>
+				We are thrilled you want to know more about us. HCC Coleman College is part of 
+				the Houston Community College system, and like HCC, we are accredited by the 
+				Southern Association of Colleges and Schools.  For you, this means the classes 
+				you take at HCC Coleman are college credit hours that you have earned.
+			</p>
+			<p>
+				But we are a little different from other HCC colleges in a very important way. 
+				Before you sign up to learn more about one of our programs, we want to explain a 
+				few things. It won’t take too long, and may seem unnecessary at first, but it's 
+				important information you need to know.
+			</p>
+			<p>
+				Here's a break down of what is about to happen:
+			</p>
+			
+			<ol>
+				<li>Learn more about HCC Coleman College through this online presentation</li>
+				<li>Create an account on Coleman Connection <small>(This is how you will register for a program session)</small></li>
+				<li>Attend the program session to learn more about the program and what it takes to get into that program.</li>
+			</ol>
+			
+			<p class='actions'>
+				<a href='#next' class='btn btn-info btn-large gs-next-page'>Next</a>
+			</p>
+		</div>
+	</section>
+	
+	<section id='page2' class='gs-page gs-page-2' data-out-class='transitions-unglueRight' data-in-class='transitions-slideInRight'>
+		<div>
+			<p>
+				While many of the classes and programs offered by Houston Community College are 
+				open enrollment, most are not at HCC Coleman College. It's true that anyone can 
+				apply to our college to become an HCC student, however, there is a separate 
+				application process that is required for people interested in entering one of 
+				our programs.
+			</p>
+			
+			<p>
+				"What's up with that?" you might be saying.
+			</p>
+			
+			<p>
+				Our programs are designed to be taken as a cohort. That means you start with a 
+				class of students, and, as a group, you move through the program together. 
+				There is no starting and stopping. Once you've been accepted into the program 
+				you must finish. If you don't, you have to start all over.
+			</p>
+			
+			<p>
+				This might seem extreme at first, but because everything you learn is cumulative,
+				each class builds on the last.
+			</p>
+			
+			<p>
+				Another reason for a separate application process is that most of our programs 
+				require students to have proven themselves by earning some college-level courses. 
+				During the application process, we will provide you with a list of the 
+				pre-requisites you will need to enter into the program.
+			</p>
+			
+			<p class='actions'>
+				<a href='#next' class='btn btn-info btn-large gs-next-page'>Next</a>
+				or <a href='#prev' class='gs-prev-page'>go back to the last topic</a>
+			</p>
+		</div>
+	</section>
+	
+	<section id='page3' class='gs-page gs-page-3' data-out-class='transitions-unglueRight' data-in-class='transitions-slideInRight'>
+		<div>
+			<p>
+				Our location also sets us apart from other HCC colleges. The phrase "Everything's 
+				Bigger in Texas" perfectly describes the Texas Medical Center (TMC). Claiming the 
+				top spot as the world’s largest medical center, the TMC is home to thousands of 
+				healthcare employees and millions of patient visits every year.
+			</p>
+			
+			<p>
+				As the only community college located in the TMC, you will have an unparalleled 
+				learning experience at HCC Coleman College.
+			</p>
+			
+			<p>
+				Not only will you learn from our expert faculty in the classroom, you will also 
+				have the opportunity to work side-by-side with healthcare professionals in the TMC.
+			</p>
+			
+			<p>
+				However, this unequalled educational experience brings the realties of parking in 
+				the TMC.
+			</p>
+			
+			<p>
+				Just like working in the TMC, learning in the TMC comes with added expenses in 
+				the form of parking. Parking in the TMC is not free. Whether you are visiting HCC 
+				Coleman College to get more information or attending classes asa student or 
+				working as a professional, you will have to pay for parking.
+			</p>
+			
+			<p>
+				While we would love to offer everyone free parking, the fees for parking are 
+				controlled by the TMC and are out of our control. There are several options for 
+				parking which you can find <a href='http://www.tmcparking.org' target="_blank">by clicking here</a>.
+			</p>
+			
+			<p class='actions'>
+				<a href='#next' class='btn btn-info btn-large gs-next-page'>Next</a>
+				or <a href='#prev' class='gs-prev-page'>go back to the last topic</a>
+			</p>
+		</div>
+	</section>
+	
+	<section id='page4' class='gs-page gs-page-4' data-out-class='transitions-unglueRight' data-in-class='transitions-slideInRight'>
+		<div>
+			<p>
+				Because our students learn skills in real hospitals and clinics, with real patients, we must also
+				hold our students to the highest standard. This includes professionalism in
+				how you dress, act, and present yourself.
+			</p>
+			
+			<p>
+				It also means that we perform background checks when you are applying to a program.
+			</p>
+			
+			<p>
+				We tell you this so you will know what’s expected, not to scare you away.  Don’t 
+				allow a hiccup in your past to deny your future from you.
+			</p>
+			
+			<p class='actions'>
+				<a href='#next' class='btn btn-info btn-large gs-next-page'>Next</a>
+				or <a href='#prev' class='gs-prev-page'>go back to the last topic</a>
+			</p>
+		</div>
+	</section>
+	
+	<section id='page5' class='gs-page gs-page-5' data-out-class='transitions-unglueRight' data-in-class='transitions-slideInRight'>
+		<div>
+			<h1>Why you need to create an account</h1>
+			
+			<p>
+				Interest in our programs is growing. In order to accommodate everyone, we have 
+				created a system that allows you to register for a program session on date that 
+				works best for you.  At this meeting, you’ll meet with program faculty to learn 
+				more about our expectations of you, the program itself, your career opportunities, 
+				as well as have a chance to ask questions.
+			</p>
+			
+			<p>
+				Additionally, we are also moving to a paperless application process and the 
+				account you create	to register for a program session will also be the account you 
+				will use to apply to the program in the near future.
+			</p>
+			
+			<p>
+				Once the paperless system goes live, you will be able to review your application 
+				and be kept up-to-date on the status of your application.
+			</p>
+			
+			<p>
+				So, now that you know...
+			</p>
+			
+			<p class='actions'>
+				<%= link_to "It's Time to Register", new_user_registration_path, class: 'btn btn-info btn-large' %>
+			</p>
+		</div>
+	</section>
 </div>

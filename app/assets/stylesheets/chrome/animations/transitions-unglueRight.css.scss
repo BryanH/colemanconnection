@@ -1,0 +1,21 @@
+@-webkit-keyframes unglueRight {
+	40% { -webkit-transform: rotateY(15deg); opacity: .8; -webkit-animation-timing-function: ease-out; }
+	100% { -webkit-transform: scale(0.8) translateZ(-200px); opacity:0; }
+}
+@-moz-keyframes unglueRight {
+	40% { -moz-transform: rotateY(15deg); opacity: .8; -moz-animation-timing-function: ease-out; }
+	100% { -moz-transform: scale(0.8) translateZ(-200px); opacity:0; }
+}
+@keyframes unglueRight {
+	40% { transform: rotateY(15deg); opacity: .8; animation-timing-function: ease-out; }
+	100% { transform: scale(0.8) translateZ(-200px); opacity:0; }
+}
+
+.transitions-unglueRight {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: unglueRight .8s both ease-in;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: unglueRight .8s both ease-in;
+	transform-origin: 0% 50%;
+	animation: unglueRight .8s both ease-in;
+}
