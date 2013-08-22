@@ -4,6 +4,11 @@ $hexagonWidth: 100px;
 $hexagonHeight: ($hexagonWidth * cos(30deg)) * 2;
 $hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
 
+.pathways.container {
+	width: 960px;
+	margin: 90px auto 0;
+}
+
 .path-tool {
   .control-label,
   select {
@@ -30,7 +35,7 @@ $hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
     text-align: center;
   }
   
-  li p {
+  li a {
     display: inline-block;
     font-size: 1.3em;
     line-height: 1.2;
@@ -108,4 +113,62 @@ $hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
     background-color: #c4262e;
   }
   
+}
+
+@media (max-width: 979px) {
+	.pathways.container {
+		width: auto;
+		clear: both;
+	}
+	
+	.path-tool {
+	  .control-label,
+	  select {
+	    font-size: 20px;
+	  }
+
+	  .control-label {
+			float: none;
+			display: block;
+	  }
+
+	  select {
+	    height: auto;
+	    width: auto;
+	  }
+	}
+	
+	.image-grid {
+		font-size: 20px;
+		margin: 0;
+		padding: 0;
+		
+	 	li {
+			display: block;
+			float: none;
+			margin: 0 0 3px;
+			padding: 0;
+			width: 100%;
+			height: auto;
+			line-height: 1;
+			
+			p {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				display: block;
+				padding: 15px 0;
+			}
+			
+			&:nth-child(odd), &:nth-child(even) {
+				top: 0;
+			}
+			
+			&:before, &:after {
+				display: none;
+			}
+		}
+	}
 }

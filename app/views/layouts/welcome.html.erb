@@ -10,6 +10,9 @@
 	<!-- Author and Description -->
 	<meta name="description" content="Online Enrollment system for HCC Coleman Connection">
   <meta name="author" content="Terry Schmidt">
+
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700|Old+Standard+TT:400,700,400italic' rel='stylesheet' type='text/css'>
 	
 	<!-- Application Assets -->
   <%= stylesheet_link_tag    "welcome", :media => "all" %>
@@ -25,6 +28,11 @@
 			<%= link_to root_path do %>
 			<h1 id='mast-logo'>HCC Coleman Connection</h1>
 			<%- end -%>
+			
+			<div class='actions pull-right'>
+	     	<%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-large btn-text' %>
+      	<%= link_to "GET STARTED".html_safe, get_started_path, class: 'btn btn-info btn-large' %>
+			</div>
 		</div>
 	</header>
 

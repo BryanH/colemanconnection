@@ -2,61 +2,68 @@
   <div class="container">
     <div>
       <div class="gotcha">
-        <h2>Welcome! A career in health care is waiting for you.</h2>
-        <p>
-          There a few things you should know though. Enrolling
-          at <b class="highlight">HCC Coleman College</b> is a <b class="highlight">competitive</b> and <b class="highlight">selective</b>
-          process. The number of students <b class='highlight'>admitted</b> into each program is <b class='highlight'>limited</b>,
-          which is why it's so important that you are as prepared as you can be. The first step is just a click away.
-        </p>
-        <p>
-          <%= link_to "Get started &rarr;".html_safe, get_started_path, class: 'btn btn-info btn-large' %>
-          <span class='separator'>or</span> <%= link_to 'Log in if you already have an account', new_user_session_path, class: 'btn btn-large' %>
-        </p>
+        <h2>
+					<span>HCC Coleman College</span>
+					<span>Your Health Care Career</span>
+					<span><%= link_to "Starts Here", get_started_path %></span>
+				</h2>
       </div>
     </div>
   </div>
 </section>
 
-<section id="signin" class='well non-rounded'>
-  <div class="container">
-    <p>Have you already registered? <%= link_to 'Log in', new_user_session_path %> to your account.</p>
-  </div>
+<section id='aboutus' class='info'>
+	<div class='container'>
+		<p>
+			HCC Coleman College <em>for</em> Health Sciences offers <span class='highlight'>more than 20 health care programs</span> awarding certificates
+			or two-year associate degrees. Enrolling at HCC Coleman College is a <span class='highlight'>competitive</span> 
+			and <span class='highlight'>selective</span> process. The number of students <span class='highlight'>admitted</span> into each program is 
+			<span class='highlight'>limited</span>, which is why it's so important that you are as prepared as you can be.
+		</p>
+	</div>
 </section>
 
-<section id="quickshots" class="container">
-  <div class="row">
-    <section class="span4">
-      <div class="well">
-        <h3>What we have to offer</h3>
-        <p>
-          HCC Coleman College offers more than 20 health care
-          programs awarding certificates or two-year associate
-          degrees. <a href="http://coleman.hccs.edu/portal/site/coleman/menuitem.cd28cc331ea36ea9759b8e10507401ca/?vgnextoid=27c2749afded9110VgnVCM100000054710acRCRD&vgnextfmt=default" target="_blank">Click here to learn more</a>.
-        </p>
-      </div>
-    </section>
-    <section class="span4">
-      <div class="well">
-        <h3>Do you have questions?</h3>
-        <p>
-          We have answers! We know there are a lot of details involved with applying to an HCC Coleman health science program. For that reason,
-          we have established a live chat service called <%= link_to 'askColeman', 'http://coleman.hccs.edu/askcoleman' %>. Feel free to start a chat today and get your
-          questions answered.
-        </p>
-      </div>
-    </section>
-    <section class="span4">
-      <div class="well">
-        <h3>Which program fits you best</h3>
-        <p>
-          Not quite sure which program would best fit your personality?
-          Lucky for you we have a handy little tool to help point you in
-          the right direction. <a href="/pathway">Click here to find your path</a>.
-        </p>
-      </div>
-    </section>
-  </div>
+<div class='stats'>
+	<div>
+		<p class='stat one'>
+			<span>5.6</span>
+			<span>Million</span>
+			<span>Estimated new health</span>
+			<span>care jobs <em>by</em> <strong>2020</strong></span>
+		</p>
+	</div>
+
+	<div>
+		<p class='stat two'>
+			<span>20<small>+</small></span>
+			<span>Number <em>of</em> health</span>
+			<span>care programs offered</span>
+			<span><em>at</em> HCC Coleman College</span>
+		</p>
+	</div>
+</div>
+
+<section id='getstarted' class='info'>
+	<div class='container'>
+		<p>
+			Health care in this country is booming. The fact that people are living longer means
+			the demand for medical care will only continue to increase. HCC Coleman College
+			will prepare you for a rewarding career in programs ranging from Registered
+			Nursing to Pharmacy Technician. So, what are you waiting for?
+		</p>
+
+		<p>
+			<%= link_to "Get Started Today", get_started_path, class: 'btn btn-info btn-jumbo' %>
+		</p>
+	</div>
+</section>
+
+<section class="container need-help">
+	<p>
+		Not sure where to start?<br>
+		<%= link_to 'Chat with us', 'http://coleman.hccs.edu/askcoleman' %>
+		or <%= link_to 'use this really simple tool', '/pathway' %> to find your path.
+	</p>
   
   <p class="mission-statement">
     The vision of HCC Coleman College for Health Sciences is to be the 

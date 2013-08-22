@@ -1,0 +1,15 @@
+@-webkit-keyframes slideInRight {
+	from { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes slideInRight {
+	from { -moz-transform: translateX(100%); }
+}
+@keyframes slideInRight {
+	from { transform: translateX(100%); }
+}
+
+.transitions-slideInRight {
+	-webkit-animation: slideInRight .6s ease both;
+	-moz-animation: slideInRight .6s ease both;
+	animation: slideInRight .6s ease both;
+}

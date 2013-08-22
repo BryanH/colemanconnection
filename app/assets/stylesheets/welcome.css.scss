@@ -13,6 +13,7 @@
 
 // Twitter Bootstrap
 @import 'bootstrap';
+@import 'bootstrap-responsive';
 
 // Fonts
 @import 'core/fonts';
@@ -21,19 +22,40 @@
 @import 'chrome/pathway_grid';
 @import 'chrome/undesireables';
 
+body {
+	font-family: 'News Cycle', sans-serif;
+}
+
 .non-rounded {
   @include border-radius(0);
 }
 
-body { 
-  background: #f5f5f5 url(image_path('bg.png')) repeat top left;
-}
-
-b { font-weight: normal }
-
 .highlight {
-  color: #FEBE10;
+	color: #49afcd;
 }
+
+body { 
+  background: #f5f5f5;
+}
+
+#mast {
+	.actions {
+		padding: 10px 0;
+	}
+	
+	.btn.btn-text {
+		background: none;
+		border: none;
+		color: #a5a5a5;
+		box-shadow: none;
+		margin-right: 25px;
+		
+		&:hover, &:active {
+			color: #757575;
+		}
+	}
+}
+
 
 body > header {
   margin: 0;
@@ -44,23 +66,15 @@ body > header {
   width: 100%;
   
   #mast-logo {
-    position: absolute;
+		position:absolute;
     top: -10px;
-    z-index: 100;
+		z-index: 1000;
     display: block;
-    background: url(image_path('sprite.png')) no-repeat -28px -9px;
-    width: 169px;
-    height: 85px;
-    text-indent: -99999999px;
-    margin-left: -10px;
-  }
-
-  #mast-logo {
-    display: block;
-    background: url(image_path('sprite.png')) no-repeat -28px -9px;
-    width: 169px;
-    height: 85px;
+    background: url(image_path('logo.png')) no-repeat;
+    width: 264px;
+    height: 130px;
     text-indent: -99999px;
+    margin-left: -10px;
   }
 
   .masthead {
@@ -122,52 +136,155 @@ body > footer {
 }
 
 #comehither {
-  height: 500px;
+	background: #f0f0f0 url(image_path('bg_blur.jpeg')) no-repeat center center scroll;
+	background-size: cover;
   width: 100%;
   position: relative;
-  
-  border-bottom: 1px solid #858585;
-  
-  background: url(image_path('bg3.jpg')) no-repeat top left scroll;
-  
-  background-size: cover;
-}
-
-#comehither > div {
-  color: #febe10;
-  text-align: left;
 }
 
 .gotcha {
   font-size: 1.2em;
   line-height: 1.2;
-  text-shadow: 0 1px 0 #353535;
+	margin: 210px 0;
 
-  background-color: #353535;
-  background-color: rgba(0,0,0,.75);
-  
-  padding: 30px;
-  margin: 0;
-  margin-top: 120px;
-
-  p {
-    color: white;
-    line-height: 1.7;
-    padding: 20px 0;
-    font-weight: normal;
-  }
-  
-  .separator {
-    padding: 0 10px;
-  }
+	h2 {		
+		font-size: 48px;
+		text-align: center;
+		margin: 0;
+		
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+		
+	  color: #fff;
+		
+		span {
+			display: block;
+			line-height: 1.175;
+		}
+		
+		span:nth-child(1) {
+			font-size: 40pt;
+			line-height: 1.6;
+			letter-spacing: 2px;
+			text-transform: normal;
+		}
+		
+		span:nth-child(2) {
+			font-size: 34.238pt;
+			font-weight: normal;
+		}
+		
+		span:nth-child(3) {
+			font-size: 67.659pt;
+			letter-spacing: 3px;
+			line-height: 1.3;
+			text-transform: uppercase;
+		}
+	}
 }
 
-#comehither .sign-in {
-  display: block;
-  background-color: #353535;
-  background-color: rgba(0,0,0,.4);
-  padding: 4px 10px;
-  margin-top: 80px;
+.stats {
+	text-align: center;
+	overflow: hidden;
+	color: #49afcd;
+	height: 280px;
+	
+	small {
+		font-size: 45%;
+		vertical-align: 40%;
+	}
+	
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+	
+	div,
+	div p {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	div {
+		float: left;
+		padding: 0;
+		width: 50%;
+		height: 100%;
+		font-family: "Old Standard TT", serif;
+		
+		&:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+	}
+	
+	.stat {
+		line-height: 1.175;
+		font-size: 22px;
+		
+		span {
+			display: block;
+		}
+		
+		span:nth-child(1) {
+			font-size: 90px;
+			font-weight: bold;
+		}
+		
+		&.one span:nth-child(2) {
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		}
+	}
+	
+	div:nth-child(1) {
+		background-color: #444;
+	}
+	
+	div:nth-child(2) {
+		background-color: #49afcd;
+		color: #fff;
+		position: relative;
+		
+		&:after {
+			content: '';
+			width: 0;
+			height: 0;
+			zoom: 1;
+			border: 140px solid;
+			border-top-color: #444;
+			border-left-color: #444;
+			border-bottom-color: #49afcd;
+			border-right-color: #49afcd;
+			position: absolute;
+			display: block;
+			top: 0;
+			left: -140px;
+		}
+	}
+}
+
+.info {
+	background-color: #fff;
+	padding: 110px 0;
+	line-height: 1.6;
+	font-size: 22px;
+	text-align: left;
+	color: #444;
+	
+	p + p {
+		margin-top: 110px;
+		text-align: center;
+	}
+	
+	em {
+		font-family: "Old Standard TT", sans-serif;
+	}
 }
 
 .mission-statement {
@@ -176,23 +293,150 @@ body > footer {
   font-size: 12px;
 }
 
-#signin.well {
-  background-color: #FEBE10;
-  padding: 10px;
-
-  a, a:hover, a:active, a:visited {
-    color: white;
-  }
-}
-  
-#signin p { 
-  padding: 0; 
-  margin: 0;
-  text-align: center;
-  font-size: 1.3em;
+.need-help > p:first-of-type {
+	padding: 90px 0;
+	text-align: center;
+	line-height: 1.5;
+	font-size: 24px;
 }
 
-#quickshots .well {
-  color: #555;
-  height: 150px;
+.btn-info {
+	background: #49afcd;
+	border: none;
+	box-shadow: none;
+	border-radius: 2px;
+}
+
+.btn-info:hover, .btn-info:active {
+	background-color: #2f96b4;
+}
+
+.btn-jumbo {
+	font-size: 30px;
+	padding: 35px;
+}
+
+
+
+// Responsive Stuffs
+
+@media (max-width: 780px) {
+	.stats div:nth-child(2):after {
+		border-right-width: 61px;
+		border-left-width: 61px;
+		left: -61px;
+	}
+}
+
+
+// Fun CSS Animation stuffs
+
+@-webkit-keyframes fadeInTop {
+	from { -webkit-transform: translateY(-200px); opacity: 0 }
+	to { -webkit-transform: translateY(0px); opacity: 1 }
+}
+
+@-moz-keyframes fadeInTop {
+	from { -moz-transform: translateY(-200px); opacity: 0 }
+	to { -moz-transform: translateY(0px); opacity: 1 }
+}
+
+@-o-keyframes fadeInTop {
+	from { -o-transform: translateY(-200px); opacity: 0 }
+	to { -o-transform: translateY(0px); opacity: 1 }
+}
+
+@keyframes fadeInTop {
+	from { transform: translateY(-200px); opacity: 0 }
+	to { transform: translateY(0px); opacity: 1 }
+}
+
+@-webkit-keyframes fadeInBottom {
+	from { -webkit-transform: translateY(200px); opacity: 0 }
+	to { -webkit-transform: translateY(0px); opacity: 1 }
+}
+
+@-moz-keyframes fadeInBottom {
+	from { -moz-transform: translateY(200px); opacity: 0 }
+	to { -moz-transform: translateY(0px); opacity: 1 }
+}
+
+@-o-keyframes fadeInBottom {
+	from { -o-transform: translateY(200px); opacity: 0 }
+	to { -o-transform: translateY(0px); opacity: 1 }
+}
+
+@keyframes fadeInBottom {
+	from { transform: translateY(200px); opacity: 0 }
+	to { transform: translateY(0px); opacity: 1 }
+}
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+	40% {-webkit-transform: translateY(-10px);}
+	60% {-webkit-transform: translateY(-5px);}
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-30px);}
+	60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-30px);}
+	60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-10px);}
+	60% {transform: translateY(-5px);}
+}
+
+.bounce {
+	-webkit-animation: bounce 1s ease;
+	-moz-animation: bounce 1s ease;
+	-o-animation: bounce 1s ease;
+	animation: bounce 1s ease;
+}
+
+.cssanimations {
+	.gotcha {
+		span:nth-child(1) {
+			opacity: 0;
+			-webkit-animation: fadeInTop 1s ease .5s;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation: fadeInTop 1s ease .5s;
+			-moz-animation-fill-mode: forwards;
+			-o-animation: fadeInTop 1s ease .5s;
+			-o-animation-fill-mode: forwards;
+			animation: fadeInTop 1s ease .5s;
+			animation-fill-mode: forwards;
+		}
+		
+		span:nth-child(2) {
+			opacity: 0;
+			-webkit-animation: fadeInBottom 1s ease 1.7s;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation: fadeInBottom 1s ease 1.7s;
+			-moz-animation-fill-mode: forwards;
+			-o-animation: fadeInBottom 1s ease 1.7s;
+			-o-animation-fill-mode: forwards;
+			animation: fadeInBottom 1s ease 1.7s;
+			animation-fill-mode: forwards;
+		}
+		
+		span:nth-child(3) {
+			opacity: 0;
+			-webkit-animation: fadeInBottom 1s ease 2.1s;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation: fadeInBottom 1s ease 2.1s;
+			-moz-animation-fill-mode: forwards;
+			-o-animation: fadeInBottom 1s ease 2.1s;
+			-o-animation-fill-mode: forwards;
+			animation: fadeInBottom 1s ease 2.1s;
+			animation-fill-mode: forwards;
+		}
+	}
 }
