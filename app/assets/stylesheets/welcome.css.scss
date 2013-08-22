@@ -22,6 +22,10 @@
 @import 'chrome/pathway_grid';
 @import 'chrome/undesireables';
 
+body {
+	font-family: 'News Cycle', sans-serif;
+}
+
 .non-rounded {
   @include border-radius(0);
 }
@@ -143,11 +147,15 @@ body > footer {
   line-height: 1.2;
 	margin: 210px 0;
 
-	h2 {
-		font-family: Sans-serif;		
+	h2 {		
 		font-size: 48px;
 		text-align: center;
 		margin: 0;
+		
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 		
 	  color: #fff;
 		
@@ -158,13 +166,12 @@ body > footer {
 		
 		span:nth-child(1) {
 			font-size: 40pt;
-			line-height: 1.4;
+			line-height: 1.6;
 			letter-spacing: 2px;
 			text-transform: normal;
 		}
 		
 		span:nth-child(2) {
-			font-family: Sans-Serif;
 			font-size: 34.238pt;
 			font-weight: normal;
 		}
@@ -184,6 +191,11 @@ body > footer {
 	color: #49afcd;
 	height: 280px;
 	
+	small {
+		font-size: 45%;
+		vertical-align: 40%;
+	}
+	
 	&:after {
 		content: '';
 		display: inline-block;
@@ -201,7 +213,7 @@ body > footer {
 		padding: 0;
 		width: 50%;
 		height: 100%;
-		font-family: serif;
+		font-family: "Old Standard TT", serif;
 		
 		&:before {
 			content: '';
@@ -268,6 +280,10 @@ body > footer {
 	p + p {
 		margin-top: 110px;
 		text-align: center;
+	}
+	
+	em {
+		font-family: "Old Standard TT", sans-serif;
 	}
 }
 
