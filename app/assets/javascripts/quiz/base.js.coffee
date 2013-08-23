@@ -43,7 +43,7 @@ $ ->
 	nextPage = ->
 		return false if isAnimating
 		return false if current == (pagesCount - 1)
-		isAnimating = true
+		isAnimating = support
 		$currentPage = $pages.eq(current)
 		
 		++ current if current < pagesCount - 1
@@ -55,14 +55,17 @@ $ ->
 		prepareNextPage($nextPage, $nextPage.data('in-class'))
 		prepareCurrentPage($currentPage, $currentPage.data('out-class'))
 		
-		$nextPage.on(animationEndEventName, ->
-			onEndAnimation $currentPage
-		)
+		if support
+			$nextPage.on(animationEndEventName, ->
+				onEndAnimation $currentPage
+			)
+		else
+			resetPage $currentPage
 	
 	previousPage = ->
 		return false if isAnimating
 		return false if current == 0
-		isAnimating = true
+		isAnimating = support
 		$currentPage = $pages.eq(current)
 		
 		--current if current != 0
@@ -73,10 +76,13 @@ $ ->
 		
 		prepareNextPage($nextPage, $nextPage.data('in-class'))
 		prepareCurrentPage($currentPage, $currentPage.data('out-class'))
-		
-		$nextPage.on(animationEndEventName, ->
-			onEndAnimation $currentPage
-		)
+			
+		if support
+			$nextPage.on(animationEndEventName, ->
+				onEndAnimation $currentPage
+			)
+		else
+			resetPage $currentPage
 		
 		
 	prepareCurrentPage = ($currentPage, animation) ->
