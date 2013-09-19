@@ -12,7 +12,8 @@ $ ->
 		'WebkitAnimation' : 'webkitAnimationEnd',
 		'OAnimation' : 'oAnimationEnd',
 		'msAnimation' : 'MSAnimationEnd',
-		'animation' : 'animationend'
+		'animation' : 'animationend',
+		'MozAnimation' : 'animationend'
 	}
 	animationEndEventName = animationEndEventNames[ Modernizr.prefixed('animation') ]
 	support = Modernizr.cssanimations
