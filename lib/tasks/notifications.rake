@@ -13,11 +13,16 @@ namespace :notifications do
     #   2a. Create a survey result with a unique token
     #   2b. call the Notifications.satisfaction_survey with [:candidate, :program_date, :token]
     ProgramDate.includes(sessions: :user).where{ date(occurs_on).in week_start(1.week.ago)..week_end(1.week.ago) }.each do |program_date|
-      program_date.sessions.attended(true).each do |session|
+      program_date.sessions.each do |session|
         recipient = session.user
         program_session = program_date
-        survey_result = program_session.survey_results.create!(token: SurveyResult.generate_token, result: 'pending')
-        Notifications.delay.satisfaction_survey(recipient, program_session, survey_result.token)
+        
+        if session.attended?
+          survey_result = program_session.survey_results.create!(token: SurveyResult.generate_token, result: 'pending')
+          Notifications.delay.satisfaction_survey(recipient, program_session, survey_result.token)
+        else
+          Notifications.delay.missed_session(recipient, program_date)
+        end
       end
     end
   end
