@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206201724) do
+ActiveRecord::Schema.define(:version => 20140218165012) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(:version => 20130206201724) do
     t.string   "hcc_email_address"
   end
 
+  create_table "discipline_teams", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "er_dates", :force => true do |t|
     t.integer  "cap"
     t.datetime "session_time"
@@ -102,6 +109,15 @@ ActiveRecord::Schema.define(:version => 20130206201724) do
 
   add_index "program_dates", ["occurs_on"], :name => "index_program_dates_on_occurs_on"
   add_index "program_dates", ["program"], :name => "index_program_dates_on_program"
+
+  create_table "programs", :force => true do |t|
+    t.string   "name"
+    t.integer  "discipline_team_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "programs", ["discipline_team_id"], :name => "index_programs_on_discipline_team_id"
 
   create_table "sessions", :force => true do |t|
     t.integer  "user_id"

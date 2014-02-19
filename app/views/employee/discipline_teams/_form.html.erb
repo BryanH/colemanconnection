@@ -1,0 +1,11 @@
+<%= simple_form_for @discipline_team, url: employee_discipline_team_path(@discipline_team) do |f| %>
+	<fieldset>
+		<%= f.error_notification %>
+		<%= f.input :name %>
+		<%= f.input :color, :input_html => { :type => "color" }, hint: "This value must be a hexidecimal number. Example: #FFFFFF" %>
+	</fieldset>
+	
+	<div class='form-actions'>
+    <%= f.button :submit, "Update Team" %> or <%= link_to 'return to the dashboard', employee_root_path %>
+  </div>
+<% end %>

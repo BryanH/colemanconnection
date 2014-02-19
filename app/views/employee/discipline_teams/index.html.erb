@@ -1,0 +1,47 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ul class='menu'>
+        <li><%= link_to "All discipline teams", employee_discipline_teams_path, class: ('active' unless params[:q]) %></li>
+        <%= content_tag :li, link_to("Search results for '#{params[:q]}'", '#', class: 'active') if params[:q] %>
+      </ul>
+    </div>
+
+		<div class='boxed'>
+      <ul class='menu'>
+        <li><%= link_to "Add a new team", new_employee_discipline_team_path %></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class="boxed boxed-main">
+      <header>
+        <h1>
+          Discipline Teams
+          <form class="form-search pull-right">
+            <input type="text" name='q' class="input-medium search-query">
+            <%= hidden_field :active, false if params[:active] %>
+            <button type="submit" class="btn">Search</button>
+          </form>
+        </h1>
+      </header>
+
+      <section>
+        <ol class='menu menu-list'>
+          <%- @discipline_teams.each do |discipline_team| -%>
+            <%= content_tag_for :li, discipline_team, class: 'clearfix' do %>
+              <section class='pull-left'>
+                <%= discipline_team.name %>
+              </section>
+              <section class='pull-right'>
+                <span class='label label-link'><%= link_to 'edit', edit_employee_discipline_team_path(discipline_team) %></span>
+              </section>
+            <%- end -%>
+          <%- end -%>
+        </ol>
+      </section>
+    </div>
+    <%= will_paginate @discipline_teams, class: 'pagination pagination-centered' %>
+  </div>
+</div>
