@@ -46,9 +46,10 @@ group :development do
   gem 'annotate',         '>= 2.4.1.beta'
   gem 'guard-rspec',      '>= 0.5.5'
   gem 'mail_view',        '>= 1.0'
-  gem 'pry-rails'
   gem 'yaml_db'
   gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'jazz_hands'
 end
 
 group :test do
