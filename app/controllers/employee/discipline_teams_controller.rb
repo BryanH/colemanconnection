@@ -31,6 +31,6 @@ class Employee::DisciplineTeamsController < Employee::BaseController
 private
   
   def set_discipline_team
-    @discipline_team = DisciplineTeam.where(id: params[:id]).first
+    @discipline_team = DisciplineTeam.find(params[:id])
   end
 end
