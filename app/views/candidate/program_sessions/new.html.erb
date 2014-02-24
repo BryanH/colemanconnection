@@ -11,7 +11,7 @@
         <fieldset>
           <%= f.error_notification %>
           <%= hidden_field_tag :selected, @session.program_date_id %>
-          <%= f.input :program_name, label: "Choose a program", collection: ProgramOfferings.programs %>
+          <%= f.input :program_name, label: "Choose a program", collection: Program.where(active: true).select(:name).collect(&:name).sort %>
           <%= f.association :program_date, label: "Select a time" %>
         </fieldset>
       </div>

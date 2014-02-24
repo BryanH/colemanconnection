@@ -2,21 +2,15 @@
   <header>
     <h1 class='page-header'>Happiness Results by Program <small>since February 20th, 2012</small></h1>
   </header>
-  
-  <%- if SurveyResult.programs_without_surveys.any? -%>
-  <section class='alert alert-warning no-survey-results'>
-    The following programs have no survey results: <%= SurveyResult.programs_without_surveys.map{ |p| content_tag(:strong, p) }.to_sentence.html_safe %>
-  </section>
-
-  <%- end -%>
 
   <div class='row'>
-    <% SurveyResult.happiness_counts.each do |k, v| %>
-    <div class='span5 card'>
-      <h3><%= k %></h3>
-      
-      <div class='flot-container' data-series="<%= [{ label: "Great", data: v[:great], color: '#4da74d' }, { label: "Okay", data: v[:okay], color: '#edc240' }, { label: "Bad", data: v[:bad], color: '#cb4b4b' }, { label: "Pending", data: v[:pending], color: '#afd8f8' }].to_json %>"></div>
-    </div>
-    <% end %>
+		<%- Program.all.each do |program| -%>
+			<%- @result = ProgramSurveyResults.new(program) -%>
+			<div class='span5 card'>
+	      <h3><%= program.name %></h3>
+     
+	      <div class='flot-container' data-series="<%= [{ label: "Great", data: @result.great_count, color: '#4da74d' }, { label: "Okay", data: @result.okay_count, color: '#edc240' }, { label: "Bad", data: @result.bad_count, color: '#cb4b4b' }, { label: "Pending", data: @result.pending_count, color: '#afd8f8' }].to_json %>"></div>
+	    </div>
+		<%- end -%>
   </div>
 </div>

@@ -4,8 +4,6 @@ describe SurveyResult do
   subject { SurveyResult }
   
   it { should respond_to(:generate_token) }
-  it { should respond_to(:happiness_counts) }
-  it { should respond_to(:programs_without_surveys) }
   
   describe "instance" do
     let(:survey_result) { FactoryGirl.create(:survey_result) }

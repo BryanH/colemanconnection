@@ -1,6 +1,9 @@
 class Program < ActiveRecord::Base
-  belongs_to :discipline_team
   attr_accessible :name, :discipline_team_id
+  
+  belongs_to :discipline_team
+  has_many :program_dates
+  has_many :survey_results, through: :program_dates
   
   validates :name, uniqueness: true
   

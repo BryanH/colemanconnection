@@ -5,7 +5,6 @@ class Employee::ProgramDatesController < Employee::BaseController
   def index
     program_ids = Program.where(name: current_user.affiliated_programs, active: true).select(:id).collect(&:id)
     @program_dates ||= ProgramDate.all_with_sessions.where{ program_id.in(program_ids) & occurs_on.gte(2.months.ago) }.group_by {|p| p.program_name }.sort
-    # @program_dates ||= Hash[ProgramDate.all_with_sessions.where(program_string: current_user.affiliated_programs).group_by(&:program_string).sort]
   end
   
   def show

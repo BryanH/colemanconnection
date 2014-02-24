@@ -54,7 +54,7 @@ class ProgramDate < ActiveRecord::Base
                                       ) AS sessions_not_attended')
   
   def name
-    program + " " + occurs_on.to_formatted_s(:pretty)
+    program_name + " " + occurs_on.to_formatted_s(:pretty)
   end
   
   def no_attendance!
