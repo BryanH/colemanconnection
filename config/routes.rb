@@ -42,6 +42,7 @@ ColemanConnection::Application.routes.draw do
     resources :permissions, only: [:show, :update]
     resources :programs
     resources :discipline_teams
+    resources :program_activations, only: [:create, :destroy]
     
     root to: 'base#index'
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140220224209) do
+ActiveRecord::Schema.define(:version => 20140224162442) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -115,8 +115,9 @@ ActiveRecord::Schema.define(:version => 20140220224209) do
   create_table "programs", :force => true do |t|
     t.string   "name"
     t.integer  "discipline_team_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.boolean  "active",             :default => true
   end
 
   add_index "programs", ["discipline_team_id"], :name => "index_programs_on_discipline_team_id"
