@@ -28,6 +28,6 @@ describe ProgramDate do
     let(:program_time) { Chronic.parse("Oct 4th @ 5:30pm") }
     let(:porogram_date) { ProgramDate.new }
     before { ProgramDate.create!(program_string: 'Biosafety', occurs_on: program_time) }
-    it { should validate_uniqueness_of(:occurs_on).scoped_to(:program_string) }
+    it { should validate_uniqueness_of(:occurs_on).scoped_to(:program_id) }
   end
 end

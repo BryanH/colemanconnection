@@ -26,7 +26,7 @@
           Program Session Happiness Results
           <small>(<%= @completed_survey_results.count %> of <%= @date.survey_results.count %> responded)</small>
         </h1>
-        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program_string %></small></h2>
+        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program_name %></small></h2>
       </header>
       
       <ol class='smiley-results unstyled'>
