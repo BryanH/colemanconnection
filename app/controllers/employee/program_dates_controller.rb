@@ -3,7 +3,7 @@ class Employee::ProgramDatesController < Employee::BaseController
   before_filter :set_program_date, only: [:show, :happiness]
   
   def index
-    @dates ||= Hash[ProgramDate.all_with_sessions.where(program: current_user.affiliated_programs).group_by(&:program).sort]
+    @dates ||= Hash[ProgramDate.all_with_sessions.where(program_string: current_user.affiliated_programs).group_by(&:program_string).sort]
   end
   
   def show

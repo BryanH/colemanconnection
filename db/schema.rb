@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140218165012) do
+ActiveRecord::Schema.define(:version => 20140220224209) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -100,15 +100,17 @@ ActiveRecord::Schema.define(:version => 20140218165012) do
   add_index "permissions", ["user_id"], :name => "index_permissions_on_user_id"
 
   create_table "program_dates", :force => true do |t|
-    t.string   "program"
+    t.string   "program_string"
     t.datetime "occurs_on"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.boolean  "no_attendance", :default => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "no_attendance",  :default => false
+    t.integer  "program_id"
   end
 
   add_index "program_dates", ["occurs_on"], :name => "index_program_dates_on_occurs_on"
-  add_index "program_dates", ["program"], :name => "index_program_dates_on_program"
+  add_index "program_dates", ["program_id"], :name => "index_program_dates_on_program_id"
+  add_index "program_dates", ["program_string"], :name => "index_program_dates_on_program"
 
   create_table "programs", :force => true do |t|
     t.string   "name"

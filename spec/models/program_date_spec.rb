@@ -16,7 +16,7 @@ describe ProgramDate do
   subject { program_date }
 
   it { should be_valid }
-  it { should respond_to(:program) }
+  it { should respond_to(:program_string) }
   it { should respond_to(:occurs_on) }
   it { should respond_to(:no_attendance!) }
   it { should respond_to(:attendance!) }
@@ -27,7 +27,7 @@ describe ProgramDate do
   context 'existing program date' do
     let(:program_time) { Chronic.parse("Oct 4th @ 5:30pm") }
     let(:porogram_date) { ProgramDate.new }
-    before { ProgramDate.create!(program: 'Biosafety', occurs_on: program_time) }
-    it { should validate_uniqueness_of(:occurs_on).scoped_to(:program) }
+    before { ProgramDate.create!(program_string: 'Biosafety', occurs_on: program_time) }
+    it { should validate_uniqueness_of(:occurs_on).scoped_to(:program_string) }
   end
 end
