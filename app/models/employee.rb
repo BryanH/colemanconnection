@@ -41,4 +41,8 @@ class Employee < User
     self.permissions.where{ subject_class.eq("All") & action.not_eq('audit') }.count > 0
   end
   
+  def can_view_system_settings?
+    self.permissions.where{ subject_class.eq("All") }.count > 0
+  end
+  
 end

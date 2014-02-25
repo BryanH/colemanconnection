@@ -28,7 +28,7 @@
           Registered Candidates
           <%= render 'common/search_form' %>
         </h1>
-        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program %></small></h2>
+        <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program_name %></small></h2>
       </header>
       
       <%- if @sessions.any? -%>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206201724) do
+ActiveRecord::Schema.define(:version => 20140225195346) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(:version => 20130206201724) do
     t.string   "hcc_email_address"
   end
 
+  create_table "discipline_teams", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "er_dates", :force => true do |t|
     t.integer  "cap"
     t.datetime "session_time"
@@ -81,6 +88,16 @@ ActiveRecord::Schema.define(:version => 20130206201724) do
     t.datetime "updated_at"
     t.datetime "emails_sent_at"
   end
+
+  create_table "pathway_settings", :force => true do |t|
+    t.integer  "program_id"
+    t.string   "url"
+    t.string   "tags"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pathway_settings", ["program_id"], :name => "index_pathway_settings_on_program_id"
 
   create_table "permissions", :force => true do |t|
     t.string   "action"
@@ -93,15 +110,27 @@ ActiveRecord::Schema.define(:version => 20130206201724) do
   add_index "permissions", ["user_id"], :name => "index_permissions_on_user_id"
 
   create_table "program_dates", :force => true do |t|
-    t.string   "program"
+    t.string   "program_string"
     t.datetime "occurs_on"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.boolean  "no_attendance", :default => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "no_attendance",  :default => false
+    t.integer  "program_id"
   end
 
   add_index "program_dates", ["occurs_on"], :name => "index_program_dates_on_occurs_on"
-  add_index "program_dates", ["program"], :name => "index_program_dates_on_program"
+  add_index "program_dates", ["program_id"], :name => "index_program_dates_on_program_id"
+  add_index "program_dates", ["program_string"], :name => "index_program_dates_on_program"
+
+  create_table "programs", :force => true do |t|
+    t.string   "name"
+    t.integer  "discipline_team_id"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.boolean  "active",             :default => true
+  end
+
+  add_index "programs", ["discipline_team_id"], :name => "index_programs_on_discipline_team_id"
 
   create_table "sessions", :force => true do |t|
     t.integer  "user_id"

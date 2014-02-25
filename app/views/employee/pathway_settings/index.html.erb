@@ -1,0 +1,32 @@
+<div class='row'>
+	<div class='span4'>
+		<div class='boxed'>
+			<ul class='menu'>
+	      <li><%= link_to "Select a program", employee_pathway_settings_path, class: ('active' unless params[:q]) %></li>
+	      <%= content_tag :li, link_to("Search results for '#{params[:q]}'", '#', class: 'active') if params[:q] %>
+	    </ul>
+		</div>
+	</div>
+	
+	<div class='span8'>
+		<div class='boxed boxed-main'>
+			<header>
+				<h1>
+					All Active Programs
+					<form class="form-search pull-right">
+            <input type="text" name='q' class="input-medium search-query">
+            <%= hidden_field :active, false if params[:active] %>
+            <button type="submit" class="btn">Search</button>
+          </form>
+				</h1>
+			</header>
+			
+			<section>
+				<ol class='menu menu-list'>
+					<%= render partial: 'pathway_program', collection: @programs, as: :pathway_program %>
+				</ol>
+			</section>
+		</div>
+		<%= will_paginate @programs, class: 'pagination pagination-centered' %>
+	</div>
+</div>

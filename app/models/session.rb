@@ -25,7 +25,7 @@ class Session < ActiveRecord::Base
   belongs_to :er_date
   belongs_to :program_date
   
-  delegate :program, :occurs_on, to: :program_date, prefix: true
+  delegate :program_string, :program_name, :occurs_on, to: :program_date, prefix: true
   delegate :reversed_name, :email, to: :user, prefix: true
   
   validates :user_id,           presence: true

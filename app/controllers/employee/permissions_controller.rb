@@ -12,10 +12,7 @@ class Employee::PermissionsController < Employee::BaseController
   def update
     authorize! :set_permissions, @employee
     
-    if params.has_key?(:permissions)
-      permissions = @employee.permissions.where(subject_class: params[:permission_group]).destroy_all
-      build_permissions(params[:permissions])
-    end
+    build_permissions(params[:permissions])
     
     if @employee.save!
       msg = {:notice => "Permissions have been updated."}
@@ -34,10 +31,17 @@ private
   end
   
   def build_permissions(permissions)
+    reset_permissions(permissions.keys)
     permissions.each_pair do |klass, perms|
       perms.reject{|k,v| v == 'false'}.keys.each do |perm|
-        @employee.permissions.build(:action => perm, :subject_class => klass.camelcase)
+        @employee.permissions.build(:action => perm, :subject_class => klass.classify)
       end
+    end
+  end
+  
+  def reset_permissions(klasses)
+    klasses.each do |klass|
+      @employee.permissions.where(subject_class: klass.classify).destroy_all
     end
   end
   

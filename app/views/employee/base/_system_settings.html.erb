@@ -1,0 +1,12 @@
+<div class='span4'>
+  <div class='well well-system-settings well-transform-container'>
+    <h2>System Settings</h2>
+    <p>Here you can...</p>
+    <ul>
+      <%= content_tag :li, link_to('manage discipline teams', employee_discipline_teams_path) if current_user.is_able_to :edit, DisciplineTeam %>
+      <%= content_tag :li, link_to('manage programs', employee_programs_path) if current_user.is_able_to :edit, Program %>
+      <%= content_tag :li, link_to('manage pathway settings', employee_pathway_settings_path) if current_user.is_able_to :edit, PathwaySetting %>
+    </ul>
+    <b class='well-transformer'></b>
+  </div>
+</div>

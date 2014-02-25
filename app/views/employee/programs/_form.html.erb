@@ -1,0 +1,11 @@
+<%= simple_form_for [:employee, @program] do |f| %>
+	<fieldset>
+		<%= f.error_notification %>
+		<%= f.input :name %>
+		<%= f.association :discipline_team %>
+	</fieldset>
+
+	<div class='form-actions'>
+    <%= f.button :submit, "Update Program" %> or <%= link_to 'view all programs', [:employee, :programs] %>
+  </div>
+<%- end -%>

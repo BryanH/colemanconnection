@@ -93,23 +93,28 @@ $hexagonMargin: (($hexagonWidth * sin(30deg)) / 2) + 2;
     background-color: #4f0b7b;
   }
 
-  .patient-care {
+  .patient-care,
+ 	.patient-care-services {
     background-color: #b734bb;
   }
 
-  .therapeutic {
+  .therapeutic,
+  .therapeutic-services {
     background-color: #00c473;
   }
 
-  .diagnostic {
+  .diagnostic,
+  .diagnostic-services {
     background-color: #6aade4;
   }
 
-  .health-admin {
+  .health-admin,
+  .health-care-admin {
     background-color: #ec7a08;
   }
 
-  .dental {
+  .dental,
+ 	.dental-services {
     background-color: #c4262e;
   }
   

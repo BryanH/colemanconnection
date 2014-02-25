@@ -1,0 +1,11 @@
+<%= simple_form_for [:employee, @pathway_setting] do |f| %>
+	<fieldset>
+		<%= f.error_notification %>
+		<%= f.input :url %>
+		<%= f.input :tags %>
+	</fieldset>
+
+	<div class='form-actions'>
+    <%= f.button :submit, "Update Settings" %> or <%= link_to 'view all programs', [:employee, :pathway_settings] %>
+  </div>
+<%- end -%>

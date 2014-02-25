@@ -1,0 +1,17 @@
+<%= content_tag_for :li, program, class: 'clearfix' do %>
+  <section class='pull-left <%= "strikeout" unless program.active? %>'>
+    <%= program.name %>
+  </section>
+  <section class='pull-right'>
+    <span class='label label-link'><%= link_to 'edit', edit_employee_program_path(program) %></span>
+		<%= content_tag :span, class: 'label label-important label-link' do %>
+			<%= link_to 'deactivate', employee_program_activation_path(program), method: :delete, confirm: 'Are you sure?',
+			 						data: { confirm_title: 'Deactivate Program', confirm_proceed: 'Deactivate' } %>
+		<%- end if program.active? -%>
+		<%= content_tag :span, class: 'label label-success label-link' do %>
+			<%= link_to 'activate', employee_program_activations_path(id: program.id), method: :post, confirm: 'Are you sure?',
+			 						data: { confirm_title: 'Activate Program', confirm_proceed: 'Activate' } %>
+		<%- end unless program.active? -%>
+		</span>
+  </section>
+<%- end -%>

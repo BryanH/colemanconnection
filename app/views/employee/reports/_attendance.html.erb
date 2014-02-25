@@ -2,8 +2,8 @@
   <div class='span4'>
     <div class='padded'>
       <ul class='nav nav-tabs nav-stacked'>
-        <%- ProgramOfferings.programs.each do |name| -%>
-        <li><a href='#<%= name %>'><%= name %></a></li>
+        <%- Program.select(:name).order(:name).each do |program| -%>
+        <li><a href='#<%= program.name %>'><%= program.name %></a></li>
         <%- end -%>
       </ul>
     </div>
@@ -15,9 +15,9 @@
         <h1 class='page-header'>Attendance by Program <small>since February 20th, 2012</small></h1>
       </header>
 
-      <% ProgramDate.all_with_attendance.where(occurs_on: Chronic.parse('February 1st, 2012')..Date.today).group_by(&:program).sort.each do |program_name, days| %>
-      <span id="<%= program_name %>"></span>
-      <h2><%= program_name %></h2>
+      <% ProgramDate.all_with_attendance.where(occurs_on: Chronic.parse('February 1st, 2012')..Date.today).group_by(&:program).sort_by {|program, opts| program.name}.each do |program, days| %>
+      <span id="<%= program.name %>"></span>
+      <h2><%= program.name %></h2>
       <table class='table table-bordered'>
         <tr>
           <th>Date</th>
@@ -38,7 +38,7 @@
         </tr>
         <%- end -%>
         <tr class='alt'>
-          <td colspan=4>To date, <strong><%= days.sum{|d| d.sessions_attended.to_i} %></strong> out of <strong><%= days.sum{|d| d.sessions.count} %></strong> potential students have attended program sessions for <%= program_name %>.</td>
+          <td colspan=4>To date, <strong><%= days.sum{|d| d.sessions_attended.to_i} %></strong> out of <strong><%= days.sum{|d| d.sessions.count} %></strong> potential students have attended program sessions for <%= program.name %>.</td>
         </tr>
       </table>
       <%- end -%>

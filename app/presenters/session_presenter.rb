@@ -1,6 +1,6 @@
 class SessionPresenter < BasePresenter
   presents :session
-  delegate :program, :occurs_on, to: :program_date, prefix: true
+  delegate :program_name, :occurs_on, to: :program_date, prefix: true
   
   def occurs_on
     session.program_date_occurs_on.to_formatted_s(:pretty)
@@ -10,7 +10,7 @@ class SessionPresenter < BasePresenter
     h.raw('<i class="icon-ok"></i>') if session.attended?
   end
   
-  def program
-    session.program_date_program
+  def program_name
+    session.program_date_program_name
   end
 end

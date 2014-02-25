@@ -11,21 +11,24 @@
 
 class ProgramDate < ActiveRecord::Base
   
-  attr_accessible :program, :occurs_on
+  attr_accessible :program_string, :occurs_on, :program_id
 
   has_many :sessions
   has_many :candidates, through: :sessions, source: :user
   has_many :attendance_audits, through: :sessions, source: :audits
   has_many :survey_results, dependent: :destroy
+  belongs_to :program
   
-  validates :occurs_on, uniqueness: { scope: :program }
+  validates :occurs_on, uniqueness: { scope: :program_id }
   
   default_scope order('occurs_on ASC')
+  
+  delegate :name, to: :program, prefix: true
   
   audit(:update, only: :no_attendance) { |program_date, user, action| program_date.snitches_on(user).for_marking_program_attendance }
   
   scope :all_with_sessions, select('program_dates.id, 
-                                    program_dates.program, 
+                                    program_dates.program_id, 
                                     program_dates.occurs_on, 
                                     (
                                       SELECT COUNT(sessions.id)
@@ -34,7 +37,7 @@ class ProgramDate < ActiveRecord::Base
                                     ) AS registration_count')
   
   scope :all_with_attendance, select('program_dates.id,
-                                      program_dates.program,
+                                      program_dates.program_id,
                                       program_dates.occurs_on,
                                       program_dates.no_attendance,
                                       (
@@ -51,7 +54,7 @@ class ProgramDate < ActiveRecord::Base
                                       ) AS sessions_not_attended')
   
   def name
-    program + " " + occurs_on.to_formatted_s(:pretty)
+    program_name + " " + occurs_on.to_formatted_s(:pretty)
   end
   
   def no_attendance!
