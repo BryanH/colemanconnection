@@ -43,6 +43,7 @@ ColemanConnection::Application.routes.draw do
     resources :programs
     resources :discipline_teams
     resources :program_activations, only: [:create, :destroy]
+    resources :pathway_settings
     
     root to: 'base#index'
   end
