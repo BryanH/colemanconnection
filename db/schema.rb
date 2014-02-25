@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140224162442) do
+ActiveRecord::Schema.define(:version => 20140225195346) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id",                   :null => false
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(:version => 20140224162442) do
     t.datetime "updated_at"
     t.datetime "emails_sent_at"
   end
+
+  create_table "pathway_settings", :force => true do |t|
+    t.integer  "program_id"
+    t.string   "url"
+    t.string   "tags"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pathway_settings", ["program_id"], :name => "index_pathway_settings_on_program_id"
 
   create_table "permissions", :force => true do |t|
     t.string   "action"

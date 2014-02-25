@@ -1,0 +1,35 @@
+<header>
+  <h1>Permissions for running System Settings</h1>
+  <p class='metadata'>
+    These permissions pertain to settings that affect the overall system.
+  </p>
+</header>
+
+<%= simple_form_for @employee, url: employee_permission_path(@employee), html: { class: "form-permissions" } do |f| %>
+
+  <%= hidden_field_tag :section, @section %>
+  
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_employee_can_edit_discipline_teams,
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
+          { selected: @employee.can?(:edit, DisciplineTeam) },
+          { name: 'permissions[discipline_teams][edit]', data: { permission: 'edit_discipline_teams' } } %> 
+      <span><strong>edit discipline teams</strong></span>
+    </div>
+  </div>
+  
+  <div class='control-group'>
+    <div class='controls'>
+      <%= f.select :permission_employee_can_edit_programs,
+          [["#{@employee.first_name} cannot", false], ["#{@employee.first_name} can", true]],
+          { selected: @employee.can?(:edit, Program) },
+          { name: 'permissions[program][edit]', data: { permission: 'edit_programs' } } %> 
+      <span><strong>edit programs</strong></span>
+    </div>
+  </div>
+  
+  <div class='form-actions'>
+    <%= f.button :submit, "Update Permissions", class: 'btn btn-primary' %> or <%= link_to 'list employees', employee_users_path %>
+  </div>
+<%- end -%>
