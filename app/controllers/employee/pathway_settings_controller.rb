@@ -9,6 +9,7 @@ class Employee::PathwaySettingsController < Employee::BaseController
   end
   
   def update
+    params[:pathway_setting][:tags] = params[:pathway_setting][:tags].compact.reject(&:empty?).join(' ')
     @pathway_setting = PathwaySetting.find(params[:id])
     if @pathway_setting.update_attributes(params[:pathway_setting])
       redirect_to [:employee, :pathway_settings], notice: "Settings were updated successfully."

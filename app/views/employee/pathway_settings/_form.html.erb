@@ -2,7 +2,7 @@
 	<fieldset>
 		<%= f.error_notification %>
 		<%= f.input :url %>
-		<%= f.input :tags %>
+		<%= f.input :tags, collection: PathwaySetting::TAGS, as: :check_boxes, label: 'Select categories', checked: @pathway_setting.tags.split(' ') %>
 	</fieldset>
 
 	<div class='form-actions'>
