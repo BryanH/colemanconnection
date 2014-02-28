@@ -1,0 +1,19 @@
+<section class="boxed boxed-main form-container">
+  <%= simple_form_for @discipline_team, url: employee_discipline_teams_path do |f| %>
+    <header>
+      <h1>
+        Create a New Discipline Team
+      </h1>
+    </header>
+    
+    <fieldset>
+      <%= f.error_notification %>
+      <%= f.input :name %>
+      <%= f.input :color, :input_html => { :type => "color" } %>
+    </fieldset>
+    
+    <div class='form-actions'>
+      <%= f.button :submit, "Create Team" %> or <%= link_to 'return to the dashboard', employee_root_path %>
+    </div>
+  <%- end -%>
+</section>

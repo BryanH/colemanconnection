@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',              '3.2.16'
+gem 'rails',              '3.2.17'
 gem 'pg',                 '0.14.1'
 
 gem 'auditor',            '2.3.3'
@@ -46,9 +46,10 @@ group :development do
   gem 'annotate',         '>= 2.4.1.beta'
   gem 'guard-rspec',      '>= 0.5.5'
   gem 'mail_view',        '>= 1.0'
-  gem 'pry-rails'
   gem 'yaml_db'
   gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'jazz_hands'
 end
 
 group :test do

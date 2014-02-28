@@ -15,11 +15,11 @@
       <%= link_to "Select none", '#', data: { checkbox_selector: :none } %>
     </div>
 
-    <%- ProgramOfferings.programs.each do |program| -%>
+    <%- Program.where(active: true).each do |program| -%>
       <div class='controls'>
-        <%= label_tag program, class: 'checkbox' do %>
-          <%= check_box_tag 'employee[program_affiliations][]', program, @user.affiliated_with?(program), class: 'checkbox', id: program.gsub(/[ \(\)]/, '_') %>
-          <%= program %>
+        <%= label_tag program.name, class: 'checkbox' do %>
+          <%= check_box_tag 'employee[program_affiliations][]', program.name, @user.affiliated_with?(program.name), class: 'checkbox', id: program.name.gsub(/[ \(\)]/, '_') %>
+          <%= program.name %>
         <%- end -%>
       </div>
     <%- end -%>

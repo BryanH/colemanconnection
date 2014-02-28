@@ -8,7 +8,6 @@
 <%= simple_form_for @employee, url: employee_permission_path(@employee), html: { class: "form-permissions" } do |f| %>
   
   <%= hidden_field_tag :section, @section %>
-  <%= hidden_field_tag :permission_group, 'Candidate' %>
   
   <div class='control-group'>
     <div class='controls'>

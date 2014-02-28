@@ -234,3 +234,8 @@ a.disabled,
 pre {
   margin: ($gridGutterWidth / 2) 0;
 }
+
+.strikeout {
+	color: #959595;
+	text-decoration: line-through;
+}

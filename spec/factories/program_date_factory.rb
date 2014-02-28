@@ -5,6 +5,6 @@ FactoryGirl.define do
   
   factory :program_date do
     occurs_on
-    program { ProgramOfferings.programs.sample }
+    program_string { ProgramOfferings.programs.sample }
   end
 end

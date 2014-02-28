@@ -40,6 +40,10 @@ ColemanConnection::Application.routes.draw do
     resources :session_attendance, only: [:create, :destroy]
     resources :program_attendance, only: [:create, :destroy]
     resources :permissions, only: [:show, :update]
+    resources :programs
+    resources :discipline_teams
+    resources :program_activations, only: [:create, :destroy]
+    resources :pathway_settings
     
     root to: 'base#index'
   end

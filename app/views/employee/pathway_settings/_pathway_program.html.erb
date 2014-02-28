@@ -1,0 +1,9 @@
+<%= content_tag_for :li, pathway_program, class: 'clearfix' do %>
+  <section class='pull-left'>
+    <%= pathway_program.name %>
+  </section>
+  <section class='pull-right'>
+    <span class='label label-link'><%= link_to 'pathway settings', edit_employee_pathway_setting_path(pathway_program.pathway_setting) %></span>
+		</span>
+  </section>
+<%- end -%>

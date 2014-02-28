@@ -1,4 +1,4 @@
-<%- @dates.each_pair do |program, dates| -%>
+<%- @program_dates.each do |program, dates| -%>
 <div class='collapse-group'>
   <div class='collapse-heading'>
     <%= link_to program, '#', class: 'collapse-toggle', data: { parent: '#programDates', toggle: 'collapse', target: ".collapse-#{program.parameterize}"} %>

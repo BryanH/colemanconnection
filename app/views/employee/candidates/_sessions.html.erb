@@ -15,7 +15,7 @@
         <%- @candidate.program_sessions.includes(:program_date).each do |session| -%>
           <%- present session do |session_presenter| -%>
           <tr>
-            <td><%= session_presenter.program %></td>
+            <td><%= session_presenter.program_name %></td>
             <td><%= session_presenter.occurs_on %></td>
             <td><%= session_presenter.attended? %></td>
           </tr>
