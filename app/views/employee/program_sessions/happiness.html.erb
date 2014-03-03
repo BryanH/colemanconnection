@@ -2,19 +2,19 @@
   <div class='span4'>
     <div class='boxed'>
       <ol class='menu'>
-        <li><%= link_to 'Registered Candidates', employee_program_date_path(params[:id]) %></li>
+        <li><%= link_to 'Registered Candidates', employee_program_session_path(params[:id]) %></li>
       </ol>
     </div>
     
     <div class='boxed'>
       <ol class='menu'>
-        <li><%= link_to 'Happiness results', happiness_employee_program_date_path(params[:id]), class: 'active' %></li>
+        <li><%= link_to 'Happiness results', happiness_employee_program_session_path(params[:id]), class: 'active' %></li>
       </ol>
     </div>
     
     <div class='boxed'>
       <ol class='menu'>
-        <li><%= link_to 'Return to Program Dates', employee_program_dates_path %></li>
+        <li><%= link_to 'Return to Program Dates', employee_program_sessions_path %></li>
       </ol>
     </div>
   </div>

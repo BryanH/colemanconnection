@@ -34,7 +34,8 @@ ColemanConnection::Application.routes.draw do
     resources :activations, only: [:create, :destroy]
     resources :candidates
     resources :reports, only: :show
-    resources :program_dates, only: [:index, :show, :new, :create] do
+    resources :program_dates
+    resources :program_sessions do
       get 'happiness', on: :member
     end
     resources :session_attendance, only: [:create, :destroy]
