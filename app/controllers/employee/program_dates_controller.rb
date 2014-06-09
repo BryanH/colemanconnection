@@ -1,17 +1,10 @@
 class Employee::ProgramDatesController < Employee::BaseController
   
-  before_filter :set_program_date, only: [:show, :happiness]
+  before_filter :set_program_date, only: [:show, :edit, :update, :destroy, :happiness]
   
   def index
-    program_ids = Program.where(name: current_user.affiliated_programs, active: true).select(:id).collect(&:id)
-    @program_dates ||= ProgramDate.all_with_sessions.where{ program_id.in(program_ids) & occurs_on.gte(2.months.ago) }.group_by {|p| p.program_name }.sort
-  end
-  
-  def show
-    authorize! :view, ProgramDate
-    
-    @sessions ||= @date.sessions.search_on_user(params[:q]).includes(:user).order(user: :last_name).page(params[:page])
-    @audits ||= (@date.attendance_audits + @date.audits).sort_by(&:created_at).reverse
+    @programs = Program.search(params[:q]).where(active: true).page(params[:page]).per_page(5)
+    @program_dates ||= ProgramDate.all_with_sessions.where{ program_id.in(my{@programs.collect(&:id)}) & occurs_on.gte(2.months.ago) }.group_by {|p| p.program_name }.sort
   end
   
   def new
@@ -29,16 +22,29 @@ class Employee::ProgramDatesController < Employee::BaseController
     end
   end
   
-  def happiness
-    authorize! :view, ProgramDate
-    
-    @completed_survey_results ||= @date.survey_results.not_pending.order(:id)
+  def edit
+  end
+  
+  def update
+    if @program_date.update_attributes(params[:program_date])
+      redirect_to employee_program_dates_path, notice: 'The program session date was updated successfully.'
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+    if @program_date.destroy
+      redirect_to employee_program_dates_path, notice: 'The program session date has been cancelled.'
+    else
+      redirect_to employee_program_dates_path, alert: 'The program session date could not be cancelled.'
+    end
   end
   
 private
 
   def set_program_date    
-    @date ||= ProgramDate.find_by_id(params[:id])
+    @program_date ||= ProgramDate.find_by_id(params[:id])
   end
   
 end

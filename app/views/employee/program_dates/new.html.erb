@@ -18,7 +18,7 @@
         </header>
         
         <fieldset>
-          <%= f.association :program, order: :name %>
+          <%= f.association :program, collection: Program.where(active: true), order: :name %>
           <%= f.input :occurs_on, as: :string, hint: "example: Feb 3rd @ 5:30pm" %>
         </fieldset>
         

@@ -1,0 +1,33 @@
+<div class='row'>
+  <div class='span4'>
+    <div class='boxed'>
+      <ol class='menu'>
+				<li><%= link_to 'View all dates', employee_program_dates_path %></li>
+        <li><%= link_to 'Add New Date', new_employee_program_date_path %></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class='span8'>
+    <div class='boxed boxed-main form-container'>
+      
+      <%= simple_form_for [:employee, @program_date] do |f| %>
+        <header>
+          <h1>
+            Edit Program Date
+          </h1>
+					<h2><%= @program_date.program_name %> on <%= @program_date.occurs_on_was.to_formatted_s(:pretty) %></h2>
+        </header>
+        
+        <fieldset>
+          <%= f.input :occurs_on, as: :string, input_html: { value: @program_date.occurs_on.to_formatted_s(:pretty) }, hint: "example: Feb 3rd @ 5:30pm" %>
+        </fieldset>
+        
+        <div class='form-actions'>
+          <%= f.button :submit, "Update Program Date" %> or <%= link_to 'return to the dashboard', employee_root_path %>
+        </div>
+      <%- end -%>
+      
+    </div>
+  </div>
+</div>
