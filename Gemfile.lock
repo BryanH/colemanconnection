@@ -145,6 +145,7 @@ GEM
     httpi (2.0.2)
       rack
     i18n (0.6.9)
+    ice_cube (0.12.0)
     jazz_hands (0.5.2)
       awesome_print (~> 1.2)
       coolline (>= 0.4.2)
@@ -357,6 +358,7 @@ DEPENDENCIES
   god
   guard-rspec (>= 0.5.5)
   guard-spork (>= 0.3.2)
+  ice_cube
   jazz_hands
   jquery-rails (= 2.0.2)
   launchy (>= 2.1.0)
