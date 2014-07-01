@@ -31,6 +31,8 @@ gem 'capistrano',         '2.12.0'
 # App server
 gem 'unicorn'
 
+gem 'ice_cube'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
