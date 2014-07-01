@@ -11,7 +11,7 @@ end
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address                      => "webmail.hccs.edu",
+  :address                      => "10.100.100.139",
   :user_name                    => username,
   :password                     => password,
   :authentication               => :login,
