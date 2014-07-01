@@ -7,7 +7,7 @@ class PathwaySetting < ActiveRecord::Base
   
   TAGS = [
     ['You would like working with other people', 'peopleperson'],
-    ['You would like working with technology', 'techy'],
+    ['You would like working with technology', 'tecky'],
     ['You would not be bothered by blood and body fluids', 'blood'],
     ['You would be able to make life or death decisions', 'lifeordeath'],
     ['You would rather take direction in your job', 'takedirection'],
