@@ -20,15 +20,7 @@
         <fieldset>
           <%= f.association :program, collection: Program.where(active: true), order: :name %>
           
-          <%- for time in @schedule.occurrences(Chronic.parse("September 1st") + 1.year) do -%>
-          <div class='control-group'>
-            <div class='controls'>
-              <label class='checkbox'>
-                <%= check_box_tag 'session_dates[]', time %> <%= time.strftime("%B %d, %Y at %l:%M%P") %>
-              </label>
-            </div>
-          </div>
-          <%- end -%>
+          <%= f.input :occurs_on, as: :string, hint: "example: Feb 3rd @ 5:30pm" %>
         </fieldset>
         
         <div class='form-actions'>

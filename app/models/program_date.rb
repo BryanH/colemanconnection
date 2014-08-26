@@ -19,7 +19,8 @@ class ProgramDate < ActiveRecord::Base
   has_many :survey_results, dependent: :destroy
   belongs_to :program
   
-  validates :occurs_on, uniqueness: { scope: :program_id }
+  validates :occurs_on, presence: true, uniqueness: { scope: :program_id }
+  validates :program_id, presence: true
   
   default_scope order('occurs_on ASC')
   
