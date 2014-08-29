@@ -1,0 +1,23 @@
+<div class='row'>
+	<div class='span4'>
+		<div class='boxed'>
+			<ol class='menu'>
+				<li>
+					<%= link_to 'View all programs', [:employee, :program_dates] %>
+				</li>
+			</ol>
+		</div>
+	</div>
+	
+	<div class='span8'>
+		<div class='boxed boxed-main'>
+			<header>
+				<h1>Reassign Attendees for <%= @program_date.program_name %> on <%= @program_date.occurs_on.to_s(:pretty) %></h1>
+			</header>
+			
+			<section>
+				<%= render 'form' %>
+			</section>
+		</div>
+	</div>
+</div>

@@ -36,12 +36,16 @@
 									<div class='pull-left'>
 										<%= program_date.occurs_on.to_formatted_s(:pretty) %>
 									</div>
-									<%- unless program_date.sessions.any? -%>
 				          <div class='pull-right'>
+                    <%- if program_date.sessions.present? -%>
+                    <%- if program_date.occurs_on >= Date.today -%>
+                    <span class='label label-link'><%= link_to 'move attendees', edit_employee_session_assignment_path(program_date) %></span>
+                    <%- end -%>
+                    <%- else -%>
 				          	<span class='label label-link'><%= link_to 'change date', edit_employee_program_date_path(program_date) %></span>
 				          	<span class='label label-link label-important'><%= link_to 'cancel session', employee_program_date_path(program_date), method: :delete, confirm: "Are you sure? This cannot be undone.", data: { confirm_title: "Remove Program Session Date?", confirm_proceed: 'Remove Date'} %></span>
+                    <%- end -%>
 				          </div>
-									<%- end -%>
 								<%- end -%>
 							<%- end -%>
 						</ol>

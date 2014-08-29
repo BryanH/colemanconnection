@@ -1,0 +1,14 @@
+<%= simple_form_for [:employee, @program_date], url: employee_session_assignment_path(@program_date) do |f| %>
+	<fieldset>
+		<%= f.error_notification %>
+    <%= f.input :occurs_on, as: :radio_buttons,
+                label: 'Select new date',
+                collection: ProgramDate.where{ program_id.eq(my{@program_date.program_id}) & occurs_on.gt(my{@program_date.occurs_on}) },
+                label_method: lambda {|pd| pd.occurs_on.to_s(:pretty) },
+                value_method: :id %>
+	</fieldset>
+
+	<div class='form-actions'>
+    <%= f.button :submit, "Save" %> or <%= link_to 'view all programs', [:employee, :program_dates] %>
+  </div>
+<%- end -%>
