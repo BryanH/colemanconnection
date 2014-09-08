@@ -65,16 +65,16 @@
                                       </p>
                                       <p>
                                         We just wanted to remind you that you are currently registered for the
-                                        <%= @program_session.program %> Program Session this Thursday at
+                                        <%= @program_session.program.name %> Program Session this Thursday at
                                         <%= @program_session.occurs_on.localtime.strftime("%l:%M%P") %>.
                                         You may want to plan on arriving a little early though, to get a good
                                         parking spot. Please be aware that there is a fee for parking. More
                                         information about parking can be found <%= link_to 'here', 'http://coleman.hccs.edu/portal/site/coleman/contactus', target: :_blank %>.
                                       </p>
                                       
-                                      <%- if @program_session.program.include?("Pharmacy") -%>
+                                      <%- if @program_session.program.name.include? "Pharmacy" -%>
                                       <p>
-                                        Since you are registered for the <%= @program_session.program %> Program
+                                        Since you are registered for the <%= @program_session.program.name %> Program
                                         Session, you will need to go to our McGovern Campus. It is located at:
                                       </p>
                                       
@@ -107,7 +107,7 @@
                                       
                                       <p>
                                         We look forward to meeting you and letting you know all about the HCC Coleman
-                                        College <%= @program_session.program %> Program.
+                                        College <%= @program_session.program.name %> Program.
                                       </p>
                                     </div>
                                   </td>
