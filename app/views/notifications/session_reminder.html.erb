@@ -65,7 +65,7 @@
                                       </p>
                                       <p>
                                         We just wanted to remind you that you are currently registered for the
-                                        <%= @program_session.program.name %> Program Session this Thursday at
+                                        <%= @program_session.program.name %> Program Session this <%= @program_session.occurs_on.localtime.strftime("%A") %> at
                                         <%= @program_session.occurs_on.localtime.strftime("%l:%M%P") %>.
                                         You may want to plan on arriving a little early though, to get a good
                                         parking spot. Please be aware that there is a fee for parking. More
