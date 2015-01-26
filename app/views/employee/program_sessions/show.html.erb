@@ -46,7 +46,7 @@
               <%- if current_user.can?(:mark_attendance, ProgramDate.new) -%>
                 <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
               <%- end -%>
-              <%= session.user_reversed_name %> <small class='metadata'>( <%= session.user_email %> )</small>
+              <%= session.user_reversed_name %> <small class=''>( <%= session.user_email %> )</small>
               <section class='pull-right'>
                 <span class='label label-link'><%= link_to 'profile', employee_candidate_path(session.user), target: '_blank' %></span>
               </section>
