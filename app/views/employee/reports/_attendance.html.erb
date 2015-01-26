@@ -2,7 +2,7 @@
   <div class='span4'>
     <div class='padded'>
       <ul class='nav nav-tabs nav-stacked'>
-        <%- Program.select(:name).order(:name).each do |program| -%>
+        <%- Program.where(name: current_user.affiliated_programs).select(:name).order(:name).each do |program| -%>
         <li><a href='#<%= program.name %>'><%= program.name %></a></li>
         <%- end -%>
       </ul>
@@ -15,7 +15,7 @@
         <h1 class='page-header'>Attendance by Program <small>since February 20th, 2012</small></h1>
       </header>
 
-      <% ProgramDate.all_with_attendance.where(occurs_on: Chronic.parse('February 1st, 2012')..Date.today).group_by(&:program).sort_by {|program, opts| program.name}.each do |program, days| %>
+      <% ProgramDate.joins(:program).all_with_attendance.where(occurs_on: Chronic.parse('February 1st, 2012')..Date.today, program: { name: current_user.affiliated_programs }).group_by(&:program).sort_by {|program, opts| program.name}.each do |program, days| %>
       <span id="<%= program.name %>"></span>
       <h2><%= program.name %></h2>
       <table class='table table-bordered'>
