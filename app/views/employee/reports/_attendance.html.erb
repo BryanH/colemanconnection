@@ -27,7 +27,7 @@
         </tr>
         <%- days.each do |day| -%>
         <tr>
-          <td><%= day.occurs_on.to_formatted_s(:pretty) %></td>
+          <td><%= link_to day.occurs_on.to_formatted_s(:pretty), employee_program_session_path(day) %></td>
           <%- if day.no_attendance? -%>
           <td colspan=3>This session was marked as having no attendance</td>
           <%- else -%>
