@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',              '3.2.19'
+gem 'rails',              '3.2.21'
 gem 'pg',                 '0.14.1'
 
 gem 'auditor',            '2.3.3'
