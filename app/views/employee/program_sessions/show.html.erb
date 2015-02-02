@@ -29,6 +29,7 @@
           <%= render 'common/search_form' %>
         </h1>
         <h2><small><%= @date.occurs_on.to_formatted_s(:pretty) %> for <%= @date.program_name %></small></h2>
+        <p><%= link_to "Printable checklist", printable_employee_program_session_path(@date) %></p>
       </header>
       
       <%- if @sessions.any? -%>
@@ -46,7 +47,7 @@
               <%- if current_user.can?(:mark_attendance, ProgramDate.new) -%>
                 <input <%= 'checked' if session.attended? %> type='checkbox' class='checkbox' data-attendance value='<%= session.id %>'>
               <%- end -%>
-              <%= session.user_reversed_name %> <small class='metadata'>( <%= session.user_email %> )</small>
+              <%= session.user_reversed_name %> <small class=''>( <%= session.user_email %> )</small>
               <section class='pull-right'>
                 <span class='label label-link'><%= link_to 'profile', employee_candidate_path(session.user), target: '_blank' %></span>
               </section>

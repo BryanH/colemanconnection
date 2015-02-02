@@ -37,6 +37,7 @@ ColemanConnection::Application.routes.draw do
     resources :program_dates
     resources :program_sessions do
       get 'happiness', on: :member
+      get 'printable', on: :member
     end
     resources :session_assignments
     resources :session_attendance, only: [:create, :destroy]
