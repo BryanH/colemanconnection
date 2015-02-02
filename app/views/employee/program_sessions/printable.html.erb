@@ -1,0 +1,15 @@
+<h2>
+  <%= link_to @date.program_name, employee_program_session_path(@date) %><br>
+  <small>Attendance for <%= @date.occurs_on.to_s(:pretty) %></small>
+</h2>
+
+<ul class='unstyled'>
+  <%- @date.sessions.joins(:user).order(user: :last_name).each do |session| -%>
+  <li>
+    <label class='checkbox'>
+      <input type='checkbox' class='checkbox'>
+      <%= session.user_reversed_name %>
+    </label>
+  </li>
+  <%- end -%>
+</ul>
