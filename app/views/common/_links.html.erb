@@ -1,0 +1,25 @@
+<% case type
+when 'ask'
+		url = 'http://coleman.hccs.edu/'
+when 'facebook'
+		url  = 'https://www.facebook.com/HCCColeman'
+		icon = 'linklogos/fb.png'
+when 'twitter'
+		url = 'https://twitter.com/hcccoleman'
+		icon = 'linklogos/twitter.png'
+when 'main'
+		url = 'http://www.hccs.edu'
+when 'deptpage'
+		url = 'http://coleman.hccs.edu/'
+else
+		message = 'UNKNOWN LINK'
+		url = '.'
+end %>
+
+<% if !icon.nil? %>
+		<%= link_to( image_tag( icon, :alt => "link image" ),  url ) -%>
+<% end %>
+<% if !message.nil? -%>
+		<%= link_to(message,  url) %>
+<% end -%>
+

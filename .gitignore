@@ -20,3 +20,5 @@ config/*.yml
 /public/assets
 config/initializers/secret_token.rb
 lib/program_session_times.rb
+*~
+ssh/*

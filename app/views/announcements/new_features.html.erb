@@ -110,8 +110,10 @@
                         <table border="0" cellpadding="10" cellspacing="0" width="100%">
                           <tr>
                             <td valign="middle" id="social">
-                              <div mc:edit="std_social">
-                                &nbsp;<%= link_to 'Follow us on Twitter', 'https://twitter.com/#!/HCC_Coleman' %> | <%= link_to 'Like us on Facebook', 'https://www.facebook.com/HCCColemanCollege' %> | <%= link_to 'Log into your account', new_user_session_url %>&nbsp;
+									<div mc:edit="std_social">
+											<%= render partial: 'common/links', locals: {type:'twitter', message: "Follow us on Twitter" } %> |
+											<%= render partial: 'common/links', locals: {type:'facebook'   } %> |
+											<%= link_to 'Log into your account', new_user_session_url %>
                               </div>
                             </td>
                           </tr>
