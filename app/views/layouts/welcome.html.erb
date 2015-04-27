@@ -47,14 +47,14 @@
           713.718.7400<br>
           <a href='mailto:studentsfirst@hccs.edu'>studentsfirst@hccs.edu</a>
         </div>
-        <div class="span4 connections">
-          <a href="https://www.facebook.com/HCCColemanCollege" title="Connect with us on Facebook">Facebook</a><br>
-          <a href="https://twitter.com/#!/HCC_Coleman" title="Follow us on Twitter">Twitter</a><br>
-          <a href="http://coleman.hccs.edu/askcoleman" title="Have a question? Why not askColeman.">askColeman</a><br>
+		<div class="span4 connections">
+				<%= render partial: 'common/links', locals: {type:'twitter' } %> 
+				<%= render partial: 'common/links', locals: {type:'facebook' } %> 
+				<%= render partial: 'common/links', locals: {type:'ask', message: "askColeman" } %>
         </div>
         <div class="span4 logos">
-          <a href="#"><%= image_tag 'hcc-logo.png' %></a>
-          <a href="#"><%= image_tag 'coleman-logo.png' %></a>
+				<%= render partial: 'common/links', locals: {type:'main' } %> 
+				<%= render partial: 'common/links', locals: {type:'deptpage' } %> 
         </div>
       </div>
       <p class='ndc-statement'>
