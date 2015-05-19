@@ -3,17 +3,17 @@
 <head>
 	<meta charset='UTF-8'>
   <title>HCC Coleman Connection</title>
-	
+
 	<!-- iDevice Specific -->
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	
+
 	<!-- Author and Description -->
 	<meta name="description" content="Online Enrollment system for HCC Coleman Connection">
   <meta name="author" content="Terry Schmidt">
 
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700|Old+Standard+TT:400,700,400italic' rel='stylesheet' type='text/css'>
-	
+
 	<!-- Application Assets -->
   <%= stylesheet_link_tag    "welcome", :media => "all" %>
   <%= javascript_include_tag "welcome" %>
@@ -22,16 +22,16 @@
 </head>
 <body>
   <%= render 'common/undesireables' %>
-  
+
 	<header>
 		<div id='mast' class='container'>
 			<%= link_to root_path do %>
 			<h1 id='mast-logo'>HCC Coleman Connection</h1>
 			<%- end -%>
-			
+
 			<div class='actions pull-right'>
-	     	<%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-large btn-text' %>
-      	<%= link_to "GET STARTED".html_safe, get_started_path, class: 'btn btn-info btn-large' %>
+					<%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-large btn-text' %>
+					<%= link_to "GET STARTED".html_safe, new_user_registration_path, class: 'btn btn-info btn-large' %>
 			</div>
 		</div>
 	</header>
@@ -48,20 +48,20 @@
           <a href='mailto:studentsfirst@hccs.edu'>studentsfirst@hccs.edu</a>
         </div>
 		<div class="span4 connections">
-				<%= render partial: 'common/links', locals: {type:'twitter' } %> 
-				<%= render partial: 'common/links', locals: {type:'facebook' } %> 
+				<%= render partial: 'common/links', locals: {type:'twitter' } %>
+				<%= render partial: 'common/links', locals: {type:'facebook' } %>
 				<%= render partial: 'common/links', locals: {type:'ask', message: "askColeman" } %>
         </div>
         <div class="span4 logos">
-				<%= render partial: 'common/links', locals: {type:'main' } %> 
-				<%= render partial: 'common/links', locals: {type:'deptpage' } %> 
+				<%= render partial: 'common/links', locals: {type:'main' } %>
+				<%= render partial: 'common/links', locals: {type:'deptpage' } %>
         </div>
       </div>
       <p class='ndc-statement'>
-        The College is committed to providing an educational climate that is 
-        conducive to the personal and professional development of each individual. 
-        The College prohibits discrimination on the basis of race, color, 
-        religion, gender identity and gender expression, national origin, age, 
+        The College is committed to providing an educational climate that is
+        conducive to the personal and professional development of each individual.
+        The College prohibits discrimination on the basis of race, color,
+        religion, gender identity and gender expression, national origin, age,
         disability, sexual orientation, or veteran status.
       </p>
     </div>
