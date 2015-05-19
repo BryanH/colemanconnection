@@ -17,7 +17,7 @@ server 'sy-colcon.hccs.edu', :web, :app, :db, :primary => true
 set :user, 'tschmidt'
 set :application, "coleman_connection"
 set :rails_env, 'production' # added for delayed_job
-set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_to, "/opt/local/cap/colemanconnection"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
@@ -31,7 +31,7 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keeps only the last 5 releases
 
-# Delayed Job  
-# after "deploy:stop",    "delayed_job:stop"  
-# after "deploy:start",   "delayed_job:start"  
-# after "deploy:restart", "delayed_job:restart" 
+# Delayed Job
+# after "deploy:stop",    "delayed_job:stop"
+# after "deploy:start",   "delayed_job:start"
+# after "deploy:restart", "delayed_job:restart"
