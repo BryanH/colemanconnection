@@ -22,8 +22,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, :git
-set :repository, 'git@github.com:tschmidt/coleman_connection.git'
-set :github_user, 'tschmidt'
+set :repository, "https://github.com/BryanH/colemanconnection.git"
 set :branch, 'master'
 
 default_run_options[:pty] = true
