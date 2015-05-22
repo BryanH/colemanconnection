@@ -1,4 +1,4 @@
-set :output, '/home/tschmidt/apps/coleman_connection/shared/log/whenever.log'
+set :output, '/opt/local/cap/colemanconnection/shared/log/whenever.log'
 
 job_type :coleman_rake, "cd :path && RAILS_ENV=:environment :bundler exec rake :task --silent :output"
 

@@ -3,16 +3,16 @@
 <head>
   <meta charset='UTF-8' />
   <title>HCC Coleman Connection</title><!-- iDevice Specific -->
-  <meta name="viewport" content=
-  "width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-  <!-- Author and Description -->
-  <meta name="description" content=
-  "Online Enrollment system for HCC Coleman Connection" />
-  <meta name="author" content="Terry Schmidt" /><!-- Google Fonts -->
-  <link href=
-  'http://fonts.googleapis.com/css?family=News+Cycle:400,700|Old+Standard+TT:400,700,400italic'
-  rel='stylesheet' type='text/css' /><!-- Application Assets -->
-  <%= stylesheet_link_tag    "welcome", :media => "all" %><%= javascript_include_tag "welcome" %><%= csrf_meta_tags %><%= render 'common/analytics' if Rails.env.production? %>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+  <!-- Description -->
+  <meta name="description" content="Online Enrollment system for HCC Coleman Connection" />
+  <!-- Google Fonts -->
+  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700|Old+Standard+TT:400,700,400italic'
+  rel='stylesheet' type='text/css' />
+  <%= stylesheet_link_tag "welcome", :media => "all" %>
+  <%= javascript_include_tag "welcome" %>
+  <%= csrf_meta_tags %>
+  <%= render 'common/analytics' if Rails.env.production? %>
 </head>
 <body>
   <header>

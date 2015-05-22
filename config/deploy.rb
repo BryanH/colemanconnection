@@ -14,7 +14,7 @@ load 'config/deploy/recipes/whenever'
 
 server 'sy-colcon.hccs.edu', :web, :app, :db, :primary => true
 
-set :user, 'tschmidt'
+set :user, 'bhanks'
 set :application, "coleman_connection"
 set :rails_env, 'production' # added for delayed_job
 set :deploy_to, "/opt/local/cap/colemanconnection"

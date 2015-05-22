@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.15), see www.w3.org" />
   <meta charset="utf-8" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.15), see www.w3.org" />
   <title>HCC Coleman Connection</title><!-- iDevice Specific -->
-  <meta name="viewport" content=
-  "width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
   <!-- Author and Description -->
-  <meta name="description" content=
-  "Online Enrollment system for HCC Coleman Connection" />
-  <meta name="author" content="Terry Schmidt" /><!-- Google Fonts -->
-  <link href=
-  'http://fonts.googleapis.com/css?family=News+Cycle:400,700|Old+Standard+TT:400,700,400italic'
+  <meta name="description" content="Online Enrollment system for HCC Coleman Connection" />
+  <!-- Google Fonts -->
+  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700|Old+Standard+TT:400,700,400italic'
   rel='stylesheet' type='text/css' /><!-- Application Assets -->
-  <%= stylesheet_link_tag    "application", :media => "all" %><%= javascript_include_tag "application" %><%= csrf_meta_tags %><%= render 'common/analytics' if Rails.env.production? %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'common/analytics' if Rails.env.production? %>
 </head>
 <body>
   <%= render 'common/mast' %>
@@ -22,6 +21,8 @@
     <div>
       <%= render '/common/flash_messages' %><%= yield %>
     </div>
-  </div><%= render 'employee/common/audit_log' if @audits %><%= render 'employee/common/keyboard_shortcuts' if current_user and current_user.kind_of?(Employee) %>
+  </div>
+  <%= render 'employee/common/audit_log' if @audits %>
+  <%= render 'employee/common/keyboard_shortcuts' if current_user and current_user.kind_of?(Employee) %>
 </body>
 </html>

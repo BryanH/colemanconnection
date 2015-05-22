@@ -9,7 +9,7 @@ Developers
 
 Perform the following steps to get up and running.
 
-    git clone https://github.com/tschmidt/coleman_connection.git
+    git clone https://github.com/BryanH/colemanconnection.git
     cd coleman_connection
     bundle install
     rake db:create:all
