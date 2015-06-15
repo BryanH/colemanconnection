@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '3.2.21'
-gem 'pg',                 '0.14.1'
+gem 'pg'
 
 gem 'auditor',            '2.3.3'
 gem 'bootstrap-sass',     '2.3.1.0'
