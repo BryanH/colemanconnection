@@ -365,7 +365,7 @@ DEPENDENCIES
   mail_view (>= 1.0)
   modernizr-rails (= 2.0.6)
   nokogiri
-  pg (= 0.14.1)
+  pg
   premailer-rails3
   rails (= 3.2.21)
   rspec-rails (>= 2.10)
@@ -380,3 +380,6 @@ DEPENDENCIES
   unicorn
   whenever
   yaml_db
+
+BUNDLED WITH
+   1.10.5
