@@ -9,12 +9,6 @@
         <%= content_tag :li, link_to("Edit Your Profile", edit_account_settings_path(:account)) %>
         <%= content_tag :li, link_to("Manage Program Session Registrations", candidate_program_sessions_path) %>
         <%= content_tag :li, link_to("View Your Dashboard", candidate_root_path) %>
-        <%- if @help_tour -%>
-        <li class='divider'></li>
-        <li>
-          <%= link_to_help_me(@help_tour) %>
-        </li>
-        <%- end -%>
         <li class='divider'></li>
         <li><%= link_to "Sign out", destroy_user_session_path %></li>
       </ul>

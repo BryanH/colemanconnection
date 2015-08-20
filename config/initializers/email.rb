@@ -7,7 +7,7 @@ end
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-		:address                      => "10.100.100.139",
+		:address                      => "smtpout.secureserver.net"
 		:user_name                    => username,
 		:password                     => password,
 		:authentication               => :login,

@@ -1,4 +1,3 @@
-<%- @help_tour = 'dashboard' -%>
 <div class="row dashboard">
   <%= render 'employees' if current_user.is_able_to :view, Employee.new %>
   <%= render 'candidates' if current_user.is_able_to :view, Candidate.new %>

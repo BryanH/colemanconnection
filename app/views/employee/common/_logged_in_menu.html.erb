@@ -8,19 +8,12 @@
       <ul class='dropdown-menu'>
         <li><%= link_to 'Edit your account settings', edit_employee_user_path(current_user) %></li>
         <li><%= link_to 'Return to the dashboard', employee_root_path %></li>
-        
+
         <%- if current_user.is_able_to(:audit, :all) -%>
         <li class='divider'></li>
         <%= content_tag :li, link_to('View Audit Log', '#auditModal', class: "#{@audits.blank? ? 'disabled' : ''}", data: { toggle: 'modal' }) %>
         <%- end -%>
-        
-        <%- if @help_tour -%>
-        <li class='divider'></li>
-        <li>
-          <%= link_to_help_me(@help_tour) %>
-        </li>
-        <%- end -%>
-        
+
         <li class='divider'></li>
         <li><%= link_to "Sign out", destroy_user_session_path %></li>
       </ul>
