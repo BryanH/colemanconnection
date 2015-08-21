@@ -2,7 +2,8 @@ if ENV.has_key?("DEVISE_USERNAME")
 		username = ENV["DEVISE_USERNAME"]
 		password = ENV["DEVISE_PASSWORD"]
 else
-		raise "(ERR: 5545) Email not configured - see email.rb"
+# commenting out for now, because it is preventing deploy
+		# raise "(ERR: 5545) Email not configured - see email.rb"
 end
 
 ActionMailer::Base.delivery_method = :smtp
