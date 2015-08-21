@@ -34,11 +34,3 @@ after "deploy", "deploy:cleanup" # keeps only the last 5 releases
 # after "deploy:stop",    "delayed_job:stop"
 # after "deploy:start",   "delayed_job:start"
 # after "deploy:restart", "delayed_job:restart"
-
-# Skip asset precompile because it is failing on permissions error
-[:assets ].each do |default_task|
-		task default_task do
-				# Do nothing
-				puts "The '#{default_task.to_s}' task DOES NOTHING!!!"
-		end
-end
