@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'rails',              '3.2.21'
+gem 'rails', '~>4.2.3'
 gem 'pg'
 
-gem 'auditor',            '2.3.3'
-gem 'bootstrap-sass',     '2.3.1.0'
-gem 'bootstrap-will_paginate', '0.0.9'
-gem 'chronic',            '0.7.0'
-gem 'devise',             '2.1.2'
-gem 'jquery-rails',       '2.0.2'
-gem 'modernizr-rails',    '2.0.6'
-gem 'simple_form',        '2.0.2'
-gem 'squeel',             '1.0.9'
+gem 'auditor'
+gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
+gem 'chronic'
+gem 'devise'
+gem 'jquery-rails'
+gem 'modernizr-rails'
+gem 'simple_form'
+gem 'squeel'
 gem 'savon'
 
 gem 'delayed_job_active_record'
@@ -33,38 +33,38 @@ gem 'ice_cube'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-		gem 'coffee-rails',     '>= 3.2.1'
-		gem 'sass-rails',       '>= 3.2.6'
-		gem 'compass-rails',    '>= 1.0.3'
-		gem 'uglifier',         '>= 1.0.3'
+		gem 'coffee-rails',     '~> 4.1.0'
+		gem 'sass-rails',       '~> 5.0'
+		gem 'compass-rails'
+		gem 'uglifier',         '~> 1.3.0'
 		gem 'flot-rails'
 		gem 'turbo-sprockets-rails3'
 end
 
 group :development do
-		gem 'annotate',         '>= 2.4.1.beta'
-		gem 'guard-rspec',      '>= 0.5.5'
-		gem 'mail_view',        '>= 1.0'
+		gem 'annotate', :git => 'https://github.com/ctran/annotate_models.git'
+		gem 'guard-rspec'
+		gem 'mail_view'
 		gem 'yaml_db'
-		gem 'better_errors'
+	#	gem 'better_errors'
 		gem 'binding_of_caller'
-		gem 'jazz_hands'
+	#	gem 'jazz_hands'
 end
 
 group :test do
-		gem 'capybara',         '>= 1.1.2'
+		gem 'capybara'
 		gem 'database_cleaner'
-		gem 'guard-spork',      '>= 0.3.2'
-		gem 'launchy',          '>= 2.1.0'
+		gem 'guard-spork'
+		gem 'launchy'
 		gem 'shoulda-matchers'
-		gem 'spork',            '>= 0.9.0'
+		gem 'spork'
 end
 
 group :test, :development do
 		# Deployment
-		gem 'capistrano',         '2.12.0'
+		gem 'capistrano'
 
-		gem 'factory_girl_rails', '>= 1.4.0'
-		gem 'ffaker',             '>= 1.14.0'
-		gem 'rspec-rails',        '>= 2.10'
+		gem 'factory_girl_rails'
+#		gem 'ffaker',             '>= 1.14.0'
+		gem 'rspec-rails'
 end
