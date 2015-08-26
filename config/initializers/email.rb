@@ -9,11 +9,12 @@ end
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-		:address                      => smtp_url,
-		:user_name                    => username,
-		:password                     => password,
-		:authentication               => :login,
-		:enable_starttls_auto         => true
+		:address              => smtp_url,
+		:port                 => 587,
+		:user_name            => username,
+		:password             => password,
+		:authentication       => :login,
+		:enable_starttls_auto => true
 }
 
 # ActionMailer::Base.delivery_method = :smtp

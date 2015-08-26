@@ -9,7 +9,7 @@ ColemanConnection::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  # 
+  #
   # Set this to true if testing locally
   config.serve_static_assets = false
 
@@ -53,7 +53,6 @@ ColemanConnection::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'colemanconnection.org' }
 
   # Enable threaded mode
   # config.threadsafe!
