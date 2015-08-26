@@ -1,6 +1,7 @@
 if ENV.has_key?("DEVISE_USERNAME")
 		username = ENV["DEVISE_USERNAME"]
 		password = ENV["DEVISE_PASSWORD"]
+		smtp_url = ENV["DEVISE_SMTP"]
 else
 # commenting out for now, because it is preventing deploy
 		# raise "(ERR: 5545) Email not configured - see email.rb"
@@ -8,7 +9,7 @@ end
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-		:address                      => "smtpout.secureserver.net",
+		:address                      => smtp_url,
 		:user_name                    => username,
 		:password                     => password,
 		:authentication               => :login,
