@@ -13,6 +13,7 @@ ActionMailer::Base.smtp_settings = {
 		:port                 => 587,
 		:user_name            => username,
 		:password             => password,
+		:host                 => 'colemanconnection.com',
 		:authentication       => :login,
 		:enable_starttls_auto => true
 }
