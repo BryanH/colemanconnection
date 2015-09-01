@@ -3,4 +3,3 @@ Devise::Async.setup do |config|
 		#config.enabled = true # | false
 end
 
-Devise::Async.enabled = true
