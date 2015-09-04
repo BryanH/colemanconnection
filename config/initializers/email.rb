@@ -1,7 +1,7 @@
 if ENV.has_key?("DEVISE_USERNAME")
-		username = ENV["DEVISE_USERNAME"]
+		username = ENV["DEVISE_USERNAME"] || "info@colemanconnection.com"
 		password = ENV["DEVISE_PASSWORD"]
-		smtp_url = ENV["DEVISE_SMTP"]
+		smtp_url = ENV["DEVISE_SMTP"] || "smtpout.secureserver.net"
 else
 # commenting out for now, because it is preventing deploy
 		# raise "(ERR: 5545) Email not configured - see email.rb"
