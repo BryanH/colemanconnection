@@ -10,7 +10,7 @@ end
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
 		:address              => smtp_url,
-		:port                 => 587,
+		:port                 => 25,
 		:user_name            => username,
 		:password             => password,
 		:authentication       => 'simple',
