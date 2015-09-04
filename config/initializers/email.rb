@@ -11,6 +11,7 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
 		:address              => smtp_url,
 		:port                 => 25,
+		:domain				  => "colemanconnection.org",
 		:user_name            => username,
 		:password             => password,
 		:authentication       => :login,
