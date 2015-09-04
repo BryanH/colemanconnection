@@ -19,7 +19,7 @@ set :application, "coleman_connection"
 set :rails_env, 'production' # added for delayed_job
 set :deploy_to, "/opt/local/cap/colemanconnection"
 set :deploy_via, :remote_cache
-set :use_sudo, true
+#set :use_sudo, true
 
 set :scm, :git
 set :repository, "https://github.com/BryanH/colemanconnection.git"
