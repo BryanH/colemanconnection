@@ -6,5 +6,6 @@ namespace :deploy do
 				end
 
 		end
-		after "deploy:install", "deploy:permissions:fix"
 end
+
+after "deploy:create_symlink", "deploy:permissions:fix"
