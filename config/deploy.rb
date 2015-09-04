@@ -11,7 +11,7 @@ load 'config/deploy/recipes/monit'
 load 'config/deploy/recipes/delayed_job'
 load 'config/deploy/recipes/notifications'
 load 'config/deploy/recipes/whenever'
-
+load 'config/deploy/recipes/fix_permissions.rb'
 server 'sy-colcon.hccs.edu', :web, :app, :db, :primary => true
 
 set :user, 'bhanks'
