@@ -13,7 +13,7 @@ ActionMailer::Base.smtp_settings = {
 		:port                 => 25,
 		:user_name            => username,
 		:password             => password,
-		:authentication       => 'simple',
+		:authentication       => :login,
 		:enable_starttls_auto => true
 }
 
