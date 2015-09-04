@@ -54,7 +54,9 @@ ColemanConnection::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => 'colemanconnection.com' }
-
+  # Figure out why mailing is failing!
+  config.action_mailer.logger = Logger.new("log/mail.log", "daily")
+  config.action_mailer.logger.level = Logger::DEBUG
   # Enable threaded mode
   # config.threadsafe!
 
