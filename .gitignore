@@ -22,3 +22,4 @@ config/initializers/secret_token.rb
 lib/program_session_times.rb
 *~
 ssh/*
+/config/app_secret.yml

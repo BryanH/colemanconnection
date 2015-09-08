@@ -12,6 +12,8 @@ load 'config/deploy/recipes/monit'
 load 'config/deploy/recipes/notifications'
 load 'config/deploy/recipes/whenever'
 load 'config/deploy/recipes/fix_permissions.rb'
+load 'config/deploy/recipes/app_secret.rb'
+
 server 'sy-colcon.hccs.edu', :web, :app, :db, :primary => true
 
 set :user, 'bhanks'
@@ -28,5 +30,5 @@ set :branch, 'master'
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-#after "deploy", "deploy:cleanup" # keeps only the last 5 releases
+after "deploy", "deploy:cleanup" # keeps only the last 5 releases
 

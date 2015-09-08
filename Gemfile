@@ -23,6 +23,8 @@ gem 'nokogiri'
 gem 'cancan'
 gem 'god'
 
+gem "econfig", require: "econfig/rails"
+
 gem 'whenever', require: false
 
 # App server
