@@ -4,8 +4,8 @@
       <div class="gotcha">
         <h2>
 					<span>HCC Coleman College</span>
-					<span>Your Health Care Career</span>
-					<span><%= link_to "Starts Here", new_user_registration_path %></span>
+					<span>Program Information Session</span>
+					<span><%= link_to "Registration", new_user_registration_path %></span>
 				</h2>
       </div>
     </div>
@@ -55,8 +55,7 @@
 <section class="container need-help">
 	<p>
 	Not sure where to start?<br />
-	<%= render partial: 'common/links', locals: {type:'ask', message: "Chat with us" } %>
-	or <%= link_to 'use this really simple tool', '/pathway' %> to find your path.
+	<%= link_to 'Use this really simple tool', '/pathway' %> to find your path.
 	</p>
 
   <p class="mission-statement">
