@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '3.2.21'
-gem 'pg'
+gem 'pg',                 '0.14.1'
 
 gem 'auditor',            '2.3.3'
 gem 'bootstrap-sass',     '2.3.1.0'
@@ -17,20 +17,23 @@ gem 'savon'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'devise-async'
-gem 'premailer-rails'
+gem 'premailer-rails3'
 gem 'nokogiri'
 
 gem 'cancan'
 gem 'god'
 
-gem "econfig", require: "econfig/rails"
-
 gem 'whenever', require: false
+
+# Deployment
+gem 'capistrano',         '2.12.0'
 
 # App server
 gem 'unicorn'
 
 gem 'ice_cube'
+gem 'rack-cache',			'1.2.0'
+gem 'net-ssh',				'~>2.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -48,7 +51,6 @@ group :development do
 		gem 'guard-rspec',      '>= 0.5.5'
 		gem 'mail_view',        '>= 1.0'
 		gem 'yaml_db'
-		gem 'better_errors'
 		gem 'binding_of_caller'
 		gem 'jazz_hands'
 end
@@ -64,8 +66,6 @@ end
 
 group :test, :development do
 		# Deployment
-		gem 'capistrano',         '2.12.0'
-
 		gem 'factory_girl_rails', '>= 1.4.0'
 		gem 'ffaker',             '>= 1.14.0'
 		gem 'rspec-rails',        '>= 2.10'
