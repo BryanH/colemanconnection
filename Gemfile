@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',              '3.2.21'
+gem 'rails',              '3.2.22.5'
 gem 'pg',                 '0.14.1'
 
 gem 'auditor',            '2.3.3'
@@ -17,8 +17,12 @@ gem 'savon'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'devise-async'
-gem 'premailer-rails3'
+gem 'premailer-rails'
 gem 'nokogiri'
+
+
+gem 'sqlite3'
+
 
 gem 'cancan'
 gem 'god'
@@ -34,6 +38,8 @@ gem 'unicorn'
 gem 'ice_cube'
 gem 'rack-cache',			'1.2.0'
 gem 'net-ssh',				'~>2.0'
+
+gem 'econfig'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -52,7 +58,7 @@ group :development do
 		gem 'mail_view',        '>= 1.0'
 		gem 'yaml_db'
 		gem 'binding_of_caller'
-		gem 'jazz_hands'
+		#gem 'jazz_hands'
 end
 
 group :test do

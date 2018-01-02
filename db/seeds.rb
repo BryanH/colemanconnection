@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+time=Time.now.to_s
 {
   "Biosafety" => :first_thursdays,
   "Certified Prevention Specialist" => :both,
@@ -36,25 +36,25 @@
   if schedule.is_a?(Symbol)
     case schedule
     when :first_thursdays
-      ProgramSessionTimes.first_thursdays.each do |time|
-        next if ProgramSessionTimes.already_created?(time, program)
+#      ProgramSessionTimes.first_thursdays.each do |time|
+ #       next if ProgramSessionTimes.already_created?(time, program)
         ProgramDate.create!(program: program, occurs_on: Chronic.parse(time))
-      end
+      #end
     when :third_thursdays
-      ProgramSessionTimes.third_thursdays.each do |time|
-        next if ProgramSessionTimes.already_created?(time, program)
+  #    ProgramSessionTimes.third_thursdays.each do |time|
+   #     next if ProgramSessionTimes.already_created?(time, program)
         ProgramDate.create!(program: program, occurs_on: Chronic.parse(time))
-      end
+      #end
     when :both
-      ProgramSessionTimes.all.each do |time|
-        next if ProgramSessionTimes.already_created?(time, program)
+    #  ProgramSessionTimes.all.each do |time|
+     #   next if ProgramSessionTimes.already_created?(time, program)
         ProgramDate.create!(program: program, occurs_on: Chronic.parse(time))
-      end
+      #end
     end
   else
     schedule.each do |i|
       time = ProgramSessionTimes::OCCURS_ON_TIMES[i]
-      next if ProgramSessionTimes.already_created?(time, program)
+     # next if ProgramSessionTimes.already_created?(time, program)
       ProgramDate.create!(program: program, occurs_on: Chronic.parse(time))
     end
   end
