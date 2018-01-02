@@ -1,6 +1,6 @@
-username = ColemanConnection.config.devise_username
-password = ColemanConnection.config.devise_password
-smtp_url = ColemanConnection.config.devise_smtp
+username = 'chump' #ColemanConnection.config.devise_username
+password = 'chump' #ColemanConnection.config.devise_password
+smtp_url = 'http:' #ColemanConnection.config.devise_smtp
 
 # commenting out for now, because it is preventing deploy
 		# raise "(ERR: 5545) Email not configured - see email.rb"
@@ -31,4 +31,4 @@ ActionMailer::Base.smtp_settings = {
 ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.perform_deliveries = true
 
-ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+#ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?

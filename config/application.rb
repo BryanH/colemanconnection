@@ -16,7 +16,7 @@ if defined?(Bundler)
 end
 
 module ColemanConnection
-  extend Econfig::Shortcut
+#  extend Econfig::Shortcut
 
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
