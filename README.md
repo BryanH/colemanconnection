@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BryanH/colemanconnection.svg?branch=master)](https://travis-ci.org/BryanH/colemanconnection)
+
 HCC Coleman Connection
 ======================
 
