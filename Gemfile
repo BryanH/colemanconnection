@@ -41,16 +41,12 @@ gem 'net-ssh', '>=2.0'
 
 gem 'econfig'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
   gem 'coffee-rails', '>= 3.2.1'
   gem 'sass-rails', '>= 3.2.6'
   gem 'compass-rails', '>= 1.0.3'
   gem 'uglifier', '>= 1.0.3'
   gem 'flot-rails'
   gem 'turbo-sprockets-rails3'
-end
 
 group :development do
   gem 'annotate', '>= 2.4.1.beta'
