@@ -17,7 +17,7 @@ gem 'savon'
 
 gem 'delayed_job_active_record'
 gem 'daemons'
-gem 'devise-async'
+gem 'devise-async', '~>0.7.0'
 gem 'premailer-rails'
 gem 'nokogiri'
 
