@@ -368,7 +368,7 @@ DEPENDENCIES
   guard-rspec (>= 0.5.5)
   guard-spork (>= 0.3.2)
   ice_cube
-  jquery-rails (~> 4.3.3)
+  jquery-rails
   launchy (>= 2.1.0)
   mail_view (>= 1.0)
   modernizr-rails (= 2.0.6)
