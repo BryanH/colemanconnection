@@ -1,10 +1,10 @@
 class PathwaySetting < ActiveRecord::Base
-  attr_accessible :program, :program_id, :url, :tags
-  
+#  attr_accessible :program, :program_id, :url, :tags
+
   belongs_to :program
-  
+
   delegate :name, to: :program, prefix: true
-  
+
   TAGS = [
     ['You would like working with other people', 'peopleperson'],
     ['You would like working with technology', 'tecky'],

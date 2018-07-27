@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-time=Time.now.to_s
-{
+time = Time.now.to_s
+progs = {
   "Biosafety" => :first_thursdays,
   "Certified Prevention Specialist" => :both,
   "Clinical Laboratory Technician" => :first_thursdays,
@@ -32,7 +32,10 @@ time=Time.now.to_s
   "Respiratory Therapist" => :first_thursdays,
   "Surgical Technology" => [2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22],
   "Chemical Dependency Certificate (LCDC)" => :first_thursdays
-}.each_pair do |program, schedule|
+}
+
+progs.each_pair do |program_name, schedule|
+  program = Program.create( name: program_name )
   if schedule.is_a?(Symbol)
     case schedule
     when :first_thursdays
@@ -53,7 +56,7 @@ time=Time.now.to_s
     end
   else
     schedule.each do |i|
-      time = ProgramSessionTimes::OCCURS_ON_TIMES[i]
+ #####     time = ProgramSessionTimes::OCCURS_ON_TIMES[i]
      # next if ProgramSessionTimes.already_created?(time, program)
       ProgramDate.create!(program: program, occurs_on: Chronic.parse(time))
     end

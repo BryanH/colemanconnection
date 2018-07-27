@@ -11,7 +11,7 @@
 #  updated_at     :datetime
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :er_date do
     cap           250
     session_time  Time.now
