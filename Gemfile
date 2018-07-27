@@ -11,7 +11,7 @@ gem 'chronic', '0.7.0'
 gem 'devise', '>=2.1.2'
 gem 'jquery-rails'
 gem 'modernizr-rails', '2.0.6'
-gem 'simple_form', '~>3.0.2'
+gem 'simple_form', '~>4.0.0'
 gem 'squeel', '~>1.2.3'
 gem 'savon'
 
@@ -31,7 +31,7 @@ gem 'god'
 gem 'whenever', require: false
 
 # Deployment
-gem 'capistrano', '~>2.15.0'
+gem 'capistrano', '~>3.11.0'
 
 # App server
 gem 'unicorn'
@@ -43,7 +43,7 @@ gem 'net-ssh', '>=2.0'
 gem 'econfig'
 
 gem 'coffee-rails', '>= 3.2.1'
-gem 'sass-rails', '>= 3.2.6'
+gem 'sass-rails', '>= 3.5.6'
 gem 'compass-rails', '>= 1.0.3'
 gem 'uglifier', '>= 1.0.3'
 gem 'flot-rails'
