@@ -1,4 +1,5 @@
-ColemanConnection::Application.routes.draw do
+Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # mount Flair::Engine => "/flair" if Rails.env.development?
   #mount EmailPreviewers::Devise::Preview => 'devise_preview' if Rails.env.development?
