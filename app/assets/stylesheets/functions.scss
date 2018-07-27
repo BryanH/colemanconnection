@@ -6,4 +6,6 @@
   -moz-border-radius: $radius;
 }
 
-@asdjfljk
+@mixin background-size( $size ) {
+  background-size: $size;
+}
