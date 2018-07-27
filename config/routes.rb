@@ -1,22 +1,25 @@
 ColemanConnection::Application.routes.draw do
-  
+
   # mount Flair::Engine => "/flair" if Rails.env.development?
-  mount EmailPreviewers::Devise::Preview => 'devise_preview' if Rails.env.development?
+  #mount EmailPreviewers::Devise::Preview => 'devise_preview' if Rails.env.development?
   mount Announcements::Preview => 'announcement_emails' if Rails.env.development?
   mount Notifications::Preview => 'notification_emails' if Rails.env.development?
-  
-  match '/pathway', to: 'welcome#pathway'
-  match '/quiz/:id', to: 'welcome#quiz', as: :next_quiz
+
+  get '/pathway', to: 'welcome#pathway'
+
+  # This was "match" but rails complained and suggested adding the 'via'. Not soure if this works
+  # TODO: verify this is the right way to do this
+  get '/quiz/:id', to: 'welcome#quiz', as: :next_quiz, via: [:get, :post]
   get '/settings/:section', to: 'account_settings#edit', as: :edit_account_settings
   put '/settings/:id', to: 'account_settings#update', as: :update_account_settings
-  
+
   devise_scope :user do
-    match '/get_started' => 'devise/registrations#index', as: :get_started
+    get '/get_started' => 'devise/registrations#index', as: :get_started
   end
-  
+
   resource :welcome
   resources :survey_results
-  
+
   # Routes for potential candidates
   namespace :candidate do
     resources :program_sessions do
@@ -24,7 +27,7 @@ ColemanConnection::Application.routes.draw do
         post :date_list
       end
     end
-    
+
     root to: 'base#index'
   end
 
@@ -47,12 +50,12 @@ ColemanConnection::Application.routes.draw do
     resources :discipline_teams
     resources :program_activations, only: [:create, :destroy]
     resources :pathway_settings
-    
+
     root to: 'base#index'
   end
-  
+
   devise_for :users
-  
+
   root to: 'welcome#index'
-  
+
 end

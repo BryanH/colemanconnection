@@ -34,18 +34,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Run devise mailers asynchronously
-  include Devise::Async::Model
+## BDH#  include Devise::Async::Model
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_USERNAME_REGEX = /^[a-z](?=[\w.]{3,31}$)\w*\.?\w*$/i
+  ## THESE ARE BOTH FLAWED AND WILL BE REMOVED
+  #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  #VALID_USERNAME_REGEX = /^[a-z](?=[\w.]{3,31}$)\w*\.?\w*$/i
 
   # Virtual attribute for authenticating by either the username or email
-  attr_accessor :login
+#  attr_accessor :login
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :demographic_attributes, :username,
-                  :login, :program_affiliations
-
+#  attr_accessible :email, :password, :password_confirmation, :remember_me,
+#                  :first_name, :last_name, :demographic_attributes, :username,
+#                  :login, :program_affiliations
+#
   has_many    :permissions, dependent: :destroy
   has_many    :sessions, dependent: :destroy
   has_many    :program_dates, through: :sessions
@@ -56,20 +57,21 @@ class User < ActiveRecord::Base
   validates :username,    uniqueness: { case_sensitive: false,
                                         allow_blank: true,
                                         allow_nil: true
-                                      },
-                          format: { with: VALID_USERNAME_REGEX,
-                                    allow_blank: true,
-                                    allow_nil: true
+#                                      },
+#                          format: {
+#				     with: VALID_USERNAME_REGEX,
+#                                    allow_blank: true,
+#                                    allow_nil: true
                                   }
   validates :email,       presence: true,
-                          format: { with: VALID_EMAIL_REGEX },
+#                          format: { with: VALID_EMAIL_REGEX },
                           uniqueness: { case_sensitive: false }
 
   accepts_nested_attributes_for :demographic
 
   before_create :set_sti
 
-  default_scope order('lower(last_name) ASC')
+  default_scope { order('lower(last_name) ASC') }
 
   scope :search, lambda { |query| where{first_name.matches("%#{query}%") |
                                         last_name.matches("%#{query}%") |

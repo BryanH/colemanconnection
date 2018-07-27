@@ -26,7 +26,7 @@
 #  updated_at             :datetime
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     first_name        { Faker::Name.first_name }
     last_name         { Faker::Name.first_name }
@@ -35,13 +35,13 @@ FactoryGirl.define do
 
     factory :staff, aliases: [:employee], class: Employee do
       type "Employee"
-      
+
       trait :who_can_set_permissions do
         after(:create) do |instance|
           instance.permissions.create!(action: 'set_permissions', subject_class: 'Employee')
         end
       end
-      
+
       trait :overlord do
         after(:create) do |instance|
           instance.permissions.create!(action: 'manage', subject_class: 'all')
@@ -52,11 +52,11 @@ FactoryGirl.define do
     factory :student, aliases: [:candidate], class: Candidate do
       type "Candidate"
     end
-    
+
     trait :active do
       active true
     end
-    
+
     trait :inactive do
       active false
     end
