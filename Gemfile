@@ -1,23 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.0' #'~>3.2.22'
+gem 'rails', '~> 5.2.0' #'~>3.2.22'
 gem 'pg', '~>1.0.0'
 
 ####gem 'auditor', '~>2.3.3'
 gem "audited", '~> 4.7'
-gem 'bootstrap-sass', '~>3.3.7'
+gem 'bootstrap-sass', '>=3.3.7'
 gem 'bootstrap-will_paginate'
-gem 'chronic', '0.7.0'
+gem 'chronic', '~>0.10.0'
 gem 'devise', '>=2.1.2'
 gem 'jquery-rails'
-gem 'modernizr-rails', '2.0.6'
+gem 'modernizr-rails', '>=2.0.6'
 gem 'simple_form', '~>4.0.0'
-gem 'squeel', '~>1.2.3'
+gem 'squeel', '>=1.2.3'
 gem 'savon'
 
 gem 'delayed_job_active_record'
 gem 'daemons'
-gem 'devise-async', '~>0.7.0'
+gem 'devise-async', '~>1.0.0'
 gem 'premailer-rails'
 gem 'nokogiri'
 
@@ -37,7 +37,7 @@ gem 'capistrano', '~>3.11.0'
 gem 'unicorn'
 
 gem 'ice_cube'
-gem 'rack-cache', '1.2.0'
+gem 'rack-cache', '~>1.8.0'
 gem 'net-ssh', '>=2.0'
 
 gem 'econfig'
@@ -55,6 +55,7 @@ group :development do
   gem 'yaml_db', '~>0.7.0'
   gem 'binding_of_caller'
   #gem 'jazz_hands'
+  gem 'byebug'
 end
 
 group :test do
