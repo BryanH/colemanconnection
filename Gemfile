@@ -9,7 +9,7 @@ gem 'bootstrap-sass', '>=3.3.7'
 gem 'bootstrap-will_paginate'
 gem 'bootsnap', require: false
 gem 'chronic', '~>0.10.0'
-gem 'devise', '>=2.1.2'
+gem 'devise', '~>4.4.0'
 gem 'jquery-rails'
 gem 'modernizr-rails', '>=2.0.6'
 gem 'simple_form', '~>4.0.0'

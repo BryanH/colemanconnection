@@ -1,29 +1,31 @@
-<h2>Create an Account</h2>
+<h2>Sign up</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, required: true, autofocus: true %>
-    <%= f.input :last_name, required: true %>
-    <%- @demographic = resource.demographic || resource.build_demographic -%>
-    <%= f.simple_fields_for :demographic do |demographic_fields| %>
-      <%= demographic_fields.input :hcc_student_id, 
-            label: "HCC Student ID", 
-            hint: "Creating an account on HCC Coleman Connection requires an HCC 
-                  student id which typically contains 9 numbers. This ID number 
-                  is also required if you would like to apply to an HCC Coleman 
-                  College program. If you are new to HCC and need to apply, please <a href='http://www.hccs.edu/district/students/apply/'>click here and complete 'Step 1'</a>.
-                  If you are already an HCC student and need to retrieve your Student ID please <a href='https://hccsaweb.hccs.edu:8080/psp/cspwd/EMPLOYEE/HRMS/c/HCCS_CUST_MENU.HCC_UAT.GBL' target='_blank'>click here</a>.".html_safe,
-            required: true %>
-    <%- end -%>
-    <hr>
-    <%= f.input :email, :required => true %>
-    <%= f.input :password, :autocomplete => "off", :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
+	<%= f.input :first_name, required: true, autofocus: true %>
+	<%= f.input :last_name, required: true %>
+	<%- @demographic = resource.demographic || resource.build_demographic -%>
+	<%= f.simple_fields_for :demographic do |demographic_fields| %>
+		<%= demographic_fields.input :hcc_student_id,
+			label: "HCC Student ID",
+			hint: "Creating an account on HCC Coleman Connection requires an HCC
+			student id which typically contains 9 numbers. This ID number
+			is also required if you would like to apply to an HCC Coleman
+			College program. If you are new to HCC, you will <a href='https://www.hccs.edu/district/students/apply/'>need to apply first</a>. After you complete <em>Step 1</em> you can come back here and register.
+            Existing students can <a href='https://hccsaweb.hccs.edu:8080/psp/cspwd/EMPLOYEE/HRMS/c/HCCS_CUST_MENU.HCC_UAT.GBL' target='_blank'>retrieve their Student ID number</a>".html_safe,
+                required: true %>
+        <%- end -%>
+        <hr />
+        <%= f.input :email, required: true %>
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, :required => true %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, raw("Create This Account"), class: 'btn btn-primary' %>
+       <%= f.button :submit, "Create Account", class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<%= render "devise/shared/links" %>

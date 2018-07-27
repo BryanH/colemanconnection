@@ -372,7 +372,7 @@ DEPENDENCIES
   daemons
   database_cleaner
   delayed_job_active_record
-  devise (>= 2.1.2)
+  devise (~> 4.4.0)
   devise-async (~> 1.0.0)
   econfig
   factory_bot_rails
