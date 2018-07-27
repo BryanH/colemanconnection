@@ -1,0 +1,13 @@
+defaults: &defaults
+  adapter: sqlite3
+  encoding: unicode
+  pool: 5
+development:
+  <<: *defaults
+  database: db/coleman_connection_development.sqlite3
+production:
+  <<: *defaults
+  database: db/coleman_connection_production.sqlite3
+test:
+  <<: *defaults
+  database: db/coleman_connection_test.sqlite3
