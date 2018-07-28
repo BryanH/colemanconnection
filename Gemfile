@@ -50,7 +50,7 @@ gem 'uglifier', '>= 1.0.3'
 gem 'flot-rails'
 
 group :development do
-  gem 'annotate', '>= 2.4.1.beta'
+  gem 'annotate', '>= 2.7.4'
   gem 'guard-rspec', '>= 0.5.5'
   gem 'mail_view', '>= 1.0'
   gem 'yaml_db', '~>0.7.0'
