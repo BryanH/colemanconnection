@@ -1,9 +1,9 @@
 class Employee::SessionAssignmentsController < Employee::BaseController
-  before_filter :find_program_date
-  
+  before_action :find_program_date
+
   def edit
   end
-  
+
   def update
     # params[:program_date][:occurs_on] will actually contain the id of the new date
     if @program_date.sessions.update_all(program_date_id: params[:program_date][:occurs_on])
@@ -13,9 +13,9 @@ class Employee::SessionAssignmentsController < Employee::BaseController
       render :edit
     end
   end
-  
+
   private
-  
+
   def find_program_date
     @program_date = ProgramDate.find(params[:id])
   end

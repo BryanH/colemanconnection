@@ -1,14 +1,14 @@
 class Employee::ProgramsController < Employee::BaseController
-  before_filter :set_program, only: [:edit, :update]
-  
+  before_action :set_program, only: [:edit, :update]
+
   def index
     @programs = Program.order(:name).search(params[:q]).paginate(page: params[:page])
   end
-  
+
   def new
     @program = Program.new
   end
-  
+
   def create
     @program = Program.new(params[:program])
     if @program.save
@@ -17,10 +17,10 @@ class Employee::ProgramsController < Employee::BaseController
       render :new
     end
   end
-  
+
   def edit
   end
-  
+
   def update
     if @program.update_attributes(params[:program])
       redirect_to [:employee, :programs], notice: "Program was updated successfully."
@@ -28,9 +28,9 @@ class Employee::ProgramsController < Employee::BaseController
       render :edit
     end
   end
-  
+
 private
-  
+
   def set_program
     @program = Program.find(params[:id])
   end

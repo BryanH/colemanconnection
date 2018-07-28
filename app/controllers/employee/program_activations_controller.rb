@@ -1,6 +1,6 @@
 class Employee::ProgramActivationsController < Employee::BaseController
-  before_filter :get_program, only: [:create, :destroy]
-  
+  before_action :get_program, only: [:create, :destroy]
+
   def create
     @program.active = true
     if @program.save
@@ -9,8 +9,8 @@ class Employee::ProgramActivationsController < Employee::BaseController
       redirect_to employee_programs_path, alert: "The program could not be activated: #{$!}"
     end
   end
-  
-  
+
+
   def destroy
     @program.active = false
     if @program.save
@@ -19,7 +19,7 @@ class Employee::ProgramActivationsController < Employee::BaseController
       redirect_to employee_programs_path, alert: "The program could not be deactivated: #{$!}"
     end
   end
-  
+
 private
 
   def get_program

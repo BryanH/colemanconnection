@@ -1,8 +1,8 @@
 class Candidate::BaseController < ApplicationController
-  before_filter :authorize_candidate!
+  before_action :authorize_candidate!
 
 private
-  
+
   def authorize_candidate!
     authenticate_user!
     unless current_user.is_a?(Candidate) and current_user.active?

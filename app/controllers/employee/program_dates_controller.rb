@@ -1,6 +1,6 @@
 class Employee::ProgramDatesController < Employee::BaseController
 
-  before_filter :set_program_date, only: [:show, :edit, :update, :destroy, :happiness]
+  before_action :set_program_date, only: [:show, :edit, :update, :destroy, :happiness]
 
   def index
     @programs = Program.search(params[:q]).where(active: true)
