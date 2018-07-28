@@ -2,11 +2,13 @@
 #
 # Table name: program_dates
 #
-#  created_at :datetime         not null
-#  id         :integer          not null, primary key
-#  occurs_on  :date
-#  program    :string(255)
-#  updated_at :datetime         not null
+#  id             :integer          not null, primary key
+#  program_string :string(255)
+#  occurs_on      :datetime
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  no_attendance  :boolean          default(FALSE)
+#  program_id     :integer
 #
 
 class ProgramDate < ActiveRecord::Base

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: pathway_settings
+#
+#  id         :integer          not null, primary key
+#  program_id :integer
+#  url        :string(255)
+#  tags       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe PathwaySetting do

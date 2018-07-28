@@ -2,28 +2,30 @@
 #
 # Table name: users
 #
-#  active                 :boolean          default(TRUE)
-#  confirmation_sent_at   :datetime
-#  confirmation_token     :string(255)
-#  confirmed_at           :datetime
-#  created_at             :datetime
-#  current_sign_in_at     :datetime
-#  current_sign_in_ip     :string(255)
-#  demographic_id         :integer
+#  id                     :integer          not null, primary key
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(128)      default(""), not null
-#  first_name             :string(255)
-#  id                     :integer          not null, primary key
-#  last_name              :string(255)
-#  last_sign_in_at        :datetime
-#  last_sign_in_ip        :string(255)
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
-#  role_mask              :integer
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0)
-#  type                   :string(255)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  created_at             :datetime
 #  updated_at             :datetime
+#  demographic_id         :integer
+#  role_mask              :integer
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  active                 :boolean          default(TRUE)
+#  type                   :string(255)
+#  username               :string(255)
+#  program_affiliations   :text
 #
 
 class User < ActiveRecord::Base

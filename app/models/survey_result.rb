@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: survey_results
+#
+#  id              :integer          not null, primary key
+#  result          :string(255)      not null
+#  comment         :text
+#  token           :string(255)      not null
+#  program_date_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class SurveyResult < ActiveRecord::Base
 
   belongs_to :program_date
@@ -6,7 +19,7 @@ class SurveyResult < ActiveRecord::Base
 
   validates :token, uniqueness: true, presence: true
 
-  scope :not_pending, where{ result != 'pending' }
+  scope :not_pending, -> { where{ result != 'pending' } }
 
   def self.generate_token
     begin
