@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 
-class PathwaySetting < ActiveRecord::Base
+class PathwaySetting < ApplicationRecord::Base
 #  attr_accessible :program, :program_id, :url, :tags
 
   belongs_to :program

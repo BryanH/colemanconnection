@@ -13,12 +13,12 @@
 
 # This class is deprecated. This is just being kept around
 # for legacy data
-class ErDate < ActiveRecord::Base
-  
+class ErDate < ApplicationRecord::Base
+
   has_many :sessions
-  
+
   validates :cap,           presence: true
   validates :session_time,  presence: true,
                             uniqueness: true
-  
+
 end

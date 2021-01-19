@@ -15,7 +15,7 @@
 #  program_date_id         :integer
 #
 
-class Session < ActiveRecord::Base
+class Session < ApplicationRecord::Base
 
   attr_accessor :program_name
 

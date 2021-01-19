@@ -10,7 +10,7 @@
 #  active             :boolean          default(TRUE)
 #
 
-class Program < ActiveRecord::Base
+class Program < ApplicationRecord::Base
 #  attr_accessible :name, :discipline_team_id
 
   belongs_to :discipline_team
