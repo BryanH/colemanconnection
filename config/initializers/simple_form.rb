@@ -81,7 +81,7 @@ SimpleForm.setup do |config|
       input.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
     end
   end
-  
+
   config.wrappers :checkbox, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
     b.wrapper :tag => 'div', :class => 'controls' do |ba|
       ba.use :label_input
@@ -144,7 +144,7 @@ SimpleForm.setup do |config|
   config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
-  config.form_class = 'form-horizontal'
+  config.default_form_class = 'form-horizontal'
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
