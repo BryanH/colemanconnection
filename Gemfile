@@ -22,6 +22,7 @@ gem 'devise-async', '~>1.0.0'
 gem 'premailer-rails'
 gem 'nokogiri'
 
+gem "webpacker"
 
 gem 'sqlite3'
 

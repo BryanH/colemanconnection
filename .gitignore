@@ -25,3 +25,10 @@ ssh/*
 /config/app_secret.yml
 doc
 bin/
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
