@@ -30,6 +30,16 @@
 
 require 'spec_helper'
 
-describe Student do
-  
+describe User do
+	let(:student) { User.new }
+	subject {student}
+
+  context 'a new instance' do
+  	it { should respond_to :email }
+  	it { should respond_to :first_name }
+  	it { should respond_to :last_name }
+  	it { should respond_to :username }
+  	it { should respond_to :program_affiliations }
+  	it { should respond_to :confirmation_token }
+  end
 end
