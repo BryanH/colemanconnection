@@ -43,4 +43,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Prevent CSRF
+  config.action_controller.forgery_protection_origin_check = true
+
 end
