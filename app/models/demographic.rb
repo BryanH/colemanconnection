@@ -27,7 +27,7 @@
 #  zip                   :string(9)
 #
 
-class Demographic < ApplicationRecord::Base
+class Demographic < ApplicationRecord
 
   AGE_GROUPS = [
     '18 - 20',

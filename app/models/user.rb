@@ -28,7 +28,7 @@
 #  program_affiliations   :text
 #
 
-class User < ApplicationRecord::Base
+class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

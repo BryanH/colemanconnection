@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class DisciplineTeam < ApplicationRecord::Base
+class DisciplineTeam < ApplicationRecord
 #  attr_accessible :name, :color
 
   validates :name, uniqueness: true

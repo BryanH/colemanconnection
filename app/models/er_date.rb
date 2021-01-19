@@ -13,7 +13,7 @@
 
 # This class is deprecated. This is just being kept around
 # for legacy data
-class ErDate < ApplicationRecord::Base
+class ErDate < ApplicationRecord
 
   has_many :sessions
 

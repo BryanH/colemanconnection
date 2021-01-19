@@ -11,7 +11,7 @@
 #  updated_at      :datetime         not null
 #
 
-class SurveyResult < ApplicationRecord::Base
+class SurveyResult < ApplicationRecord
 
   belongs_to :program_date
 

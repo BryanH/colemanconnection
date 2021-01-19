@@ -10,7 +10,7 @@
 #  user_id       :integer
 #
 
-class Permission < ApplicationRecord::Base
+class Permission < ApplicationRecord
 
   belongs_to :user
 

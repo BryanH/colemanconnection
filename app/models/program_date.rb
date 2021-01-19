@@ -11,7 +11,7 @@
 #  program_id     :integer
 #
 
-class ProgramDate < ApplicationRecord::Base
+class ProgramDate < ApplicationRecord
 
 #  attr_accessible :program_string, :occurs_on, :program_id
 
