@@ -1,29 +1,29 @@
 <section class="pathways container">
-	<div id='filter' class='btn-group'>
-	  <form class='form-inline path-tool'>
-	    <div class='control-group'>
-  	    <label class='control-label'>You would</label>
-	      <select>
-    	    <option value='all'>like to see all programs</option>
-    	    <option value='peopleperson'>like working with other people</option>
-    	    <option value='tecky'>like working with technology</option>
-    	    <option value='blood'>not be bothered by blood and body fluids</option>
-    	    <option value='lifeordeath'>be able to make life or death decisions</option>
-    	    <option value='takedirection'>rather take direction in your job</option>
-    	    <option value='handson'>love to have hands-on work</option>
-    	    <option value='loner'>prefer to work by yourself</option>
-    	  </select>
-  	  </div>
-	  </form>
-	</div>
+  <div id='filter' class='btn-group'>
+    <form class='form-inline path-tool'>
+      <div class='control-group'>
+        <label class='control-label'>You would</label>
+        <select>
+          <option value='all'>like to see all programs</option>
+          <option value='peopleperson'>like working with other people</option>
+          <option value='tecky'>like working with technology</option>
+          <option value='blood'>not be bothered by blood and body fluids</option>
+          <option value='lifeordeath'>be able to make life or death decisions</option>
+          <option value='takedirection'>rather take direction in your job</option>
+          <option value='handson'>love to have hands-on work</option>
+          <option value='loner'>prefer to work by yourself</option>
+        </select>
+      </div>
+    </form>
+  </div>
   <hr>
   <ul id="program_offerings" class="image-grid unstyled">
-		<%- Program.where(active: true).each do |program| -%>
-			<%= content_tag_for :li, program, class: "#{program.discipline_team_name.parameterize} #{program.name.parameterize}", 
-													data: {id: program.id, type: program.pathway_setting_tags} do %>
-				<%= link_to program.name, program.pathway_setting_url %>
-			<% end %>
-		<%- end -%>
+    <%- Program.where(active: true).each do |program| -%>
+      <%= content_tag_for :li, program, class: "#{program.discipline_team_name.parameterize} #{program.name.parameterize}",
+                          data: {id: program.id, type: program.pathway_setting_tags} do %>
+        <%= link_to program.name, program.pathway_setting_url %>
+      <% end %>
+    <%- end -%>
   </ul>
   <hr>
 </section>
